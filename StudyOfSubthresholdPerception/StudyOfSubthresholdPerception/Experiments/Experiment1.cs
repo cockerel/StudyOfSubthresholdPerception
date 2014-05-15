@@ -16,6 +16,7 @@ namespace StudyOfSubthresholdPerception.Experiments
         private List<object> answersPresentation = new List<object>();
         private DB db = new DB();
         private int m = 0; //счетчик текущей строки в table
+        private int num = 0;
 
         internal void loadData()
         {
@@ -93,7 +94,7 @@ namespace StudyOfSubthresholdPerception.Experiments
                 if (DB.connection.State == ConnectionState.Closed)
                     DB.connection.Open();
                 adapter.Fill(table);
-                int num = (int)table.Rows[0][0] + 1;
+                num = (int)table.Rows[0][0] + 1;
 
                 //-----------------------------
                 query = "INSERT INTO ResultOfExperiment1 (UserId, NumberExperiment, TimeMask, TimePresentation, " +
@@ -119,6 +120,43 @@ namespace StudyOfSubthresholdPerception.Experiments
                     i++;
                     cmd.Parameters.Clear();
                 }
+                loadTableResult();
+            }
+            catch (SqlCeException ex)
+            {
+                MessageBox.Show(ex.Message, StudyOfSubthresholdPerception.Properties.Resources.StrErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                DB.connection.Close();
+            }
+        }
+
+        private void loadTableResult()
+        {
+            try
+            {
+                string query = "SELECT TimeMask , TimePresentation , ADateTime , Anagram , CorrectAnswer , TypedAnswer , Coincided " + 
+                    "FROM ResultOfExperiment1 WHERE UserId=" + db.ID_USER + 
+                    " AND NumberExperiment=" + num;
+                
+                if (DB.connection.State == ConnectionState.Closed)
+                    DB.connection.Open();
+                SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
+                //table.Clear();
+                table = new DataTable();
+                table.Columns.Add("№ предъявления");
+                adapter.Fill(table);
+
+                table.Columns[1].ColumnName = "Время маски";
+                table.Columns[2].ColumnName = "Время предъявления";
+                table.Columns[3].ColumnName = "Текущее время";
+                table.Columns[4].ColumnName = "Анаграмма";
+                table.Columns[5].ColumnName = "Правильный ответ";
+                table.Columns[6].ColumnName = "Введенный ответ";
+                table.Columns[7].ColumnName = "Совпал";
+
+                new FormCurrentResult(table).ShowDialog();
             }
             catch (SqlCeException ex)
             {

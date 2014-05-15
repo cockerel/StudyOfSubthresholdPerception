@@ -112,6 +112,7 @@ namespace StudyOfSubthresholdPerception
                         MessageBox.Show("Эксперимент пройден успешно. Просмотреть результаты эксперимента.");
                         exp1.addAnswerPresentation(DateTime.Now, textBoxAnswer.Text);
                         exp1.saveData(listTime[0], listTime[1]);
+                        //new FormCurrentResult().ShowDialog();
                         Close();
                     }
                     break;

@@ -70,6 +70,12 @@
   <ItemGroup>
     <Compile Include="DB.cs" />
     <Compile Include="Experiments\Experiment1.cs" />
+    <Compile Include="FormCurrentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCurrentResult.Designer.cs">
+      <DependentUpon>FormCurrentResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExperiment1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,7 @@
       <DependentUpon>FormResults.cs</DependentUpon>
     </Compile>
     <Compile Include="Results\Experiment1.cs" />
+    <Compile Include="SaveTableToFile.cs" />
     <Compile Include="SetEditor\Experiment1.cs" />
     <Compile Include="SettingsExperiments\SettingExperiment1.cs" />
     <Compile Include="FormAddDataToExperiment1.cs">
@@ -123,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCurrentResult.resx">
+      <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExperiment1.resx">
       <DependentUpon>FormExperiment1.cs</DependentUpon>

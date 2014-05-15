@@ -13,6 +13,7 @@ namespace StudyOfSubthresholdPerception
 {
     public partial class FormResults : Form
     {
+        private enum Tabs { Experiment1, Experiment2, Experiment3, Experiment4, Experiment5 };
         private Results.Experiment1 exp1;
 
         public FormResults()
@@ -75,42 +76,12 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
-            // диалоговое окно
-            var save = new SaveFileDialog
+            switch (tabControlResults.SelectedIndex)
             {
-                AddExtension = true,
-                DefaultExt = "bin",
-                Filter = @"Текстовые файлы (*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin",
-                FilterIndex = 2,
-                RestoreDirectory = true
-
-            };
-
-            if (save.ShowDialog() != DialogResult.OK) return;
-            var sw = new StreamWriter(save.FileName, true, Encoding.UTF8);
-
-            var firstHeader = true;
-            foreach (DataGridViewColumn column in dataGridViewResults1.Columns)
-            {
-                if (!firstHeader) sw.Write(";");
-                sw.Write(column.HeaderText.ToString());
-                firstHeader = false;
+                case (int)Tabs.Experiment1:
+                    new SaveTableToFile(dataGridViewResults1);
+                    break;
             }
-            sw.WriteLine();
-
-            foreach (DataGridViewRow row in dataGridViewResults1.Rows) //запись
-                if (!row.IsNewRow)
-                {
-                    var first = true;
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if (!first) sw.Write(";");
-                        sw.Write(cell.Value.ToString());
-                        first = false;
-                    }
-                    sw.WriteLine();
-                }
-            sw.Close();
         }
     }
 }
