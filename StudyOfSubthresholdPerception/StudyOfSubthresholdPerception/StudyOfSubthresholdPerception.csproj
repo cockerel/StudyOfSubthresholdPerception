@@ -88,6 +88,14 @@
     <Compile Include="FormResults.Designer.cs">
       <DependentUpon>FormResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment1.cs" />
+    <Compile Include="FormsAddData\FormAddDataToExperiment1.Designer.cs">
+      <DependentUpon>FormAddDataToExperiment1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment5.cs" />
+    <Compile Include="FormsAddData\FormAddDataToExperiment5.Designer.cs">
+      <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyOpenFileDialog.cs" />
     <Compile Include="Results\Experiment1.cs" />
     <Compile Include="SaveTableToFile.cs" />
@@ -135,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormResults.resx">
       <DependentUpon>FormResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAddData\FormAddDataToExperiment1.resx">
+      <DependentUpon>FormAddDataToExperiment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAddData\FormAddDataToExperiment5.resx">
+      <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
