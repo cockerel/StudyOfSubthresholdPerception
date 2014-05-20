@@ -59,6 +59,7 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment4:
                     break;
                 case (int)Tabs.Experiment5:
+                    new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
                     break;
                 case (int)Tabs.GeneralSettings:
                     List<string> listTime = new DB().getTimeMaskAndPresent();
