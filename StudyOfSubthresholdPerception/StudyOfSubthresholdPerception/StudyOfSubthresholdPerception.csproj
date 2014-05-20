@@ -70,6 +70,12 @@
   <ItemGroup>
     <Compile Include="DB.cs" />
     <Compile Include="Experiments\Experiment1.cs" />
+    <Compile Include="FormAddDataToExperiment5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDataToExperiment5.Designer.cs">
+      <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCurrentResult.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,7 +21,13 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            new FormAddDataToExperiment1(this).ShowDialog();
+            switch (tabControl.SelectedIndex) { 
+                case (int)Tabs.Experiment1:
+                    new FormAddDataToExperiment1(this).ShowDialog();
+                    break;
+                case (int)Tabs.Experiment5:
+                    break;
+            }
         }
 
         private void FormSetEditor_Load(object sender, EventArgs e)
