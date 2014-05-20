@@ -47,9 +47,8 @@ namespace StudyOfSubthresholdPerception
                 && textBoxAnswer1.Text != "" && textBoxAnswer2.Text != "")
             {
                 string query = "INSERT INTO Experiment1 (Image, Anagram, Answer1, Answer2) VALUES (@img, @anagram, @answ1, @answ2)";
-                string connectionString = Environment.CurrentDirectory + @"\Data\Data.sdf";
 
-                using (SqlCeConnection sc = new SqlCeConnection(@"Data Source=" + connectionString + ";Max Database Size=2048"))
+                using (SqlCeConnection sc = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))
                 {
                     byte[] data;
 

@@ -26,6 +26,7 @@ namespace StudyOfSubthresholdPerception
                     new FormAddDataToExperiment1(this).ShowDialog();
                     break;
                 case (int)Tabs.Experiment5:
+                    new FormAddDataToExperiment5(this).ShowDialog();
                     break;
             }
         }
@@ -48,13 +49,24 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment4:
                     break;
                 case (int)Tabs.Experiment5:
+                    new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
                     break;
             }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            new SetEditor.Experiment1().deleteRow(dataGridViewExperiment1);
+            switch (tabControl.SelectedIndex)
+            {
+                case (int)Tabs.Experiment1:
+                    new SetEditor.Experiment1().deleteRow(dataGridViewExperiment1);
+                    break;
+                case (int)Tabs.Experiment5:
+                    new SetEditor.Experiment5().deleteRow(dataGridViewExperiment5);
+                    break;
+            }
+
+            
         }
 
         public DataGridView DataGridViewExperiment1
@@ -62,6 +74,14 @@ namespace StudyOfSubthresholdPerception
             get 
             {
                 return dataGridViewExperiment1;
+            }
+        }
+
+        public DataGridView DataGridViewExperiment5
+        {
+            get
+            {
+                return dataGridViewExperiment5;
             }
         }
     }

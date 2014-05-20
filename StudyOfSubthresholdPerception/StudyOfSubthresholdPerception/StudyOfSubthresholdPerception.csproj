@@ -94,9 +94,11 @@
     <Compile Include="FormResults.Designer.cs">
       <DependentUpon>FormResults.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyOpenFileDialog.cs" />
     <Compile Include="Results\Experiment1.cs" />
     <Compile Include="SaveTableToFile.cs" />
     <Compile Include="SetEditor\Experiment1.cs" />
+    <Compile Include="SetEditor\Experiment5.cs" />
     <Compile Include="SettingsExperiments\SettingExperiment1.cs" />
     <Compile Include="FormAddDataToExperiment1.cs">
       <SubType>Form</SubType>
@@ -133,6 +135,9 @@
     <Compile Include="Timer\Timer.cs" />
     <EmbeddedResource Include="FormAddDataToExperiment1.resx">
       <DependentUpon>FormAddDataToExperiment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddDataToExperiment5.resx">
+      <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>

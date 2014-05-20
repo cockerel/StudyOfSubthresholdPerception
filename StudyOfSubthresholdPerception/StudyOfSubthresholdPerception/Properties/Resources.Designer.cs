@@ -142,6 +142,15 @@ namespace StudyOfSubthresholdPerception.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Выбран неверный файл!.
+        /// </summary>
+        internal static string MessageWrongFile {
+            get {
+                return ResourceManager.GetString("MessageWrongFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ошибка!.
         /// </summary>
         internal static string StrErrorTitle {

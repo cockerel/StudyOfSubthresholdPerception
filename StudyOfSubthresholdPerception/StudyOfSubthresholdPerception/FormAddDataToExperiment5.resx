@@ -117,47 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Anagram10" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram4" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram5" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram8" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MessageWrongFile" xml:space="preserve">
-    <value>Выбран неверный файл!</value>
-  </data>
-  <data name="StrErrorTitle" xml:space="preserve">
-    <value>Ошибка!</value>
-  </data>
-  <data name="StrWarningTitle" xml:space="preserve">
-    <value>Внимание!</value>
-  </data>
-  <data name="TestAnagramForExperiment1" xml:space="preserve">
-    <value>авлсть,авкны,адекн,икмно,адилно,аекст,кртуф,агикло,алмря,абжир,</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="тв_шум" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\тв шум.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="openFileDialogSelectImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
