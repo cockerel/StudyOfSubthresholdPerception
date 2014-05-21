@@ -30,7 +30,7 @@ namespace StudyOfSubthresholdPerception
 
         public FormExperiment5()
         {
-            listTime = db.getTime(11, 12);
+            listTime = db.getTime(19, 20);
             timer.Tick += timer_Tick;
             InitializeComponent();
         }
@@ -220,7 +220,7 @@ namespace StudyOfSubthresholdPerception
                 switch (numChange)
                 {
                     case 0:
-                        //pictureBox.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                        pictureBoxMask.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
                         byte[] byteArray = new byte[0];
                         if ((bool)Experiments.Experiment5.table.Rows[m][4] == true)
                             byteArray = (byte[])Experiments.Experiment5.table.Rows[m][2];

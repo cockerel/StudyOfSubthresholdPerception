@@ -41,15 +41,14 @@
             this.panelSample = new System.Windows.Forms.Panel();
             this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             this.tabPageEX3 = new Dotnetrix.Controls.TabPageEX();
+            this.labelScale = new System.Windows.Forms.Label();
+            this.trackBarScale = new System.Windows.Forms.TrackBar();
             this.labelNumTest = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.pictureBoxPresentation = new System.Windows.Forms.PictureBox();
-            this.labelAnagram = new System.Windows.Forms.Label();
             this.pictureBoxMask = new System.Windows.Forms.PictureBox();
             this.buttonNext = new System.Windows.Forms.Button();
-            this.labelScale = new System.Windows.Forms.Label();
-            this.trackBarScale = new System.Windows.Forms.TrackBar();
             this.panelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEX1.SuspendLayout();
@@ -58,10 +57,10 @@
             this.panelSample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
             this.tabPageEX3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPresentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMask)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -194,6 +193,25 @@
             this.tabPageEX3.TabIndex = 2;
             this.tabPageEX3.Text = "Тест";
             // 
+            // labelScale
+            // 
+            this.labelScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelScale.Location = new System.Drawing.Point(216, 417);
+            this.labelScale.Name = "labelScale";
+            this.labelScale.Size = new System.Drawing.Size(309, 43);
+            this.labelScale.TabIndex = 8;
+            this.labelScale.Text = "Оценка: 0";
+            // 
+            // trackBarScale
+            // 
+            this.trackBarScale.Location = new System.Drawing.Point(3, 369);
+            this.trackBarScale.Maximum = 100;
+            this.trackBarScale.Minimum = -100;
+            this.trackBarScale.Name = "trackBarScale";
+            this.trackBarScale.Size = new System.Drawing.Size(740, 45);
+            this.trackBarScale.TabIndex = 7;
+            this.trackBarScale.Scroll += new System.EventHandler(this.trackBarScale_Scroll);
+            // 
             // labelNumTest
             // 
             this.labelNumTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -218,7 +236,6 @@
             // 
             this.panel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel.Controls.Add(this.pictureBoxPresentation);
-            this.panel.Controls.Add(this.labelAnagram);
             this.panel.Controls.Add(this.pictureBoxMask);
             this.panel.Location = new System.Drawing.Point(220, 60);
             this.panel.Name = "panel";
@@ -234,17 +251,6 @@
             this.pictureBoxPresentation.TabIndex = 3;
             this.pictureBoxPresentation.TabStop = false;
             this.pictureBoxPresentation.Visible = false;
-            // 
-            // labelAnagram
-            // 
-            this.labelAnagram.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAnagram.Location = new System.Drawing.Point(3, 115);
-            this.labelAnagram.Name = "labelAnagram";
-            this.labelAnagram.Size = new System.Drawing.Size(300, 80);
-            this.labelAnagram.TabIndex = 2;
-            this.labelAnagram.Text = "ololo";
-            this.labelAnagram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelAnagram.Visible = false;
             // 
             // pictureBoxMask
             // 
@@ -266,25 +272,6 @@
             this.buttonNext.Text = "Далее";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // labelScale
-            // 
-            this.labelScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelScale.Location = new System.Drawing.Point(216, 417);
-            this.labelScale.Name = "labelScale";
-            this.labelScale.Size = new System.Drawing.Size(309, 43);
-            this.labelScale.TabIndex = 8;
-            this.labelScale.Text = "Оценка: 0";
-            // 
-            // trackBarScale
-            // 
-            this.trackBarScale.Location = new System.Drawing.Point(3, 369);
-            this.trackBarScale.Maximum = 100;
-            this.trackBarScale.Minimum = -100;
-            this.trackBarScale.Name = "trackBarScale";
-            this.trackBarScale.Size = new System.Drawing.Size(740, 45);
-            this.trackBarScale.TabIndex = 7;
-            this.trackBarScale.Scroll += new System.EventHandler(this.trackBarScale_Scroll);
             // 
             // FormExperiment5
             // 
@@ -309,10 +296,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).EndInit();
             this.tabPageEX3.ResumeLayout(false);
             this.tabPageEX3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPresentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMask)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,7 +319,6 @@
         private System.Windows.Forms.Label labelNumSampleTest;
         private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Label labelAnagram;
         private System.Windows.Forms.PictureBox pictureBoxMask;
         private System.Windows.Forms.Label labelNumTest;
         private System.Windows.Forms.PictureBox pictureBoxPresentation;
