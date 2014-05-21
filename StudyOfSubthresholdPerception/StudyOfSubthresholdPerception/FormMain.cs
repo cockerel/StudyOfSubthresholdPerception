@@ -56,5 +56,10 @@ namespace StudyOfSubthresholdPerception
         {
             Close();
         }
+
+        private void buttonExperiment5_Click(object sender, EventArgs e)
+        {
+            new FormExperiment5().ShowDialog();
+        }
     }
 }

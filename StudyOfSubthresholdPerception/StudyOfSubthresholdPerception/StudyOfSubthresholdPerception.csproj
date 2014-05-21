@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="Experiments\Experiment5.cs" />
     <Compile Include="Experiments\Experiment1.cs" />
     <Compile Include="FormCurrentResult.cs">
       <SubType>Form</SubType>
@@ -76,10 +77,16 @@
     <Compile Include="FormCurrentResult.Designer.cs">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormExperiment1.cs">
+    <Compile Include="FormsExperiments\FormExperiment5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormExperiment1.Designer.cs">
+    <Compile Include="FormsExperiments\FormExperiment5.Designer.cs">
+      <DependentUpon>FormExperiment5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment1.Designer.cs">
       <DependentUpon>FormExperiment1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormResults.cs">
@@ -137,7 +144,10 @@
     <EmbeddedResource Include="FormCurrentResult.resx">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormExperiment1.resx">
+    <EmbeddedResource Include="FormsExperiments\FormExperiment5.resx">
+      <DependentUpon>FormExperiment5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsExperiments\FormExperiment1.resx">
       <DependentUpon>FormExperiment1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">

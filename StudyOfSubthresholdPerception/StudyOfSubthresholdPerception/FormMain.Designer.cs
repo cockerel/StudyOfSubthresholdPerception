@@ -123,6 +123,7 @@
             this.buttonExperiment5.TabIndex = 4;
             this.buttonExperiment5.Text = "Эксперимент 5";
             this.buttonExperiment5.UseVisualStyleBackColor = true;
+            this.buttonExperiment5.Click += new System.EventHandler(this.buttonExperiment5_Click);
             // 
             // buttonExperiment4
             // 
