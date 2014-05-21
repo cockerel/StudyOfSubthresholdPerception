@@ -77,6 +77,12 @@
     <Compile Include="FormCurrentResult.Designer.cs">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsExperiments\FormExperiment2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment2.Designer.cs">
+      <DependentUpon>FormExperiment2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsExperiments\FormExperiment5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCurrentResult.resx">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsExperiments\FormExperiment2.resx">
+      <DependentUpon>FormExperiment2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsExperiments\FormExperiment5.resx">
       <DependentUpon>FormExperiment5.cs</DependentUpon>
