@@ -15,6 +15,7 @@ namespace StudyOfSubthresholdPerception
     {
         private enum Tabs { Experiment1, Experiment2, Experiment3, Experiment4, Experiment5, GeneralSettings };
         private SettingExperiment1 settingExperiment1;
+        private SettingExperiment5 settingExperiment5;
 
         public FormSetting()
         {
@@ -26,7 +27,7 @@ namespace StudyOfSubthresholdPerception
             object[] values = new object[6];
 
             foreach (DataGridViewColumn column in dataGridViewExperiment1.Columns)
-            { 
+            {
                 values[column.Index] = dataGridViewExperiment1[column.Index, dataGridViewExperiment1.CurrentRow.Index].Value;
             }
             /*
@@ -49,7 +50,7 @@ namespace StudyOfSubthresholdPerception
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (tabControl.SelectedIndex)
-            { 
+            {
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
@@ -60,6 +61,8 @@ namespace StudyOfSubthresholdPerception
                     break;
                 case (int)Tabs.Experiment5:
                     new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
+                    settingExperiment5 = new SettingExperiment5(this);
+                    settingExperiment5.loadData();
                     break;
                 case (int)Tabs.GeneralSettings:
                     List<string> listTime = new DB().getTimeMaskAndPresent();
@@ -79,35 +82,42 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (dataGridViewExpSetting1.Rows.Count > 0)
-            {
-                dataGridViewExpSetting1.Rows.RemoveAt(dataGridViewExpSetting1.CurrentRow.Index);
-                foreach (DataGridViewRow row in dataGridViewExpSetting1.Rows)
-                {
-                    row.Cells[0].Value = row.Index + 1;
-                }
+            switch (tabControl.SelectedIndex)
+            { 
+                case (int)Tabs.Experiment1:
+                    new RemoveRowFromTableSettings().removeRow(dataGridViewExpSetting1);
+                    break;
+                case (int)Tabs.Experiment5:
+                    new RemoveRowFromTableSettings().removeRow(dataGridViewExpSetting5);
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Таблица пустая!");
-            }
+            
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            settingExperiment1.saveData();
+            switch (tabControl.SelectedIndex)
+            { 
+                case (int)Tabs.Experiment1:
+                    settingExperiment1.saveData();
+                    break;
+                case (int)Tabs.Experiment5:
+                    settingExperiment5.saveData();
+                    break;
+            }
+            
         }
 
         private void textBoxesInt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
-                e.Handled = true; 
+                e.Handled = true;
         }
 
         private void textBoxesPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
-                e.Handled = true; 
+                e.Handled = true;
         }
 
         //---get and set---
@@ -116,6 +126,14 @@ namespace StudyOfSubthresholdPerception
             get
             {
                 return dataGridViewExpSetting1;
+            }
+        }
+
+        public DataGridView DataGridViewExpSetting5
+        {
+            get
+            {
+                return dataGridViewExpSetting5;
             }
         }
 
@@ -132,6 +150,22 @@ namespace StudyOfSubthresholdPerception
             get
             {
                 return textBoxNumOfPresent;
+            }
+        }
+
+        public TextBox TextBoxNumOfExp5
+        {
+            get
+            {
+                return textBoxNumOfExp5;
+            }
+        }
+
+        public TextBox TextBoxNumOfPresent5
+        {
+            get
+            {
+                return textBoxNumOfPresent5;
             }
         }
         //--------------------------
@@ -161,7 +195,7 @@ namespace StudyOfSubthresholdPerception
                 new DB().setTimeMaskAndPresent(listTime);
                 MessageBox.Show("Данные сохранены");
             }
-            else 
+            else
             {
                 MessageBox.Show("Не все поля с временем заполнены либо пароли не совпали!");
             }
@@ -179,6 +213,42 @@ namespace StudyOfSubthresholdPerception
             {
                 MessageBox.Show("Пароли не совпали!");
             }
+        }
+
+        private void buttonExp5AddPositive_Click(object sender, EventArgs e)
+        {
+            object[] values = new object[5];
+
+            foreach (DataGridViewColumn column in dataGridViewExperiment5.Columns)
+            {
+                if (column.Index == 3)
+                    break;
+                values[column.Index] = dataGridViewExperiment5[column.Index, dataGridViewExperiment5.CurrentRow.Index].Value;
+            }
+            values[3] = dataGridViewExperiment5[3, dataGridViewExperiment5.CurrentRow.Index].Value;
+            values[4] = true;
+
+
+            values[0] = dataGridViewExpSetting5.Rows.Count + 1;
+            dataGridViewExpSetting5.Rows.Add(values);
+        }
+
+        private void buttonExp5AddNegative_Click(object sender, EventArgs e)
+        {
+            object[] values = new object[5];
+
+            foreach (DataGridViewColumn column in dataGridViewExperiment5.Columns)
+            {
+                if (column.Index == 3)
+                    break;
+                values[column.Index] = dataGridViewExperiment5[column.Index, dataGridViewExperiment5.CurrentRow.Index].Value;
+            }
+            values[3] = dataGridViewExperiment5[4, dataGridViewExperiment5.CurrentRow.Index].Value;
+            values[4] = false;
+
+            values[0] = dataGridViewExpSetting5.Rows.Count + 1;
+            dataGridViewExpSetting5.Rows.Add(values);
+
         }
     }
 }

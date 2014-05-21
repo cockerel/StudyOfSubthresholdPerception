@@ -21,7 +21,8 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex) { 
+            switch (tabControl.SelectedIndex)
+            {
                 case (int)Tabs.Experiment1:
                     new FormAddDataToExperiment1(this).ShowDialog();
                     break;
@@ -39,7 +40,7 @@ namespace StudyOfSubthresholdPerception
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (tabControl.SelectedIndex)
-            { 
+            {
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
@@ -66,12 +67,12 @@ namespace StudyOfSubthresholdPerception
                     break;
             }
 
-            
+
         }
 
         public DataGridView DataGridViewExperiment1
         {
-            get 
+            get
             {
                 return dataGridViewExperiment1;
             }
