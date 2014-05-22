@@ -119,7 +119,7 @@ namespace StudyOfSubthresholdPerception
         private void FormExperiment5_Load(object sender, EventArgs e)
         {
             //new DB().loadTime();
-
+            tabControl.SelectedIndex = 0;
             exp5.loadData();
             labelDescription.Text = labelDescription.Text.Replace("N", Experiments.Experiment5.numOfExp.ToString());
             labelDescription.Text = labelDescription.Text.Replace("M", Experiments.Experiment5.numOfPresent.ToString());

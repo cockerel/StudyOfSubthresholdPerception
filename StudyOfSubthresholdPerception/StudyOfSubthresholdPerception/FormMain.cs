@@ -19,7 +19,13 @@ namespace StudyOfSubthresholdPerception
             //this.p = p;
             if (p == true) //true - админ
             {
-                groupBox1.Enabled = true;
+                groupBox1.Visible = true;
+            }
+            else 
+            {
+                groupBox2.Location = new Point(12, 45);
+                groupBox3.Location = new Point(12, 150);
+                this.Size = new Size(640, 300);
             }
         }
 

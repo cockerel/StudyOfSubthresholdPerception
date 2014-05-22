@@ -168,7 +168,7 @@
             this.buttonAuthorization.Name = "buttonAuthorization";
             this.buttonAuthorization.Size = new System.Drawing.Size(91, 23);
             this.buttonAuthorization.TabIndex = 3;
-            this.buttonAuthorization.Text = "Авторизация";
+            this.buttonAuthorization.Text = "Войти";
             this.buttonAuthorization.UseVisualStyleBackColor = true;
             this.buttonAuthorization.Click += new System.EventHandler(this.buttonAuthorization_Click);
             // 

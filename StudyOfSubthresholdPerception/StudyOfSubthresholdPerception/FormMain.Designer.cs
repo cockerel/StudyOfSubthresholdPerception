@@ -181,13 +181,13 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.buttonSetting);
             this.groupBox1.Controls.Add(this.buttonSetEditor);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(600, 98);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление экспериментом";
+            this.groupBox1.Visible = false;
             // 
             // button3
             // 

@@ -115,7 +115,7 @@ namespace StudyOfSubthresholdPerception
                 if (table.Rows.Count > 0 && name == (string)table.Rows[0][1] && gender == (string)table.Rows[0][2] &&
                     age == (int)table.Rows[0][3] && group == (int)table.Rows[0][4])
                 {
-                    MessageBox.Show("Данная учетная запись уже существует. Вход будет осуществлен под старой учетной записью",
+                    MessageBox.Show("Данная учетная запись уже существует. Вход будет осуществлен под старой учетной записью.",
                         StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     idUser = (int)table.Rows[0][0];
                 }
