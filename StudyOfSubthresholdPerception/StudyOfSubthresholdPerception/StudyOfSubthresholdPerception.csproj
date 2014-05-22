@@ -110,7 +110,7 @@
       <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </Compile>
     <Compile Include="MyOpenFileDialog.cs" />
-    <Compile Include="Results\Experiment1.cs" />
+    <Compile Include="Results\UsersInfo.cs" />
     <Compile Include="SaveTableToFile.cs" />
     <Compile Include="SetEditor\Experiment1.cs" />
     <Compile Include="SetEditor\Experiment5.cs" />
@@ -226,9 +226,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
-    <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Data\Data.sdf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

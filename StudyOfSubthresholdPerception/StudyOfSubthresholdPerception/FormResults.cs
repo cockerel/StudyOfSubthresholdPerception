@@ -14,29 +14,41 @@ namespace StudyOfSubthresholdPerception
     public partial class FormResults : Form
     {
         private enum Tabs { Experiment1, Experiment2, Experiment3, Experiment4, Experiment5 };
-        private Results.Experiment1 exp1;
+        private Results.UsersInfo uInfo;
 
         public FormResults()
         {
             InitializeComponent();
-            exp1 = new Results.Experiment1(this);
+            uInfo = new Results.UsersInfo(this);
         }
 
         private void FormResults_Load(object sender, EventArgs e)
         {
-            exp1.loadUsers();
+            uInfo.loadUsers();
         }
 
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridViewResults1.Rows.Clear();
-            exp1.getUserInfo(comboBoxUsers.SelectedIndex);
+            for (int i = 0; i < 5; i++)
+            {
+                switch (i)
+                {
+                    case (int)Tabs.Experiment1:
+                        dataGridViewResults1.Rows.Clear();
+                        uInfo.getUserInfo(comboBoxUsers.SelectedIndex, dataGridViewResults1, i);
+                        break;
+                    case (int)Tabs.Experiment5:
+                        dataGridViewResults5.Rows.Clear();
+                        uInfo.getUserInfo(comboBoxUsers.SelectedIndex, dataGridViewResults5, i);
+                        break;
+                }
+            }
         }
 
         //-----get and set-----
         public ComboBox ComboBoxUsers
         {
-            get 
+            get
             {
                 return comboBoxUsers;
             }
@@ -58,6 +70,14 @@ namespace StudyOfSubthresholdPerception
             }
         }
 
+        public int tabControlResultsSelectedIndex
+        {
+            get
+            {
+                return tabControlResults.SelectedIndex;
+            }
+        }
+
         private void buttonClearTable_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -69,8 +89,14 @@ namespace StudyOfSubthresholdPerception
 
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                new DB().clearTable("ResultOfExperiment1");
-                dataGridViewResults1.Rows.Clear();
+                switch (tabControlResults.SelectedIndex)
+                {
+                    case (int)Tabs.Experiment1:
+                        new DB().clearTable("ResultOfExperiment1");
+                        dataGridViewResults1.Rows.Clear();
+                        break;
+                }
+
             }
         }
 
@@ -80,6 +106,9 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new SaveTableToFile(dataGridViewResults1);
+                    break;
+                case (int)Tabs.Experiment5:
+                    new SaveTableToFile(dataGridViewResults5);
                     break;
             }
         }

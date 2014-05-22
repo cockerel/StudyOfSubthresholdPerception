@@ -8,13 +8,16 @@ using System.Windows.Forms;
 
 namespace StudyOfSubthresholdPerception.Results
 {
-    class Experiment1
+    class UsersInfo
     {
         private DataTable tableUsers = new DataTable();
         private DataTable tableResults = new DataTable();
         private FormResults formResults;
+        private DataGridView dgView;
+        private string query;
+        private int tabIndex;
 
-        public Experiment1(FormResults formResults)
+        public UsersInfo(FormResults formResults)
         {
             this.formResults = formResults;
         }
@@ -28,11 +31,6 @@ namespace StudyOfSubthresholdPerception.Results
                     DB.connection.Open();
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
                 adapter.Fill(tableUsers);
-
-                
-                //formResults.ComboBoxUsers.DataSource = tableUsers;
-                //formResults.ComboBoxUsers.DisplayMember = "Name";
-                //formResults.ComboBoxUsers.SelectedIndex = 0;
 
                 formResults.ComboBoxUsers.Items.Add("Все пользователи");
                 for (int i = 0; i < tableUsers.Rows.Count; i++)
@@ -53,11 +51,22 @@ namespace StudyOfSubthresholdPerception.Results
 
         public void loadResult(int userId)
         {
-            string query;
-            if (userId == -1)
-                query = "SELECT * FROM ResultOfExperiment1";
-            else
-                query = "SELECT * FROM ResultOfExperiment1 WHERE UserId=" + userId;
+            switch (tabIndex)
+            {
+                case 0:
+                    if (userId == -1)
+                        query = "SELECT * FROM ResultOfExperiment1";
+                    else
+                        query = "SELECT * FROM ResultOfExperiment1 WHERE UserId=" + userId;
+                    break;
+                case 4:
+                    if (userId == -1)
+                        query = "SELECT * FROM ResultsOfExperiment5";
+                    else
+                        query = "SELECT * FROM ResultsOfExperiment5 WHERE UserId=" + userId;
+                    break;
+            }
+
             try
             {
                 if (DB.connection.State == ConnectionState.Closed)
@@ -65,19 +74,20 @@ namespace StudyOfSubthresholdPerception.Results
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
                 adapter.Fill(tableResults);
 
-                formResults.DataGridViewResults1.Rows.Clear();
+                dgView.Rows.Clear();
 
                 for (int i = 0; i < tableResults.Rows.Count; i++)
                 {
-                    formResults.DataGridViewResults1.Rows.Add();
-                    formResults.DataGridViewResults1.Rows[i].Cells[0].Value = (i + 1).ToString();
-                    
+                    dgView.Rows.Add();
+                    dgView.Rows[i].Cells[0].Value = (i + 1).ToString();
+
                     for (int j = 0; j < tableResults.Columns.Count; j++)
                     {
-                        formResults.DataGridViewResults1.Rows[i].Cells[j+1].Value = tableResults.Rows[i][j];
+                        dgView.Rows[i].Cells[j + 1].Value = tableResults.Rows[i][j];
                     }
                 }
                 tableResults.Clear();
+                tableResults.Columns.Clear();
             }
             catch (SqlCeException ex)
             {
@@ -89,21 +99,15 @@ namespace StudyOfSubthresholdPerception.Results
             }
         }
 
-        //-----get and set-----
-        public DataTable TableUsers
+        public DataGridView getUserInfo(int index, DataGridView dgView, int tabIndex)
         {
-            get
-            {
-                return tableUsers;
-            }
-        }
-
-        internal void getUserInfo(int index)
-        {
+            this.dgView = dgView;
+            this.tabIndex = tabIndex;
             if (index == 0)
             {
                 formResults.LabelUserInfo.Text = String.Empty;
                 loadResult(-1);
+                return this.dgView;
             }
             else
             {
@@ -111,8 +115,8 @@ namespace StudyOfSubthresholdPerception.Results
                 formResults.LabelUserInfo.Text = "Id = " + tableUsers.Rows[index][0] + ", пол - " +
                     tableUsers.Rows[index][2] + ", возраст - " + tableUsers.Rows[index][3] + ", группа - " + tableUsers.Rows[index][4];
                 loadResult((int)tableUsers.Rows[index][0]);
+                return this.dgView;
             }
-            //formResults.DataGridViewResults1.Rows.Clear();
         }
     }
 }
