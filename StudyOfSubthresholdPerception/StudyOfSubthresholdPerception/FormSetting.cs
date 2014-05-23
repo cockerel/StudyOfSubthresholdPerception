@@ -76,6 +76,11 @@ namespace StudyOfSubthresholdPerception
                     textBoxTimePresent4.Text = listTime[7];
                     textBoxTimeMask5.Text = listTime[8];
                     textBoxTimePresent5.Text = listTime[9];
+                    textBoxSleep1.Text = listTime[10];
+                    textBoxSleep2.Text = listTime[11];
+                    textBoxSleep3.Text = listTime[12];
+                    textBoxSleep4.Text = listTime[13];
+                    textBoxSleep5.Text = listTime[14];
                     break;
             }
         }
@@ -177,9 +182,11 @@ namespace StudyOfSubthresholdPerception
                 textBoxTimeMask5.Text != String.Empty &&
                 textBoxTimePresent1.Text != String.Empty && textBoxTimePresent2.Text != String.Empty &&
                 textBoxTimePresent3.Text != String.Empty && textBoxTimePresent4.Text != String.Empty &&
-                textBoxTimePresent5.Text != String.Empty)
+                textBoxTimePresent5.Text != String.Empty && textBoxSleep1.Text != String.Empty &&
+                textBoxSleep2.Text != String.Empty && textBoxSleep3.Text != String.Empty &&
+                textBoxSleep3.Text != String.Empty && textBoxSleep5.Text != String.Empty)
             {
-                List<int> listTime = new List<int>(10);
+                List<int> listTime = new List<int>(15);
 
                 listTime.Add(int.Parse(textBoxTimeMask1.Text));
                 listTime.Add(int.Parse(textBoxTimePresent1.Text));
@@ -191,6 +198,11 @@ namespace StudyOfSubthresholdPerception
                 listTime.Add(int.Parse(textBoxTimePresent4.Text));
                 listTime.Add(int.Parse(textBoxTimeMask5.Text));
                 listTime.Add(int.Parse(textBoxTimePresent5.Text));
+                listTime.Add(int.Parse(textBoxSleep1.Text));
+                listTime.Add(int.Parse(textBoxSleep2.Text));
+                listTime.Add(int.Parse(textBoxSleep3.Text));
+                listTime.Add(int.Parse(textBoxSleep4.Text));
+                listTime.Add(int.Parse(textBoxSleep5.Text));
 
                 new DB().setTimeMaskAndPresent(listTime);
                 MessageBox.Show("Данные сохранены");
@@ -249,6 +261,22 @@ namespace StudyOfSubthresholdPerception
             values[0] = dataGridViewExpSetting5.Rows.Count + 1;
             dataGridViewExpSetting5.Rows.Add(values);
 
+        }
+
+        private void buttonClearResults_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show("Вы действительно хотите удалить результаты экспериментов и всех пользователей?", 
+                StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                new DB().clearTable("ResultOfExperiment1");
+                new DB().clearTable("ResultsOfExperiment5");
+                new DB().clearTable("Users");
+            }
         }
     }
 }

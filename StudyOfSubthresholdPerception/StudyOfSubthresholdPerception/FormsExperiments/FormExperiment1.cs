@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using CustomTimer = StudyOfSubthresholdPerception.Timer.Timer;
+using System.Threading;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -30,7 +31,7 @@ namespace StudyOfSubthresholdPerception
 
         public FormExperiment1()
         {
-            listTime = db.getTime(11, 12);
+            listTime = db.getTime(11, 12, 22);
             timer.Tick += timer_Tick;
             InitializeComponent();
         }
@@ -93,6 +94,7 @@ namespace StudyOfSubthresholdPerception
                     }
                     else
                     {
+                        MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
                     }
                     break;
@@ -129,13 +131,13 @@ namespace StudyOfSubthresholdPerception
                             {
                                 labelNumTest.Text = "Опыт " + (++n) + " из " + Experiments.Experiment1.numOfExp;
                             }
-                            MessageBox.Show("Опыт пройден. Перейти к следующему опыту.");
+                            MessageBox.Show("Опыт завершен. Перейти к следующему опыту.");
                             goto loop1;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Эксперимент пройден успешно. Просмотреть результаты эксперимента.");
+                        MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
                         exp1.addAnswerPresentation(DateTime.Now, textBoxAnswer.Text);
                         exp1.saveData(listTime[0], listTime[1]);
                         //new FormCurrentResult().ShowDialog();
@@ -169,6 +171,7 @@ namespace StudyOfSubthresholdPerception
             //тестовые предъявления
             if (isTest == false)
             {
+                //Thread.Sleep(2000);
                 sampleTest();
             }
             //выполнение теста
@@ -211,11 +214,13 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             moveToTabExp();
         }
 
         private void sampleTest()
         {
+            
             if (listTime[0] > 0 && numChange < 3)
             {
                 if (check == false)
@@ -257,6 +262,7 @@ namespace StudyOfSubthresholdPerception
             else
             {
                 timer.Stop();
+                //Thread.Sleep(2000);
                 numChange = 0;
                 check = false;
                 labelSampleAnagram.BeginInvoke(new Action(delegate()

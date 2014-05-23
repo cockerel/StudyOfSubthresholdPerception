@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using CustomTimer = StudyOfSubthresholdPerception.Timer.Timer;
+using System.Threading;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -27,10 +28,11 @@ namespace StudyOfSubthresholdPerception
         private Stopwatch stopwatch = new Stopwatch();
         private CustomTimer timer = new CustomTimer();
         private ImageConverter imageConverter = new ImageConverter();
+        private int countImage = 0;
 
         public FormExperiment5()
         {
-            listTime = db.getTime(19, 20);
+            listTime = db.getTime(19, 20, 26);
             timer.Tick += timer_Tick;
             InitializeComponent();
         }
@@ -52,7 +54,12 @@ namespace StudyOfSubthresholdPerception
                         tabPageEX2.Enabled = true;
                         tabControl.SelectedIndex = (int)Tabs.SampleTest;
                         buttonFinish.Visible = true;
-                        timer.Period = 1500;
+                        pictureBoxSample.Visible = false;
+                        if (listTime[0] > 0)
+                        {
+                            timer.Period = listTime[0];
+                        }
+                        //Thread.Sleep(listTime[2]);
                         timer.Start();
                     }
                     else
@@ -61,16 +68,23 @@ namespace StudyOfSubthresholdPerception
                     }
                     break;
                 case (int)Tabs.SampleTest:
-                    if (k < 9)
+                    pictureBoxSample.Visible = false;
+                    //Thread.Sleep(listTime[2]);
+                    if (k < 4)
                     {
-                        timer.Period = listTime[0];
+                        if (listTime[0] > 0)
+                        {
+                            timer.Period = listTime[0];
+                        }
+
                         timer.Start();
-                        pictureBoxSample.Visible = true;
+                        //pictureBoxSample.Visible = true;
                         k++;
-                        labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 10";
+                        labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 5";
                     }
                     else
                     {
+                        MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
                     }
                     break;
@@ -84,9 +98,22 @@ namespace StudyOfSubthresholdPerception
                             m++;
                             if (n <= Experiments.Experiment5.numOfExp)
                             {
-                                timer.Period = listTime[0];
+                                if (listTime[0] > 0)
+                                {
+                                    timer.Period = listTime[0];
+                                    //pictureBoxMask.Visible = true;
+                                }
+                                //else
+                                    //pictureBoxMask.Visible = false;
+                                //pictureBoxPresentation.Visible = false;
+
+                                pictureBoxPresentation.BeginInvoke(new Action(delegate()
+                                {
+                                    pictureBoxPresentation.Visible = false;
+                                }));
+
                                 timer.Start();
-                                pictureBoxMask.Visible = true;
+                                
                                 k++;
                                 labelNum.Text = "Предъявление " + k + " из " + (Experiments.Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
@@ -100,13 +127,13 @@ namespace StudyOfSubthresholdPerception
                             {
                                 labelNumTest.Text = "Опыт " + (++n) + " из " + Experiments.Experiment5.numOfExp;
                             }
-                            MessageBox.Show("Опыт пройден. Перейти к следующему опыту.");
+                            MessageBox.Show("Опыт завершен. Перейти к следующему опыту.");
                             goto loop1;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Эксперимент пройден успешно. Просмотреть результаты эксперимента.");
+                        MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
                         exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
                         exp5.saveData(listTime[0], listTime[1]);
                         //new FormCurrentResult().ShowDialog();
@@ -121,6 +148,7 @@ namespace StudyOfSubthresholdPerception
             //new DB().loadTime();
             tabControl.SelectedIndex = 0;
             exp5.loadData();
+            exp5.loadTestImages();
             labelDescription.Text = labelDescription.Text.Replace("N", Experiments.Experiment5.numOfExp.ToString());
             labelDescription.Text = labelDescription.Text.Replace("M", Experiments.Experiment5.numOfPresent.ToString());
         }
@@ -167,43 +195,101 @@ namespace StudyOfSubthresholdPerception
             {
                 labelNum.Text = "Предъявление " + ++k + " из " + (Experiments.Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
             }));
+            
             timer.Start();
         }
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             moveToTabExp();
         }
 
         private void sampleTest()
         {
-            if (numChange < 3)
+            if (numChange < 4 && listTime[0] > 0)
             {
-                if (check == false)
+                switch (numChange)
                 {
-                    timer.Stop();
+                    case 0:
+                        Thread.Sleep(listTime[2]);
 
-                    pictureBoxSample.BeginInvoke(new Action(delegate()
-                    {
-                        pictureBoxSample.Visible = false;
-                    }));
-                    check = true;
-                    numChange++;
-                    timer.Period = listTime[1];
-                    timer.Start();
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                            pictureBoxSample.Visible = true;
+                        }));
+                        timer.Period = listTime[0];
+                        break;
+                    case 1:
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            //pictureBoxSample.Visible = false;
+                        }));
+                        timer.Period = listTime[1];
+                        break;
+                    case 2:
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                            //pictureBoxSample.Visible = true;
+                        }));
+
+                        timer.Period = listTime[0];
+                        break;
+                    case 3:
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Visible = false;
+                        }));
+                        
+                        Thread.Sleep(listTime[2]);
+
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Visible = true;
+                            pictureBoxSample.Image = Experiments.Experiment5.imageList[countImage++];
+                        }));
+                        timer.Period = listTime[0];
+                        break;
                 }
-                else
+                numChange++;
+            }
+            else if (listTime[0] == 0 && numChange < 3)
+            {
+                switch (numChange)
                 {
-                    timer.Stop();
-                    pictureBoxSample.BeginInvoke(new Action(delegate()
-                    {
-                        pictureBoxSample.Visible = true;
-                    }));
-                    check = false;
-                    numChange++;
-                    timer.Period = listTime[0];
-                    timer.Start();
+                    case 0:
+                        Thread.Sleep(listTime[2]);
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Visible = false;
+                        }));
+                        break;
+                    case 1:
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            pictureBoxSample.Visible = true;
+                        }));
+                        timer.Period = listTime[1];
+                        break;
+                    case 2:
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Visible = false;
+                        }));
+
+                        Thread.Sleep(listTime[2]);
+                        pictureBoxSample.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxSample.Visible = true;
+                            pictureBoxSample.Image = Experiments.Experiment5.imageList[countImage++];
+                        }));
+                        break;
                 }
+                numChange++;
             }
             else
             {
@@ -215,17 +301,29 @@ namespace StudyOfSubthresholdPerception
 
         private void nextPresentation()
         {
-            if (numChange < 3)
+            //есть маска
+            if (numChange < 4 && listTime[0] > 0)
             {
                 switch (numChange)
                 {
                     case 0:
-                        pictureBoxMask.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                        
+
+                        Thread.Sleep(listTime[2]);
+
+                        pictureBoxMask.BeginInvoke(new Action(delegate()
+                        {
+                            //pictureBoxMask.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                            pictureBoxMask.Visible = true;
+                        }));
+
                         byte[] byteArray = new byte[0];
                         if ((bool)Experiments.Experiment5.table.Rows[m][4] == true)
                             byteArray = (byte[])Experiments.Experiment5.table.Rows[m][2];
-                        else 
+                        else
                             byteArray = (byte[])Experiments.Experiment5.table.Rows[m][3];
+
+                        
 
                         pictureBoxPresentation.BeginInvoke(new Action(delegate()
                         {
@@ -250,8 +348,49 @@ namespace StudyOfSubthresholdPerception
                         {
                             pictureBoxPresentation.Visible = false;
                         }));
-
+                        
                         timer.Period = listTime[0];
+                        break;
+                    case 3:
+                        pictureBoxMask.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxMask.Visible = false;
+                        }));
+
+                        Thread.Sleep(listTime[2]);
+
+                        //timer.Period = listTime[0];
+                        break;
+                }
+                numChange++;
+            }
+            //нет маски
+            else if (listTime[0] == 0 && numChange < 2)
+            {
+                switch (numChange)
+                {
+                    case 0:
+                        
+                        byte[] byteArray = new byte[0];
+                        if ((bool)Experiments.Experiment5.table.Rows[m][4] == true)
+                            byteArray = (byte[])Experiments.Experiment5.table.Rows[m][2];
+                        else
+                            byteArray = (byte[])Experiments.Experiment5.table.Rows[m][3];
+                        Thread.Sleep(listTime[2]);
+                        pictureBoxPresentation.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxPresentation.Image = (Image)imageConverter.ConvertFrom(byteArray);
+                            pictureBoxPresentation.Visible = true;
+                        }));
+                        timer.Period = listTime[1];
+                        break;
+                    
+                    case 1:
+                        pictureBoxPresentation.BeginInvoke(new Action(delegate()
+                        {
+                            pictureBoxPresentation.Visible = false;
+                        }));
+                        Thread.Sleep(listTime[2]);
                         break;
                 }
                 numChange++;
@@ -263,9 +402,10 @@ namespace StudyOfSubthresholdPerception
                 byte[] byteArray = new byte[0];
                 byteArray = (byte[])Experiments.Experiment5.table.Rows[m][1];
 
-                pictureBoxMask.BeginInvoke(new Action(delegate()
+                pictureBoxPresentation.BeginInvoke(new Action(delegate()
                 {
-                    pictureBoxMask.Image = (Image)imageConverter.ConvertFrom(byteArray);
+                    pictureBoxPresentation.Image = (Image)imageConverter.ConvertFrom(byteArray);
+                    pictureBoxPresentation.Visible = true;
                 }));
             }
         }

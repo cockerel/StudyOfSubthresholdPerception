@@ -215,7 +215,7 @@
             this.buttonSetEditor.Name = "buttonSetEditor";
             this.buttonSetEditor.Size = new System.Drawing.Size(144, 47);
             this.buttonSetEditor.TabIndex = 0;
-            this.buttonSetEditor.Text = "Редактор наборов";
+            this.buttonSetEditor.Text = "Редактор набора стимулов";
             this.buttonSetEditor.UseVisualStyleBackColor = true;
             this.buttonSetEditor.Click += new System.EventHandler(this.buttonSetEditor_Click);
             // 

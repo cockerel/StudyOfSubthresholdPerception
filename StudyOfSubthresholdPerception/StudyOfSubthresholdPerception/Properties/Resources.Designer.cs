@@ -142,11 +142,80 @@ namespace StudyOfSubthresholdPerception.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test1 {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test2 {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test3 {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test4 {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exp5Test5 {
+            get {
+                object obj = ResourceManager.GetObject("exp5Test5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Выбран неверный файл!.
         /// </summary>
         internal static string MessageWrongFile {
             get {
                 return ResourceManager.GetString("MessageWrongFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Внимание! Тренировочная серия завершена.  Начинается основная часть эксперимента..
+        /// </summary>
+        internal static string StrAttention1 {
+            get {
+                return ResourceManager.GetString("StrAttention1", resourceCulture);
             }
         }
         

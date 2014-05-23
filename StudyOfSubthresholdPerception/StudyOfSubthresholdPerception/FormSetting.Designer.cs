@@ -31,6 +31,12 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxNumOfPresent = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNumOfExp = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewExpSetting1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +59,11 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridViewExpSetting5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.is_positive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxNumOfPresent5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -69,6 +80,7 @@
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonExp5AddPositive = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonClearResults = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.buttonSavePassword = new System.Windows.Forms.Button();
             this.textBoxPassword2 = new System.Windows.Forms.TextBox();
@@ -76,6 +88,12 @@
             this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSleep5 = new System.Windows.Forms.TextBox();
+            this.textBoxSleep4 = new System.Windows.Forms.TextBox();
+            this.textBoxSleep3 = new System.Windows.Forms.TextBox();
+            this.textBoxSleep2 = new System.Windows.Forms.TextBox();
+            this.textBoxSleep1 = new System.Windows.Forms.TextBox();
             this.buttonSaveTimes = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -94,17 +112,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.is_positive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNumOfExp = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.textBoxNumOfPresent = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -163,6 +170,57 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Предъявления";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(596, 195);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 9;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // textBoxNumOfPresent
+            // 
+            this.textBoxNumOfPresent.Location = new System.Drawing.Point(596, 89);
+            this.textBoxNumOfPresent.Name = "textBoxNumOfPresent";
+            this.textBoxNumOfPresent.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNumOfPresent.TabIndex = 8;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(596, 140);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(593, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Количество предъявлений в опыте:";
+            // 
+            // textBoxNumOfExp
+            // 
+            this.textBoxNumOfExp.Location = new System.Drawing.Point(596, 37);
+            this.textBoxNumOfExp.Name = "textBoxNumOfExp";
+            this.textBoxNumOfExp.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNumOfExp.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(593, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Количество опытов:";
             // 
             // dataGridViewExpSetting1
             // 
@@ -385,8 +443,48 @@
             this.dataGridViewExpSetting5.ReadOnly = true;
             this.dataGridViewExpSetting5.RowHeadersVisible = false;
             this.dataGridViewExpSetting5.RowTemplate.Height = 200;
-            this.dataGridViewExpSetting5.Size = new System.Drawing.Size(580, 205);
+            this.dataGridViewExpSetting5.Size = new System.Drawing.Size(580, 237);
             this.dataGridViewExpSetting5.TabIndex = 10;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "№";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn2.HeaderText = "Надпороговый стимул";
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn6
+            // 
+            this.dataGridViewImageColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn6.HeaderText = "Подпороговый стимул";
+            this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+            this.dataGridViewImageColumn6.ReadOnly = true;
+            this.dataGridViewImageColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // is_positive
+            // 
+            this.is_positive.HeaderText = "Is_positive";
+            this.is_positive.Name = "is_positive";
+            this.is_positive.ReadOnly = true;
+            this.is_positive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.is_positive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.is_positive.Visible = false;
             // 
             // button1
             // 
@@ -453,11 +551,11 @@
             // 
             // buttonExp5AddNegative
             // 
-            this.buttonExp5AddNegative.Location = new System.Drawing.Point(592, 85);
+            this.buttonExp5AddNegative.Location = new System.Drawing.Point(592, 107);
             this.buttonExp5AddNegative.Name = "buttonExp5AddNegative";
-            this.buttonExp5AddNegative.Size = new System.Drawing.Size(148, 23);
+            this.buttonExp5AddNegative.Size = new System.Drawing.Size(148, 45);
             this.buttonExp5AddNegative.TabIndex = 5;
-            this.buttonExp5AddNegative.Text = "Добавить негативный";
+            this.buttonExp5AddNegative.Text = "Добавить негативный подпороговый стимул";
             this.buttonExp5AddNegative.UseVisualStyleBackColor = true;
             this.buttonExp5AddNegative.Click += new System.EventHandler(this.buttonExp5AddNegative_Click);
             // 
@@ -497,7 +595,7 @@
             // dataGridViewImageColumn3
             // 
             this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn3.HeaderText = "Картинка нейтральная";
+            this.dataGridViewImageColumn3.HeaderText = "Нейтральное изображение";
             this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
@@ -505,7 +603,7 @@
             // dataGridViewImageColumn4
             // 
             this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn4.HeaderText = "Картинка позитивная";
+            this.dataGridViewImageColumn4.HeaderText = "Позитивное изображение";
             this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.ReadOnly = true;
@@ -514,7 +612,7 @@
             // dataGridViewImageColumn5
             // 
             this.dataGridViewImageColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn5.HeaderText = "Картинка негативная";
+            this.dataGridViewImageColumn5.HeaderText = "Негативное изображение";
             this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
@@ -524,14 +622,15 @@
             // 
             this.buttonExp5AddPositive.Location = new System.Drawing.Point(592, 56);
             this.buttonExp5AddPositive.Name = "buttonExp5AddPositive";
-            this.buttonExp5AddPositive.Size = new System.Drawing.Size(148, 23);
+            this.buttonExp5AddPositive.Size = new System.Drawing.Size(148, 45);
             this.buttonExp5AddPositive.TabIndex = 1;
-            this.buttonExp5AddPositive.Text = "Добавить позитивный";
+            this.buttonExp5AddPositive.Text = "Добавить позитивный подпороговый стимул";
             this.buttonExp5AddPositive.UseVisualStyleBackColor = true;
             this.buttonExp5AddPositive.Click += new System.EventHandler(this.buttonExp5AddPositive_Click);
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.buttonClearResults);
             this.tabPage6.Controls.Add(this.groupBox5);
             this.tabPage6.Controls.Add(this.groupBox4);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
@@ -540,6 +639,16 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Общие настройки";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonClearResults
+            // 
+            this.buttonClearResults.Location = new System.Drawing.Point(556, 457);
+            this.buttonClearResults.Name = "buttonClearResults";
+            this.buttonClearResults.Size = new System.Drawing.Size(180, 40);
+            this.buttonClearResults.TabIndex = 4;
+            this.buttonClearResults.Text = "Очистить таблицы результатов и пользователей";
+            this.buttonClearResults.UseVisualStyleBackColor = true;
+            this.buttonClearResults.Click += new System.EventHandler(this.buttonClearResults_Click);
             // 
             // groupBox5
             // 
@@ -602,6 +711,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.textBoxSleep5);
+            this.groupBox4.Controls.Add(this.textBoxSleep4);
+            this.groupBox4.Controls.Add(this.textBoxSleep3);
+            this.groupBox4.Controls.Add(this.textBoxSleep2);
+            this.groupBox4.Controls.Add(this.textBoxSleep1);
             this.groupBox4.Controls.Add(this.buttonSaveTimes);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label11);
@@ -622,14 +737,63 @@
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(50, 50);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 252);
+            this.groupBox4.Size = new System.Drawing.Size(337, 252);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Время (милисек.)";
+            this.groupBox4.Text = "Время предъявления, мс";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(235, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "До/после маски";
+            // 
+            // textBoxSleep5
+            // 
+            this.textBoxSleep5.Location = new System.Drawing.Point(250, 150);
+            this.textBoxSleep5.MaxLength = 4;
+            this.textBoxSleep5.Name = "textBoxSleep5";
+            this.textBoxSleep5.Size = new System.Drawing.Size(50, 20);
+            this.textBoxSleep5.TabIndex = 21;
+            // 
+            // textBoxSleep4
+            // 
+            this.textBoxSleep4.Location = new System.Drawing.Point(250, 124);
+            this.textBoxSleep4.MaxLength = 4;
+            this.textBoxSleep4.Name = "textBoxSleep4";
+            this.textBoxSleep4.Size = new System.Drawing.Size(50, 20);
+            this.textBoxSleep4.TabIndex = 20;
+            // 
+            // textBoxSleep3
+            // 
+            this.textBoxSleep3.Location = new System.Drawing.Point(250, 98);
+            this.textBoxSleep3.MaxLength = 4;
+            this.textBoxSleep3.Name = "textBoxSleep3";
+            this.textBoxSleep3.Size = new System.Drawing.Size(50, 20);
+            this.textBoxSleep3.TabIndex = 19;
+            // 
+            // textBoxSleep2
+            // 
+            this.textBoxSleep2.Location = new System.Drawing.Point(250, 72);
+            this.textBoxSleep2.MaxLength = 4;
+            this.textBoxSleep2.Name = "textBoxSleep2";
+            this.textBoxSleep2.Size = new System.Drawing.Size(50, 20);
+            this.textBoxSleep2.TabIndex = 18;
+            // 
+            // textBoxSleep1
+            // 
+            this.textBoxSleep1.Location = new System.Drawing.Point(250, 46);
+            this.textBoxSleep1.MaxLength = 4;
+            this.textBoxSleep1.Name = "textBoxSleep1";
+            this.textBoxSleep1.Size = new System.Drawing.Size(50, 20);
+            this.textBoxSleep1.TabIndex = 17;
             // 
             // buttonSaveTimes
             // 
-            this.buttonSaveTimes.Location = new System.Drawing.Point(14, 190);
+            this.buttonSaveTimes.Location = new System.Drawing.Point(73, 191);
             this.buttonSaveTimes.Name = "buttonSaveTimes";
             this.buttonSaveTimes.Size = new System.Drawing.Size(217, 40);
             this.buttonSaveTimes.TabIndex = 3;
@@ -639,12 +803,11 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(149, 30);
+            this.label10.Location = new System.Drawing.Point(149, 16);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 13);
+            this.label10.Size = new System.Drawing.Size(89, 27);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Предъявления";
+            this.label10.Text = "Подпорогового стимула";
             // 
             // label11
             // 
@@ -781,96 +944,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Эксперимент 1";
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "№";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn2.HeaderText = "Картинка нейтральная";
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn6
-            // 
-            this.dataGridViewImageColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn6.HeaderText = "Картинка предъявления";
-            this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
-            this.dataGridViewImageColumn6.ReadOnly = true;
-            this.dataGridViewImageColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // is_positive
-            // 
-            this.is_positive.HeaderText = "Is_positive";
-            this.is_positive.Name = "is_positive";
-            this.is_positive.ReadOnly = true;
-            this.is_positive.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.is_positive.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(593, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Количество опытов:";
-            // 
-            // textBoxNumOfExp
-            // 
-            this.textBoxNumOfExp.Location = new System.Drawing.Point(596, 37);
-            this.textBoxNumOfExp.Name = "textBoxNumOfExp";
-            this.textBoxNumOfExp.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNumOfExp.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(593, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 26);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Количество предъявлений в опыте:";
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(596, 140);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // textBoxNumOfPresent
-            // 
-            this.textBoxNumOfPresent.Location = new System.Drawing.Point(596, 89);
-            this.textBoxNumOfPresent.Name = "textBoxNumOfPresent";
-            this.textBoxNumOfPresent.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNumOfPresent.TabIndex = 8;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(596, 195);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 9;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
             // FormSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,11 +1035,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonExp5AddPositive;
         private System.Windows.Forms.DataGridView dataGridViewExperiment5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.Button buttonExp5AddNegative;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dataGridViewExpSetting5;
@@ -976,16 +1044,28 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxNumOfExp5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_positive;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxNumOfPresent;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxNumOfExp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxSleep5;
+        private System.Windows.Forms.TextBox textBoxSleep4;
+        private System.Windows.Forms.TextBox textBoxSleep3;
+        private System.Windows.Forms.TextBox textBoxSleep2;
+        private System.Windows.Forms.TextBox textBoxSleep1;
+        private System.Windows.Forms.Button buttonClearResults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn is_positive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
     }
 }

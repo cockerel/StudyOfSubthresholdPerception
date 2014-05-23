@@ -27,7 +27,7 @@ namespace StudyOfSubthresholdPerception.Experiments
                 if (DB.connection.State == ConnectionState.Closed)
                     DB.connection.Open();
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
-                //DataTable table = new DataTable();
+                table = new DataTable();
                 adapter.Fill(table);
                 numOfExp = Convert.ToInt32(table.Rows[0][1]);
                 numOfPresent = Convert.ToInt32(table.Rows[1][1]);

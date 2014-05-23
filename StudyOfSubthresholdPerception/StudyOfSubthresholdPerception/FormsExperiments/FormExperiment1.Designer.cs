@@ -168,7 +168,7 @@
             // 
             // pictureBoxSample
             // 
-            this.pictureBoxSample.BackColor = System.Drawing.Color.Red;
+            this.pictureBoxSample.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBoxSample.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
             this.pictureBoxSample.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxSample.Name = "pictureBoxSample";

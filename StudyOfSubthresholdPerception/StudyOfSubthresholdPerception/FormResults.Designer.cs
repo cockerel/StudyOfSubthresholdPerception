@@ -46,10 +46,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
-            this.labelUserInfo = new System.Windows.Forms.Label();
-            this.buttonClearTable = new System.Windows.Forms.Button();
-            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.dataGridViewResults5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +56,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
+            this.labelUserInfo = new System.Windows.Forms.Label();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.tabControlResults.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResults1)).BeginInit();
@@ -221,45 +220,6 @@
             this.tabPage5.Text = "Эксперимент 5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // comboBoxUsers
-            // 
-            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxUsers.FormattingEnabled = true;
-            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
-            this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
-            this.comboBoxUsers.TabIndex = 1;
-            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
-            // 
-            // labelUserInfo
-            // 
-            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
-            this.labelUserInfo.Name = "labelUserInfo";
-            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
-            this.labelUserInfo.TabIndex = 2;
-            this.labelUserInfo.Text = "label1";
-            // 
-            // buttonClearTable
-            // 
-            this.buttonClearTable.Location = new System.Drawing.Point(12, 510);
-            this.buttonClearTable.Name = "buttonClearTable";
-            this.buttonClearTable.Size = new System.Drawing.Size(180, 40);
-            this.buttonClearTable.TabIndex = 3;
-            this.buttonClearTable.Text = "Очистить таблицу рерультатов";
-            this.buttonClearTable.UseVisualStyleBackColor = true;
-            this.buttonClearTable.Click += new System.EventHandler(this.buttonClearTable_Click);
-            // 
-            // buttonSaveToFile
-            // 
-            this.buttonSaveToFile.Location = new System.Drawing.Point(592, 510);
-            this.buttonSaveToFile.Name = "buttonSaveToFile";
-            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
-            this.buttonSaveToFile.TabIndex = 4;
-            this.buttonSaveToFile.Text = "Сохранить данные в файл";
-            this.buttonSaveToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
-            // 
             // dataGridViewResults5
             // 
             this.dataGridViewResults5.AllowUserToAddRows = false;
@@ -340,13 +300,41 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxUsers.TabIndex = 1;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
+            // 
+            // labelUserInfo
+            // 
+            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
+            this.labelUserInfo.Name = "labelUserInfo";
+            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
+            this.labelUserInfo.TabIndex = 2;
+            this.labelUserInfo.Text = "label1";
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.Location = new System.Drawing.Point(592, 510);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
+            this.buttonSaveToFile.TabIndex = 4;
+            this.buttonSaveToFile.Text = "Сохранить данные в файл";
+            this.buttonSaveToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            // 
             // FormResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.buttonSaveToFile);
-            this.Controls.Add(this.buttonClearTable);
             this.Controls.Add(this.labelUserInfo);
             this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tabControlResults);
@@ -384,7 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypedAnswer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Coincided;
         private System.Windows.Forms.Label labelUserInfo;
-        private System.Windows.Forms.Button buttonClearTable;
         private System.Windows.Forms.Button buttonSaveToFile;
         private System.Windows.Forms.DataGridView dataGridViewResults5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

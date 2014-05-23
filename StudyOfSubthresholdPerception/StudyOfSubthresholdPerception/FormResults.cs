@@ -78,28 +78,6 @@ namespace StudyOfSubthresholdPerception
             }
         }
 
-        private void buttonClearTable_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-
-            // Displays the MessageBox.
-
-            result = MessageBox.Show("Вы желаете очистить таблицу?", StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, buttons);
-
-            if (result == System.Windows.Forms.DialogResult.Yes)
-            {
-                switch (tabControlResults.SelectedIndex)
-                {
-                    case (int)Tabs.Experiment1:
-                        new DB().clearTable("ResultOfExperiment1");
-                        dataGridViewResults1.Rows.Clear();
-                        break;
-                }
-
-            }
-        }
-
         private void buttonSaveToFile_Click(object sender, EventArgs e)
         {
             switch (tabControlResults.SelectedIndex)

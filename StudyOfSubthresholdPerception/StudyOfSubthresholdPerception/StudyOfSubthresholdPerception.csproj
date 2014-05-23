@@ -101,11 +101,15 @@
     <Compile Include="FormResults.Designer.cs">
       <DependentUpon>FormResults.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAddData\FormAddDataToExperiment1.cs" />
+    <Compile Include="FormsAddData\FormAddDataToExperiment1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsAddData\FormAddDataToExperiment1.Designer.cs">
       <DependentUpon>FormAddDataToExperiment1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAddData\FormAddDataToExperiment5.cs" />
+    <Compile Include="FormsAddData\FormAddDataToExperiment5.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormsAddData\FormAddDataToExperiment5.Designer.cs">
       <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </Compile>
@@ -187,6 +191,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,6 +232,12 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf" />
+    <Content Include="Resources\ForExperiment5Test\1.jpg" />
+    <Content Include="Resources\ForExperiment5Test\2.jpg" />
+    <Content Include="Resources\ForExperiment5Test\3.jpg" />
+    <Content Include="Resources\ForExperiment5Test\4.jpg" />
+    <Content Include="Resources\ForExperiment5Test\5.jpg" />
+    <None Include="Resources\бегемот.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

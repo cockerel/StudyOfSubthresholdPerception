@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlServerCe;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace StudyOfSubthresholdPerception.Experiments
     class Experiment5
     {
         public static int numOfExp, numOfPresent, numRows;
-        public static List<string> anagrams = new List<string>();
+        public static List<Bitmap> imageList;
         public static DataTable table = new DataTable();
         private List<object> answersPresentation = new List<object>();
         private DB db = new DB();
@@ -27,7 +28,7 @@ namespace StudyOfSubthresholdPerception.Experiments
                 if (DB.connection.State == ConnectionState.Closed)
                     DB.connection.Open();
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
-                //DataTable table = new DataTable();
+                table = new DataTable();
                 adapter.Fill(table);
                 numOfExp = Convert.ToInt32(table.Rows[0][1]);
                 numOfPresent = Convert.ToInt32(table.Rows[1][1]);
@@ -49,20 +50,14 @@ namespace StudyOfSubthresholdPerception.Experiments
             }
         }
 
-        public void loadTestAnagrams()
+        public void loadTestImages()
         {
-            string str = StudyOfSubthresholdPerception.Properties.Resources.TestAnagramForExperiment1;
-            string anagram = "";
-            for (int i = 0; i < str.Length; i++)
-            { 
-                anagram += Convert.ToString(str[i]);
-                if (str[i + 1] == ',')
-                {
-                    anagrams.Add(anagram);
-                    anagram = String.Empty;
-                    i++;
-                }
-            }
+            imageList = new List<Bitmap>();
+            imageList.Add(StudyOfSubthresholdPerception.Properties.Resources.exp5Test1);
+            imageList.Add(StudyOfSubthresholdPerception.Properties.Resources.exp5Test2);
+            imageList.Add(StudyOfSubthresholdPerception.Properties.Resources.exp5Test3);
+            imageList.Add(StudyOfSubthresholdPerception.Properties.Resources.exp5Test4);
+            imageList.Add(StudyOfSubthresholdPerception.Properties.Resources.exp5Test5);
         }
 
         public void addAnswerPresentation(DateTime dTime, int scale)

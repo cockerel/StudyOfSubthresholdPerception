@@ -66,12 +66,12 @@ namespace StudyOfSubthresholdPerception
          */
 
         //почлучение времени
-        public List<int> getTime(int idTimeMask, int idTimePresent)
+        public List<int> getTime(int idTimeMask, int idTimePresent, int idSleep)
         {
             try
             {
                 string query = "SELECT Id, Value FROM GeneralSettings WHERE " +
-                    "Id=" + idTimeMask + " OR Id=" + idTimePresent; //id=idTimeMask - время до(после) предъявления, id=idTimePresent - время предъявления
+                    "Id=" + idTimeMask + " OR Id=" + idTimePresent + " OR Id=" + idSleep; //id=idTimeMask - время до(после) предъявления, id=idTimePresent - время предъявления
                 
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
@@ -214,15 +214,25 @@ namespace StudyOfSubthresholdPerception
 
                 SqlCeCommand cmd;
 
-                for (int i = 0; i < list.Count; i++)
+                int i;
+                for (i = 0; i < list.Count - 5; i++)
                 {
-                    query = "UPDATE GeneralSettings SET Value=(@time) WHERE Id=" + id; //пароль
+                    query = "UPDATE GeneralSettings SET Value=(@time) WHERE Id=" + id; //
                     cmd = new SqlCeCommand(query, connection);
                     cmd.Parameters.AddWithValue("@time", list[i].ToString());
                     cmd.ExecuteNonQuery();
                     id++;
                 }
-                    
+
+                //id = 22;
+                while (i < list.Count)
+                {
+                    query = "UPDATE GeneralSettings SET Value=(@time) WHERE Id=" + ++id; //
+                    cmd = new SqlCeCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@time", list[i].ToString());
+                    cmd.ExecuteNonQuery();
+                    i++;
+                }
             }
             catch (SqlCeException ex)
             {
@@ -236,8 +246,8 @@ namespace StudyOfSubthresholdPerception
 
         public List<string> getTimeMaskAndPresent()
         {
-            List<string> listTime = new List<string>(10);
-            query = "SELECT Value FROM GeneralSettings WHERE Id BETWEEN 11 AND 20"; //время
+            List<string> listTime = new List<string>(15);
+            query = "SELECT Value FROM GeneralSettings WHERE Id BETWEEN 11 AND 20 OR Id BETWEEN 22 AND 26"; //время
 
             try
             {

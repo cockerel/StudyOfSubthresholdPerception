@@ -155,7 +155,7 @@
             this.labelNumSampleTest.Name = "labelNumSampleTest";
             this.labelNumSampleTest.Size = new System.Drawing.Size(306, 23);
             this.labelNumSampleTest.TabIndex = 3;
-            this.labelNumSampleTest.Text = "Предъявление 1 из 10";
+            this.labelNumSampleTest.Text = "Предъявление 1 из 5";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSample
@@ -262,6 +262,7 @@
             this.pictureBoxMask.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMask.TabIndex = 0;
             this.pictureBoxMask.TabStop = false;
+            this.pictureBoxMask.Visible = false;
             // 
             // buttonNext
             // 
@@ -282,7 +283,7 @@
             this.Controls.Add(this.panelMain);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormExperiment5";
-            this.Text = "Эксперимент 1";
+            this.Text = "Эксперимент 5";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormExperiment5_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment5_SizeChanged);
