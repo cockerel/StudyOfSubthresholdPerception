@@ -1,6 +1,6 @@
 ﻿namespace StudyOfSubthresholdPerception.FormsExperiments
 {
-    partial class FormExperiment2
+    partial class FormExperiment4
     {
         /// <summary>
         /// Required designer variable.
@@ -34,24 +34,29 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.tabControlEX1 = new Dotnetrix.Controls.TabControlEX();
+            this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
+            this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControlEX1.SuspendLayout();
+            this.tabPageEX1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(26, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 600);
+            this.panel1.Size = new System.Drawing.Size(632, 636);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::StudyOfSubthresholdPerception.Properties.Resources._1;
-            this.pictureBox2.Location = new System.Drawing.Point(330, 192);
+            this.pictureBox2.Location = new System.Drawing.Point(385, 192);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -63,7 +68,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StudyOfSubthresholdPerception.Properties.Resources._1;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 192);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 192);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,18 +85,48 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // FormExperiment2
+            // tabControlEX1
+            // 
+            this.tabControlEX1.Controls.Add(this.tabPageEX1);
+            this.tabControlEX1.Controls.Add(this.tabPageEX2);
+            this.tabControlEX1.FlatBorderColor = System.Drawing.SystemColors.Window;
+            this.tabControlEX1.Location = new System.Drawing.Point(12, 12);
+            this.tabControlEX1.Name = "tabControlEX1";
+            this.tabControlEX1.SelectedIndex = 0;
+            this.tabControlEX1.Size = new System.Drawing.Size(674, 696);
+            this.tabControlEX1.TabIndex = 2;
+            // 
+            // tabPageEX1
+            // 
+            this.tabPageEX1.Controls.Add(this.panel1);
+            this.tabPageEX1.Location = new System.Drawing.Point(4, 25);
+            this.tabPageEX1.Name = "tabPageEX1";
+            this.tabPageEX1.Size = new System.Drawing.Size(666, 667);
+            this.tabPageEX1.TabIndex = 0;
+            this.tabPageEX1.Text = "tabPageEX1";
+            // 
+            // tabPageEX2
+            // 
+            this.tabPageEX2.Location = new System.Drawing.Point(4, 25);
+            this.tabPageEX2.Name = "tabPageEX2";
+            this.tabPageEX2.Size = new System.Drawing.Size(666, 667);
+            this.tabPageEX2.TabIndex = 1;
+            this.tabPageEX2.Text = "tabPageEX2";
+            // 
+            // FormExperiment4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 630);
-            this.Controls.Add(this.panel1);
-            this.Name = "FormExperiment2";
-            this.Text = "Эксперимент 2";
+            this.ClientSize = new System.Drawing.Size(698, 720);
+            this.Controls.Add(this.tabControlEX1);
+            this.Name = "FormExperiment4";
+            this.Text = "Эксперимент 4";
             this.Load += new System.EventHandler(this.FormExperiment2_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControlEX1.ResumeLayout(false);
+            this.tabPageEX1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,6 +138,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer2;
+        private Dotnetrix.Controls.TabControlEX tabControlEX1;
+        private Dotnetrix.Controls.TabPageEX tabPageEX1;
+        private Dotnetrix.Controls.TabPageEX tabPageEX2;
 
     }
 }

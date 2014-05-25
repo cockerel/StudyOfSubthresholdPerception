@@ -3,13 +3,14 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.Models;
+using StudyOfSubthresholdPerception.Models.Experiment2;
 using Point = StudyOfSubthresholdPerception.Models.Point;
 
 namespace StudyOfSubthresholdPerception.FormsExperiments
 {
-    public partial class FormExperiment2 : Form
+    public partial class FormExperiment4 : Form
     {
-        public FormExperiment2()
+        public FormExperiment4()
         {
             InitializeComponent();
         }
@@ -28,12 +29,12 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             CircleIsVisible = true;
             TestExperiment = false;
             Result = new Experiment2ResultModel();
-            var temp = (panel1.Width - 1f) / 2f;
-            _circle = new Circle(temp, temp, temp, new Pen(Color.GreenYellow, 3));
+            var temp = (panel1.Width - 10f) / 2f;
+            _circle = new Circle(temp+5, temp+5, temp, new Pen(Color.GreenYellow, 3));
             _point = new Point(4f, 4.7f, (float)Math.PI / 30f, new SolidBrush(Color.DarkGreen));
             _point.Reset(_circle);
             timer1.Interval = 40;
-            timer2.Interval = 10;
+            timer2.Interval = 40;
             timer1.Start();
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -43,13 +44,21 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             {
                 StopCircle();
             }
-            if (Math.Abs(_point.Angle - 0.1f) < 0.05f || Math.Abs(_point.Angle - 3.2f) < 0.05f)
+            if (Math.Abs(_point.Angle - 0.1f) < 0.05f)
             {
                 if (!TestExperiment)
                 {
-                    ShowPictures();
+                    pictureBox2.Visible = true;
                     timer2.Start();
                     
+                }
+            }
+            if (Math.Abs(_point.Angle - 3.2f) < 0.05f)
+            {
+                if (!TestExperiment)
+                {
+                    pictureBox1.Visible = true;
+                    timer2.Start();
                 }
             }
             Invalidate();
@@ -137,7 +146,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 Close();
             }
         }
-
 
     }
 }

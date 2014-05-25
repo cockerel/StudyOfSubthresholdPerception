@@ -1,4 +1,4 @@
-﻿namespace StudyOfSubthresholdPerception.Models
+﻿namespace StudyOfSubthresholdPerception.Models.Experiment2
 {
     public class Experiment2Model
     {

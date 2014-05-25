@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using StudyOfSubthresholdPerception.DAL;
-using StudyOfSubthresholdPerception.DAL.Models;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment2;
 using StudyOfSubthresholdPerception.Models;
+using StudyOfSubthresholdPerception.Models.Experiment2;
 
 namespace StudyOfSubthresholdPerception.DataHelpers
 {

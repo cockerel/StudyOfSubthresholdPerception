@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StudyOfSubthresholdPerception.Models
+namespace StudyOfSubthresholdPerception.Models.Experiment2
 {
     public class Experiment2ResultModel
     {
