@@ -163,6 +163,7 @@
             this.buttonExperiment2.TabIndex = 1;
             this.buttonExperiment2.Text = "Эксперимент 2";
             this.buttonExperiment2.UseVisualStyleBackColor = true;
+            this.buttonExperiment2.Click += new System.EventHandler(this.buttonExperiment2_Click);
             // 
             // buttonExperiment1
             // 
