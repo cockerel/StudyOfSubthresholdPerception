@@ -81,9 +81,11 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DAL\DataContext.cs" />
-    <Compile Include="DAL\Models\Experiment2\Experiment2.cs" />
+    <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\ExperimentsSettings.cs" />
     <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
+    <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="DataHelpers\Experiment5.cs" />
     <Compile Include="DataHelpers\Experiment1.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Experiment2\Experiment2Model.cs" />
     <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
+    <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />

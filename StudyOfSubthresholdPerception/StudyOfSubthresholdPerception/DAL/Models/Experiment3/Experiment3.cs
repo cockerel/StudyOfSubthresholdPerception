@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StudyOfSubthresholdPerception.DAL.Models.Experiment2
+namespace StudyOfSubthresholdPerception.DAL.Models.Experiment3
 {
-    public class Experiment2
+    public class Experiment3
     {
         [Key]
         public int Id { get; set; }

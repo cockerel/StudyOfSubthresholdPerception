@@ -7,6 +7,17 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         public FormExperiment3()
         {
             InitializeComponent();
+	        timer1.Interval = 20;
         }
+
+		private void label2_Click(object sender, System.EventArgs e)
+		{
+			
+		}
+
+		private void label3_Click(object sender, System.EventArgs e)
+		{
+
+		}
     }
 }
