@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,8 +48,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.0\lib\net40\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -68,20 +79,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DAL\DataContext.cs" />
+    <Compile Include="DAL\Models\Experiment2\Experiment2.cs" />
+    <Compile Include="DAL\Models\ExperimentsSettings.cs" />
+    <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
     <Compile Include="DB.cs" />
-    <Compile Include="Experiments\Experiment5.cs" />
-    <Compile Include="Experiments\Experiment1.cs" />
+    <Compile Include="DataHelpers\Experiment5.cs" />
+    <Compile Include="DataHelpers\Experiment1.cs" />
     <Compile Include="FormCurrentResult.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCurrentResult.Designer.cs">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsExperiments\FormExperiment2.cs">
+    <Compile Include="FormsExperiments\FormExperiment4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsExperiments\FormExperiment2.Designer.cs">
-      <DependentUpon>FormExperiment2.cs</DependentUpon>
+    <Compile Include="FormsExperiments\FormExperiment4.Designer.cs">
+      <DependentUpon>FormExperiment4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment3.Designer.cs">
+      <DependentUpon>FormExperiment3.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsExperiments\FormExperiment5.cs">
       <SubType>Form</SubType>
@@ -113,6 +135,11 @@
     <Compile Include="FormsAddData\FormAddDataToExperiment5.Designer.cs">
       <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Circle.cs" />
+    <Compile Include="Models\Experiment2\Experiment2Model.cs" />
+    <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
+    <Compile Include="Models\Figure.cs" />
+    <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />
     <Compile Include="Results\UsersInfo.cs" />
     <Compile Include="SaveTableToFile.cs" />
@@ -154,8 +181,11 @@
     <EmbeddedResource Include="FormCurrentResult.resx">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsExperiments\FormExperiment2.resx">
-      <DependentUpon>FormExperiment2.cs</DependentUpon>
+    <EmbeddedResource Include="FormsExperiments\FormExperiment4.resx">
+      <DependentUpon>FormExperiment4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsExperiments\FormExperiment3.resx">
+      <DependentUpon>FormExperiment3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsExperiments\FormExperiment5.resx">
       <DependentUpon>FormExperiment5.cs</DependentUpon>
@@ -228,10 +258,15 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAL\Helpers\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
-    <Content Include="Data\Data.sdf" />
+    <Content Include="Data\Data.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
     <Content Include="Resources\ForExperiment5Test\2.jpg" />
     <Content Include="Resources\ForExperiment5Test\3.jpg" />

@@ -117,22 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Anagram10" xml:space="preserve">
-    <value />
+  <data name="StrAttention1" xml:space="preserve">
+    <value>Внимание! Тренировочная серия завершена.  Начинается основная часть эксперимента.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="exp5Test2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment5Test\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exp5Test1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment5Test\1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exp5Test5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment5Test\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrErrorTitle" xml:space="preserve">
+    <value>Ошибка!</value>
   </data>
   <data name="Anagram2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Anagram4" xml:space="preserve">
     <value />
   </data>
   <data name="Anagram5" xml:space="preserve">
     <value />
   </data>
-  <data name="Anagram6" xml:space="preserve">
+  <data name="exp5Test4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment5Test\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exp5Test3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment5Test\3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageWrongFile" xml:space="preserve">
+    <value>Выбран неверный файл!</value>
+  </data>
+  <data name="Anagram10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Anagram4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Anagram3" xml:space="preserve">
     <value />
   </data>
   <data name="Anagram7" xml:space="preserve">
@@ -141,30 +163,14 @@
   <data name="Anagram8" xml:space="preserve">
     <value />
   </data>
-  <data name="Anagram9" xml:space="preserve">
+  <data name="Anagram6" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="exp5Test1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ForExperiment5Test\1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="тв_шум" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\тв шум.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exp5Test2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ForExperiment5Test\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exp5Test3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ForExperiment5Test\3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exp5Test4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ForExperiment5Test\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exp5Test5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ForExperiment5Test\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MessageWrongFile" xml:space="preserve">
-    <value>Выбран неверный файл!</value>
-  </data>
-  <data name="StrErrorTitle" xml:space="preserve">
-    <value>Ошибка!</value>
+  <data name="Anagram9" xml:space="preserve">
+    <value />
   </data>
   <data name="StrWarningTitle" xml:space="preserve">
     <value>Внимание!</value>
@@ -172,13 +178,10 @@
   <data name="TestAnagramForExperiment1" xml:space="preserve">
     <value>авлсть,авкны,адекн,икмно,адилно,аекст,кртуф,агикло,алмря,абжир,</value>
   </data>
-  <data name="тв_шум" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\тв шум.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="exp5Test" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\бегемот.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StrAttention1" xml:space="preserve">
-    <value>Внимание! Тренировочная серия завершена.  Начинается основная часть эксперимента.</value>
+  <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForExperiment2\1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -133,6 +133,7 @@
             this.buttonExperiment4.TabIndex = 3;
             this.buttonExperiment4.Text = "Эксперимент 4";
             this.buttonExperiment4.UseVisualStyleBackColor = true;
+            this.buttonExperiment4.Click += new System.EventHandler(this.buttonExperiment4_Click);
             // 
             // groupBox2
             // 
@@ -163,6 +164,7 @@
             this.buttonExperiment2.TabIndex = 1;
             this.buttonExperiment2.Text = "Эксперимент 2";
             this.buttonExperiment2.UseVisualStyleBackColor = true;
+            this.buttonExperiment2.Click += new System.EventHandler(this.buttonExperiment2_Click);
             // 
             // buttonExperiment1
             // 

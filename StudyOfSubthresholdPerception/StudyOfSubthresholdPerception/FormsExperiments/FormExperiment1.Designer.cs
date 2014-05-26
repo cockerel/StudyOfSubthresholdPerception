@@ -90,7 +90,7 @@
             this.tabControl.Controls.Add(this.tabPageEX3);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(754, 496);
             this.tabControl.TabIndex = 0;
             // 
