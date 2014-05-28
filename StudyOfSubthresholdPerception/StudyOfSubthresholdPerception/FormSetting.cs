@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
-using StudyOfSubthresholdPerception.DAL;
+using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.Models.Experiment4;
 using StudyOfSubthresholdPerception.SettingsExperiments;
 
@@ -47,18 +42,10 @@ namespace StudyOfSubthresholdPerception
         {
             new SetEditor.Experiment1().loadData(dataGridViewExperiment1);
             settingExperiment1 = new SettingExperiment1(this);
-	        using (var context = new DataContext())
-	        {
-		        var model = new List<Experiment4Model>();
-		      /*  foreach (var item in context.Experiment4Images)
-		        {
-					var ms = new MemoryStream(item.Image);
-			        model.Add(new Experiment4Model{Id = item.Id, ImageItem = System.Drawing.Image.FromStream(ms)});
-		        }*/
-				dataGridView2.DataSource = model;
-				dataGridView3.DataSource = model;
-	        }
 	        settingExperiment1.loadData();
+		    var ex4 = new Experiment4DataHelper();
+		    var model = ex4.GetAll();
+		    dataGridView2.DataSource = model;
         }
 
 		private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,8 +62,6 @@ namespace StudyOfSubthresholdPerception
 					break;
 				case (int)Tabs.Experiment5:
 					new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
-                    dataGridViewExpSetting5.Rows.Clear();
-                    //dataGridViewExpSetting5.Columns.Clear();
 					settingExperiment5 = new SettingExperiment5(this);
 					settingExperiment5.loadData();
 					break;
@@ -137,8 +122,7 @@ namespace StudyOfSubthresholdPerception
 
 		private void textBoxesPassword_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			//if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
-            if (e.KeyChar != 8 && !char.IsDigit(e.KeyChar) && !char.IsLetter(e.KeyChar))
+			if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
 				e.Handled = true;
 		}
 

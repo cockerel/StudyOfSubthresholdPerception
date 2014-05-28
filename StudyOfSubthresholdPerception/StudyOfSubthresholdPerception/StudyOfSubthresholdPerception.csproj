@@ -86,7 +86,7 @@
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\ExperimentsSettings.cs" />
     <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
-    <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
+    <Compile Include="DataHelpers\Experiment4DataHelper.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="DataHelpers\Experiment5.cs" />
     <Compile Include="DataHelpers\Experiment1.cs" />
@@ -269,7 +269,7 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
