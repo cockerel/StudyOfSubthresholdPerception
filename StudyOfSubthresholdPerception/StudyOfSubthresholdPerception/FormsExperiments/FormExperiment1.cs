@@ -249,16 +249,16 @@ namespace StudyOfSubthresholdPerception
                     case 1:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
-                            //pictureBoxSample.Visible = false;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            pictureBoxSample.Visible = false;
                         }));
                         timer.Period = listTime[1];
                         break;
                     case 2:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-                            //pictureBoxSample.Visible = false;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                            pictureBoxSample.Visible = true;
                         }));
                         timer.Period = listTime[0];
                         
@@ -288,8 +288,8 @@ namespace StudyOfSubthresholdPerception
                     case 1:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
-                            pictureBoxSample.Visible = true;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            //pictureBoxSample.Visible = true;
                         }));
                         timer.Period = listTime[1];
                         break;

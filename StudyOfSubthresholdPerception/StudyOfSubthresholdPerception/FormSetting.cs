@@ -75,6 +75,8 @@ namespace StudyOfSubthresholdPerception
 					break;
 				case (int)Tabs.Experiment5:
 					new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
+                    dataGridViewExpSetting5.Rows.Clear();
+                    //dataGridViewExpSetting5.Columns.Clear();
 					settingExperiment5 = new SettingExperiment5(this);
 					settingExperiment5.loadData();
 					break;
@@ -135,7 +137,8 @@ namespace StudyOfSubthresholdPerception
 
 		private void textBoxesPassword_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
+			//if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
+            if (e.KeyChar != 8 && !char.IsDigit(e.KeyChar) && !char.IsLetter(e.KeyChar))
 				e.Handled = true;
 		}
 

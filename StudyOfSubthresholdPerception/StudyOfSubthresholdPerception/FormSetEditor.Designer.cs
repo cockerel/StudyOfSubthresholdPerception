@@ -31,24 +31,24 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment1 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridViewExperiment5 = new System.Windows.Forms.DataGridView();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridViewExperiment5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
@@ -100,49 +100,6 @@
             this.dataGridViewExperiment1.RowTemplate.Height = 200;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(580, 351);
             this.dataGridViewExperiment1.TabIndex = 2;
-            // 
-            // Position
-            // 
-            this.Position.HeaderText = "№";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            this.Position.Width = 30;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 50;
-            // 
-            // Image
-            // 
-            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Image.HeaderText = "Картинка";
-            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
-            // 
-            // Anagram
-            // 
-            this.Anagram.HeaderText = "Анаграмма";
-            this.Anagram.Name = "Anagram";
-            this.Anagram.ReadOnly = true;
-            this.Anagram.Width = 80;
-            // 
-            // Answer1
-            // 
-            this.Answer1.HeaderText = "Ответ 1";
-            this.Answer1.Name = "Answer1";
-            this.Answer1.ReadOnly = true;
-            this.Answer1.Width = 80;
-            // 
-            // Answer2
-            // 
-            this.Answer2.HeaderText = "Ответ 2";
-            this.Answer2.Name = "Answer2";
-            this.Answer2.ReadOnly = true;
-            this.Answer2.Width = 80;
             // 
             // tabPage2
             // 
@@ -204,46 +161,6 @@
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(580, 351);
             this.dataGridViewExperiment5.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "№";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn1.HeaderText = "Картинка нейтральная";
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Картинка позитивная";
-            this.dataGridViewTextBoxColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Картинка негативная";
-            this.dataGridViewTextBoxColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(537, 407);
@@ -263,6 +180,89 @@
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "№";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn1.HeaderText = "Нейтральное изображение";
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Позитивное изображение";
+            this.dataGridViewTextBoxColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Негативное изображение";
+            this.dataGridViewTextBoxColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Position
+            // 
+            this.Position.HeaderText = "№";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            this.Position.Width = 30;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Image
+            // 
+            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Image.HeaderText = "Изображение";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            // 
+            // Anagram
+            // 
+            this.Anagram.HeaderText = "Анаграмма";
+            this.Anagram.Name = "Anagram";
+            this.Anagram.ReadOnly = true;
+            this.Anagram.Width = 80;
+            // 
+            // Answer1
+            // 
+            this.Answer1.HeaderText = "Ответ 1";
+            this.Answer1.Name = "Answer1";
+            this.Answer1.ReadOnly = true;
+            this.Answer1.Width = 80;
+            // 
+            // Answer2
+            // 
+            this.Answer2.HeaderText = "Ответ 2";
+            this.Answer2.Name = "Answer2";
+            this.Answer2.ReadOnly = true;
+            this.Answer2.Width = 80;
             // 
             // FormSetEditor
             // 
@@ -301,17 +301,17 @@
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn answer1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn answer2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewImageColumn Image;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Anagram;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Answer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Answer2;
         private System.Windows.Forms.DataGridView dataGridViewExperiment5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewImageColumn Image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anagram;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Answer2;
     }
 }

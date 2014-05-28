@@ -24,9 +24,9 @@ namespace StudyOfSubthresholdPerception
             }
             else 
             {
-                groupBox2.Location = new Point(12, 45);
-                groupBox3.Location = new Point(12, 150);
-                this.Size = new Size(640, 300);
+                groupBox2.Location = new Point(12, 12);
+                groupBox3.Location = new Point(12, 120);
+                this.Size = new Size(640, 260);
             }
         }
 
@@ -81,6 +81,6 @@ namespace StudyOfSubthresholdPerception
 		private void buttonExperiment3_Click(object sender, EventArgs e)
 		{
 			new FormExperiment3().ShowDialog();
-		}
+        }
     }
 }

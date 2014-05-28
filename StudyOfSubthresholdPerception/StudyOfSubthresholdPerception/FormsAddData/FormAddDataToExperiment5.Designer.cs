@@ -77,7 +77,7 @@
             this.buttonAddNeutral.Name = "buttonAddNeutral";
             this.buttonAddNeutral.Size = new System.Drawing.Size(240, 40);
             this.buttonAddNeutral.TabIndex = 3;
-            this.buttonAddNeutral.Text = "Добавить нейтральный";
+            this.buttonAddNeutral.Text = "Добавить нейтральное изображение";
             this.buttonAddNeutral.UseVisualStyleBackColor = true;
             this.buttonAddNeutral.Click += new System.EventHandler(this.buttonAddNeutral_Click);
             // 
@@ -87,7 +87,7 @@
             this.buttonAddPositive.Name = "buttonAddPositive";
             this.buttonAddPositive.Size = new System.Drawing.Size(240, 40);
             this.buttonAddPositive.TabIndex = 4;
-            this.buttonAddPositive.Text = "Добавить позитивный";
+            this.buttonAddPositive.Text = "Добавить позитивное изображение";
             this.buttonAddPositive.UseVisualStyleBackColor = true;
             this.buttonAddPositive.Click += new System.EventHandler(this.buttonAddPositive_Click);
             // 
@@ -97,7 +97,7 @@
             this.buttonAddNegative.Name = "buttonAddNegative";
             this.buttonAddNegative.Size = new System.Drawing.Size(240, 40);
             this.buttonAddNegative.TabIndex = 5;
-            this.buttonAddNegative.Text = "Добавить негативный";
+            this.buttonAddNegative.Text = "Добавить негативное изображение";
             this.buttonAddNegative.UseVisualStyleBackColor = true;
             this.buttonAddNegative.Click += new System.EventHandler(this.buttonAddNegative_Click);
             // 
@@ -130,7 +130,7 @@
             this.Controls.Add(this.pictureBoxPositive);
             this.Controls.Add(this.pictureBoxNeutral);
             this.Name = "FormAddDataToExperiment5";
-            this.Text = "FormAddDataToExperiment5";
+            this.Text = "Добавление стимулов";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNeutral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPositive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNegative)).EndInit();

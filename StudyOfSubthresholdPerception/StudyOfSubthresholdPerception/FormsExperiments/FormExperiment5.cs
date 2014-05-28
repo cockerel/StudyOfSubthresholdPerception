@@ -83,6 +83,7 @@ namespace StudyOfSubthresholdPerception
                         k++;
                         labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 5";
                         trackBarScaleTest.Value = 0;
+                        labelScaleTest.Text = "Оценка: 0";
                     }
                     else
                     {
@@ -120,6 +121,7 @@ namespace StudyOfSubthresholdPerception
                                 labelNum.Text = "Предъявление " + k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
                                 trackBarScale.Value = 0;
+                                labelScale.Text = "Оценка: 0";
                             }
                         }
                         else
@@ -226,16 +228,16 @@ namespace StudyOfSubthresholdPerception
                     case 1:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
-                            //pictureBoxSample.Visible = false;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            pictureBoxSample.Visible = false;
                         }));
                         timer.Period = listTime[1];
                         break;
                     case 2:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-                            //pictureBoxSample.Visible = true;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
+                            pictureBoxSample.Visible = true;
                         }));
 
                         timer.Period = listTime[0];
@@ -272,8 +274,9 @@ namespace StudyOfSubthresholdPerception
                     case 1:
                         pictureBoxSample.BeginInvoke(new Action(delegate()
                         {
-                            pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
-                            pictureBoxSample.Visible = true;
+                            //pictureBoxSample.Image = StudyOfSubthresholdPerception.Properties.Resources.exp5Test;
+                            //pictureBoxSample.Visible = true;
+                            pictureBoxSample.Visible = false;
                         }));
                         timer.Period = listTime[1];
                         break;
