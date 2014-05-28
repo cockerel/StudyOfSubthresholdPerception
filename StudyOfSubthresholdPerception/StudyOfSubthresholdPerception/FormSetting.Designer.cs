@@ -56,6 +56,16 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Image1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.IsUsing = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonExp4AddPair = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridViewExpSetting5 = new System.Windows.Forms.DataGridView();
@@ -112,12 +122,15 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpSetting1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpSetting5)).BeginInit();
@@ -391,6 +404,12 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.buttonExp4AddPair);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Controls.Add(this.textBox2);
+            this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -398,6 +417,86 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Эксперимент 4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Image1,
+            this.Column2,
+            this.Type,
+            this.IsUsing});
+            this.dataGridView1.Location = new System.Drawing.Point(19, 223);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(568, 77);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // Image1
+            // 
+            this.Image1.HeaderText = "Изображение 1";
+            this.Image1.Name = "Image1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Изображение 2";
+            this.Column2.Name = "Column2";
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Тип";
+            this.Type.Items.AddRange(new object[] {
+            "Подпороговые",
+            "Надпороговые"});
+            this.Type.Name = "Type";
+            // 
+            // IsUsing
+            // 
+            this.IsUsing.FalseValue = "false";
+            this.IsUsing.HeaderText = "Применять";
+            this.IsUsing.Name = "IsUsing";
+            this.IsUsing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IsUsing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.IsUsing.TrueValue = "true";
+            // 
+            // buttonExp4AddPair
+            // 
+            this.buttonExp4AddPair.Location = new System.Drawing.Point(593, 238);
+            this.buttonExp4AddPair.Name = "buttonExp4AddPair";
+            this.buttonExp4AddPair.Size = new System.Drawing.Size(126, 23);
+            this.buttonExp4AddPair.TabIndex = 4;
+            this.buttonExp4AddPair.Text = "Создать пару";
+            this.buttonExp4AddPair.UseVisualStyleBackColor = true;
+            this.buttonExp4AddPair.Click += new System.EventHandler(this.buttonExp4AddPair_Click);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(6, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Скорость Точки";
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(6, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Период точки";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(121, 83);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(126, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(121, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(126, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -944,6 +1043,10 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Эксперимент 1";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,6 +1065,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpSetting1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -1067,5 +1173,16 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonExp4AddPair;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewImageColumn Image1;
+        private System.Windows.Forms.DataGridViewImageColumn Column2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsUsing;
     }
 }

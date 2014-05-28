@@ -82,6 +82,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
+    <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\ExperimentsSettings.cs" />
     <Compile Include="DataHelpers\Experiment2DataHelper.cs" />

@@ -278,5 +278,10 @@ namespace StudyOfSubthresholdPerception
                 new DB().clearTable("Users");
             }
         }
+
+        private void buttonExp4AddPair_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
