@@ -46,6 +46,10 @@
             // 
             // panel1
             // 
+<<<<<<< HEAD
+=======
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+>>>>>>> 26d95d24da2323454c35fc94af0a7c44037587a2
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(15, 3);
@@ -90,8 +94,12 @@
             this.tabControlEX1.BackColor = System.Drawing.Color.White;
             this.tabControlEX1.Controls.Add(this.tabPageEX1);
             this.tabControlEX1.Controls.Add(this.tabPageEX2);
+<<<<<<< HEAD
             this.tabControlEX1.FlatBorderColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabControlEX1.HotColor = System.Drawing.SystemColors.ControlLightLight;
+=======
+            this.tabControlEX1.FlatBorderColor = System.Drawing.Color.White;
+>>>>>>> 26d95d24da2323454c35fc94af0a7c44037587a2
             this.tabControlEX1.Location = new System.Drawing.Point(12, 12);
             this.tabControlEX1.Name = "tabControlEX1";
             this.tabControlEX1.SelectedIndex = 1;

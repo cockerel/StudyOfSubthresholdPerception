@@ -82,6 +82,7 @@ namespace StudyOfSubthresholdPerception
                         //pictureBoxSample.Visible = true;
                         k++;
                         labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 5";
+                        trackBarScaleTest.Value = 0;
                     }
                     else
                     {
