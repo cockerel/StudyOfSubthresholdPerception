@@ -50,11 +50,11 @@ namespace StudyOfSubthresholdPerception
 	        using (var context = new DataContext())
 	        {
 		        var model = new List<Experiment4Model>();
-		        foreach (var item in context.Experiment4Images)
+		      /*  foreach (var item in context.Experiment4Images)
 		        {
 					var ms = new MemoryStream(item.Image);
 			        model.Add(new Experiment4Model{Id = item.Id, ImageItem = System.Drawing.Image.FromStream(ms)});
-		        }
+		        }*/
 				dataGridView2.DataSource = model;
 				dataGridView3.DataSource = model;
 	        }
