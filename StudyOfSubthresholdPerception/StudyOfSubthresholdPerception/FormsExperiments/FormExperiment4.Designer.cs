@@ -91,9 +91,8 @@
             this.tabControlEX1.BackColor = System.Drawing.Color.White;
             this.tabControlEX1.Controls.Add(this.tabPageEX1);
             this.tabControlEX1.Controls.Add(this.tabPageEX2);
-            this.tabControlEX1.FlatBorderColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tabControlEX1.HotColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabControlEX1.FlatBorderColor = System.Drawing.Color.White;
+            this.tabControlEX1.HotColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabControlEX1.Location = new System.Drawing.Point(12, 12);
             this.tabControlEX1.Name = "tabControlEX1";
             this.tabControlEX1.SelectedIndex = 1;
@@ -144,9 +143,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer2;
-		private Dotnetrix.Controls.TabControlEX tabControlEX1;
-		private Dotnetrix.Controls.TabPageEX tabPageEX1;
-		private Dotnetrix.Controls.TabPageEX tabPageEX2;
+        private Dotnetrix.Controls.TabControlEX tabControlEX1;
+        private Dotnetrix.Controls.TabPageEX tabPageEX1;
+        private Dotnetrix.Controls.TabPageEX tabPageEX2;
 
     }
 }

@@ -38,8 +38,20 @@
             this.textBoxNumOfExp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewExpSetting1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewExperiment1 = new System.Windows.Forms.DataGridView();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -48,14 +60,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Exp4Id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exp4Img2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ImageColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exp4Id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exp4Img1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Image1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.IsUsing = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonExp4AddPair = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -118,18 +128,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPair = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.IsUsing = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -264,6 +267,49 @@
             this.dataGridViewExpSetting1.Size = new System.Drawing.Size(580, 200);
             this.dataGridViewExpSetting1.TabIndex = 4;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "№";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn1.HeaderText = "Изображение";
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Анаграмма";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ответ 1";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ответ 2";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 80;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridViewExperiment1);
@@ -294,6 +340,49 @@
             this.dataGridViewExperiment1.RowTemplate.Height = 200;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(580, 200);
             this.dataGridViewExperiment1.TabIndex = 2;
+            // 
+            // Position
+            // 
+            this.Position.HeaderText = "№";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            this.Position.Width = 30;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Image
+            // 
+            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Image.HeaderText = "Изображение";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            // 
+            // Anagram
+            // 
+            this.Anagram.HeaderText = "Анаграмма";
+            this.Anagram.Name = "Anagram";
+            this.Anagram.ReadOnly = true;
+            this.Anagram.Width = 80;
+            // 
+            // Answer1
+            // 
+            this.Answer1.HeaderText = "Ответ 1";
+            this.Answer1.Name = "Answer1";
+            this.Answer1.ReadOnly = true;
+            this.Answer1.Width = 80;
+            // 
+            // Answer2
+            // 
+            this.Answer2.HeaderText = "Ответ 2";
+            this.Answer2.Name = "Answer2";
+            this.Answer2.ReadOnly = true;
+            this.Answer2.Width = 80;
             // 
             // buttonAdd
             // 
@@ -363,9 +452,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(594, 19);
+            this.button3.Location = new System.Drawing.Point(634, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 49);
+            this.button3.Size = new System.Drawing.Size(103, 25);
             this.button3.TabIndex = 8;
             this.button3.Text = "Сохранить";
             this.button3.UseVisualStyleBackColor = true;
@@ -377,18 +466,27 @@
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ImageColumn2});
-            this.dataGridView3.Location = new System.Drawing.Point(444, 135);
+            this.Exp4Id2,
+            this.Exp4Img2});
+            this.dataGridView3.Location = new System.Drawing.Point(376, 135);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(370, 150);
             this.dataGridView3.TabIndex = 7;
             // 
-            // ImageColumn2
+            // Exp4Id2
             // 
-            this.ImageColumn2.HeaderText = "Изображение";
-            this.ImageColumn2.Name = "ImageColumn2";
-            this.ImageColumn2.ReadOnly = true;
+            this.Exp4Id2.HeaderText = "Id";
+            this.Exp4Id2.Name = "Exp4Id2";
+            this.Exp4Id2.ReadOnly = true;
+            // 
+            // Exp4Img2
+            // 
+            this.Exp4Img2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Exp4Img2.HeaderText = "Изображение";
+            this.Exp4Img2.Name = "Exp4Img2";
+            this.Exp4Img2.ReadOnly = true;
             // 
             // dataGridView2
             // 
@@ -396,59 +494,45 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ImageColumn1});
-            this.dataGridView2.Location = new System.Drawing.Point(54, 135);
+            this.Exp4Id1,
+            this.Exp4Img1});
+            this.dataGridView2.Location = new System.Drawing.Point(9, 135);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(361, 150);
             this.dataGridView2.TabIndex = 6;
             // 
-            // ImageColumn1
+            // Exp4Id1
             // 
-            this.ImageColumn1.HeaderText = "Изображение";
-            this.ImageColumn1.Name = "ImageColumn1";
-            this.ImageColumn1.ReadOnly = true;
+            this.Exp4Id1.HeaderText = "Id";
+            this.Exp4Id1.Name = "Exp4Id1";
+            this.Exp4Id1.ReadOnly = true;
+            // 
+            // Exp4Img1
+            // 
+            this.Exp4Img1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Exp4Img1.HeaderText = "Изображение";
+            this.Exp4Img1.Name = "Exp4Img1";
+            this.Exp4Img1.ReadOnly = true;
+            this.Exp4Img1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Exp4Img1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPair,
             this.Image1,
             this.Column2,
             this.Type,
             this.IsUsing});
             this.dataGridView1.Location = new System.Drawing.Point(9, 355);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(737, 151);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // Image1
-            // 
-            this.Image1.HeaderText = "Изображение 1";
-            this.Image1.Name = "Image1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Изображение 2";
-            this.Column2.Name = "Column2";
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Тип";
-            this.Type.Items.AddRange(new object[] {
-            "Подпороговые",
-            "Надпороговые"});
-            this.Type.Name = "Type";
-            // 
-            // IsUsing
-            // 
-            this.IsUsing.FalseValue = "false";
-            this.IsUsing.HeaderText = "Применять";
-            this.IsUsing.Name = "IsUsing";
-            this.IsUsing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IsUsing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IsUsing.TrueValue = "true";
             // 
             // buttonExp4AddPair
             // 
@@ -1039,91 +1123,39 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Position
+            // idPair
             // 
-            this.Position.HeaderText = "№";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            this.Position.Width = 30;
+            this.idPair.HeaderText = "Id";
+            this.idPair.Name = "idPair";
             // 
-            // Id
+            // Image1
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 50;
+            this.Image1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Image1.HeaderText = "Изображение 1";
+            this.Image1.Name = "Image1";
             // 
-            // Image
+            // Column2
             // 
-            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Image.HeaderText = "Изображение";
-            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Изображение 2";
+            this.Column2.Name = "Column2";
             // 
-            // Anagram
+            // Type
             // 
-            this.Anagram.HeaderText = "Анаграмма";
-            this.Anagram.Name = "Anagram";
-            this.Anagram.ReadOnly = true;
-            this.Anagram.Width = 80;
+            this.Type.HeaderText = "Тип";
+            this.Type.Items.AddRange(new object[] {
+            "Подпороговые",
+            "Надпороговые"});
+            this.Type.Name = "Type";
             // 
-            // Answer1
+            // IsUsing
             // 
-            this.Answer1.HeaderText = "Ответ 1";
-            this.Answer1.Name = "Answer1";
-            this.Answer1.ReadOnly = true;
-            this.Answer1.Width = 80;
-            // 
-            // Answer2
-            // 
-            this.Answer2.HeaderText = "Ответ 2";
-            this.Answer2.Name = "Answer2";
-            this.Answer2.ReadOnly = true;
-            this.Answer2.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "№";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn1.HeaderText = "Изображение";
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Анаграмма";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ответ 1";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ответ 2";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 80;
+            this.IsUsing.FalseValue = "false";
+            this.IsUsing.HeaderText = "Применять";
+            this.IsUsing.Name = "IsUsing";
+            this.IsUsing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IsUsing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.IsUsing.TrueValue = "true";
             // 
             // FormSetting
             // 
@@ -1247,17 +1279,11 @@
 		private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn Image1;
-        private System.Windows.Forms.DataGridViewImageColumn Column2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsUsing;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.DataGridView dataGridView3;
-		private System.Windows.Forms.DataGridViewImageColumn ImageColumn2;
-		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageColumn1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.Button buttonExp4AddPair;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1271,5 +1297,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Anagram;
         private System.Windows.Forms.DataGridViewTextBoxColumn Answer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Answer2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exp4Id2;
+        private System.Windows.Forms.DataGridViewImageColumn Exp4Img2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Exp4Id1;
+        private System.Windows.Forms.DataGridViewImageColumn Exp4Img1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPair;
+        private System.Windows.Forms.DataGridViewImageColumn Image1;
+        private System.Windows.Forms.DataGridViewImageColumn Column2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsUsing;
     }
 }

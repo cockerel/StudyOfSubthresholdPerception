@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.Models;
 using StudyOfSubthresholdPerception.Models.Experiment2;
+using StudyOfSubthresholdPerception.Models.Experiment4;
 using Point = StudyOfSubthresholdPerception.Models.Point;
 
 namespace StudyOfSubthresholdPerception.FormsExperiments
@@ -22,12 +25,15 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private int ExperimentsCount { get; set; }
         private bool CircleIsVisible { get; set; }
         private bool TestExperiment { get; set; }
+        private List<Experiment4Model> Data { get; set; } 
 
         private void FormExperiment2_Load(object sender, EventArgs e)
         {
             DoubleBuffered = true;
             CircleIsVisible = true;
             TestExperiment = false;
+            var ex4 = new Experiment4DataHelper();
+            Data = ex4.GetData();
             Result = new Experiment2ResultModel();
             var temp = (panel1.Width - 10f) / 2f;
             _circle = new Circle(temp+5, temp+5, temp, new Pen(Color.GreenYellow, 3));
@@ -36,6 +42,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             timer1.Interval = 40;
             timer2.Interval = 40;
             timer1.Start();
+            var rand = new Random();
+            var randomInt = rand.Next(0, Data.Count);
+            pictureBox1.Image = Data[randomInt].ImageItem1;
+            pictureBox2.Image = Data[randomInt].ImageItem2;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

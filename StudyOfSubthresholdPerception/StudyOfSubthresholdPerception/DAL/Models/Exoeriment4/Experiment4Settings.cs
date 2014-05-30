@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StudyOfSubthresholdPerception.DAL.Models
+namespace StudyOfSubthresholdPerception.DAL.Models.Exoeriment4
 {
-    public class ExperimentsSettings
+    public class Experiment4Settings
     {
         [Key]
         public int Id { get; set; }
@@ -10,9 +10,6 @@ namespace StudyOfSubthresholdPerception.DAL.Models
         public int PresentationCount { get; set; }
 
         public int ExperimentsCount { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string ExperimentId { get; set; }
+        public int PresentationTrainingCount { get; set; }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using StudyOfSubthresholdPerception.DataHelpers;
+using StudyOfSubthresholdPerception.FormsAddData;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -25,6 +27,9 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new FormAddDataToExperiment1(this).ShowDialog();
+                    break;
+                case (int)Tabs.Experiment4:
+                    new FormAddDataToExperiment4(this).ShowDialog();
                     break;
                 case (int)Tabs.Experiment5:
                     new FormAddDataToExperiment5(this).ShowDialog();
@@ -48,10 +53,22 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment3:
                     break;
                 case (int)Tabs.Experiment4:
+                    Exp4Load();
                     break;
                 case (int)Tabs.Experiment5:
                     new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
                     break;
+            }
+        }
+
+        public void Exp4Load()
+        {
+            dataGridViewExperiment4.Rows.Clear();
+            var ex4 = new Experiment4DataHelper();
+            var model = ex4.GetAll();
+            foreach (var item in model)
+            {
+                dataGridViewExperiment4.Rows.Add(new object[] { item.Id, item.Img });
             }
         }
 
