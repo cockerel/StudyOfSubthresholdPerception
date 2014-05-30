@@ -150,6 +150,7 @@
     <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4Model.cs" />
+    <Compile Include="Models\Experiment4\Experiment4SettingsModel.cs" />
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />
@@ -279,7 +280,7 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
