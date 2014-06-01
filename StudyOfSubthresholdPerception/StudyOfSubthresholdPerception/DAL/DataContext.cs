@@ -10,5 +10,10 @@ namespace StudyOfSubthresholdPerception.DAL
         public DbSet<Experiment4Settings> Experiment4Settings { get; set; }
 		public DbSet<Experiment4Images> Experiment4Images { get; set; }
         public DbSet<Experiment4> Experiment4{ get; set; }
+
+        public DataContext()
+        {
+            this.Configuration.ValidateOnSaveEnabled = false;
+        }
     }
 }

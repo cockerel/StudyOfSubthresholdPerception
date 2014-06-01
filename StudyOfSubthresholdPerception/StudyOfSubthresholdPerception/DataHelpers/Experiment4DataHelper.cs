@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DAL;
 using StudyOfSubthresholdPerception.DAL.Models.Exoeriment4;
 using StudyOfSubthresholdPerception.Models.Experiment4;
+using System.Data.Entity.Validation;
 
 namespace StudyOfSubthresholdPerception.DataHelpers
 {
@@ -54,13 +55,14 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 {
                     using (var ms = new MemoryStream())
                     {
-                        img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        img.Save(ms, img.RawFormat);
+                        var array = ms.ToArray();
                         context.Experiment4Images.Add(new Experiment4Images { Id = 0, Img = ms.ToArray() });
                     }
                     context.SaveChanges();
                 }
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
                 MessageBox.Show(ex.Message);
             }
