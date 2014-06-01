@@ -22,7 +22,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private Circle _circle;
         private Experiment2ResultModel Result { get; set; }
         private int Count { get; set; }
-        private int ExperimentsCount { get; set; }
+        private int PresentationsCount { get; set; }
+		private int Period { get; set; }
         private bool CircleIsVisible { get; set; }
         private bool TestExperiment { get; set; }
         private List<Experiment4Model> Data { get; set; } 
@@ -33,11 +34,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             CircleIsVisible = true;
             TestExperiment = false;
             var ex4 = new Experiment4DataHelper();
+	        var settings = ex4.GetSettings();
+	        Period = settings.Period;
+	        PresentationsCount = settings.Presentations;
             Data = ex4.GetData();
             Result = new Experiment2ResultModel();
             var temp = (panel1.Width - 10f) / 2f;
             _circle = new Circle(temp+5, temp+5, temp, new Pen(Color.GreenYellow, 3));
-            _point = new Point(4f, 4.7f, (float)Math.PI / 30f, new SolidBrush(Color.DarkGreen));
+            _point = new Point(4f, 4.7f, (float)Math.PI / Period, new SolidBrush(Color.DarkGreen));
             _point.Reset(_circle);
             timer1.Interval = 40;
             timer2.Interval = 40;
@@ -145,7 +149,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             Result.SelectedImageIds.Add(imageId);
             Count++;
-            if (Count < 2)
+            if (Count < PresentationsCount)
             {
                 StartCircle();
             }

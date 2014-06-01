@@ -10,6 +10,7 @@ namespace StudyOfSubthresholdPerception.DAL.Models.Exoeriment4
         public int PresentationCount { get; set; }
 
         public int ExperimentsCount { get; set; }
+		public int Period { get; set; }
         public int PresentationTrainingCount { get; set; }
     }
 }
