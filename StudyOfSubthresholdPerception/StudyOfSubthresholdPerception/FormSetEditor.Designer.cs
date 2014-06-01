@@ -40,6 +40,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridViewExperiment4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,16 +50,16 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.dataGridViewExperiment4 = new System.Windows.Forms.DataGridView();
+            this.orderEx4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exp4Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exp4Img = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment4)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -180,6 +181,24 @@
             this.tabPage4.Text = "Эксперимент 4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewExperiment4
+            // 
+            this.dataGridViewExperiment4.AllowUserToAddRows = false;
+            this.dataGridViewExperiment4.AllowUserToDeleteRows = false;
+            this.dataGridViewExperiment4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExperiment4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderEx4,
+            this.Exp4Id,
+            this.Exp4Img});
+            this.dataGridViewExperiment4.Location = new System.Drawing.Point(6, 3);
+            this.dataGridViewExperiment4.Name = "dataGridViewExperiment4";
+            this.dataGridViewExperiment4.ReadOnly = true;
+            this.dataGridViewExperiment4.RowHeadersVisible = false;
+            this.dataGridViewExperiment4.RowTemplate.Height = 200;
+            this.dataGridViewExperiment4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewExperiment4.Size = new System.Drawing.Size(580, 357);
+            this.dataGridViewExperiment4.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dataGridViewExperiment5);
@@ -270,19 +289,11 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // dataGridViewExperiment4
+            // orderEx4
             // 
-            this.dataGridViewExperiment4.AllowUserToAddRows = false;
-            this.dataGridViewExperiment4.AllowUserToDeleteRows = false;
-            this.dataGridViewExperiment4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExperiment4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Exp4Id,
-            this.Exp4Img});
-            this.dataGridViewExperiment4.Location = new System.Drawing.Point(6, 3);
-            this.dataGridViewExperiment4.Name = "dataGridViewExperiment4";
-            this.dataGridViewExperiment4.ReadOnly = true;
-            this.dataGridViewExperiment4.Size = new System.Drawing.Size(580, 357);
-            this.dataGridViewExperiment4.TabIndex = 0;
+            this.orderEx4.HeaderText = "№";
+            this.orderEx4.Name = "orderEx4";
+            this.orderEx4.ReadOnly = true;
             // 
             // Exp4Id
             // 
@@ -294,6 +305,7 @@
             // 
             this.Exp4Img.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Exp4Img.HeaderText = "Изображение";
+            this.Exp4Img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Exp4Img.Name = "Exp4Img";
             this.Exp4Img.ReadOnly = true;
             this.Exp4Img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -316,9 +328,9 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment4)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,6 +363,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Answer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Answer2;
         private System.Windows.Forms.DataGridView dataGridViewExperiment4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderEx4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exp4Id;
         private System.Windows.Forms.DataGridViewImageColumn Exp4Img;
     }

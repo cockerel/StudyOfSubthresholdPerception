@@ -22,11 +22,13 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private Circle _circle;
         private Experiment2ResultModel Result { get; set; }
         private int Count { get; set; }
-        private int PresentationsCount { get; set; }
-		private int Period { get; set; }
+        private int ExperimentsCount { get; set; }
+        private int PointPeriod { get; set; }
         private bool CircleIsVisible { get; set; }
         private bool TestExperiment { get; set; }
-        private List<Experiment4Model> Data { get; set; } 
+        private bool Image1Shown { get; set; }
+        private bool Image2Shown { get; set; }
+        private List<Experiment4Model> Data { get; set; }
 
         private void FormExperiment2_Load(object sender, EventArgs e)
         {
@@ -34,17 +36,19 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             CircleIsVisible = true;
             TestExperiment = false;
             var ex4 = new Experiment4DataHelper();
-	        var settings = ex4.GetSettings();
-	        Period = settings.Period;
-	        PresentationsCount = settings.Presentations;
+            var settings = ex4.GetSettings();
+            PointPeriod = settings.PointPeriod;
+            ExperimentsCount = settings.Experiments;
             Data = ex4.GetData();
             Result = new Experiment2ResultModel();
             var temp = (panel1.Width - 10f) / 2f;
-            _circle = new Circle(temp+5, temp+5, temp, new Pen(Color.GreenYellow, 3));
-            _point = new Point(4f, 4.7f, (float)Math.PI / Period, new SolidBrush(Color.DarkGreen));
+            _circle = new Circle(temp + 5, temp + 5, temp, new Pen(Color.GreenYellow, 3));
+            _point = new Point(4f, 4.8f, (float)(Math.PI / (PointPeriod*10))*2, new SolidBrush(Color.DarkGreen));
             _point.Reset(_circle);
-            timer1.Interval = 40;
+            timer1.Interval = 100;
             timer2.Interval = 40;
+            Image1Shown = false;
+            Image2Shown = false;
             timer1.Start();
             var rand = new Random();
             var randomInt = rand.Next(0, Data.Count);
@@ -54,24 +58,26 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void timer1_Tick(object sender, EventArgs e)
         {
             _point.Step(_circle);
-            if (Math.Abs(_point.Angle - 4.7f) < 0.05f)
+            if (Math.Abs(_point.Angle - 4.8f) < 0.1f)
             {
                 StopCircle();
             }
-            if (Math.Abs(_point.Angle - 0.1f) < 0.05f)
+            if (Math.Abs(_point.Angle - 0.1f) < 0.1f && !Image2Shown)
             {
                 if (!TestExperiment)
                 {
                     pictureBox2.Visible = true;
+                    Image2Shown = true;
                     timer2.Start();
-                    
+
                 }
             }
-            if (Math.Abs(_point.Angle - 3.2f) < 0.05f)
+            if (Math.Abs(_point.Angle - 3.2f) < 0.1f && !Image1Shown)
             {
                 if (!TestExperiment)
                 {
                     pictureBox1.Visible = true;
+                    Image1Shown = true;
                     timer2.Start();
                 }
             }
@@ -149,7 +155,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             Result.SelectedImageIds.Add(imageId);
             Count++;
-            if (Count < PresentationsCount)
+            Image1Shown = false;
+            Image2Shown = false;
+            if (Count < ExperimentsCount)
             {
                 StartCircle();
             }

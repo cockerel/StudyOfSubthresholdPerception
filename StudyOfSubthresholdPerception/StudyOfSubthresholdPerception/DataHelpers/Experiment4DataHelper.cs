@@ -66,6 +66,27 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void RemoveImage(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+                    var entity = context.Experiment4Images.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment4Images.Remove(entity);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void AddData(Experiment4Model data)
         {
             try
@@ -73,8 +94,29 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 using (var context = new DataContext())
                 {
 
-                    context.Experiment4.Add(new Experiment4 { Id = 0, IdImage1 = data.Id1, IdImage2 = data.Id2 });
+                    context.Experiment4.Add(new Experiment4 { Id = 0, IdImage1 = data.Id1, IdImage2 = data.Id2, Type = data.Type });
                     context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RemoveData(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment4.FirstOrDefault(x=>x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment4.Remove(entity);
+                        context.SaveChanges();
+                    }
                 }
             }
             catch (Exception ex)
@@ -92,7 +134,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 {
                     model.AddRange(
                         context.Experiment4.ToList()
-                            .Select(entity => new Experiment4Model { Id = entity.Id, Id1 = entity.IdImage1, Id2 = entity.IdImage2, ImageItem1 = GetImageById(entity.IdImage1).Img, ImageItem2 = GetImageById(entity.IdImage2).Img }));
+                            .Select(entity => new Experiment4Model { Id = entity.Id, Id1 = entity.IdImage1, Id2 = entity.IdImage2, ImageItem1 = GetImageById(entity.IdImage1).Img, ImageItem2 = GetImageById(entity.IdImage2).Img, Type = entity.Type }));
                 }
                 catch (Exception e)
                 {
@@ -112,8 +154,9 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     var entity = context.Experiment4Settings.FirstOrDefault();
                     if (entity != null)
                     {
-                        model.Period = entity.Period;
-                        model.Presentations = entity.PresentationCount;
+                        model.PointPeriod = entity.PointPeriod;
+                        model.Experiments = entity.ExperimentsCount;
+                        model.CirclePeriod = entity.CirclePeriod;
                     }
                 }
                 catch (Exception e)
@@ -135,8 +178,9 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         context.Experiment4Settings.Remove(entity);
                     context.Experiment4Settings.Add(new Experiment4Settings
                     {
-                        PresentationCount = settings.Presentations,
-                        Period = settings.Period
+                        ExperimentsCount = settings.Experiments,
+                        PointPeriod = settings.PointPeriod,
+                        CirclePeriod = settings.CirclePeriod
                     });
                     context.SaveChanges();
                 }

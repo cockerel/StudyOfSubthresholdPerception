@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
 using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.FormsAddData;
 
@@ -66,9 +59,10 @@ namespace StudyOfSubthresholdPerception
             dataGridViewExperiment4.Rows.Clear();
             var ex4 = new Experiment4DataHelper();
             var model = ex4.GetAll();
-            foreach (var item in model)
+            model.Sort((first, second)=>first.Id.CompareTo(second.Id));
+            for (int i = 0; i < model.Count; i++)
             {
-                dataGridViewExperiment4.Rows.Add(new object[] { item.Id, item.Img });
+                dataGridViewExperiment4.Rows.Add(new object[] { i + 1, model[i].Id, model[i].Img });
             }
         }
 
@@ -78,6 +72,15 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new SetEditor.Experiment1().deleteRow(dataGridViewExperiment1);
+                    break;
+                case (int)Tabs.Experiment4:
+                    var ex4 = new Experiment4DataHelper();
+                    if (dataGridViewExperiment4.SelectedRows.Count > 0)
+                    {
+                        var id = (int)dataGridViewExperiment4.SelectedRows[0].Cells[1].Value;
+                        ex4.RemoveImage(id);
+                        Exp4Load();
+                    }
                     break;
                 case (int)Tabs.Experiment5:
                     new SetEditor.Experiment5().deleteRow(dataGridViewExperiment5);

@@ -151,6 +151,7 @@
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4Model.cs" />
     <Compile Include="Models\Experiment4\Experiment4SettingsModel.cs" />
+    <Compile Include="Models\Experiment4\PairsTypes.cs" />
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />

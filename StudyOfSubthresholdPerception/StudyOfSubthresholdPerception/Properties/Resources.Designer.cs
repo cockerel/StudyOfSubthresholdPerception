@@ -257,6 +257,33 @@ namespace StudyOfSubthresholdPerception.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ложная пара.
+        /// </summary>
+        internal static string textFalsePair {
+            get {
+                return ResourceManager.GetString("textFalsePair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Истинная пара.
+        /// </summary>
+        internal static string textTruePair {
+            get {
+                return ResourceManager.GetString("textTruePair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пара подпороговых стимулов.
+        /// </summary>
+        internal static string textUnderPair {
+            get {
+                return ResourceManager.GetString("textUnderPair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap тв_шум {

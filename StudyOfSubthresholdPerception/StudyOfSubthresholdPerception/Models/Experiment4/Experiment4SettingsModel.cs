@@ -2,7 +2,9 @@
 {
 	public class Experiment4SettingsModel
 	{
-		public int Period { get; set; }
-		public int Presentations { get; set; }
+		public int PointPeriod { get; set; }
+        public int CirclePeriod { get; set; }
+		public int Experiments { get; set; }
+        public int Presentations { get; set; }
 	}
 }
