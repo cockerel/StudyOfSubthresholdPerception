@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -89,8 +88,62 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             var model = new List<Experiment4Model>();
             using (var context = new DataContext())
             {
-                model.AddRange(context.Experiment4.ToList().Select(entity => new Experiment4Model {Id = entity.Id, Id1 = entity.IdImage1, Id2 = entity.IdImage2}));
+                try
+                {
+                    model.AddRange(
+                        context.Experiment4.ToList()
+                            .Select(entity => new Experiment4Model { Id = entity.Id, Id1 = entity.IdImage1, Id2 = entity.IdImage2, ImageItem1 = GetImageById(entity.IdImage1).Img, ImageItem2 = GetImageById(entity.IdImage2).Img }));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
                 return model;
+            }
+        }
+
+        public Experiment4SettingsModel GetSettings()
+        {
+            var model = new Experiment4SettingsModel();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experiment4Settings.FirstOrDefault();
+                    if (entity != null)
+                    {
+                        model.Period = entity.Period;
+                        model.Presentations = entity.PresentationCount;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+        public void SetSettings(Experiment4SettingsModel settings)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experiment4Settings.FirstOrDefault();
+                    if (entity != null)
+                        context.Experiment4Settings.Remove(entity);
+                    context.Experiment4Settings.Add(new Experiment4Settings
+                    {
+                        PresentationCount = settings.Presentations,
+                        Period = settings.Period
+                    });
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
         }
     }
