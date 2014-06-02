@@ -111,7 +111,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 using (var context = new DataContext())
                 {
 
-                    var entity = context.Experiment4.FirstOrDefault(x=>x.Id == id);
+                    var entity = context.Experiment4.FirstOrDefault(x => x.Id == id);
                     if (entity != null)
                     {
                         context.Experiment4.Remove(entity);
@@ -157,6 +157,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         model.PointPeriod = entity.PointPeriod;
                         model.Experiments = entity.ExperimentsCount;
                         model.CirclePeriod = entity.CirclePeriod;
+                        model.Presentations = entity.PresCount;
                     }
                 }
                 catch (Exception e)
@@ -180,7 +181,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     {
                         ExperimentsCount = settings.Experiments,
                         PointPeriod = settings.PointPeriod,
-                        CirclePeriod = settings.CirclePeriod
+                        CirclePeriod = settings.CirclePeriod,
+                        PresCount = settings.Presentations
                     });
                     context.SaveChanges();
                 }

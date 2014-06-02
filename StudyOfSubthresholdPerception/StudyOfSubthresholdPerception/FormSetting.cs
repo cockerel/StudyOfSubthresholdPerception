@@ -66,7 +66,7 @@ namespace StudyOfSubthresholdPerception
                             textBoxEx4CirclePeriod.Text = settings.CirclePeriod.ToString(CultureInfo.InvariantCulture);
                             textBoxEx4PointPeriod.Text = settings.PointPeriod.ToString(CultureInfo.InvariantCulture);
                             textBoxEx4ExpCount.Text = settings.Experiments.ToString(CultureInfo.InvariantCulture);
-                            textBoxEx4PresCount.Text = settings.Presentations.ToString(CultureInfo.InvariantCulture); ;
+                            textBoxEx4PresCount.Text = settings.Presentations.ToString(CultureInfo.InvariantCulture);
                         }
                         else
                         {
@@ -376,7 +376,9 @@ namespace StudyOfSubthresholdPerception
             int.TryParse(textBoxEx4ExpCount.Text, out experiments);
             var circlePeriod = 0;
             int.TryParse(textBoxEx4CirclePeriod.Text, out circlePeriod);
-            ex4.SetSettings(new Experiment4SettingsModel { PointPeriod = pointPeriod, Experiments = experiments, CirclePeriod = circlePeriod });
+            var presentations = 0;
+            int.TryParse(textBoxEx4PresCount.Text, out presentations);
+            ex4.SetSettings(new Experiment4SettingsModel { PointPeriod = pointPeriod, Experiments = experiments, CirclePeriod = circlePeriod, Presentations = presentations });
         }
 
         private void button4_Click(object sender, EventArgs e)

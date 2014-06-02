@@ -281,7 +281,7 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
