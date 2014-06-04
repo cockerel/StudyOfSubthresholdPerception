@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
+using StudyOfSubthresholdPerception.Models.Experiment3;
 using StudyOfSubthresholdPerception.Models.Experiment4;
 using StudyOfSubthresholdPerception.Properties;
 using StudyOfSubthresholdPerception.SettingsExperiments;
@@ -408,6 +409,12 @@ namespace StudyOfSubthresholdPerception
                     dataGridViewEx4Pairs.Rows.Add(new object[] { i + 1, data[i].Id, data[i].ImageItem1, data[i].ImageItem2, typeStr ?? string.Empty });
                 }
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var ex3 = new Experiment3DataHelper();
+            ex3.SetSettings(new Experiment3SettingsModel{ExpCount = 5, PresCount = 5});
         }
     }
 }

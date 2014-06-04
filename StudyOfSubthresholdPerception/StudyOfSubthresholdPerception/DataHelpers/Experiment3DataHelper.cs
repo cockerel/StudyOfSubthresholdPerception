@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using StudyOfSubthresholdPerception.DAL;
+using StudyOfSubthresholdPerception.DAL.Models.Exoeriment4;
+using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
+using StudyOfSubthresholdPerception.Models.Experiment2;
+using StudyOfSubthresholdPerception.Models.Experiment3;
+using StudyOfSubthresholdPerception.Models.Experiment4;
+
+namespace StudyOfSubthresholdPerception.DataHelpers
+{
+    public class Experiment3DataHelper
+    {
+        public void AddData(Experiment3Model data)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    context.Experiment3Data.Add(new Experiment3 { Id = 0, FirstAnswer = data.FirstAnswer, SecondAnswer = data.SecondAnswer, Text = data.Text });
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RemoveData(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3Data.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3Data.Remove(entity);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public List<Experiment3Model> GetData()
+        {
+            var model = new List<Experiment3Model>();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    model.AddRange(
+                        context.Experiment3Data.ToList()
+                            .Select(entity => new Experiment3Model { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text});
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+        public Experiment3SettingsModel GetSettings()
+        {
+            var model = new Experiment3SettingsModel();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experiment4Settings.FirstOrDefault();
+                    if (entity != null)
+                    {
+                        model.Id = entity.Id;
+                        model.ExpCount = entity.PointPeriod;
+                        model.PresCount = entity.ExperimentsCount;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+        public void SetSettings(Experiment3SettingsModel settings)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experimen3Settings.FirstOrDefault();
+                    if (entity != null)
+                        context.Experimen3Settings.Remove(entity);
+                    context.Experimen3Settings.Add(new Experiment3Settings
+                    {
+                        Id = settings.Id,
+                        PresCount = settings.PresCount,
+                        ExpCount = settings.ExpCount
+                    });
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+    }
+}
