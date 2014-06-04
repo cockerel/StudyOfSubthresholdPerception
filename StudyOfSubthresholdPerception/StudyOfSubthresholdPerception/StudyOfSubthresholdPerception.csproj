@@ -85,7 +85,9 @@
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3Settings.cs" />
     <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
+    <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
     <Compile Include="DataHelpers\Experiment4DataHelper.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="DataHelpers\Experiment5.cs" />
@@ -148,6 +150,8 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Experiment2\Experiment2Model.cs" />
     <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
+    <Compile Include="Models\Experiment3\Experiment3DataModel.cs" />
+    <Compile Include="Models\Experiment3\Experiment3SettingsModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4Model.cs" />
     <Compile Include="Models\Experiment4\Experiment4SettingsModel.cs" />
