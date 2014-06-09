@@ -1,6 +1,6 @@
 ﻿namespace StudyOfSubthresholdPerception.Models.Experiment3
 {
-    class Experiment3DataModel
+    public class Experiment3DataModel
     {
         public int Id { get; set; }
 

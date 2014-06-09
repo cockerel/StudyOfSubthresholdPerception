@@ -85,8 +85,9 @@
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3Data.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3SelectedData.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3Settings.cs" />
-    <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
     <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
     <Compile Include="DataHelpers\Experiment4DataHelper.cs" />
     <Compile Include="DB.cs" />

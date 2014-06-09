@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.FormsAddData;
+using StudyOfSubthresholdPerception.Models.Experiment3;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -20,6 +21,19 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new FormAddDataToExperiment1(this).ShowDialog();
+                    break;
+                case (int)Tabs.Experiment3:
+                    var ex3 = new Experiment3DataHelper();
+                    string und = textBoxEx3Und.Text;
+                    string word1 = textBoxEx3Down1.Text;
+                    string word2 = textBoxEx3Down2.Text;
+                    ex3.AddData(new Experiment3DataModel { FirstAnswer = word1, SecondAnswer = word2, Text = und });
+                    var data = ex3.GetData();
+                    dataGridViewEx3.Rows.Clear();
+                    for (int i = 0; i < data.Count; i++)
+                    {
+                        dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+                    }
                     break;
                 case (int)Tabs.Experiment4:
                     new FormAddDataToExperiment4(this).ShowDialog();
@@ -44,6 +58,13 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment2:
                     break;
                 case (int)Tabs.Experiment3:
+                    var ex3 = new Experiment3DataHelper();
+                    var data = ex3.GetData();
+                    dataGridViewEx3.Rows.Clear();
+                    for (int i = 0; i < data.Count; i++)
+                    {
+                        dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+                    }
                     break;
                 case (int)Tabs.Experiment4:
                     Exp4Load();
@@ -59,7 +80,7 @@ namespace StudyOfSubthresholdPerception
             dataGridViewExperiment4.Rows.Clear();
             var ex4 = new Experiment4DataHelper();
             var model = ex4.GetAll();
-            model.Sort((first, second)=>first.Id.CompareTo(second.Id));
+            model.Sort((first, second) => first.Id.CompareTo(second.Id));
             for (int i = 0; i < model.Count; i++)
             {
                 dataGridViewExperiment4.Rows.Add(new object[] { i + 1, model[i].Id, model[i].Img });
@@ -72,6 +93,20 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new SetEditor.Experiment1().deleteRow(dataGridViewExperiment1);
+                    break;
+                case (int)Tabs.Experiment3:
+                    if (dataGridViewEx3.SelectedRows.Count > 0)
+                    {
+                        var id = (int)dataGridViewEx3.SelectedRows[0].Cells[1].Value;
+                        var ex3 = new Experiment3DataHelper();
+                        ex3.RemoveData(id);
+                        var data = ex3.GetData();
+                        dataGridViewEx3.Rows.Clear();
+                        for (int i = 0; i < data.Count; i++)
+                        {
+                            dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+                        }
+                    }
                     break;
                 case (int)Tabs.Experiment4:
                     var ex4 = new Experiment4DataHelper();

@@ -40,6 +40,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void FormExperiment2_Load(object sender, EventArgs e)
         {
             Reset();
+            tabControlEX1.SelectTab(tabPageEX1);
         }
 
         private void Reset()
@@ -50,7 +51,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             CircleCount = 0;
             DoubleBuffered = true;
             CircleIsVisible = true;
-            TestExperiment = false;
+            TestExperiment = true;
             var ex4 = new Experiment4DataHelper();
             var settings = ex4.GetSettings();
             PointPeriod = settings.PointPeriod;
@@ -80,7 +81,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 StopCircle();
                 SetNextImage();
             }
-            if (Math.Abs(_point.Angle - 0.1f) < 0.1f && !Image2Shown)
+            if (Math.Abs(_point.Angle - 0.1f) < 0.1f && !Image2Shown && !TestExperiment)
             {
                 if (!TestExperiment)
                 {
@@ -91,7 +92,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                 }
             }
-            if (Math.Abs(_point.Angle - 3.2f) < 0.1f && !Image1Shown)
+            if (Math.Abs(_point.Angle - 3.2f) < 0.1f && !Image1Shown && !TestExperiment)
             {
                 if (!TestExperiment)
                 {
@@ -132,58 +133,120 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void StopCircle()
         {
             timer1.Stop();
-            pictureBox1.Visible = true;
-            pictureBox2.Visible = true;
+            if (!TestExperiment)
+            {
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                pictureBox3.Visible = true;
+                pictureBox4.Visible = true;
+            }
             CircleIsVisible = false;
         }
 
         private void SetNextImage()
         {
-            var rand = new Random();
-            var randomInt = rand.Next(0, Data.Count);
-            pictureBox1.Image = Data[randomInt].ImageItem1;
-            pictureBox2.Image = Data[randomInt].ImageItem2;
-        }
-
-        private void SetUnderImage()
-        {
-            pictureBox1.Image = UnderImage.ImageItem1;
-            pictureBox2.Image = UnderImage.ImageItem2;
-        }
-
-        private void StartCircle()
-        {
-            if (PresCount < PresentationsCount)
+            if (!TestExperiment)
             {
-                if (CircleCount == 0 || CircleCount == CirclePeriod)
+                var rand = new Random();
+                var randomInt = rand.Next(0, Data.Count);
+                if (Data.Count > 0)
                 {
-                    PresCount++;
-                    CircleCount = 1;
-                    timer1.Start();
-                    pictureBox1.Visible = false;
-                    pictureBox2.Visible = false;
-                    CircleIsVisible = true;
-                }
-                else
-                {
-                    PresCount++;
-                    SetNextImage();
-                    CircleCount++;
+                    pictureBox1.Image = Data[randomInt].ImageItem1;
+                    pictureBox2.Image = Data[randomInt].ImageItem2;
+
                 }
             }
             else
             {
-                pictureBox1.Visible = false;
-                pictureBox2.Visible = false;
-                CircleIsVisible = false;
-                buttonNext.Visible = true;
-                labelExp.Visible = true;
+
+                var rand = new Random();
+                var randomInt = rand.Next(0, Data.Count);
+                if (Data.Count > 0)
+                {
+                    pictureBox3.Image = Data[randomInt].ImageItem1;
+                    pictureBox4.Image = Data[randomInt].ImageItem2;
+
+                }
+            }
+        }
+
+        private void SetUnderImage()
+        {
+            if (UnderImage != null)
+            {
+                pictureBox1.Image = UnderImage.ImageItem1;
+                pictureBox2.Image = UnderImage.ImageItem2;
+            }
+        }
+
+        private void StartCircle()
+        {
+            if (!TestExperiment)
+            {
+                if (PresCount < PresentationsCount)
+                {
+                    if (CircleCount == 0 || CircleCount == CirclePeriod)
+                    {
+                        PresCount++;
+                        CircleCount = 1;
+                        timer1.Start();
+                        pictureBox1.Visible = false;
+                        pictureBox2.Visible = false;
+                        CircleIsVisible = true;
+                    }
+                    else
+                    {
+                        PresCount++;
+                        SetNextImage();
+                        CircleCount++;
+                    }
+                }
+                else
+                {
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = false;
+                    CircleIsVisible = false;
+                    buttonNext.Visible = true;
+                    labelExp.Visible = true;
+                }
+            }
+            else
+            {
+                if (PresCount < PresentationsCount)
+                {
+                    if (CircleCount == 0 || CircleCount == CirclePeriod)
+                    {
+                        PresCount++;
+                        CircleCount = 1;
+                        timer1.Start();
+                        pictureBox4.Visible = false;
+                        pictureBox3.Visible = false;
+                        CircleIsVisible = true;
+                    }
+                    else
+                    {
+                        PresCount++;
+                        SetNextImage();
+                        CircleCount++;
+                    }
+                }
+                else
+                {
+                    pictureBox4.Visible = false;
+                    pictureBox3.Visible = false;
+                    CircleIsVisible = false;
+                    buttonNext.Visible = false;
+                    label1.Visible = true;
+                }
             }
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Draw(panel1.CreateGraphics());
+            Draw(!TestExperiment ? panel1.CreateGraphics() : panel2.CreateGraphics());
         }
 
         private void Draw(Graphics graphics)
@@ -220,7 +283,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
-                buttonNext.Visible = true;
+                if (TestExperiment)
+                {
+                    label1.Visible = true;
+                }
+                else
+                {
+                    buttonNext.Visible = true;
+                }
             }
         }
 
@@ -231,11 +301,25 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 case 0:
                     tabControlEX1.SelectTab(tabPageEX2);
                     buttonFinish.Visible = true;
-                    buttonNext.Visible = false;
+                    tabPageEX2.Enabled = true;
                     Step++;
                     break;
                 case 1:
-                    Step++;
+                    if (ExpCount < 5)
+                    {
+                        ExpCount++;
+                        PresCount = 0;
+                        labelExp.Visible = false;
+                        buttonNext.Visible = false;
+                        CircleCount = 0;
+                        StartExperiment();
+                    }
+                    else
+                    {
+                        Reset();
+                        TestExperiment = false;
+                        Step++;
+                    }
                     break;
                 case 2:
                     if (ExpCount < ExperimentsCount)
@@ -243,6 +327,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ExpCount++;
                         PresCount = 0;
                         labelExp.Visible = false;
+                        buttonNext.Visible = false;
+                        CircleCount = 0;
                         StartExperiment();
                     }
                     else
@@ -257,11 +343,22 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
+            TestExperiment = false;
+            tabPageEX3.Enabled = true;
+            tabPageEX2.Enabled = false;
             tabControlEX1.SelectTab(tabPageEX3);
             Step++;
             buttonFinish.Visible = false;
             buttonNext.Visible = true;
+            Reset();
+            Step = 2;
+            TestExperiment = false;
         }
 
+        private void FormExperiment4_SizeChanged(object sender, EventArgs e)
+        {
+            panelMain.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - panelMain.Size.Width / 2,
+                this.ClientSize.Height / 2 - panelMain.Size.Height / 2);
+        }
     }
 }

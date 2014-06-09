@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
+using StudyOfSubthresholdPerception.Models.Experiment2;
 using StudyOfSubthresholdPerception.Models.Experiment3;
 using StudyOfSubthresholdPerception.Models.Experiment4;
 using StudyOfSubthresholdPerception.Properties;
@@ -56,6 +57,8 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment2:
                     break;
                 case (int)Tabs.Experiment3:
+                    LoadEx3();
+                    LoadEx3Setings();
                     break;
                 case (int)Tabs.Experiment4:
                     var ex4 = new Experiment4DataHelper();
@@ -411,10 +414,60 @@ namespace StudyOfSubthresholdPerception
             }
         }
 
+        private void LoadEx3()
+        {
+            var ex3 = new Experiment3DataHelper();
+            var data = ex3.GetData();
+            var selecrteddata = ex3.GetSelectedData();
+            dataGridViewEx3.Rows.Clear();
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < data.Count; i++)
+            {
+                dataGridView1.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer, data[i].Text);
+            }
+            for (int i = 0; i < selecrteddata.Count; i++)
+            {
+                dataGridViewEx3.Rows.Add(i + 1, selecrteddata[i].Id, selecrteddata[i].FirstAnswer, selecrteddata[i].SecondAnswer, selecrteddata[i].Text);
+            }
+
+        }
+
+        private void LoadEx3Setings()
+        {
+            var ex3 = new Experiment3DataHelper();
+            var settings = ex3.GetSettings();
+            textBoxEx3Exp.Text = settings.ExpCount.ToString(CultureInfo.InvariantCulture);
+            textBoxEx3Pres.Text = settings.PresCount.ToString(CultureInfo.InvariantCulture);
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             var ex3 = new Experiment3DataHelper();
-            ex3.SetSettings(new Experiment3SettingsModel{ExpCount = 5, PresCount = 5});
+            int expCount = 0;
+            int.TryParse(textBoxEx3Exp.Text, out expCount);
+            int presCount = 0;
+            int.TryParse(textBoxEx3Pres.Text, out presCount);
+            ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount });
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var ex3 = new Experiment3DataHelper();
+                ex3.AddSelectedById((int)dataGridView1.SelectedRows[0].Cells[1].Value);
+            }
+            LoadEx3();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEx3.SelectedRows.Count > 0)
+            {
+                var ex3 = new Experiment3DataHelper();
+                ex3.RemoveSelectedData((int)dataGridViewEx3.SelectedRows[0].Cells[1].Value);
+            }
+            LoadEx3();
         }
     }
 }

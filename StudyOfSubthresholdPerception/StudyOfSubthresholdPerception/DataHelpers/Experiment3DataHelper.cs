@@ -14,14 +14,14 @@ namespace StudyOfSubthresholdPerception.DataHelpers
 {
     public class Experiment3DataHelper
     {
-        public void AddData(Experiment3Model data)
+        public void AddData(Experiment3DataModel data)
         {
             try
             {
                 using (var context = new DataContext())
                 {
 
-                    context.Experiment3Data.Add(new Experiment3 { Id = 0, FirstAnswer = data.FirstAnswer, SecondAnswer = data.SecondAnswer, Text = data.Text });
+                    context.Experiment3Data.Add(new Experiment3Data { Id = 0, FirstAnswer = data.FirstAnswer, SecondAnswer = data.SecondAnswer, Text = data.Text });
                     context.SaveChanges();
                 }
             }
@@ -52,16 +52,58 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             }
         }
 
-        public List<Experiment3Model> GetData()
+        public void RemoveSelectedData(int id)
         {
-            var model = new List<Experiment3Model>();
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3SelectedData.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3SelectedData.Remove(entity);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void AddSelectedById(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3Data.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3SelectedData.Add(new Experiment3SelectedData { FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text });
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public List<Experiment3DataModel> GetData()
+        {
+            var model = new List<Experiment3DataModel>();
             using (var context = new DataContext())
             {
                 try
                 {
                     model.AddRange(
                         context.Experiment3Data.ToList()
-                            .Select(entity => new Experiment3Model { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text});
+                            .Select(entity => new Experiment3DataModel { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text }));
                 }
                 catch (Exception e)
                 {
@@ -71,6 +113,26 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             }
         }
 
+        public List<Experiment3SelectedData> GetSelectedData()
+        {
+            var model = new List<Experiment3SelectedData>();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    model.AddRange(
+                        context.Experiment3SelectedData.ToList()
+                            .Select(entity => new Experiment3SelectedData { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text }));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+
         public Experiment3SettingsModel GetSettings()
         {
             var model = new Experiment3SettingsModel();
@@ -78,12 +140,12 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             {
                 try
                 {
-                    var entity = context.Experiment4Settings.FirstOrDefault();
+                    var entity = context.Experimen3Settings.FirstOrDefault();
                     if (entity != null)
                     {
                         model.Id = entity.Id;
-                        model.ExpCount = entity.PointPeriod;
-                        model.PresCount = entity.ExperimentsCount;
+                        model.ExpCount = entity.ExpCount;
+                        model.PresCount = entity.PresCount;
                     }
                 }
                 catch (Exception e)

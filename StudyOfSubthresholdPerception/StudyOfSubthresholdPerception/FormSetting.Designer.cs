@@ -55,6 +55,18 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBoxEx3Exp = new System.Windows.Forms.TextBox();
+            this.textBoxEx3Pres = new System.Windows.Forms.TextBox();
+            this.dataGridViewEx3 = new System.Windows.Forms.DataGridView();
+            this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3First = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Second = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBoxEx4PresCount = new System.Windows.Forms.TextBox();
@@ -145,13 +157,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,6 +170,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx3)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx4Pairs)).BeginInit();
@@ -430,14 +442,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.button6);
             this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.textBox4);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.textBox1);
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.textBoxEx3Exp);
+            this.tabPage3.Controls.Add(this.textBoxEx3Pres);
+            this.tabPage3.Controls.Add(this.dataGridViewEx3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -445,6 +458,110 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Эксперимент 3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(214, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 13);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Эксперименты";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Предъявления";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(418, 16);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Сохранить";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(671, 107);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Добавить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBoxEx3Exp
+            // 
+            this.textBoxEx3Exp.Location = new System.Drawing.Point(312, 16);
+            this.textBoxEx3Exp.Name = "textBoxEx3Exp";
+            this.textBoxEx3Exp.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEx3Exp.TabIndex = 5;
+            // 
+            // textBoxEx3Pres
+            // 
+            this.textBoxEx3Pres.Location = new System.Drawing.Point(94, 16);
+            this.textBoxEx3Pres.Name = "textBoxEx3Pres";
+            this.textBoxEx3Pres.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEx3Pres.TabIndex = 4;
+            // 
+            // dataGridViewEx3
+            // 
+            this.dataGridViewEx3.AllowUserToAddRows = false;
+            this.dataGridViewEx3.AllowUserToDeleteRows = false;
+            this.dataGridViewEx3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEx3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ex3Order,
+            this.Ex3Id,
+            this.Ex3First,
+            this.Ex3Second,
+            this.Ex3Text});
+            this.dataGridViewEx3.Location = new System.Drawing.Point(6, 298);
+            this.dataGridViewEx3.Name = "dataGridViewEx3";
+            this.dataGridViewEx3.ReadOnly = true;
+            this.dataGridViewEx3.RowHeadersVisible = false;
+            this.dataGridViewEx3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEx3.Size = new System.Drawing.Size(649, 208);
+            this.dataGridViewEx3.TabIndex = 0;
+            // 
+            // Ex3Order
+            // 
+            this.Ex3Order.HeaderText = "№";
+            this.Ex3Order.Name = "Ex3Order";
+            this.Ex3Order.ReadOnly = true;
+            // 
+            // Ex3Id
+            // 
+            this.Ex3Id.HeaderText = "Id";
+            this.Ex3Id.Name = "Ex3Id";
+            this.Ex3Id.ReadOnly = true;
+            // 
+            // Ex3First
+            // 
+            this.Ex3First.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3First.HeaderText = "Надпороговый 1";
+            this.Ex3First.Name = "Ex3First";
+            this.Ex3First.ReadOnly = true;
+            // 
+            // Ex3Second
+            // 
+            this.Ex3Second.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Second.HeaderText = "Надпороговый 2";
+            this.Ex3Second.Name = "Ex3Second";
+            this.Ex3Second.ReadOnly = true;
+            // 
+            // Ex3Text
+            // 
+            this.Ex3Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Text.HeaderText = "Подпороговый";
+            this.Ex3Text.Name = "Ex3Text";
+            this.Ex3Text.ReadOnly = true;
             // 
             // tabPage4
             // 
@@ -1304,65 +1421,65 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 99);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 84);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(740, 407);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(649, 208);
+            this.dataGridView1.TabIndex = 10;
             // 
-            // textBox1
+            // dataGridViewTextBoxColumn8
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.dataGridViewTextBoxColumn8.HeaderText = "№";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // textBox2
+            // dataGridViewTextBoxColumn9
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // textBox3
+            // dataGridViewTextBoxColumn10
             // 
-            this.textBox3.Location = new System.Drawing.Point(277, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Надпороговый 1";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
-            // textBox4
+            // dataGridViewTextBoxColumn13
             // 
-            this.textBox4.Location = new System.Drawing.Point(36, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn13.HeaderText = "Надпороговый 2";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
-            // textBox5
+            // dataGridViewTextBoxColumn14
             // 
-            this.textBox5.Location = new System.Drawing.Point(158, 17);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 5;
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Подпороговый";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(411, 60);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(277, 17);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Сохранить";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.Location = new System.Drawing.Point(671, 336);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Удалить";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // FormSetting
             // 
@@ -1384,6 +1501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -1533,11 +1651,22 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxEx3Exp;
+        private System.Windows.Forms.TextBox textBoxEx3Pres;
+        private System.Windows.Forms.DataGridView dataGridViewEx3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3First;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Second;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Text;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }
