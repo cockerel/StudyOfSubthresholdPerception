@@ -1,44 +1,183 @@
-﻿using System.Drawing;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DAL;
 using StudyOfSubthresholdPerception.DAL.Models.Exoeriment4;
+using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
+using StudyOfSubthresholdPerception.Models.Experiment2;
+using StudyOfSubthresholdPerception.Models.Experiment3;
 using StudyOfSubthresholdPerception.Models.Experiment4;
 
 namespace StudyOfSubthresholdPerception.DataHelpers
 {
-	public class Experiment3DataHelper
-	{
-		public Experiment4ImageModel GetImageById(int id)
-		{
-			Experiment4ImageModel model = null;
-			using (var context = new DataContext())
-			{
-				var dtoImage = context.Experiment4Images.FirstOrDefault(x => x.Id == id);
-				if (dtoImage != null)
-				{
-					using (var ms = new MemoryStream(dtoImage.Image))
-					{
-						model = new Experiment4ImageModel { Id = dtoImage.Id, Image = Image.FromStream(ms) };
-					}
-				}
-			}
-			return model;
-		}
+    public class Experiment3DataHelper
+    {
+        public void AddData(Experiment3DataModel data)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
 
-		public void AddImage(Image img)
-		{
-			Experiment4ImageModel model = null;
-			using (var context = new DataContext())
-			{
-				using (var ms = new MemoryStream())
-				{
-					img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-					var array = ms.ToArray();
-					context.Experiment4Images.Add(new Experiment4Images { Image = array });
-					context.SaveChanges();
-				}
-			}
-		}
-	}
+                    context.Experiment3Data.Add(new Experiment3Data { Id = 0, FirstAnswer = data.FirstAnswer, SecondAnswer = data.SecondAnswer, Text = data.Text });
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RemoveData(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3Data.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3Data.Remove(entity);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RemoveSelectedData(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3SelectedData.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3SelectedData.Remove(entity);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void AddSelectedById(int id)
+        {
+            try
+            {
+                using (var context = new DataContext())
+                {
+
+                    var entity = context.Experiment3Data.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3SelectedData.Add(new Experiment3SelectedData { FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text });
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public List<Experiment3DataModel> GetData()
+        {
+            var model = new List<Experiment3DataModel>();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    model.AddRange(
+                        context.Experiment3Data.ToList()
+                            .Select(entity => new Experiment3DataModel { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text }));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+        public List<Experiment3SelectedData> GetSelectedData()
+        {
+            var model = new List<Experiment3SelectedData>();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    model.AddRange(
+                        context.Experiment3SelectedData.ToList()
+                            .Select(entity => new Experiment3SelectedData { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text }));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+
+        public Experiment3SettingsModel GetSettings()
+        {
+            var model = new Experiment3SettingsModel();
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experimen3Settings.FirstOrDefault();
+                    if (entity != null)
+                    {
+                        model.Id = entity.Id;
+                        model.ExpCount = entity.ExpCount;
+                        model.PresCount = entity.PresCount;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return model;
+            }
+        }
+
+        public void SetSettings(Experiment3SettingsModel settings)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var entity = context.Experimen3Settings.FirstOrDefault();
+                    if (entity != null)
+                        context.Experimen3Settings.Remove(entity);
+                    context.Experimen3Settings.Add(new Experiment3Settings
+                    {
+                        Id = settings.Id,
+                        PresCount = settings.PresCount,
+                        ExpCount = settings.ExpCount
+                    });
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+    }
 }

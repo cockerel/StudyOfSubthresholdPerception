@@ -84,9 +84,12 @@
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
-    <Compile Include="DAL\Models\ExperimentsSettings.cs" />
-    <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
+    <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3Data.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3SelectedData.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3Settings.cs" />
     <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
+    <Compile Include="DataHelpers\Experiment4DataHelper.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="DataHelpers\Experiment5.cs" />
     <Compile Include="DataHelpers\Experiment1.cs" />
@@ -95,6 +98,12 @@
     </Compile>
     <Compile Include="FormCurrentResult.Designer.cs">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment4.Designer.cs">
+      <DependentUpon>FormAddDataToExperiment4.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsExperiments\FormExperiment4.cs">
       <SubType>Form</SubType>
@@ -138,11 +147,16 @@
     <Compile Include="FormsAddData\FormAddDataToExperiment5.Designer.cs">
       <DependentUpon>FormAddDataToExperiment5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Experiment2\Experiment2Model.cs" />
     <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
+    <Compile Include="Models\Experiment3\Experiment3DataModel.cs" />
+    <Compile Include="Models\Experiment3\Experiment3SettingsModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4Model.cs" />
+    <Compile Include="Models\Experiment4\Experiment4SettingsModel.cs" />
+    <Compile Include="Models\Experiment4\PairsTypes.cs" />
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />
@@ -185,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCurrentResult.resx">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAddData\FormAddDataToExperiment4.resx">
+      <DependentUpon>FormAddDataToExperiment4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsExperiments\FormExperiment4.resx">
       <DependentUpon>FormExperiment4.cs</DependentUpon>
@@ -269,7 +286,7 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
