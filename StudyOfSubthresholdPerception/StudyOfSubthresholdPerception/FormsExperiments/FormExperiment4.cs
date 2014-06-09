@@ -186,6 +186,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             if (!TestExperiment)
             {
+				labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
+				
                 if (PresCount < PresentationsCount)
                 {
                     if (CircleCount == 0 || CircleCount == CirclePeriod)
@@ -215,6 +217,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
+				labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
+				
                 if (PresCount < PresentationsCount)
                 {
                     if (CircleCount == 0 || CircleCount == CirclePeriod)
@@ -302,28 +306,22 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     tabControlEX1.SelectTab(tabPageEX2);
                     buttonFinish.Visible = true;
                     tabPageEX2.Enabled = true;
+					labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
                     Step++;
                     break;
                 case 1:
-                    if (ExpCount < 5)
-                    {
+						labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
                         ExpCount++;
                         PresCount = 0;
                         labelExp.Visible = false;
                         buttonNext.Visible = false;
                         CircleCount = 0;
                         StartExperiment();
-                    }
-                    else
-                    {
-                        Reset();
-                        TestExperiment = false;
-                        Step++;
-                    }
                     break;
                 case 2:
                     if (ExpCount < ExperimentsCount)
                     {
+						labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", ExperimentsCount);
                         ExpCount++;
                         PresCount = 0;
                         labelExp.Visible = false;
@@ -353,6 +351,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             Reset();
             Step = 2;
             TestExperiment = false;
+			labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", ExperimentsCount);
+			labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
         }
 
         private void FormExperiment4_SizeChanged(object sender, EventArgs e)

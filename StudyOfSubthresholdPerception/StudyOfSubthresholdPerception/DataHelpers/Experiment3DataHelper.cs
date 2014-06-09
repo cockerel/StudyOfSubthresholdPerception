@@ -42,6 +42,12 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     if (entity != null)
                     {
                         context.Experiment3Data.Remove(entity);
+						var removed = new List<Experiment3SelectedData>();
+						removed.AddRange(context.Experiment3SelectedData.Where(x => x.FirstAnswer == entity.FirstAnswer || x.SecondAnswer == entity.SecondAnswer));
+						foreach (var item in removed)
+						{
+							context.Experiment3SelectedData.Remove(item);
+						}
                         context.SaveChanges();
                     }
                 }

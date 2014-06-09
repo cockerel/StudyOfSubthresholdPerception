@@ -63,6 +63,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
+
+				labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -85,6 +87,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
+				labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -99,10 +102,12 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     tabControlEx3.SelectTab(tabPage2);
                     buttonFinish.Visible = true;
                     buttonNext.Visible = false;
-
+					labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                     Step++;
                     break;
                 case 1:
+		            PresCount = 0;
+					labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                     break;
                 case 2:
                     if (ExpCount > Settings.ExpCount)
@@ -112,6 +117,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     }
                     else
                     {
+						labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         label4.Visible = false;
                         SetWord();
                     }
@@ -122,6 +128,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void buttonFinish_Click(object sender, System.EventArgs e)
         {
             Reset();
+			labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+			labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
             tabControlEx3.SelectTab(tabPage3);
             TestExp = false;
             buttonFinish.Visible = false;
@@ -180,6 +188,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
+				labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -196,6 +205,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
+				labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }

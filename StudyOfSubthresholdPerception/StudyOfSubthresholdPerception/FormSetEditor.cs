@@ -22,7 +22,7 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment1:
                     new FormAddDataToExperiment1(this).ShowDialog();
                     break;
-                case (int)Tabs.Experiment3:
+                case (int)Tabs.Experiment2:
                     var ex3 = new Experiment3DataHelper();
                     string und = textBoxEx3Und.Text;
                     string word1 = textBoxEx3Down1.Text;
@@ -56,8 +56,6 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
-                    break;
-                case (int)Tabs.Experiment3:
                     var ex3 = new Experiment3DataHelper();
                     var data = ex3.GetData();
                     dataGridViewEx3.Rows.Clear();
@@ -94,7 +92,7 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment1:
                     new SetEditor.Experiment1().deleteRow(dataGridViewExperiment1);
                     break;
-                case (int)Tabs.Experiment3:
+                case (int)Tabs.Experiment2:
                     if (dataGridViewEx3.SelectedRows.Count > 0)
                     {
                         var id = (int)dataGridViewEx3.SelectedRows[0].Cells[1].Value;

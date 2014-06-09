@@ -78,6 +78,12 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     {
                         context.Experiment4Images.Remove(entity);
                     }
+	                var removed = new List<Experiment4>();
+					removed.AddRange(context.Experiment4.Where(x => x.IdImage1 == entity.Id || x.IdImage2 == entity.Id));
+	                foreach (var item in removed)
+	                {
+		                context.Experiment4.Remove(item);
+	                }
                     context.SaveChanges();
                 }
             }

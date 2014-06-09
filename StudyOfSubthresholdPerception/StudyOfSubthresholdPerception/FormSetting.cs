@@ -55,8 +55,6 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
-                    break;
-                case (int)Tabs.Experiment3:
                     LoadEx3();
                     LoadEx3Setings();
                     break;
