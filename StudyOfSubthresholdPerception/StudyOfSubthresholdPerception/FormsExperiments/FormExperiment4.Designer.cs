@@ -82,7 +82,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(738, 789);
             this.panelMain.TabIndex = 5;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // tabControlEX1
             // 

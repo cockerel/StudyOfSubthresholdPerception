@@ -154,8 +154,6 @@ namespace StudyOfSubthresholdPerception.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-<<<<<<< ours
         internal static System.Drawing.Bitmap exp4Test1 {
             get {
                 object obj = ResourceManager.GetObject("exp4Test1", resourceCulture);
@@ -196,60 +194,6 @@ namespace StudyOfSubthresholdPerception.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-=======
-        internal static System.Drawing.Bitmap exp4Test1 {
-            get {
-                object obj = ResourceManager.GetObject("exp4Test1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exp4Test2 {
-            get {
-                object obj = ResourceManager.GetObject("exp4Test2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exp4Test3 {
-            get {
-                object obj = ResourceManager.GetObject("exp4Test3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exp4Test4 {
-            get {
-                object obj = ResourceManager.GetObject("exp4Test4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exp4Test5 {
-            get {
-                object obj = ResourceManager.GetObject("exp4Test5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
->>>>>>> theirs
-=======
->>>>>>> parent of 4c29b5c... Merge
         internal static System.Drawing.Bitmap exp5Test {
             get {
                 object obj = ResourceManager.GetObject("exp5Test", resourceCulture);
