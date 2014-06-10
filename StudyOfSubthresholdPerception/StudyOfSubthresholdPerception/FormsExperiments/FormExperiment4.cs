@@ -40,6 +40,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private bool Image2Shown { get; set; }
         private List<Experiment4Model> Data { get; set; }
         private List<Image> TestData { get; set; }
+        private int TestDataCount = 0;
 
         private void FormExperiment2_Load(object sender, EventArgs e)
         {
@@ -48,6 +49,16 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             {
                 TestData = new List<Image>
 				{
+                    Resources.exp4Test1,
+                    Resources.exp4Test2,
+                    Resources.exp4Test3,
+                    Resources.exp4Test4,
+                    Resources.exp4Test5,
+                    Resources.exp4Test6,
+                    Resources.exp4Test7,
+                    Resources.exp4Test8,
+                    Resources.exp4Test9,
+                    Resources.exp4Test10
 				};
             }
             catch (Exception ex)
@@ -177,12 +188,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
-
-                var rand = new Random();
-                var randomInt = rand.Next(0, TestData.Count);
-                pictureBox3.Image = TestData[randomInt];
-                randomInt = rand.Next(0, TestData.Count);
-                pictureBox4.Image = TestData[randomInt];
+                pictureBox3.Image = TestData[TestDataCount];
+                pictureBox4.Image = TestData[++TestDataCount];
             }
         }
 
@@ -232,7 +239,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             {
                 labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
 
-                if (PresCount < PresentationsCount)
+                if (PresCount < 5)
                 {
                     if (CircleCount == 0 || CircleCount == CirclePeriod)
                     {
@@ -324,9 +331,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     tabPageEX2.Enabled = true;
                     labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
                     Step++;
-                    break;
-                case 1:
-                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
                     ExpCount++;
                     PresCount = 0;
                     labelExp.Visible = false;
@@ -334,10 +338,18 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     CircleCount = 0;
                     StartExperiment();
                     break;
+                case 1:
+                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", PresentationsCount);
+                    ExpCount++;
+                    PresCount = 0;
+                    labelExp.Visible = false;
+                    buttonNext.Visible = false;
+                    StartExperiment();
+                    break;
                 case 2:
                     if (ExpCount < ExperimentsCount)
                     {
-                        labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", ExperimentsCount);
+                        labelNumTest.Text = String.Concat("Опыт ", ExpCount + 1, " из ", ExperimentsCount);
                         ExpCount++;
                         PresCount = 0;
                         labelExp.Visible = false;
@@ -347,8 +359,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     }
                     else
                     {
-                        var formResult = new FormCurrentResult(new DataTable());
-                        formResult.Show();
+                        MessageBox.Show(Resources.EndExpMessage);
+                        Close();
                     }
                     break;
             }
@@ -372,6 +384,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             Reset();
             Step = 2;
             TestExperiment = false;
+            MessageBox.Show(Properties.Resources.StrAttention1);
+            SetNextImage();
             labelNumTest.Text = String.Concat("Опыт ", ExpCount + 1, " из ", ExperimentsCount);
             labelNum.Text = String.Concat("Предъявление ", (PresCount + 1), " из ", PresentationsCount);
         }
@@ -380,6 +394,13 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             panelMain.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - panelMain.Size.Width / 2,
                 this.ClientSize.Height / 2 - panelMain.Size.Height / 2);
+        }
+
+        private void FormExperiment4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var formResult = new FormCurrentResult(new DataTable());
+            formResult.Show();
+            formResult.Focus();
         }
     }
 }

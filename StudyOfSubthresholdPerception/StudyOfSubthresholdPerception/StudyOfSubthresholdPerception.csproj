@@ -160,6 +160,11 @@
     <Compile Include="Models\Figure.cs" />
     <Compile Include="Models\Point.cs" />
     <Compile Include="MyOpenFileDialog.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Results\UsersInfo.cs" />
     <Compile Include="SaveTableToFile.cs" />
     <Compile Include="SetEditor\Experiment1.cs" />
@@ -235,14 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -290,10 +290,15 @@
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment4Test\1.jpg" />
+    <Content Include="Resources\ForExperiment4Test\10.jpg" />
     <Content Include="Resources\ForExperiment4Test\2.jpg" />
     <Content Include="Resources\ForExperiment4Test\3.jpg" />
     <Content Include="Resources\ForExperiment4Test\4.jpg" />
     <Content Include="Resources\ForExperiment4Test\5.jpg" />
+    <Content Include="Resources\ForExperiment4Test\6.jpg" />
+    <Content Include="Resources\ForExperiment4Test\7.jpg" />
+    <Content Include="Resources\ForExperiment4Test\8.jpg" />
+    <Content Include="Resources\ForExperiment4Test\9.jpg" />
     <Content Include="Resources\ForExperiment5Test\1.jpg" />
     <Content Include="Resources\ForExperiment5Test\2.jpg" />
     <Content Include="Resources\ForExperiment5Test\3.jpg" />

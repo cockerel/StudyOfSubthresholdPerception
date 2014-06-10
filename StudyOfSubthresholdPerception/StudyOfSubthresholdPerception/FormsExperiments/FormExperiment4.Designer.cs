@@ -93,7 +93,7 @@
             this.tabControlEX1.HotColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabControlEX1.Location = new System.Drawing.Point(3, 0);
             this.tabControlEX1.Name = "tabControlEX1";
-            this.tabControlEX1.SelectedIndex = 1;
+            this.tabControlEX1.SelectedIndex = 0;
             this.tabControlEX1.Size = new System.Drawing.Size(707, 734);
             this.tabControlEX1.TabIndex = 2;
             // 
@@ -103,16 +103,16 @@
             this.tabPageEX1.Controls.Add(this.label2);
             this.tabPageEX1.Location = new System.Drawing.Point(4, 25);
             this.tabPageEX1.Name = "tabPageEX1";
-            this.tabPageEX1.Size = new System.Drawing.Size(699, 643);
+            this.tabPageEX1.Size = new System.Drawing.Size(699, 705);
             this.tabPageEX1.TabIndex = 0;
             this.tabPageEX1.Text = "Инструкция";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(644, 537);
+            this.label2.Size = new System.Drawing.Size(693, 537);
             this.label2.TabIndex = 4;
             this.label2.Text = resources.GetString("label2.Text");
             // 
@@ -291,6 +291,7 @@
             this.Name = "FormExperiment4";
             this.Text = "Эксперимент 4";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormExperiment4_FormClosed);
             this.Load += new System.EventHandler(this.FormExperiment2_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment4_SizeChanged);
             this.panelMain.ResumeLayout(false);
