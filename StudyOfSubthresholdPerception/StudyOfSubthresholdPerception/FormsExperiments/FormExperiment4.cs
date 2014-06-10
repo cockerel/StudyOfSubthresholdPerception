@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
@@ -37,7 +36,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private Experiment4Model UnderImage { get; set; }
         private bool Image2Shown { get; set; }
         private List<Experiment4Model> Data { get; set; }
-        private List<Image> TestData { get; set; }
 
         private void FormExperiment2_Load(object sender, EventArgs e)
         {
@@ -47,15 +45,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void Reset()
         {
-            try
-            {
-                var paths = Directory.GetFiles("Resources/ForExperiment4Test").ToList();
-                TestData = paths.Select(Image.FromFile).ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
             Step = 0;
             ExpCount = 0;
             PresCount = 0;
@@ -370,11 +359,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             panelMain.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - panelMain.Size.Width / 2,
                 this.ClientSize.Height / 2 - panelMain.Size.Height / 2);
-        }
-
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
