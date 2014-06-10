@@ -154,6 +154,7 @@ namespace StudyOfSubthresholdPerception.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
 <<<<<<< ours
         internal static System.Drawing.Bitmap exp4Test1 {
             get {
@@ -247,6 +248,8 @@ namespace StudyOfSubthresholdPerception.Properties {
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
 >>>>>>> theirs
+=======
+>>>>>>> parent of 4c29b5c... Merge
         internal static System.Drawing.Bitmap exp5Test {
             get {
                 object obj = ResourceManager.GetObject("exp5Test", resourceCulture);
