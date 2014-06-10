@@ -130,6 +130,21 @@
   <data name="exp5Test5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ForExperiment5Test\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+	<data name="exp4Test1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\ForExperiment4Test\1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="exp4Test2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\ForExperiment4Test\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="exp4Test3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\ForExperiment4Test\3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="exp4Test4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\ForExperiment4Test\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="exp4Test5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\ForExperiment4Test\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
   <data name="StrErrorTitle" xml:space="preserve">
     <value>Ошибка!</value>
   </data>

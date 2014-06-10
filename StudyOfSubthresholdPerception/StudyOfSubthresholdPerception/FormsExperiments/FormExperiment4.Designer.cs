@@ -39,19 +39,19 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.labelNumSampleTest = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.tabPageEX3 = new Dotnetrix.Controls.TabPageEX();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.labelNumTest = new System.Windows.Forms.Label();
+			this.labelNum = new System.Windows.Forms.Label();
 			this.labelExp = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.buttonFinish = new System.Windows.Forms.Button();
 			this.buttonNext = new System.Windows.Forms.Button();
-			this.labelNumSampleTest = new System.Windows.Forms.Label();
-			this.labelNumTest = new System.Windows.Forms.Label();
-			this.labelNum = new System.Windows.Forms.Label();
 			this.panelMain.SuspendLayout();
 			this.tabControlEX1.SuspendLayout();
 			this.tabPageEX1.SuspendLayout();
@@ -80,7 +80,7 @@
 			this.panelMain.Controls.Add(this.buttonNext);
 			this.panelMain.Location = new System.Drawing.Point(12, 12);
 			this.panelMain.Name = "panelMain";
-			this.panelMain.Size = new System.Drawing.Size(738, 711);
+			this.panelMain.Size = new System.Drawing.Size(738, 756);
 			this.panelMain.TabIndex = 5;
 			// 
 			// tabControlEX1
@@ -94,7 +94,7 @@
 			this.tabControlEX1.Location = new System.Drawing.Point(3, 0);
 			this.tabControlEX1.Name = "tabControlEX1";
 			this.tabControlEX1.SelectedIndex = 2;
-			this.tabControlEX1.Size = new System.Drawing.Size(707, 672);
+			this.tabControlEX1.Size = new System.Drawing.Size(707, 720);
 			this.tabControlEX1.TabIndex = 2;
 			// 
 			// tabPageEX1
@@ -123,7 +123,7 @@
 			this.tabPageEX2.Enabled = false;
 			this.tabPageEX2.Location = new System.Drawing.Point(4, 25);
 			this.tabPageEX2.Name = "tabPageEX2";
-			this.tabPageEX2.Size = new System.Drawing.Size(699, 643);
+			this.tabPageEX2.Size = new System.Drawing.Size(699, 691);
 			this.tabPageEX2.TabIndex = 1;
 			this.tabPageEX2.Text = "Тренеровочная серия";
 			// 
@@ -136,13 +136,23 @@
 			this.panel2.Controls.Add(this.pictureBox4);
 			this.panel2.Location = new System.Drawing.Point(17, 11);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(661, 619);
+			this.panel2.Size = new System.Drawing.Size(661, 666);
 			this.panel2.TabIndex = 3;
+			// 
+			// labelNumSampleTest
+			// 
+			this.labelNumSampleTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelNumSampleTest.Location = new System.Drawing.Point(173, 127);
+			this.labelNumSampleTest.Name = "labelNumSampleTest";
+			this.labelNumSampleTest.Size = new System.Drawing.Size(306, 23);
+			this.labelNumSampleTest.TabIndex = 4;
+			this.labelNumSampleTest.Text = "Предъявление 1 из 10";
+			this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(175, 30);
+			this.label1.Location = new System.Drawing.Point(182, 230);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(314, 139);
 			this.label1.TabIndex = 3;
@@ -152,7 +162,7 @@
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = global::StudyOfSubthresholdPerception.Properties.Resources._1;
-			this.pictureBox3.Location = new System.Drawing.Point(412, 200);
+			this.pictureBox3.Location = new System.Drawing.Point(401, 200);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(200, 200);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +174,7 @@
 			// pictureBox4
 			// 
 			this.pictureBox4.Image = global::StudyOfSubthresholdPerception.Properties.Resources._1;
-			this.pictureBox4.Location = new System.Drawing.Point(49, 200);
+			this.pictureBox4.Location = new System.Drawing.Point(51, 200);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(200, 200);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +190,7 @@
 			this.tabPageEX3.Enabled = false;
 			this.tabPageEX3.Location = new System.Drawing.Point(4, 25);
 			this.tabPageEX3.Name = "tabPageEX3";
-			this.tabPageEX3.Size = new System.Drawing.Size(699, 643);
+			this.tabPageEX3.Size = new System.Drawing.Size(699, 691);
 			this.tabPageEX3.TabIndex = 2;
 			this.tabPageEX3.Text = "Основная часть эксперимента";
 			// 
@@ -192,10 +202,30 @@
 			this.panel1.Controls.Add(this.labelExp);
 			this.panel1.Controls.Add(this.pictureBox2);
 			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Location = new System.Drawing.Point(19, 3);
+			this.panel1.Location = new System.Drawing.Point(19, 12);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(644, 553);
+			this.panel1.Size = new System.Drawing.Size(661, 666);
 			this.panel1.TabIndex = 2;
+			// 
+			// labelNumTest
+			// 
+			this.labelNumTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelNumTest.Location = new System.Drawing.Point(178, 75);
+			this.labelNumTest.Name = "labelNumTest";
+			this.labelNumTest.Size = new System.Drawing.Size(306, 23);
+			this.labelNumTest.TabIndex = 8;
+			this.labelNumTest.Text = "Опыт 1 из n";
+			this.labelNumTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// labelNum
+			// 
+			this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelNum.Location = new System.Drawing.Point(178, 115);
+			this.labelNum.Name = "labelNum";
+			this.labelNum.Size = new System.Drawing.Size(306, 23);
+			this.labelNum.TabIndex = 7;
+			this.labelNum.Text = "Предъявление 1 из n";
+			this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// labelExp
 			// 
@@ -233,7 +263,7 @@
 			// 
 			// buttonFinish
 			// 
-			this.buttonFinish.Location = new System.Drawing.Point(395, 674);
+			this.buttonFinish.Location = new System.Drawing.Point(391, 726);
 			this.buttonFinish.Name = "buttonFinish";
 			this.buttonFinish.Size = new System.Drawing.Size(210, 30);
 			this.buttonFinish.TabIndex = 4;
@@ -244,7 +274,7 @@
 			// 
 			// buttonNext
 			// 
-			this.buttonNext.Location = new System.Drawing.Point(613, 674);
+			this.buttonNext.Location = new System.Drawing.Point(609, 726);
 			this.buttonNext.Name = "buttonNext";
 			this.buttonNext.Size = new System.Drawing.Size(100, 30);
 			this.buttonNext.TabIndex = 3;
@@ -252,41 +282,11 @@
 			this.buttonNext.UseVisualStyleBackColor = true;
 			this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
 			// 
-			// labelNumSampleTest
-			// 
-			this.labelNumSampleTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelNumSampleTest.Location = new System.Drawing.Point(178, 7);
-			this.labelNumSampleTest.Name = "labelNumSampleTest";
-			this.labelNumSampleTest.Size = new System.Drawing.Size(306, 23);
-			this.labelNumSampleTest.TabIndex = 4;
-			this.labelNumSampleTest.Text = "Предъявление 1 из 10";
-			this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// labelNumTest
-			// 
-			this.labelNumTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelNumTest.Location = new System.Drawing.Point(178, 75);
-			this.labelNumTest.Name = "labelNumTest";
-			this.labelNumTest.Size = new System.Drawing.Size(306, 23);
-			this.labelNumTest.TabIndex = 8;
-			this.labelNumTest.Text = "Опыт 1 из n";
-			this.labelNumTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// labelNum
-			// 
-			this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelNum.Location = new System.Drawing.Point(178, 115);
-			this.labelNum.Name = "labelNum";
-			this.labelNum.Size = new System.Drawing.Size(306, 23);
-			this.labelNum.TabIndex = 7;
-			this.labelNum.Text = "Предъявление 1 из n";
-			this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// FormExperiment4
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(762, 735);
+			this.ClientSize = new System.Drawing.Size(762, 772);
 			this.Controls.Add(this.panelMain);
 			this.Name = "FormExperiment4";
 			this.Text = "Эксперимент 4";
