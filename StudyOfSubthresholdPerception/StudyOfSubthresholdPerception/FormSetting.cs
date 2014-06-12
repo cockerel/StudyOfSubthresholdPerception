@@ -69,6 +69,7 @@ namespace StudyOfSubthresholdPerception
                             textBoxEx4PointPeriod.Text = settings.PointPeriod.ToString(CultureInfo.InvariantCulture);
                             textBoxEx4ExpCount.Text = settings.Experiments.ToString(CultureInfo.InvariantCulture);
                             textBoxEx4PresCount.Text = settings.Presentations.ToString(CultureInfo.InvariantCulture);
+                            textBoxEx4PresCount.Text = settings.UnderTime.ToString(CultureInfo.InvariantCulture);
                         }
                         else
                         {
@@ -76,7 +77,7 @@ namespace StudyOfSubthresholdPerception
                             textBoxEx4CirclePeriod.Text = zeroString;
                             textBoxEx4PointPeriod.Text = zeroString;
                             textBoxEx4ExpCount.Text = zeroString;
-                            textBoxEx4PresCount.Text = zeroString;
+                            textBoxEx4PresCount.Text = Resources.DefaultUnderTime;
                         }
                         var model = ex4.GetAll();
                         for (int i = 0; i < model.Count; i++)
@@ -255,6 +256,10 @@ namespace StudyOfSubthresholdPerception
                 listTime.Add(int.Parse(textBoxSleep4.Text));
                 listTime.Add(int.Parse(textBoxSleep5.Text));
 
+                var ex4 = new Experiment4DataHelper();
+                var settings = ex4.GetSettings();
+                settings.UnderTime =textBoxTimePresent4.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent4.Text);
+                ex4.SetSettings(settings);
                 new DB().setTimeMaskAndPresent(listTime);
                 MessageBox.Show("Данные сохранены");
             }

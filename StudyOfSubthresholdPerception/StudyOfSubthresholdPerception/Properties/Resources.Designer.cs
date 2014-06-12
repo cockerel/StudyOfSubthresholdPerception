@@ -152,6 +152,15 @@ namespace StudyOfSubthresholdPerception.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 40.
+        /// </summary>
+        internal static string DefaultUnderTime {
+            get {
+                return ResourceManager.GetString("DefaultUnderTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Эксперимент завершен успешно. Просмотреть результаты эксперимента..
         /// </summary>
         internal static string EndExpMessage {

@@ -226,4 +226,7 @@
   <data name="EndExpMessage" xml:space="preserve">
     <value>Эксперимент завершен успешно. Просмотреть результаты эксперимента.</value>
   </data>
+  <data name="DefaultUnderTime" xml:space="preserve">
+    <value>40</value>
+  </data>
 </root>

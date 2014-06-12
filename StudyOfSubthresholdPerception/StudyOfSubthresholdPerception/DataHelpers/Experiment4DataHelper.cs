@@ -164,6 +164,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         model.Experiments = entity.ExperimentsCount;
                         model.CirclePeriod = entity.CirclePeriod;
                         model.Presentations = entity.PresCount;
+                        model.UnderTime = entity.UnderTime;
                     }
                 }
                 catch (Exception e)
@@ -188,7 +189,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         ExperimentsCount = settings.Experiments,
                         PointPeriod = settings.PointPeriod,
                         CirclePeriod = settings.CirclePeriod,
-                        PresCount = settings.Presentations
+                        PresCount = settings.Presentations,
+                        UnderTime = settings.UnderTime
                     });
                     context.SaveChanges();
                 }
