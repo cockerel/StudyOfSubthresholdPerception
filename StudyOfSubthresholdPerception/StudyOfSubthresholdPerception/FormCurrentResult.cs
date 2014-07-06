@@ -27,5 +27,10 @@ namespace StudyOfSubthresholdPerception
         {
             new SaveTableToFile(dataGridViewResult);
         }
+
+        private void FormCurrentResult_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,8 +67,10 @@ namespace StudyOfSubthresholdPerception
                     {
                         tabControl.SelectedIndex = (int)Tabs.Test;
                     }
+                    buttonNext.Enabled = false;
                     break;
                 case (int)Tabs.SampleTest:
+                    buttonNext.Enabled = false;
                     pictureBoxSample.Visible = false;
                     //Thread.Sleep(listTime[2]);
                     if (k < 4)
@@ -89,9 +91,11 @@ namespace StudyOfSubthresholdPerception
                     {
                         MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
+                        buttonNext.Enabled = false;
                     }
                     break;
                 case (int)Tabs.Test:
+                    buttonNext.Enabled = false;
                 loop1:
                     if (m < Experiment5.numOfPresent * Experiment5.numOfExp - 1)
                     {
@@ -301,6 +305,10 @@ namespace StudyOfSubthresholdPerception
                 timer.Stop();
                 numChange = 0;
                 check = false;
+                buttonNext.BeginInvoke(new Action(delegate()
+                {
+                    buttonNext.Enabled = true;
+                }));
             }
         }
 
@@ -411,6 +419,11 @@ namespace StudyOfSubthresholdPerception
                 {
                     pictureBoxPresentation.Image = (Image)imageConverter.ConvertFrom(byteArray);
                     pictureBoxPresentation.Visible = true;
+                }));
+
+                buttonNext.BeginInvoke(new Action(delegate()
+                {
+                    buttonNext.Enabled = true;
                 }));
             }
         }

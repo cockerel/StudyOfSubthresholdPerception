@@ -78,8 +78,10 @@ namespace StudyOfSubthresholdPerception
                     {
                         tabControl.SelectedIndex = (int)Tabs.Test;
                     }
+                    buttonNext.Enabled = false;
                     break;
                 case (int)Tabs.SampleTest:
+                    buttonNext.Enabled = false;
                     if (k < 9)
                     {
                         pictureBoxSample.Visible = false;
@@ -105,9 +107,11 @@ namespace StudyOfSubthresholdPerception
                     {
                         MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
+                        buttonNext.Enabled = false;
                     }
                     break;
                 case (int)Tabs.Test:
+                    buttonNext.Enabled = false;
                 loop1:
                     if (m < Experiment1.numOfPresent * Experiment1.numOfExp - 1)
                     {
@@ -319,6 +323,10 @@ namespace StudyOfSubthresholdPerception
                 {
                     textBoxSampleAnswer.MaxLength = labelSampleAnagram.Text.Length;
                 }));
+                buttonNext.BeginInvoke(new Action(delegate()
+                    {
+                        buttonNext.Enabled = true;
+                    }));
             }
         }
 
@@ -461,6 +469,11 @@ namespace StudyOfSubthresholdPerception
                     {
                         textBoxAnswer.MaxLength = labelAnagram.Text.Length;
                     }));
+
+                buttonNext.BeginInvoke(new Action(delegate()
+                {
+                    buttonNext.Enabled = true;
+                }));
 
                 //check = false;
                 //labelSampleAnagram.Text = Experiments.Experiment1.anagrams[k];

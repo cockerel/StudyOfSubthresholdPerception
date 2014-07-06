@@ -63,6 +63,7 @@
             this.Controls.Add(this.dataGridViewResult);
             this.Name = "FormCurrentResult";
             this.Text = "Результат";
+            this.Load += new System.EventHandler(this.FormCurrentResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
 

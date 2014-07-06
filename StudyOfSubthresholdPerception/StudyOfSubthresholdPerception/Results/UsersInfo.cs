@@ -83,7 +83,19 @@ namespace StudyOfSubthresholdPerception.Results
 
                     for (int j = 0; j < tableResults.Columns.Count; j++)
                     {
-                        dgView.Rows[i].Cells[j + 1].Value = tableResults.Rows[i][j];
+                        if (j < 2)
+                        {
+                            dgView.Rows[i].Cells[j + 1].Value = tableResults.Rows[i][j];
+                        }
+                        else
+                        {
+                            dgView.Rows[i].Cells[j + 2].Value = tableResults.Rows[i][j];
+                        }
+
+                        if (j == 2) //если текущая ячейка с id юзера
+                        {
+                            dgView.Rows[i].Cells[j + 1].Value = getUserName((int)tableResults.Rows[i][j-1]);
+                        }
                     }
                 }
                 tableResults.Clear();
@@ -117,6 +129,21 @@ namespace StudyOfSubthresholdPerception.Results
                 loadResult((int)tableUsers.Rows[index][0]);
                 return this.dgView;
             }
+        }
+
+        private String getUserName(int idUser)
+        {
+            String name = "Преподаватель";
+
+            for (int i = 0; i < tableUsers.Rows.Count; i++)
+            {
+                if ((int)tableUsers.Rows[i][0] == idUser)
+                {
+                    name = tableUsers.Rows[i][1].ToString();
+                }
+            }
+
+            return name;
         }
     }
 }

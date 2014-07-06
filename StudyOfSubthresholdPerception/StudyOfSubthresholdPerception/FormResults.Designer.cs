@@ -34,6 +34,7 @@
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberExperiment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeMask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimePresentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,18 +48,19 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridViewResults5 = new System.Windows.Forms.DataGridView();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
+            this.labelUserInfo = new System.Windows.Forms.Label();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
-            this.labelUserInfo = new System.Windows.Forms.Label();
-            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.tabControlResults.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResults1)).BeginInit();
@@ -99,6 +101,7 @@
             this.Number,
             this.Id,
             this.UserId,
+            this.Name,
             this.NumberExperiment,
             this.TimeMask,
             this.TimePresentation,
@@ -133,6 +136,12 @@
             this.UserId.Name = "UserId";
             this.UserId.ReadOnly = true;
             this.UserId.Width = 50;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Ф.И.О.";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
             // 
             // NumberExperiment
             // 
@@ -229,6 +238,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.UserName,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
@@ -240,6 +250,35 @@
             this.dataGridViewResults5.ReadOnly = true;
             this.dataGridViewResults5.Size = new System.Drawing.Size(752, 431);
             this.dataGridViewResults5.TabIndex = 1;
+            // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxUsers.TabIndex = 1;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
+            // 
+            // labelUserInfo
+            // 
+            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
+            this.labelUserInfo.Name = "labelUserInfo";
+            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
+            this.labelUserInfo.TabIndex = 2;
+            this.labelUserInfo.Text = "label1";
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.Location = new System.Drawing.Point(592, 510);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
+            this.buttonSaveToFile.TabIndex = 4;
+            this.buttonSaveToFile.Text = "Сохранить данные в файл";
+            this.buttonSaveToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -261,6 +300,12 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "Ф.И.О.";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -300,35 +345,6 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // comboBoxUsers
-            // 
-            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxUsers.FormattingEnabled = true;
-            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
-            this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
-            this.comboBoxUsers.TabIndex = 1;
-            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
-            // 
-            // labelUserInfo
-            // 
-            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
-            this.labelUserInfo.Name = "labelUserInfo";
-            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
-            this.labelUserInfo.TabIndex = 2;
-            this.labelUserInfo.Text = "label1";
-            // 
-            // buttonSaveToFile
-            // 
-            this.buttonSaveToFile.Location = new System.Drawing.Point(592, 510);
-            this.buttonSaveToFile.Name = "buttonSaveToFile";
-            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
-            this.buttonSaveToFile.TabIndex = 4;
-            this.buttonSaveToFile.Text = "Сохранить данные в файл";
-            this.buttonSaveToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
-            // 
             // FormResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +354,7 @@
             this.Controls.Add(this.labelUserInfo);
             this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tabControlResults);
-            this.Name = "FormResults";
+            //this.Name = "FormResults";
             this.Text = "Результаты";
             this.Load += new System.EventHandler(this.FormResults_Load);
             this.tabControlResults.ResumeLayout(false);
@@ -360,9 +376,13 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ComboBox comboBoxUsers;
+        private System.Windows.Forms.Label labelUserInfo;
+        private System.Windows.Forms.Button buttonSaveToFile;
+        private System.Windows.Forms.DataGridView dataGridViewResults5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberExperiment;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeMask;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimePresentation;
@@ -371,12 +391,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CorrectAnswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypedAnswer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Coincided;
-        private System.Windows.Forms.Label labelUserInfo;
-        private System.Windows.Forms.Button buttonSaveToFile;
-        private System.Windows.Forms.DataGridView dataGridViewResults5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
