@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.FormsAddData;
@@ -35,6 +36,9 @@ namespace StudyOfSubthresholdPerception
                         dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
                     }
                     break;
+                case (int)Tabs.Experiment3:
+                    var ex2 = new FormAddDataToExperiment2(this).ShowDialog();
+                    break;
                 case (int)Tabs.Experiment4:
                     new FormAddDataToExperiment4(this).ShowDialog();
                     break;
@@ -64,6 +68,9 @@ namespace StudyOfSubthresholdPerception
                         dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
                     }
                     break;
+                case (int)Tabs.Experiment3:
+                    Exp2Load();
+                    break;
                 case (int)Tabs.Experiment4:
                     Exp4Load();
                     break;
@@ -82,6 +89,22 @@ namespace StudyOfSubthresholdPerception
             for (int i = 0; i < model.Count; i++)
             {
                 dataGridViewExperiment4.Rows.Add(new object[] { i + 1, model[i].Id, model[i].Img });
+            }
+        }
+
+        public void Exp2Load()
+        {
+            dataGridView1.Rows.Clear();
+            var ex2 = new Experiment2DataHelper();
+            var model = ex2.GetData();
+            model.Sort((first, second) => first.Id.CompareTo(second.Id));
+            for (int i = 0; i < model.Count; i++)
+            {
+                using (var img = new MemoryStream(model[i].Image))
+                using (var uimg = new MemoryStream(model[i].UnderImage))
+                {
+                    dataGridView1.Rows.Add(new object[] { i + 1, model[i].Id, System.Drawing.Image.FromStream(img), System.Drawing.Image.FromStream(uimg), model[i].FirstAnswer, model[i].SecondAnswer });
+                }
             }
         }
 
@@ -106,6 +129,14 @@ namespace StudyOfSubthresholdPerception
                         }
                     }
                     break;
+                case (int)Tabs.Experiment3:
+                    var ex2 = new Experiment4DataHelper();
+                    if (dataGridViewExperiment4.SelectedRows.Count > 0)
+                    {
+                        var id = (int)dataGridView1.SelectedRows[0].Cells[1].Value;
+                        Exp4Load();
+                    }
+                    break;
                 case (int)Tabs.Experiment4:
                     var ex4 = new Experiment4DataHelper();
                     if (dataGridViewExperiment4.SelectedRows.Count > 0)
@@ -119,8 +150,6 @@ namespace StudyOfSubthresholdPerception
                     new SetEditor.Experiment5().deleteRow(dataGridViewExperiment5);
                     break;
             }
-
-
         }
 
         public DataGridView DataGridViewExperiment1

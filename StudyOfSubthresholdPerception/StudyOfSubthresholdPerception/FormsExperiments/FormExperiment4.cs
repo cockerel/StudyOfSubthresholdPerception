@@ -24,7 +24,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private Point _point;
         private Circle _circle;
-        private Experiment2ResultModel Result { get; set; }
         private int ExpCount { get; set; }
         private int PresCount { get; set; }
         private int ExperimentsCount { get; set; }
@@ -87,7 +86,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             PresentationsCount = settings.Presentations;
             CirclePeriod = settings.CirclePeriod;
             Data = ex4.GetData();
-            Result = new Experiment2ResultModel();
             var temp = (panel1.Width - 10f) / 2f;
             _circle = new Circle(temp + 5, temp + 5, temp, new Pen(Color.GreenYellow, 3));
             _point = new Point(4f, 4.8f, (float)(Math.PI / (PointPeriod * 10)) * 2, new SolidBrush(Color.DarkGreen));

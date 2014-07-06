@@ -83,11 +83,13 @@
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
+    <Compile Include="DAL\Models\Experiment2\Experiment2Data.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3Data.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3SelectedData.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3Settings.cs" />
+    <Compile Include="DataHelpers\Experiment2DataHelper.cs" />
     <Compile Include="DataHelpers\Experiment3DataHelper.cs" />
     <Compile Include="DataHelpers\Experiment4DataHelper.cs" />
     <Compile Include="DB.cs" />
@@ -99,11 +101,23 @@
     <Compile Include="FormCurrentResult.Designer.cs">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAddData\FormAddDataToExperiment2.Designer.cs">
+      <DependentUpon>FormAddDataToExperiment2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsAddData\FormAddDataToExperiment4.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsAddData\FormAddDataToExperiment4.Designer.cs">
       <DependentUpon>FormAddDataToExperiment4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsExperiments\FormExperiment2.Designer.cs">
+      <DependentUpon>FormExperiment2.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsExperiments\FormExperiment4.cs">
       <SubType>Form</SubType>
@@ -149,8 +163,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Circle.cs" />
-    <Compile Include="Models\Experiment2\Experiment2Model.cs" />
-    <Compile Include="Models\Experiment2\Experiment2ResultModel.cs" />
+    <Compile Include="Models\Experiment2\Experiment2DataModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3DataModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3SettingsModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
@@ -205,8 +218,14 @@
     <EmbeddedResource Include="FormCurrentResult.resx">
       <DependentUpon>FormCurrentResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsAddData\FormAddDataToExperiment2.resx">
+      <DependentUpon>FormAddDataToExperiment2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAddData\FormAddDataToExperiment4.resx">
       <DependentUpon>FormAddDataToExperiment4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsExperiments\FormExperiment2.resx">
+      <DependentUpon>FormExperiment2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsExperiments\FormExperiment4.resx">
       <DependentUpon>FormExperiment4.cs</DependentUpon>
