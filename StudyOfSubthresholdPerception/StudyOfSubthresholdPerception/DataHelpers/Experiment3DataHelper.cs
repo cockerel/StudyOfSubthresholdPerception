@@ -42,12 +42,12 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     if (entity != null)
                     {
                         context.Experiment3Data.Remove(entity);
-						var removed = new List<Experiment3SelectedData>();
-						removed.AddRange(context.Experiment3SelectedData.Where(x => x.FirstAnswer == entity.FirstAnswer || x.SecondAnswer == entity.SecondAnswer));
-						foreach (var item in removed)
-						{
-							context.Experiment3SelectedData.Remove(item);
-						}
+                        var removed = new List<Experiment3SelectedData>();
+                        removed.AddRange(context.Experiment3SelectedData.Where(x => x.FirstAnswer == entity.FirstAnswer || x.SecondAnswer == entity.SecondAnswer));
+                        foreach (var item in removed)
+                        {
+                            context.Experiment3SelectedData.Remove(item);
+                        }
                         context.SaveChanges();
                     }
                 }
@@ -178,6 +178,52 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         ExpCount = settings.ExpCount
                     });
                     context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        public void AddResult(Experiment3Results result)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    context.Experiment3Results.Add(new Experiment3Results
+                    {
+                        Id = result.Id,,
+                        Date = result.Date,
+                        ExperimentsCount = result.ExperimentsCount,
+                        IsRight = result.IsRight,
+                        PresentationTime = result.PresentationTime
+                    });
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+        public List<Experiment3ResultsModel> GetResults(Experiment3Results result)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+                    var results = context.Experiment3Results.Select(x => new Experiment3ResultsModel
+                    {
+                        Id = x.Id,
+                        Answer = x.Answer,
+                        Date = x.Date,
+                        ExperimentsCount = x.ExperimentsCount,
+                        IsRight = x.IsRight,
+                        PresentationTime = x.PresentationTime
+                    });
+                    return results.ToList();
                 }
                 catch (Exception e)
                 {

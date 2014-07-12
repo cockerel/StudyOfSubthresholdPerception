@@ -84,6 +84,7 @@
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment2\Experiment2Data.cs" />
+    <Compile Include="DAL\Models\Experiment3\Experiment3Results.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3Data.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Experiment2\Experiment2DataModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3DataModel.cs" />
+    <Compile Include="Models\Experiment3\Experiment3ResultsModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3SettingsModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4ImageModel.cs" />
     <Compile Include="Models\Experiment4\Experiment4Model.cs" />
@@ -305,7 +307,7 @@
   <ItemGroup>
     <Content Include="bin\TabControlEX.dll" />
     <Content Include="Data\Data.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ForExperiment2\1.gif" />
     <Content Include="Resources\ForExperiment4Test\1.jpg" />
