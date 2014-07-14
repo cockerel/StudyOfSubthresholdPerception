@@ -6,6 +6,7 @@ namespace StudyOfSubthresholdPerception.Models.Experiment3
     {
         public int Id { get; set; }
         public string Answer { get; set; }
+        public string Incentive { get; set; }
         public DateTime Date { get; set; }
         public int ExperimentsCount { get; set; }
         public int PresentationTime { get; set; }

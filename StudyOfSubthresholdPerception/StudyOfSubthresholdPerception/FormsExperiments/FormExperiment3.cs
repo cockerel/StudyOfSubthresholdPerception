@@ -18,6 +18,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private int PresCount { get; set; }
         private int Index { get; set; }
         private bool TestExp { get; set; }
+        private List<Experiment3ResultsModel> Results { get; set; }
 
         public FormExperiment3()
         {
@@ -40,6 +41,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         public void FormExperiment3_Load(object sender, EventArgs e)
         {
             TestExp = true;
+            Results = new List<Experiment3ResultsModel>();
             Reset();
             tabPage2.Enabled = false;
             tabPage3.Enabled = false;
@@ -83,6 +85,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     label3.Visible = false;
                     label4.Visible = true;
                     buttonNext.Visible = true;
+                    Results.Add(new Experiment3ResultsModel
+                    {
+                        Answer = label2.Text,
+                        Date = DateTime.Now,
+                        ExperimentsCount = ExpCount,
+                        Incentive = label3.Text,
+                        PresentationTime = timer1.Interval 
+                    });
                 }
             }
             else
@@ -117,8 +127,13 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     }
                     else
                     {
+                        var ex3 = new Experiment3DataHelper();
 						labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         label4.Visible = false;
+                        foreach (var x in Results)
+                        {
+                            ex3.AddResult(x);
+                        }
                         SetWord();
                     }
                     break;
