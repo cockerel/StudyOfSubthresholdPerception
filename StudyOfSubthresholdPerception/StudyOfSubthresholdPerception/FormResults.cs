@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlServerCe;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StudyOfSubthresholdPerception.DataHelpers;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -36,6 +38,24 @@ namespace StudyOfSubthresholdPerception
                     case (int)Tabs.Experiment1:
                         dataGridViewResults1.Rows.Clear();
                         uInfo.getUserInfo(comboBoxUsers.SelectedIndex, dataGridViewResults1, i);
+                        break;
+                    case (int)Tabs.Experiment2:
+                        dataGridViewResults2.Rows.Clear();
+                        var ex3 = new Experiment3DataHelper();
+                        var results = ex3.GetResults();
+                        for (var count = 0; count < results.Count; count++)
+                        {
+                            dataGridViewResults2.Rows.Add(new object[]
+                            {
+                                i,
+                                "",
+                                results[count].ExperimentsCount,
+                                results[count].PresentationTime,
+                                results[count].Date.ToString(CultureInfo.InvariantCulture),
+                                results[count].Incentive,
+                                results[count].Answer
+                            });
+                        }
                         break;
                     case (int)Tabs.Experiment5:
                         dataGridViewResults5.Rows.Clear();
@@ -84,6 +104,9 @@ namespace StudyOfSubthresholdPerception
             {
                 case (int)Tabs.Experiment1:
                     new SaveTableToFile(dataGridViewResults1);
+                    break;
+                case (int)Tabs.Experiment2:
+                    new SaveTableToFile(dataGridViewResults2);
                     break;
                 case (int)Tabs.Experiment5:
                     new SaveTableToFile(dataGridViewResults5);

@@ -210,7 +210,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 }
             }
         }
-        public List<Experiment3ResultsModel> GetResults(Experiment3Results result)
+        public List<Experiment3ResultsModel> GetResults()
         {
             using (var context = new DataContext())
             {

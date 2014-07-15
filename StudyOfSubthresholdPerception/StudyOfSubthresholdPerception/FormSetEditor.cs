@@ -24,17 +24,7 @@ namespace StudyOfSubthresholdPerception
                     new FormAddDataToExperiment1(this).ShowDialog();
                     break;
                 case (int)Tabs.Experiment2:
-                    var ex3 = new Experiment3DataHelper();
-                    string und = textBoxEx3Und.Text;
-                    string word1 = textBoxEx3Down1.Text;
-                    string word2 = textBoxEx3Down2.Text;
-                    ex3.AddData(new Experiment3DataModel { FirstAnswer = word1, SecondAnswer = word2, Text = und });
-                    var data = ex3.GetData();
-                    dataGridViewEx3.Rows.Clear();
-                    for (int i = 0; i < data.Count; i++)
-                    {
-                        dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
-                    }
+                    var ex3 = new FormAddDataToExperiment3(this).ShowDialog();
                     break;
                 case (int)Tabs.Experiment3:
                     var ex2 = new FormAddDataToExperiment2(this).ShowDialog();
@@ -45,6 +35,17 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment5:
                     new FormAddDataToExperiment5(this).ShowDialog();
                     break;
+            }
+        }
+
+        public void Ex3Load()
+        {
+            var ex3 = new Experiment3DataHelper();
+            var data = ex3.GetData();
+            dataGridViewEx3.Rows.Clear();
+            for (int i = 0; i < data.Count; i++)
+            {
+                dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
             }
         }
 
@@ -60,13 +61,7 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
-                    var ex3 = new Experiment3DataHelper();
-                    var data = ex3.GetData();
-                    dataGridViewEx3.Rows.Clear();
-                    for (int i = 0; i < data.Count; i++)
-                    {
-                        dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
-                    }
+                    Ex3Load();
                     break;
                 case (int)Tabs.Experiment3:
                     Exp2Load();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Schema;
@@ -122,18 +123,55 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 case 2:
                     if (ExpCount > Settings.ExpCount)
                     {
-                        var formRes = new FormResults();
+                        var table = new DataTable();
+
+                        table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Id"
+                        });
+
+                         table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Ответ"
+                        });
+
+                         table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Предъявление"
+                        });
+
+                         table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Дата"
+                        });
+
+                         table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Количество экспериментов"
+                        });
+
+                         table.Columns.Add(new DataColumn
+                        {
+                            ColumnName = "Время предъявления"
+                        });
+
+                        var ex3 = new Experiment3DataHelper();
+                        foreach (var x in Results)
+                        {
+                            ex3.AddResult(x);
+                            table.Rows.Add(new object[]
+                            {
+                                x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
+                                x.PresentationTime
+                            });
+                        }
+                        var formRes = new FormCurrentResult(table);
                         formRes.Show();
                     }
                     else
                     {
-                        var ex3 = new Experiment3DataHelper();
 						labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         label4.Visible = false;
-                        foreach (var x in Results)
-                        {
-                            ex3.AddResult(x);
-                        }
                         SetWord();
                     }
                     break;
