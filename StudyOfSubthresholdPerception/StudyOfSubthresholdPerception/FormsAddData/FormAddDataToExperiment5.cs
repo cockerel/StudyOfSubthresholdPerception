@@ -31,40 +31,50 @@ namespace StudyOfSubthresholdPerception
         private void buttonAddNeutral_Click(object sender, EventArgs e)
         {
             openFile.SelectAnImage();
-            try
+            if (openFile.getCheck == false)
             {
-                pictureBoxNeutral.Load(openFile.getPathToFile);
+                try
+                {
+                    pictureBoxNeutral.Load(openFile.getPathToFile);
+                }
+                catch
+                {
+                    MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
+                }
             }
-            catch
-            {
-                MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
-            }
+            
             
         }
 
         private void buttonAddPositive_Click(object sender, EventArgs e)
         {
             openFile.SelectAnImage();
-            try 
-            { 
-                pictureBoxPositive.Load(openFile.getPathToFile);
-            }
-            catch
+            if (openFile.getCheck == false)
             {
-                MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
+                try
+                {
+                    pictureBoxPositive.Load(openFile.getPathToFile);
+                }
+                catch
+                {
+                    MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
+                }
             }
         }
 
         private void buttonAddNegative_Click(object sender, EventArgs e)
         {
             openFile.SelectAnImage();
-            try 
-            { 
-                pictureBoxNegative.Load(openFile.getPathToFile);
-            }
-            catch
+            if (openFile.getCheck == false)
             {
-                MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
+                try
+                {
+                    pictureBoxNegative.Load(openFile.getPathToFile);
+                }
+                catch
+                {
+                    MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.MessageWrongFile);
+                }
             }
         }
 

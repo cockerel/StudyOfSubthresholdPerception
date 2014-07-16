@@ -79,8 +79,10 @@ namespace StudyOfSubthresholdPerception
                         tabControl.SelectedIndex = (int)Tabs.Test;
                     }
                     buttonNext.Enabled = false;
+                    textBoxSampleAnswer.Select();
                     break;
                 case (int)Tabs.SampleTest:
+                    buttonFinish.Enabled = false;
                     buttonNext.Enabled = false;
                     if (k < 9)
                     {
@@ -102,12 +104,18 @@ namespace StudyOfSubthresholdPerception
                         textBoxSampleAnswer.Text = String.Empty;
                         k++;
                         labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 10";
+                        textBoxSampleAnswer.Select();
                     }
                     else
                     {
                         MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
                         buttonNext.Enabled = false;
+                        //textBoxAnswer.Select();
+                        textBoxAnswer.BeginInvoke(new Action(delegate()
+                        {
+                            textBoxAnswer.Select();
+                        }));
                     }
                     break;
                 case (int)Tabs.Test:
@@ -135,6 +143,7 @@ namespace StudyOfSubthresholdPerception
                                 labelNum.Text = "Предъявление " + k + " из " + (Experiment1.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp1.addAnswerPresentation(DateTime.Now, textBoxAnswer.Text);
                                 textBoxAnswer.Text = String.Empty;
+                                textBoxAnswer.Select();
                             }
                         }
                         else
@@ -232,6 +241,12 @@ namespace StudyOfSubthresholdPerception
         {
             MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             moveToTabExp();
+            buttonNext.Enabled = false;
+            textBoxAnswer.BeginInvoke(new Action(delegate()
+            {
+                textBoxAnswer.Select();
+            }));
+            //textBoxAnswer.Select();
         }
 
         private void sampleTest()
@@ -322,11 +337,16 @@ namespace StudyOfSubthresholdPerception
                 textBoxSampleAnswer.BeginInvoke(new Action(delegate()
                 {
                     textBoxSampleAnswer.MaxLength = labelSampleAnagram.Text.Length;
+                    //textBoxAnswer.Select();
                 }));
                 buttonNext.BeginInvoke(new Action(delegate()
                     {
                         buttonNext.Enabled = true;
                     }));
+                buttonFinish.BeginInvoke(new Action(delegate()
+                {
+                    buttonFinish.Enabled = true;
+                }));
             }
         }
 

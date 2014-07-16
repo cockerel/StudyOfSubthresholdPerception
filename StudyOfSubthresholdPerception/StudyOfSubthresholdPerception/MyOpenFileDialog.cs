@@ -9,11 +9,21 @@ namespace StudyOfSubthresholdPerception
     class MyOpenFileDialog
     {
         private OpenFileDialog openFile = new OpenFileDialog();
+        private static bool cheakCancel = false;
 
         public void SelectAnImage() {
             openFile.Filter = "Точечные рисунки (*.bmp)|*.bmp|JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|PNG (*.png)|*.png|All files (*.*)|*.*";
             openFile.FilterIndex = 4;
-            openFile.ShowDialog();
+            DialogResult result = openFile.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                cheakCancel = true;
+            }
+            else
+            {
+                cheakCancel = false;
+            }
         }
 
         public String getPathToFile
@@ -23,5 +33,14 @@ namespace StudyOfSubthresholdPerception
                 return openFile.FileName;
             }
         }
+
+        public Boolean getCheck
+        {
+            get
+            {
+                return cheakCancel;
+            }
+        }
+
     }
 }

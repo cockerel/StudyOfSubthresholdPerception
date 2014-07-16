@@ -173,7 +173,8 @@ namespace StudyOfSubthresholdPerception
 
         private void textBoxesPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122))
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 97 || e.KeyChar > 122)
+                && (e.KeyChar < 'а' || e.KeyChar > 'ё'))
                 e.Handled = true;
         }
 

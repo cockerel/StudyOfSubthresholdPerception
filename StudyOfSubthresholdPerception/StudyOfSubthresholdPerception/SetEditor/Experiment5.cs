@@ -49,27 +49,34 @@ namespace StudyOfSubthresholdPerception.SetEditor
 
         public void deleteRow(DataGridView dgView)
         {
-            string id = dgView.Rows[dgView.CurrentRow.Index].Cells[1].Value.ToString();
-            string query = "DELETE FROM Experiment5 WHERE Id=" + id;
-
-            using (SqlCeConnection connection = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))
+            try
             {
-                try
+                string id = dgView.Rows[dgView.CurrentRow.Index].Cells[1].Value.ToString();
+                string query = "DELETE FROM Experiment5 WHERE Id=" + id;
+
+                using (SqlCeConnection connection = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))
                 {
-                    SqlCeCommand command = new SqlCeCommand(query, connection);
-                    if (connection.State == ConnectionState.Closed)
-                        connection.Open();
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        SqlCeCommand command = new SqlCeCommand(query, connection);
+                        if (connection.State == ConnectionState.Closed)
+                            connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        loadData(dgView);
+                    }
                 }
-                catch
-                {
-                    MessageBox.Show("Error");
-                }
-                finally
-                {
-                    connection.Close();
-                    loadData(dgView);
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Выберите набор для удаления!");
             }
         }
     }

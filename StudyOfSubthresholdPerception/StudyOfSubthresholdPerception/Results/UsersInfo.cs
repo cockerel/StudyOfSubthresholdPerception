@@ -33,6 +33,7 @@ namespace StudyOfSubthresholdPerception.Results
                 adapter.Fill(tableUsers);
 
                 formResults.ComboBoxUsers.Items.Add("Все пользователи");
+                formResults.ComboBoxUsers.Items.Add("Экспериментатор");
                 for (int i = 0; i < tableUsers.Rows.Count; i++)
                 {
                     formResults.ComboBoxUsers.Items.Add(tableUsers.Rows[i][1]);
@@ -56,12 +57,16 @@ namespace StudyOfSubthresholdPerception.Results
                 case 0:
                     if (userId == -1)
                         query = "SELECT * FROM ResultOfExperiment1";
+                    else if (userId == -2)
+                        query = "SELECT * FROM ResultOfExperiment1 WHERE UserId=0";
                     else
                         query = "SELECT * FROM ResultOfExperiment1 WHERE UserId=" + userId;
                     break;
                 case 4:
                     if (userId == -1)
                         query = "SELECT * FROM ResultsOfExperiment5";
+                    else if (userId == -2)
+                        query = "SELECT * FROM ResultsOfExperiment5 WHERE UserId=0";
                     else
                         query = "SELECT * FROM ResultsOfExperiment5 WHERE UserId=" + userId;
                     break;
@@ -121,9 +126,16 @@ namespace StudyOfSubthresholdPerception.Results
                 loadResult(-1);
                 return this.dgView;
             }
+            else if (index == 1)
+            {
+                formResults.LabelUserInfo.Text = String.Empty;
+                loadResult(-2);
+                return this.dgView;
+            }
             else
             {
-                --index;
+                //--index;
+                index -= 2;
                 formResults.LabelUserInfo.Text = "Id = " + tableUsers.Rows[index][0] + ", пол - " +
                     tableUsers.Rows[index][2] + ", возраст - " + tableUsers.Rows[index][3] + ", группа - " + tableUsers.Rows[index][4];
                 loadResult((int)tableUsers.Rows[index][0]);

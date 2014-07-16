@@ -49,27 +49,34 @@ namespace StudyOfSubthresholdPerception.SetEditor
 
         internal void deleteRow(DataGridView dataGridViewExperiment1)
         {
-            string id = dataGridViewExperiment1.Rows[dataGridViewExperiment1.CurrentRow.Index].Cells[1].Value.ToString();
-            string query = "DELETE FROM Experiment1 WHERE Id=" + id;
-
             try
             {
-                using (SqlCeConnection connection = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))
+                string id = dataGridViewExperiment1.Rows[dataGridViewExperiment1.CurrentRow.Index].Cells[1].Value.ToString();
+                string query = "DELETE FROM Experiment1 WHERE Id=" + id;
+
+                try
                 {
-                    SqlCeCommand command = new SqlCeCommand(query, connection);
-                    if (connection.State == ConnectionState.Closed)
-                        connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                    using (SqlCeConnection connection = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))
+                    {
+                        SqlCeCommand command = new SqlCeCommand(query, connection);
+                        if (connection.State == ConnectionState.Closed)
+                            connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
+                finally
+                {
+                    new SetEditor.Experiment1().loadData(dataGridViewExperiment1);
                 }
             }
             catch
             {
-                MessageBox.Show("Error");
-            }
-            finally
-            {
-                new SetEditor.Experiment1().loadData(dataGridViewExperiment1);
+                MessageBox.Show("Выберите набор для удаления!");
             }
         }
     }

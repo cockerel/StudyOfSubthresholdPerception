@@ -85,6 +85,7 @@
             // 
             // buttonFinish
             // 
+            this.buttonFinish.Enabled = false;
             this.buttonFinish.Location = new System.Drawing.Point(435, 505);
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.Size = new System.Drawing.Size(210, 30);

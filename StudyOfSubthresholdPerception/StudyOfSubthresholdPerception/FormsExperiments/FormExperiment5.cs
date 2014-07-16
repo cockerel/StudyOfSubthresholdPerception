@@ -70,6 +70,7 @@ namespace StudyOfSubthresholdPerception
                     buttonNext.Enabled = false;
                     break;
                 case (int)Tabs.SampleTest:
+                    buttonFinish.Enabled = false;
                     buttonNext.Enabled = false;
                     pictureBoxSample.Visible = false;
                     //Thread.Sleep(listTime[2]);
@@ -211,6 +212,7 @@ namespace StudyOfSubthresholdPerception
         {
             MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             moveToTabExp();
+            buttonNext.Enabled = false;
         }
 
         private void sampleTest()
@@ -308,6 +310,10 @@ namespace StudyOfSubthresholdPerception
                 buttonNext.BeginInvoke(new Action(delegate()
                 {
                     buttonNext.Enabled = true;
+                }));
+                buttonFinish.BeginInvoke(new Action(delegate()
+                {
+                    buttonFinish.Enabled = true;
                 }));
             }
         }

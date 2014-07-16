@@ -67,6 +67,8 @@ namespace StudyOfSubthresholdPerception.SettingsExperiments
         }
         public void loadData()
         {
+            formSetting.DataGridViewExpSetting5.Rows.Clear();
+
             try
             {
                 using (SqlCeConnection connection = new SqlCeConnection(@"Data Source=" + DB.connectionString + ";Max Database Size=2048"))

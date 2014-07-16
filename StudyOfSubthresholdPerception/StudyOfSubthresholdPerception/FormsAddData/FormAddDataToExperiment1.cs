@@ -87,5 +87,11 @@ namespace StudyOfSubthresholdPerception
             }
             
         }
+
+        private void textBoxAnagram_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 'а' || e.KeyChar > 'ё'))
+                e.Handled = true;
+        }
     }
 }

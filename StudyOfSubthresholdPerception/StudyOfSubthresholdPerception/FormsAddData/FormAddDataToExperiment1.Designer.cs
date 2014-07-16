@@ -57,6 +57,7 @@
             this.textBoxAnswer2.Name = "textBoxAnswer2";
             this.textBoxAnswer2.Size = new System.Drawing.Size(180, 20);
             this.textBoxAnswer2.TabIndex = 12;
+            this.textBoxAnswer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // textBoxAnswer1
             // 
@@ -64,6 +65,7 @@
             this.textBoxAnswer1.Name = "textBoxAnswer1";
             this.textBoxAnswer1.Size = new System.Drawing.Size(180, 20);
             this.textBoxAnswer1.TabIndex = 11;
+            this.textBoxAnswer1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // labelAnswer2
             // 
@@ -113,6 +115,7 @@
             this.textBoxAnagram.Name = "textBoxAnagram";
             this.textBoxAnagram.Size = new System.Drawing.Size(180, 20);
             this.textBoxAnagram.TabIndex = 14;
+            this.textBoxAnagram.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // labelAnagram
             // 
