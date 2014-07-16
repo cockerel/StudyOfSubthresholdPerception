@@ -145,7 +145,7 @@ namespace StudyOfSubthresholdPerception.Results
 
         private String getUserName(int idUser)
         {
-            String name = "Преподаватель";
+            String name = "Экспериментатор";
 
             for (int i = 0; i < tableUsers.Rows.Count; i++)
             {

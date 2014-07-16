@@ -146,13 +146,13 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 table.Columns.Add("№ предъявления");
                 adapter.Fill(table);
 
-                table.Columns[1].ColumnName = "Время маски";
-                table.Columns[2].ColumnName = "Время предъявления";
+                table.Columns[1].ColumnName = "Время предъявления маски";
+                table.Columns[2].ColumnName = "Время предъявления подпорогового стимула";
                 table.Columns[3].ColumnName = "Текущее время";
                 table.Columns[4].ColumnName = "Анаграмма";
-                table.Columns[5].ColumnName = "Правильный ответ";
+                table.Columns[5].ColumnName = "Вариант (совпадающий)";
                 table.Columns[6].ColumnName = "Введенный ответ";
-                table.Columns[7].ColumnName = "Совпал";
+                table.Columns[7].ColumnName = "Совпадение";
 
                 new FormCurrentResult(table).ShowDialog();
             }

@@ -132,10 +132,10 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 table.Columns.Add("№ предъявления");
                 adapter.Fill(table);
 
-                table.Columns[1].ColumnName = "Время маски";
-                table.Columns[2].ColumnName = "Время предъявления";
+                table.Columns[1].ColumnName = "Время предъявления маски";
+                table.Columns[2].ColumnName = "Время предъявления подпорогового стимула";
                 table.Columns[3].ColumnName = "Текущее время";
-                table.Columns[4].ColumnName = "Is_positive";
+                table.Columns[4].ColumnName = "Позитивный подпороговый стимул";
                 table.Columns[5].ColumnName = "Оценка";
 
                 new FormCurrentResult(table).ShowDialog();

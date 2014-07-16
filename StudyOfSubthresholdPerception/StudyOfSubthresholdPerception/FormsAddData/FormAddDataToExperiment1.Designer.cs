@@ -53,37 +53,37 @@
             // 
             // textBoxAnswer2
             // 
-            this.textBoxAnswer2.Location = new System.Drawing.Point(132, 350);
+            this.textBoxAnswer2.Location = new System.Drawing.Point(159, 350);
             this.textBoxAnswer2.Name = "textBoxAnswer2";
-            this.textBoxAnswer2.Size = new System.Drawing.Size(180, 20);
+            this.textBoxAnswer2.Size = new System.Drawing.Size(153, 20);
             this.textBoxAnswer2.TabIndex = 12;
             this.textBoxAnswer2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // textBoxAnswer1
             // 
-            this.textBoxAnswer1.Location = new System.Drawing.Point(132, 324);
+            this.textBoxAnswer1.Location = new System.Drawing.Point(159, 324);
             this.textBoxAnswer1.Name = "textBoxAnswer1";
-            this.textBoxAnswer1.Size = new System.Drawing.Size(180, 20);
+            this.textBoxAnswer1.Size = new System.Drawing.Size(153, 20);
             this.textBoxAnswer1.TabIndex = 11;
             this.textBoxAnswer1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // labelAnswer2
             // 
             this.labelAnswer2.AutoSize = true;
-            this.labelAnswer2.Location = new System.Drawing.Point(27, 353);
+            this.labelAnswer2.Location = new System.Drawing.Point(9, 353);
             this.labelAnswer2.Name = "labelAnswer2";
-            this.labelAnswer2.Size = new System.Drawing.Size(99, 13);
+            this.labelAnswer2.Size = new System.Drawing.Size(144, 13);
             this.labelAnswer2.TabIndex = 10;
-            this.labelAnswer2.Text = "Ответ (неверный):";
+            this.labelAnswer2.Text = "Вариант (несовпадающий):";
             // 
             // labelAnswer1
             // 
             this.labelAnswer1.AutoSize = true;
-            this.labelAnswer1.Location = new System.Drawing.Point(15, 327);
+            this.labelAnswer1.Location = new System.Drawing.Point(21, 327);
             this.labelAnswer1.Name = "labelAnswer1";
-            this.labelAnswer1.Size = new System.Drawing.Size(111, 13);
+            this.labelAnswer1.Size = new System.Drawing.Size(132, 13);
             this.labelAnswer1.TabIndex = 9;
-            this.labelAnswer1.Text = "Ответ (правильный):";
+            this.labelAnswer1.Text = "Вариант (совпадающий):";
             // 
             // buttonSelectImage
             // 
@@ -111,16 +111,16 @@
             // 
             // textBoxAnagram
             // 
-            this.textBoxAnagram.Location = new System.Drawing.Point(132, 298);
+            this.textBoxAnagram.Location = new System.Drawing.Point(159, 298);
             this.textBoxAnagram.Name = "textBoxAnagram";
-            this.textBoxAnagram.Size = new System.Drawing.Size(180, 20);
+            this.textBoxAnagram.Size = new System.Drawing.Size(153, 20);
             this.textBoxAnagram.TabIndex = 14;
             this.textBoxAnagram.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnagram_KeyPress);
             // 
             // labelAnagram
             // 
             this.labelAnagram.AutoSize = true;
-            this.labelAnagram.Location = new System.Drawing.Point(58, 301);
+            this.labelAnagram.Location = new System.Drawing.Point(85, 301);
             this.labelAnagram.Name = "labelAnagram";
             this.labelAnagram.Size = new System.Drawing.Size(68, 13);
             this.labelAnagram.TabIndex = 15;
@@ -141,7 +141,7 @@
             this.Controls.Add(this.buttonSelectImage);
             this.Controls.Add(this.pictureBox);
             this.Name = "FormAddDataToExperiment1";
-            this.Text = "Добавление предъявления";
+            this.Text = "Добавление стимулов";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
