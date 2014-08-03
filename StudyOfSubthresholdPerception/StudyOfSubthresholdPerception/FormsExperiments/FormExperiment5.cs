@@ -112,7 +112,7 @@ namespace StudyOfSubthresholdPerception
                                     //pictureBoxMask.Visible = true;
                                 }
                                 //else
-                                    //pictureBoxMask.Visible = false;
+                                //pictureBoxMask.Visible = false;
                                 //pictureBoxPresentation.Visible = false;
 
                                 pictureBoxPresentation.BeginInvoke(new Action(delegate()
@@ -121,7 +121,7 @@ namespace StudyOfSubthresholdPerception
                                 }));
 
                                 timer.Start();
-                                
+
                                 k++;
                                 labelNum.Text = "Предъявление " + k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
@@ -154,12 +154,21 @@ namespace StudyOfSubthresholdPerception
 
         private void FormExperiment5_Load(object sender, EventArgs e)
         {
-            //new DB().loadTime();
-            tabControl.SelectedIndex = 0;
-            exp5.loadData();
-            exp5.loadTestImages();
-            labelDescription.Text = labelDescription.Text.Replace("N", Experiment5.numOfExp.ToString());
-            labelDescription.Text = labelDescription.Text.Replace("M", Experiment5.numOfPresent.ToString());
+            try
+            {
+                //new DB().loadTime();
+                tabControl.SelectedIndex = 0;
+                exp5.loadData();
+                exp5.loadTestImages();
+                labelDescription.Text = labelDescription.Text.Replace("N", Experiment5.numOfExp.ToString());
+                labelDescription.Text = labelDescription.Text.Replace("M", Experiment5.numOfPresent.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -204,7 +213,7 @@ namespace StudyOfSubthresholdPerception
             {
                 labelNum.Text = "Предъявление " + ++k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
             }));
-            
+
             timer.Start();
         }
 
@@ -253,7 +262,7 @@ namespace StudyOfSubthresholdPerception
                         {
                             pictureBoxSample.Visible = false;
                         }));
-                        
+
                         Thread.Sleep(listTime[2]);
 
                         pictureBoxSample.BeginInvoke(new Action(delegate()
@@ -326,7 +335,7 @@ namespace StudyOfSubthresholdPerception
                 switch (numChange)
                 {
                     case 0:
-                        
+
 
                         Thread.Sleep(listTime[2]);
 
@@ -342,7 +351,7 @@ namespace StudyOfSubthresholdPerception
                         else
                             byteArray = (byte[])Experiment5.table.Rows[m][3];
 
-                        
+
 
                         pictureBoxPresentation.BeginInvoke(new Action(delegate()
                         {
@@ -367,7 +376,7 @@ namespace StudyOfSubthresholdPerception
                         {
                             pictureBoxPresentation.Visible = false;
                         }));
-                        
+
                         timer.Period = listTime[0];
                         break;
                     case 3:
@@ -389,7 +398,7 @@ namespace StudyOfSubthresholdPerception
                 switch (numChange)
                 {
                     case 0:
-                        
+
                         byte[] byteArray = new byte[0];
                         if ((bool)Experiment5.table.Rows[m][4] == true)
                             byteArray = (byte[])Experiment5.table.Rows[m][2];
@@ -403,7 +412,7 @@ namespace StudyOfSubthresholdPerception
                         }));
                         timer.Period = listTime[1];
                         break;
-                    
+
                     case 1:
                         pictureBoxPresentation.BeginInvoke(new Action(delegate()
                         {

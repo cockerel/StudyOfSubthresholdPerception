@@ -16,6 +16,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
         private DB db = new DB();
         private int m = 0; //счетчик текущей строки в table
         private int num = 0;
+        private static List<int> idsPresent;
 
         internal void loadData()
         {
@@ -30,6 +31,17 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 adapter.Fill(table);
                 numOfExp = Convert.ToInt32(table.Rows[0][1]);
                 numOfPresent = Convert.ToInt32(table.Rows[1][1]);
+
+                query = "SELECT SettingsForExperiment5.Id_presentation " +
+                    "FROM SettingsForExperiment5";
+                adapter = new SqlCeDataAdapter(query, DB.connection);
+                table = new DataTable();
+                adapter.Fill(table);
+                idsPresent = new List<int>();
+                foreach (DataRow row in table.Rows)
+                {
+                    idsPresent.Add(Convert.ToInt32(row[0]));
+                }
 
                 query = "SELECT Experiment5.*, SettingsForExperiment5.Is_positive " +
                     "FROM Experiment5, SettingsForExperiment5 WHERE Experiment5.Id = SettingsForExperiment5.Id_presentation";
@@ -84,8 +96,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
 
                 //-----------------------------
                 query = "INSERT INTO ResultsOfExperiment5 (UserId, NumberExperiment, TimeMask, TimePresentation, " +
-                    "ADateTime, Is_positive, Scale) VALUES (@userId, @num, @tMask, @tPresent, " +
-                    "@dt, @positive, @scale)";
+                    "ADateTime, Is_positive, Scale, IdPresent) VALUES (@userId, @num, @tMask, @tPresent, " +
+                    "@dt, @positive, @scale, @idpresent)";
                 //List<int> listTime = db.getTime(11, 12);
 
                 SqlCeCommand cmd = new SqlCeCommand(query, DB.connection);
@@ -100,6 +112,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     cmd.Parameters.AddWithValue("@dt", answersPresentation[i * 3]);
                     cmd.Parameters.AddWithValue("@positive", answersPresentation[(i * 3) + 1]); //table.Rows[i][2]);
                     cmd.Parameters.AddWithValue("@scale", answersPresentation[(i * 3) + 2]); //table.Rows[i][3]);
+                    cmd.Parameters.AddWithValue("@idpresent", idsPresent[i]);
                     cmd.ExecuteNonQuery();
                     i++;
                     cmd.Parameters.Clear();
