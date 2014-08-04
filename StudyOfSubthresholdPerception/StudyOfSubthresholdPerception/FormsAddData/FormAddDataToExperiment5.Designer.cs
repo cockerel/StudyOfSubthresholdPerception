@@ -130,6 +130,7 @@
             this.Controls.Add(this.pictureBoxPositive);
             this.Controls.Add(this.pictureBoxNeutral);
             this.Name = "FormAddDataToExperiment5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNeutral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPositive)).EndInit();

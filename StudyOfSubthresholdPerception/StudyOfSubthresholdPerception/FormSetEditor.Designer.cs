@@ -29,12 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment1 = new System.Windows.Forms.DataGridView();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewEx3 = new System.Windows.Forms.DataGridView();
             this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,19 +64,13 @@
             this.Exp4Img = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment5 = new System.Windows.Forms.DataGridView();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Answer1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
@@ -134,8 +134,52 @@
             this.dataGridViewExperiment1.ReadOnly = true;
             this.dataGridViewExperiment1.RowHeadersVisible = false;
             this.dataGridViewExperiment1.RowTemplate.Height = 100;
+            this.dataGridViewExperiment1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment1.TabIndex = 2;
+            // 
+            // Position
+            // 
+            this.Position.HeaderText = "№";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            this.Position.Width = 30;
+            // 
+            // Id
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Id.HeaderText = "Идентификатор (Id)";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 90;
+            // 
+            // Image
+            // 
+            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Image.HeaderText = "Изображение";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            // 
+            // Anagram
+            // 
+            this.Anagram.HeaderText = "Анаграмма";
+            this.Anagram.Name = "Anagram";
+            this.Anagram.ReadOnly = true;
+            this.Anagram.Width = 80;
+            // 
+            // Answer1
+            // 
+            this.Answer1.HeaderText = "Вариант (совпадающий)";
+            this.Answer1.Name = "Answer1";
+            this.Answer1.ReadOnly = true;
+            // 
+            // Answer2
+            // 
+            this.Answer2.HeaderText = "Вариант (несовпадающий)";
+            this.Answer2.Name = "Answer2";
+            this.Answer2.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -374,72 +418,9 @@
             this.dataGridViewExperiment5.ReadOnly = true;
             this.dataGridViewExperiment5.RowHeadersVisible = false;
             this.dataGridViewExperiment5.RowTemplate.Height = 100;
+            this.dataGridViewExperiment5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment5.TabIndex = 3;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(697, 527);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(12, 527);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.TabIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // Position
-            // 
-            this.Position.HeaderText = "№";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            this.Position.Width = 30;
-            // 
-            // Id
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Id.HeaderText = "Идентификатор (Id)";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 90;
-            // 
-            // Image
-            // 
-            this.Image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Image.HeaderText = "Изображение";
-            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
-            // 
-            // Anagram
-            // 
-            this.Anagram.HeaderText = "Анаграмма";
-            this.Anagram.Name = "Anagram";
-            this.Anagram.ReadOnly = true;
-            this.Anagram.Width = 80;
-            // 
-            // Answer1
-            // 
-            this.Answer1.HeaderText = "Вариант (совпадающий)";
-            this.Answer1.Name = "Answer1";
-            this.Answer1.ReadOnly = true;
-            // 
-            // Answer2
-            // 
-            this.Answer2.HeaderText = "Вариант (несовпадающий)";
-            this.Answer2.Name = "Answer2";
-            this.Answer2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -482,6 +463,27 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(697, 527);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(12, 527);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.TabIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // FormSetEditor
             // 

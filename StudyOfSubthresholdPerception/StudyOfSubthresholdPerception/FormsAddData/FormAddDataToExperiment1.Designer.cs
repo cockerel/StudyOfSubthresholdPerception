@@ -141,6 +141,7 @@
             this.Controls.Add(this.buttonSelectImage);
             this.Controls.Add(this.pictureBox);
             this.Name = "FormAddDataToExperiment1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
