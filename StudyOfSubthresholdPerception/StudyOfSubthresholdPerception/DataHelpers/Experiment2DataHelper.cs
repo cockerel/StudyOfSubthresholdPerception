@@ -7,7 +7,6 @@ using StudyOfSubthresholdPerception.DAL;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment2;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
 using StudyOfSubthresholdPerception.Models.Experiment2;
-using StudyOfSubthresholdPerception.Models.Experiment3;
 
 namespace StudyOfSubthresholdPerception.DataHelpers
 {
@@ -47,11 +46,11 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     if (entity != null)
                     {
                         context.Experiment3Data.Remove(entity);
-                        var removed = new List<Experiment3SelectedData>();
-                        removed.AddRange(context.Experiment3SelectedData.Where(x => x.FirstAnswer == entity.FirstAnswer || x.SecondAnswer == entity.SecondAnswer));
+                        var removed = new List<Experiment2SelectedData>();
+                        removed.AddRange(context.Experiment2SelectedData.Where(x => x.FirstAnswer == entity.FirstAnswer || x.SecondAnswer == entity.SecondAnswer));
                         foreach (var item in removed)
                         {
-                            context.Experiment3SelectedData.Remove(item);
+                            context.Experiment2SelectedData.Remove(item);
                         }
                         context.SaveChanges();
                     }
@@ -70,10 +69,10 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 using (var context = new DataContext())
                 {
 
-                    var entity = context.Experiment3SelectedData.FirstOrDefault(x => x.Id == id);
+                    var entity = context.Experiment2SelectedData.FirstOrDefault(x => x.Id == id);
                     if (entity != null)
                     {
-                        context.Experiment3SelectedData.Remove(entity);
+                        context.Experiment2SelectedData.Remove(entity);
                         context.SaveChanges();
                     }
                 }
@@ -91,10 +90,10 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 using (var context = new DataContext())
                 {
 
-                    var entity = context.Experiment3Data.FirstOrDefault(x => x.Id == id);
+                    var entity = context.Experiment2Data.FirstOrDefault(x => x.Id == id);
                     if (entity != null)
                     {
-                        context.Experiment3SelectedData.Add(new Experiment3SelectedData { FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text });
+                        context.Experiment2SelectedData.Add(new Experiment2SelectedData { FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Image = entity.Image, UnderImage = entity.UnderImage});
                         context.SaveChanges();
                     }
                 }
@@ -124,16 +123,16 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             }
         }
 
-        public List<Experiment3SelectedData> GetSelectedData()
+        public List<Experiment2SelectedData> GetSelectedData()
         {
-            var model = new List<Experiment3SelectedData>();
+            var model = new List<Experiment2SelectedData>();
             using (var context = new DataContext())
             {
                 try
                 {
                     model.AddRange(
-                        context.Experiment3SelectedData.ToList()
-                            .Select(entity => new Experiment3SelectedData { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Text = entity.Text }));
+                        context.Experiment2SelectedData.ToList()
+                            .Select(entity => new Experiment2SelectedData { Id = entity.Id, FirstAnswer = entity.FirstAnswer, SecondAnswer = entity.SecondAnswer, Image = entity.Image, UnderImage = entity.UnderImage}));
                 }
                 catch (Exception e)
                 {
@@ -144,19 +143,20 @@ namespace StudyOfSubthresholdPerception.DataHelpers
         }
 
 
-        public Experiment3SettingsModel GetSettings()
+        public Experiment2SettingsModel GetSettings()
         {
-            var model = new Experiment3SettingsModel();
+            var model = new Experiment2SettingsModel();
             using (var context = new DataContext())
             {
                 try
                 {
-                    var entity = context.Experimen3Settings.FirstOrDefault();
+                    var entity = context.Experimen2Settings.FirstOrDefault();
                     if (entity != null)
                     {
                         model.Id = entity.Id;
                         model.ExpCount = entity.ExpCount;
                         model.PresCount = entity.PresCount;
+                        model.Interval = entity.Interval;
                     }
                 }
                 catch (Exception e)
@@ -167,20 +167,21 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             }
         }
 
-        public void SetSettings(Experiment3SettingsModel settings)
+        public void SetSettings(Experiment2SettingsModel settings)
         {
             using (var context = new DataContext())
             {
                 try
                 {
-                    var entity = context.Experimen3Settings.FirstOrDefault();
+                    var entity = context.Experimen2Settings.FirstOrDefault();
                     if (entity != null)
-                        context.Experimen3Settings.Remove(entity);
-                    context.Experimen3Settings.Add(new Experiment3Settings
+                        context.Experimen2Settings.Remove(entity);
+                    context.Experimen2Settings.Add(new Experiment2Settings
                     {
                         Id = settings.Id,
                         PresCount = settings.PresCount,
-                        ExpCount = settings.ExpCount
+                        ExpCount = settings.ExpCount,
+                        Interval = settings.Interval
                     });
                     context.SaveChanges();
                 }

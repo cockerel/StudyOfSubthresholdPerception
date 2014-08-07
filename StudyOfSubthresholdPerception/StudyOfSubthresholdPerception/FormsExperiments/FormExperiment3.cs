@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Threading;
 using System.Windows.Forms;
-using System.Xml.Schema;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
 using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.Models.Experiment3;
@@ -24,13 +22,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         public FormExperiment3()
         {
             InitializeComponent();
+            tabControlEx3.SelectTab(tabPage1);
         }
 
         private void Reset()
         {
             Index = 0;
-            PresCount = 0;
-            ExpCount = 0;
+            PresCount = 1;
+            ExpCount = 1;
             timer1.Interval = 40;
             var ex3 = new Experiment3DataHelper();
             Settings = ex3.GetSettings();
@@ -51,23 +50,96 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void label1_Click(object sender, System.EventArgs e)
         {
             PresCount++;
+            if (!TestExp)
+            {
+                Results.Add(new Experiment3ResultsModel
+                {
+                    Answer = label1.Text,
+                    Date = DateTime.Now,
+                    ExperimentsCount = ExpCount,
+                    Incentive = label3.Text,
+                    PresentationTime = timer1.Interval
+                });
+            }
             if (PresCount > Settings.PresCount)
             {
-                PresCount = 0;
+                PresCount = 1;
                 ExpCount++;
-                if (!TestExp)
+                if (ExpCount > Settings.ExpCount)
                 {
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = true;
-                    buttonNext.Visible = true;
+                    var table = new DataTable();
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Id"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Ответ"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Предъявление"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Дата"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Количество экспериментов"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Время предъявления"
+                    });
+
+                    var ex3 = new Experiment3DataHelper();
+                    var db = new DB();
+                    foreach (var x in Results)
+                    {
+                        ex3.AddResult(x, db.ID_USER);
+                        table.Rows.Add(new object[]
+                            {
+                                x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
+                                x.PresentationTime
+                            });
+                    }
+                    MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
+                    var formRes = new FormCurrentResult(table);
+                    formRes.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Опыт завершен. Перейти к следующему опыту.");
+                    if (!TestExp)
+                    {
+                        label1.Visible = false;
+                        label2.Visible = false;
+                        label3.Visible = false;
+                        label4.Visible = true;
+                        buttonNext.Visible = true;
+                    }
+                    if (ExpCount <= Settings.ExpCount)
+                    {
+                        buttonNext.Visible = false;
+                        labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
+                        PresCount = 1;
+                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                        label4.Visible = false;
+                        SetWord();
+                    }
                 }
             }
             else
             {
-
-				labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -75,30 +147,96 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void label2_Click(object sender, System.EventArgs e)
         {
             PresCount++;
+            if (!TestExp)
+            {
+                Results.Add(new Experiment3ResultsModel
+                {
+                    Answer = label2.Text,
+                    Date = DateTime.Now,
+                    ExperimentsCount = ExpCount,
+                    Incentive = label3.Text,
+                    PresentationTime = timer1.Interval
+                });
+            }
             if (PresCount > Settings.PresCount)
             {
-                PresCount = 0;
+                PresCount = 1;
                 ExpCount++;
-                if (!TestExp)
+                if (ExpCount > Settings.ExpCount)
                 {
-                    label1.Visible = false;
-                    label2.Visible = false;
-                    label3.Visible = false;
-                    label4.Visible = true;
-                    buttonNext.Visible = true;
-                    Results.Add(new Experiment3ResultsModel
+                    var table = new DataTable();
+
+                    table.Columns.Add(new DataColumn
                     {
-                        Answer = label2.Text,
-                        Date = DateTime.Now,
-                        ExperimentsCount = ExpCount,
-                        Incentive = label3.Text,
-                        PresentationTime = timer1.Interval 
+                        ColumnName = "Id"
                     });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Ответ"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Предъявление"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Дата"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Количество экспериментов"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Время предъявления"
+                    });
+
+                    var ex3 = new Experiment3DataHelper();
+                    var db = new DB();
+                    foreach (var x in Results)
+                    {
+                        ex3.AddResult(x, db.ID_USER);
+                        table.Rows.Add(new object[]
+                        {
+                            x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
+                            x.PresentationTime
+                        });
+                    }
+                    MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
+                    var formRes = new FormCurrentResult(table);
+                    formRes.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Опыт завершен. Перейти к следующему опыту.");
+                    if (!TestExp)
+                    {
+                        label1.Visible = false;
+                        label2.Visible = false;
+                        label3.Visible = false;
+                        label4.Visible = true;
+                        buttonNext.Visible = true;
+                    }
+                    if (ExpCount <= Settings.ExpCount)
+                    {
+                        buttonNext.Visible = false;
+                        labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
+                        PresCount = 1;
+                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                        label4.Visible = false;
+                        SetWord();
+                    }
                 }
             }
             else
             {
-				labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -113,64 +251,21 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     tabControlEx3.SelectTab(tabPage2);
                     buttonFinish.Visible = true;
                     buttonNext.Visible = false;
-					labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                     Step++;
                     break;
                 case 1:
-		            PresCount = 0;
-					labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                    PresCount = 1;
+                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                    buttonNext.Visible = false;
                     break;
                 case 2:
-                    if (ExpCount > Settings.ExpCount)
+                    if (ExpCount <= Settings.ExpCount)
                     {
-                        var table = new DataTable();
-
-                        table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Id"
-                        });
-
-                         table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Ответ"
-                        });
-
-                         table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Предъявление"
-                        });
-
-                         table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Дата"
-                        });
-
-                         table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Количество экспериментов"
-                        });
-
-                         table.Columns.Add(new DataColumn
-                        {
-                            ColumnName = "Время предъявления"
-                        });
-
-                        var ex3 = new Experiment3DataHelper();
-                        foreach (var x in Results)
-                        {
-                            ex3.AddResult(x);
-                            table.Rows.Add(new object[]
-                            {
-                                x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
-                                x.PresentationTime
-                            });
-                        }
-                        var formRes = new FormCurrentResult(table);
-                        formRes.Show();
-                    }
-                    else
-                    {
-						labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
+                        buttonNext.Visible = false;
+                        labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
+                        PresCount = 1;
+                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
                         label4.Visible = false;
                         SetWord();
                     }
@@ -180,9 +275,15 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void buttonFinish_Click(object sender, System.EventArgs e)
         {
+            EndTraining();
+        }
+
+        private void EndTraining()
+        {
+            MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             Reset();
-			labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
-			labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
+            labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+            labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
             tabControlEx3.SelectTab(tabPage3);
             TestExp = false;
             buttonFinish.Visible = false;
@@ -192,6 +293,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             tabPage2.Enabled = false;
             tabPage3.Enabled = true;
         }
+
         private void SetWord()
         {
             if (Data.Count == Index)
@@ -232,16 +334,16 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void label7_Click(object sender, EventArgs e)
         {
             PresCount++;
-            if (PresCount > Settings.PresCount)
+            if (PresCount > 5)
             {
-                PresCount = 0;
+                PresCount = 1;
                 label6.Visible = false;
                 label7.Visible = false;
-                label5.Visible = true;
+                EndTraining();
             }
             else
             {
-				labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                 SetWord();
             }
         }
@@ -249,16 +351,16 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void label6_Click(object sender, EventArgs e)
         {
             PresCount++;
-            if (PresCount > Settings.PresCount)
+            if (PresCount > 5)
             {
-                PresCount = 0;
+                PresCount = 1;
                 label6.Visible = false;
                 label7.Visible = false;
-                label5.Visible = true;
+                EndTraining();
             }
             else
             {
-				labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                 SetWord();
             }
         }

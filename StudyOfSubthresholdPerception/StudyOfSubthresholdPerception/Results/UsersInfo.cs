@@ -143,7 +143,7 @@ namespace StudyOfSubthresholdPerception.Results
             }
         }
 
-        private String getUserName(int idUser)
+        public String getUserName(int idUser)
         {
             String name = "Экспериментатор";
 

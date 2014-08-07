@@ -186,7 +186,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
             }
         }
 
-        public void AddResult(Experiment3ResultsModel result)
+        public void AddResult(Experiment3ResultsModel result, int userId)
         {
             using (var context = new DataContext())
             {
@@ -200,7 +200,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         IsRight = result.IsRight,
                         PresentationTime = result.PresentationTime,
                         Answer = result.Answer,
-                        Incentive = result.Incentive
+                        Incentive = result.Incentive,
+                        UserId = userId
                     });
                     context.SaveChanges();
                 }
@@ -224,7 +225,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         ExperimentsCount = x.ExperimentsCount,
                         IsRight = x.IsRight,
                         PresentationTime = x.PresentationTime,
-                        Incentive = x.Incentive
+                        Incentive = x.Incentive,
+                        UserId = x.UserId
                     });
                     return results.ToList();
                 }

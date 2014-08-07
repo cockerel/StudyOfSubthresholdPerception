@@ -50,13 +50,17 @@ namespace StudyOfSubthresholdPerception
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex)
+            switch (textBoxEx2Exp.SelectedIndex)
             {
                 case (int)Tabs.Experiment1:
                     break;
                 case (int)Tabs.Experiment2:
                     LoadEx3();
                     LoadEx3Setings();
+                    break;
+                case (int)Tabs.Experiment3:
+                    LoadEx2();
+                    LoadEx2Setings();
                     break;
                 case (int)Tabs.Experiment4:
                     var ex4 = new Experiment4DataHelper();
@@ -139,7 +143,7 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex)
+            switch (textBoxEx2Exp.SelectedIndex)
             {
                 case (int)Tabs.Experiment1:
                     new RemoveRowFromTableSettings().removeRow(dataGridViewExpSetting1);
@@ -153,7 +157,7 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex)
+            switch (textBoxEx2Exp.SelectedIndex)
             {
                 case (int)Tabs.Experiment1:
                     settingExperiment1.saveData();
@@ -257,9 +261,14 @@ namespace StudyOfSubthresholdPerception
                 listTime.Add(int.Parse(textBoxSleep4.Text));
                 listTime.Add(int.Parse(textBoxSleep5.Text));
 
+                var ex2 = new Experiment2DataHelper();
+                var settingsEx2 = ex2.GetSettings();
+                settingsEx2.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+                ex2.SetSettings(settingsEx2);
+
                 var ex4 = new Experiment4DataHelper();
                 var settings = ex4.GetSettings();
-                settings.UnderTime =textBoxTimePresent4.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent4.Text);
+                settings.UnderTime = textBoxTimePresent4.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent4.Text);
                 ex4.SetSettings(settings);
                 new DB().setTimeMaskAndPresent(listTime);
                 MessageBox.Show("Данные сохранены");
@@ -436,12 +445,38 @@ namespace StudyOfSubthresholdPerception
 
         }
 
+        private void LoadEx2()
+        {
+            var ex2 = new Experiment2DataHelper();
+            var data = ex2.GetData();
+            var selecrteddata = ex2.GetSelectedData();
+            dataGridViewEx2.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            for (int i = 0; i < data.Count; i++)
+            {
+                dataGridView2.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+            }
+            for (int i = 0; i < selecrteddata.Count; i++)
+            {
+                dataGridViewEx2.Rows.Add(i + 1, selecrteddata[i].Id, selecrteddata[i].FirstAnswer, selecrteddata[i].SecondAnswer);
+            }
+
+        }
+
         private void LoadEx3Setings()
         {
             var ex3 = new Experiment3DataHelper();
             var settings = ex3.GetSettings();
             textBoxEx3Exp.Text = settings.ExpCount.ToString(CultureInfo.InvariantCulture);
             textBoxEx3Pres.Text = settings.PresCount.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void LoadEx2Setings()
+        {
+            var ex2 = new Experiment2DataHelper();
+            var settings = ex2.GetSettings();
+            textBoxEx2Exp.Text = settings.ExpCount.ToString(CultureInfo.InvariantCulture);
+            textBoxEx2Pres.Text = settings.PresCount.ToString(CultureInfo.InvariantCulture);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -451,7 +486,14 @@ namespace StudyOfSubthresholdPerception
             int.TryParse(textBoxEx3Exp.Text, out expCount);
             int presCount = 0;
             int.TryParse(textBoxEx3Pres.Text, out presCount);
-            ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount });
+            if (expCount * presCount == ex3.GetSelectedData().Count)
+            {
+                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount });
+            }
+            else
+            {
+                MessageBox.Show("Количество строк в таблице превышает количество предъявлений. Проверьте правильность заполнения!");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -472,6 +514,41 @@ namespace StudyOfSubthresholdPerception
                 ex3.RemoveSelectedData((int)dataGridViewEx3.SelectedRows[0].Cells[1].Value);
             }
             LoadEx3();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                var ex2 = new Experiment2DataHelper();
+                ex2.AddSelectedById((int)dataGridView2.SelectedRows[0].Cells[1].Value);
+            }
+            LoadEx2();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEx2.SelectedRows.Count > 0)
+            {
+                var ex2 = new Experiment2DataHelper();
+                ex2.RemoveSelectedData((int)dataGridViewEx2.SelectedRows[0].Cells[1].Value);
+            }
+            LoadEx2();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var ex2 = new Experiment2DataHelper();
+            int expCount = 0;
+            int.TryParse(textBox1.Text, out expCount);
+            int presCount = 0;
+            int.TryParse(textBoxEx2Pres.Text, out presCount);
+            ex2.SetSettings(new Experiment2SettingsModel { ExpCount = expCount, PresCount = presCount });
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

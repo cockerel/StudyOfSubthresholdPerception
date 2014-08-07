@@ -84,6 +84,9 @@
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Images.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4.cs" />
     <Compile Include="DAL\Models\Experiment2\Experiment2Data.cs" />
+    <Compile Include="DAL\Models\Experiment2\Experiment2Results.cs" />
+    <Compile Include="DAL\Models\Experiment2\Experiment2SelectedData.cs" />
+    <Compile Include="DAL\Models\Experiment2\Experiment2Settings.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3Results.cs" />
     <Compile Include="DAL\Models\Experiment3\Experiment3.cs" />
     <Compile Include="DAL\Models\Exoeriment4\Experiment4Settings.cs" />
@@ -171,6 +174,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Experiment2\Experiment2DataModel.cs" />
+    <Compile Include="Models\Experiment2\Experiment2SettingsModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3DataModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3ResultsModel.cs" />
     <Compile Include="Models\Experiment3\Experiment3SettingsModel.cs" />

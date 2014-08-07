@@ -37,28 +37,26 @@
             this.tabPage1 = new Dotnetrix.Controls.TabPageEX();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new Dotnetrix.Controls.TabPageEX();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelNumSampleTest = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new Dotnetrix.Controls.TabPageEX();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelNumTest = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControlEx3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -93,7 +91,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 2;
+            this.tabControlEx3.SelectedIndex = 0;
             this.tabControlEx3.Size = new System.Drawing.Size(818, 492);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -101,10 +99,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(810, 460);
+            this.tabPage1.Size = new System.Drawing.Size(810, 463);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
@@ -123,15 +121,22 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.labelNumSampleTest);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(810, 460);
+            this.tabPage2.Size = new System.Drawing.Size(810, 463);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Пробный тест";
+            this.tabPage2.Text = "Тренировочная серия";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(218, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(365, 292);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // labelNumSampleTest
             // 
@@ -142,16 +147,6 @@
             this.labelNumSampleTest.TabIndex = 6;
             this.labelNumSampleTest.Text = "Предъявление 1 из 10";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(81, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(642, 172);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Нажмите закончить тренеровочную серию";
-            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -180,16 +175,32 @@
             this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Controls.Add(this.labelNumTest);
             this.tabPage3.Controls.Add(this.labelNum);
-            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(810, 460);
+            this.tabPage3.Size = new System.Drawing.Size(810, 463);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Основная часть эксперимента";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(202, 88);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(365, 292);
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(202, 88);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(365, 292);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // labelNumTest
             // 
@@ -210,15 +221,6 @@
             this.labelNum.TabIndex = 9;
             this.labelNum.Text = "Предъявление 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(92, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(642, 101);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Нажмите далее для старта нового эксперимента";
             // 
             // label2
             // 
@@ -250,31 +252,6 @@
             this.panelMain.Size = new System.Drawing.Size(831, 538);
             this.panelMain.TabIndex = 6;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(218, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(365, 292);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(202, 88);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(365, 292);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(202, 88);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(365, 292);
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
-            // 
             // FormExperiment2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,11 +266,11 @@
             this.tabControlEx3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,10 +286,8 @@
         private Dotnetrix.Controls.TabPageEX tabPage3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label labelNumSampleTest;

@@ -162,5 +162,10 @@ namespace StudyOfSubthresholdPerception
                 return dataGridViewExperiment5;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
