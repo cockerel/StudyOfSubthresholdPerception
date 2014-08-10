@@ -266,6 +266,11 @@ namespace StudyOfSubthresholdPerception
                 settingsEx2.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
                 ex2.SetSettings(settingsEx2);
 
+                var ex3 = new Experiment3DataHelper();
+                var settingsEx3 = ex3.GetSettings();
+                settingsEx3.Interval = textBoxTimePresent3.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+                ex3.SetSettings(settingsEx3);
+
                 var ex4 = new Experiment4DataHelper();
                 var settings = ex4.GetSettings();
                 settings.UnderTime = textBoxTimePresent4.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent4.Text);
@@ -486,13 +491,16 @@ namespace StudyOfSubthresholdPerception
             int.TryParse(textBoxEx3Exp.Text, out expCount);
             int presCount = 0;
             int.TryParse(textBoxEx3Pres.Text, out presCount);
-            if (expCount * presCount == ex3.GetSelectedData().Count)
+            var count = ex3.GetSelectedData().Count;
+            if (expCount * presCount == count)
             {
-                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount });
+                var settings = ex3.GetSettings();
+                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval });
+                MessageBox.Show("Данные сохранены.");
             }
             else
             {
-                MessageBox.Show("Количество строк в таблице превышает количество предъявлений. Проверьте правильность заполнения!");
+                MessageBox.Show("Количество строк в таблице не совпадает с общим количеством предъявлений. Проверьте правильность заполнения!");
             }
         }
 

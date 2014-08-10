@@ -220,23 +220,23 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                 switch (PresCount)
                 {
-                    case 0:
+                    case 1:
                         label6.Text = "Печь";
                         label7.Text = "Медведь";
                         break;
-                    case 1:
+                    case 2:
                         label6.Text = "Мопед";
                         label7.Text = "Стол";
                         break;
-                    case 2:
+                    case 3:
                         label6.Text = "Баян";
                         label7.Text = "Ондатра";
                         break;
-                    case 3:
+                    case 4:
                         label6.Text = "Сырок";
                         label7.Text = "Тазик";
                         break;
-                    case 4:
+                    case 5:
                         label6.Text = "Мороз";
                         label7.Text = "Табуретка";
                         break;
@@ -260,23 +260,23 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                 switch (PresCount)
                 {
-                    case 0:
+                    case 1:
                          label6.Text = "Печь";
                          label7.Text = "Медведь";
                         break;
-                    case 1:
+                    case 2:
                         label6.Text = "Мопед";
                         label7.Text = "Стол";
                         break;
-                    case 2:
+                    case 3:
                         label6.Text = "Баян";
                         label7.Text = "Ондатра";
                         break;
-                    case 3:
+                    case 4:
                         label6.Text = "Сырок";
                         label7.Text = "Тазик";
                         break;
-                    case 4:
+                    case 5:
                         label6.Text = "Мороз";
                         label7.Text = "Табуретка";
                         break;

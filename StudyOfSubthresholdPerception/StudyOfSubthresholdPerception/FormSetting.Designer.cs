@@ -35,6 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxEx2Exp = new System.Windows.Forms.TabControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -343,8 +349,17 @@
             dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewExpSetting1.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExpSetting1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewExpSetting1.RowHeadersVisible = false;
             this.dataGridViewExpSetting1.RowTemplate.Height = 80;
+            this.dataGridViewExpSetting1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExpSetting1.Size = new System.Drawing.Size(580, 315);
             this.dataGridViewExpSetting1.TabIndex = 4;
             // 
@@ -359,6 +374,8 @@
             // 
             dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn2.HeaderText = "Идентификатор (Id)";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -425,8 +442,17 @@
             dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewExperiment1.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExperiment1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewExperiment1.RowHeadersVisible = false;
             this.dataGridViewExperiment1.RowTemplate.Height = 100;
+            this.dataGridViewExperiment1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(580, 300);
             this.dataGridViewExperiment1.TabIndex = 2;
             // 
@@ -441,6 +467,8 @@
             // 
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Id.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle3;
             this.Id.HeaderText = "Идентификатор (Id)";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -1178,6 +1206,7 @@
             this.dataGridViewExpSetting5.ReadOnly = true;
             this.dataGridViewExpSetting5.RowHeadersVisible = false;
             this.dataGridViewExpSetting5.RowTemplate.Height = 80;
+            this.dataGridViewExpSetting5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExpSetting5.Size = new System.Drawing.Size(580, 311);
             this.dataGridViewExpSetting5.TabIndex = 10;
             // 
@@ -1192,6 +1221,8 @@
             // 
             dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn7.HeaderText = "Идентификатор (Id)";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -1312,6 +1343,7 @@
             this.dataGridViewExperiment5.ReadOnly = true;
             this.dataGridViewExperiment5.RowHeadersVisible = false;
             this.dataGridViewExperiment5.RowTemplate.Height = 100;
+            this.dataGridViewExperiment5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(580, 300);
             this.dataGridViewExperiment5.TabIndex = 4;
             // 
@@ -1326,6 +1358,8 @@
             // 
             dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn12.HeaderText = "Идентификатор (Id)";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;

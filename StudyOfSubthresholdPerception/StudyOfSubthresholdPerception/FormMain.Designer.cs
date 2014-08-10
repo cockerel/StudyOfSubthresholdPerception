@@ -184,6 +184,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исследование подпорогового восприятия";
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

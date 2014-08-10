@@ -43,6 +43,7 @@
             this.CorrectAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypedAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Coincided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewResults2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +68,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxUsers = new System.Windows.Forms.ComboBox();
             this.labelUserInfo = new System.Windows.Forms.Label();
             this.buttonSaveToFile = new System.Windows.Forms.Button();
@@ -120,10 +122,12 @@
             this.Anagram,
             this.CorrectAnswer,
             this.TypedAnswer,
-            this.Coincided});
+            this.Coincided,
+            this.Column1});
             this.dataGridViewResults1.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewResults1.Name = "dataGridViewResults1";
             this.dataGridViewResults1.ReadOnly = true;
+            this.dataGridViewResults1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewResults1.Size = new System.Drawing.Size(899, 431);
             this.dataGridViewResults1.TabIndex = 0;
             // 
@@ -154,6 +158,7 @@
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
             this.Name.Width = 63;
+            this.Name.Width = 68;
             // 
             // NumberExperiment
             // 
@@ -180,6 +185,7 @@
             this.DataTime.Name = "DataTime";
             this.DataTime.ReadOnly = true;
             this.DataTime.Width = 70;
+            this.DataTime.Width = 94;
             // 
             // Anagram
             // 
@@ -204,6 +210,12 @@
             this.Coincided.HeaderText = "Совпадение";
             this.Coincided.Name = "Coincided";
             this.Coincided.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Идентификатор (Id) предъявления в настройках";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -328,10 +340,12 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
+            this.dataGridViewTextBoxColumn9,
+            this.Column2});
             this.dataGridViewResults5.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewResults5.Name = "dataGridViewResults5";
             this.dataGridViewResults5.ReadOnly = true;
+            this.dataGridViewResults5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewResults5.Size = new System.Drawing.Size(899, 431);
             this.dataGridViewResults5.TabIndex = 1;
             // 
@@ -403,6 +417,12 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Идентификатор (Id) предъявления в настройках";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // comboBoxUsers
             // 
             this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -441,6 +461,8 @@
             this.Controls.Add(this.labelUserInfo);
             this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tabControlResults);
+            //this.Name = "FormResults";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обработка результатов";
             this.Load += new System.EventHandler(this.FormResults_Load);
             this.tabControlResults.ResumeLayout(false);
@@ -488,6 +510,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CorrectAnswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypedAnswer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Coincided;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -498,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

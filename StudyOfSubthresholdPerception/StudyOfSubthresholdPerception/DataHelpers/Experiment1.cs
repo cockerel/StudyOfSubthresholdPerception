@@ -15,6 +15,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
         private DB db = new DB();
         private int m = 0; //счетчик текущей строки в table
         private int num = 0;
+        private static List<int> idsPresent;
 
         internal void loadData()
         {
@@ -36,6 +37,11 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 table = new DataTable();
                 adapter.Fill(table);
                 numRows = table.Rows.Count;
+                idsPresent = new List<int>();
+                foreach (DataRow row in table.Rows)
+                {
+                    idsPresent.Add(Convert.ToInt32(row[5]));
+                }
             }
             catch (SqlCeException ex)
             {
@@ -96,8 +102,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
 
                 //-----------------------------
                 query = "INSERT INTO ResultOfExperiment1 (UserId, NumberExperiment, TimeMask, TimePresentation, " +
-                    "ADateTime, Anagram, CorrectAnswer, TypedAnswer, Coincided) VALUES (@userId, @num, @tMask, @tPresent, " +
-                    "@dt, @anagram, @correct, @typed, @coincided)";
+                    "ADateTime, Anagram, CorrectAnswer, TypedAnswer, Coincided, IdPresent) VALUES (@userId, @num, @tMask, @tPresent, " +
+                    "@dt, @anagram, @correct, @typed, @coincided, @idpresent)";
                 //List<int> listTime = db.getTime(11, 12);
 
                 SqlCeCommand cmd = new SqlCeCommand(query, DB.connection);
@@ -114,6 +120,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                     cmd.Parameters.AddWithValue("@correct", answersPresentation[(i * 5) + 4]); //table.Rows[i][3]);
                     cmd.Parameters.AddWithValue("@typed", answersPresentation[(i * 5) + 1]);
                     cmd.Parameters.AddWithValue("@coincided", answersPresentation[(i * 5) + 2]);
+                    cmd.Parameters.AddWithValue("@idpresent", idsPresent[i]);
                     cmd.ExecuteNonQuery();
                     i++;
                     cmd.Parameters.Clear();

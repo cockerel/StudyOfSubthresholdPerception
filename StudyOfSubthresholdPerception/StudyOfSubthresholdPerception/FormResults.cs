@@ -55,7 +55,8 @@ namespace StudyOfSubthresholdPerception
                                 results[count].PresentationTime,
                                 results[count].Date.ToString(CultureInfo.InvariantCulture),
                                 results[count].Incentive,
-                                results[count].Answer
+                                results[count].Answer,
+                                results[count].Incentive == results[count].Answer
                             });
                         }
                         break;

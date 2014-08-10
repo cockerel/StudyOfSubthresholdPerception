@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
 using StudyOfSubthresholdPerception.DataHelpers;
@@ -17,6 +18,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private int PresCount { get; set; }
         private int Index { get; set; }
         private bool TestExp { get; set; }
+        private int UserExpCount { get; set; }
         private List<Experiment3ResultsModel> Results { get; set; }
 
         public FormExperiment3()
@@ -30,21 +32,36 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             Index = 0;
             PresCount = 1;
             ExpCount = 1;
-            timer1.Interval = 40;
             var ex3 = new Experiment3DataHelper();
             Settings = ex3.GetSettings();
+            timer1.Interval = Settings.Interval;
             Data = ex3.GetSelectedData();
-            label4.Visible = false;
             SetWord();
+            var db = new DB();
+            var prevRes = ex3.GetResults().Where(x => x.UserId == db.ID_USER).ToList();
+            if (prevRes.Any())
+            {
+                prevRes.Sort((x, y) => x.ExperimentsCount.CompareTo(y.ExperimentsCount));
+                UserExpCount = prevRes[prevRes.Count - 1].ExperimentsCount;
+            }
+            UserExpCount++;
         }
 
         public void FormExperiment3_Load(object sender, EventArgs e)
         {
-            TestExp = true;
-            Results = new List<Experiment3ResultsModel>();
-            Reset();
-            tabPage2.Enabled = false;
-            tabPage3.Enabled = false;
+            try
+            {
+                TestExp = true;
+                Results = new List<Experiment3ResultsModel>();
+                Reset();
+                tabPage2.Enabled = false;
+                tabPage3.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента");
+                Close();
+            }
         }
 
         private void label1_Click(object sender, System.EventArgs e)
@@ -112,6 +129,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
                     var formRes = new FormCurrentResult(table);
+                    formRes.TopMost = true;
                     formRes.Show();
                     Close();
                 }
@@ -123,7 +141,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         label1.Visible = false;
                         label2.Visible = false;
                         label3.Visible = false;
-                        label4.Visible = true;
                         buttonNext.Visible = true;
                     }
                     if (ExpCount <= Settings.ExpCount)
@@ -132,7 +149,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
                         labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
-                        label4.Visible = false;
                         SetWord();
                     }
                 }
@@ -153,7 +169,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     Answer = label2.Text,
                     Date = DateTime.Now,
-                    ExperimentsCount = ExpCount,
+                    ExperimentsCount = UserExpCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval
                 });
@@ -209,6 +225,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
                     var formRes = new FormCurrentResult(table);
+                    formRes.TopMost = true;
                     formRes.Show();
                     Close();
                 }
@@ -220,7 +237,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         label1.Visible = false;
                         label2.Visible = false;
                         label3.Visible = false;
-                        label4.Visible = true;
                         buttonNext.Visible = true;
                     }
                     if (ExpCount <= Settings.ExpCount)
@@ -229,7 +245,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
                         labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
-                        label4.Visible = false;
                         SetWord();
                     }
                 }
@@ -253,6 +268,29 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     buttonNext.Visible = false;
                     labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                     Step++;
+                    switch (PresCount)
+                    {
+                        case 1:
+                            label6.Text = "Печь";
+                            label7.Text = "Медведь";
+                            break;
+                        case 2:
+                            label6.Text = "Мопед";
+                            label7.Text = "Стол";
+                            break;
+                        case 3:
+                            label6.Text = "Баян";
+                            label7.Text = "Ондатра";
+                            break;
+                        case 4:
+                            label6.Text = "Сырок";
+                            label7.Text = "Тазик";
+                            break;
+                        case 5:
+                            label6.Text = "Мороз";
+                            label7.Text = "Табуретка";
+                            break;
+                    }
                     break;
                 case 1:
                     PresCount = 1;
@@ -266,7 +304,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
                         labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
-                        label4.Visible = false;
                         SetWord();
                     }
                     break;
@@ -310,11 +347,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 label3.Visible = true;
                 timer1.Start();
             }
-            else
-            {
-                label6.Text = Data[Index].FirstAnswer;
-                label7.Text = Data[Index].SecondAnswer;
-            }
             Index++;
         }
 
@@ -344,7 +376,29 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             else
             {
                 labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
-                SetWord();
+                switch (PresCount)
+                {
+                    case 1:
+                        label6.Text = "Печь";
+                        label7.Text = "Медведь";
+                        break;
+                    case 2:
+                        label6.Text = "Мопед";
+                        label7.Text = "Стол";
+                        break;
+                    case 3:
+                        label6.Text = "Баян";
+                        label7.Text = "Ондатра";
+                        break;
+                    case 4:
+                        label6.Text = "Сырок";
+                        label7.Text = "Тазик";
+                        break;
+                    case 5:
+                        label6.Text = "Мороз";
+                        label7.Text = "Табуретка";
+                        break;
+                }
             }
         }
 
@@ -361,7 +415,29 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             else
             {
                 labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
-                SetWord();
+                switch (PresCount)
+                {
+                    case 1:
+                        label6.Text = "Печь";
+                        label7.Text = "Медведь";
+                        break;
+                    case 2:
+                        label6.Text = "Мопед";
+                        label7.Text = "Стол";
+                        break;
+                    case 3:
+                        label6.Text = "Баян";
+                        label7.Text = "Ондатра";
+                        break;
+                    case 4:
+                        label6.Text = "Сырок";
+                        label7.Text = "Тазик";
+                        break;
+                    case 5:
+                        label6.Text = "Мороз";
+                        label7.Text = "Табуретка";
+                        break;
+                }
             }
         }
 

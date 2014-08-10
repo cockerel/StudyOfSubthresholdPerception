@@ -68,13 +68,14 @@
             this.panelMain.Controls.Add(this.buttonNext);
             this.panelMain.Location = new System.Drawing.Point(12, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(760, 538);
+            this.panelMain.Size = new System.Drawing.Size(860, 638);
             this.panelMain.TabIndex = 0;
             // 
             // buttonFinish
             // 
             this.buttonFinish.Enabled = false;
-            this.buttonFinish.Location = new System.Drawing.Point(435, 505);
+            this.buttonFinish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFinish.Location = new System.Drawing.Point(541, 605);
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.Size = new System.Drawing.Size(210, 30);
             this.buttonFinish.TabIndex = 2;
@@ -89,10 +90,13 @@
             this.tabControl.Controls.Add(this.tabPageEX1);
             this.tabControl.Controls.Add(this.tabPageEX2);
             this.tabControl.Controls.Add(this.tabPageEX3);
+            this.tabControl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(754, 496);
+            this.tabControl.Size = new System.Drawing.Size(854, 596);
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
             // 
             // tabPageEX1
@@ -101,18 +105,19 @@
             this.tabPageEX1.Controls.Add(this.labelDescription);
             this.tabPageEX1.Location = new System.Drawing.Point(4, 25);
             this.tabPageEX1.Name = "tabPageEX1";
-            this.tabPageEX1.Size = new System.Drawing.Size(746, 467);
+            this.tabPageEX1.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX1.TabIndex = 0;
             this.tabPageEX1.Text = "Инструкция";
             // 
             // labelDescription
             // 
-            this.labelDescription.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDescription.Location = new System.Drawing.Point(4, 4);
+            this.labelDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDescription.Location = new System.Drawing.Point(4, 9);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(739, 463);
+            this.labelDescription.Size = new System.Drawing.Size(839, 547);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = resources.GetString("labelDescription.Text");
+            this.labelDescription.UseCompatibleTextRendering = true;
             // 
             // tabPageEX2
             // 
@@ -122,16 +127,16 @@
             this.tabPageEX2.Enabled = false;
             this.tabPageEX2.Location = new System.Drawing.Point(4, 25);
             this.tabPageEX2.Name = "tabPageEX2";
-            this.tabPageEX2.Size = new System.Drawing.Size(746, 467);
+            this.tabPageEX2.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX2.TabIndex = 1;
             this.tabPageEX2.Text = "Тренировочная серия";
             // 
             // labelNumSampleTest
             // 
-            this.labelNumSampleTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumSampleTest.Location = new System.Drawing.Point(219, 10);
+            this.labelNumSampleTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNumSampleTest.Location = new System.Drawing.Point(250, 10);
             this.labelNumSampleTest.Name = "labelNumSampleTest";
-            this.labelNumSampleTest.Size = new System.Drawing.Size(306, 23);
+            this.labelNumSampleTest.Size = new System.Drawing.Size(400, 40);
             this.labelNumSampleTest.TabIndex = 3;
             this.labelNumSampleTest.Text = "Предъявление 1 из 10";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,17 +147,17 @@
             this.panelSample.Controls.Add(this.labelSampleAnagram);
             this.panelSample.Controls.Add(this.textBoxSampleAnswer);
             this.panelSample.Controls.Add(this.pictureBoxSample);
-            this.panelSample.Location = new System.Drawing.Point(219, 54);
+            this.panelSample.Location = new System.Drawing.Point(250, 80);
             this.panelSample.Name = "panelSample";
-            this.panelSample.Size = new System.Drawing.Size(306, 348);
+            this.panelSample.Size = new System.Drawing.Size(400, 450);
             this.panelSample.TabIndex = 2;
             // 
             // labelSampleAnagram
             // 
             this.labelSampleAnagram.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSampleAnagram.Location = new System.Drawing.Point(3, 115);
+            this.labelSampleAnagram.Location = new System.Drawing.Point(3, 165);
             this.labelSampleAnagram.Name = "labelSampleAnagram";
-            this.labelSampleAnagram.Size = new System.Drawing.Size(300, 80);
+            this.labelSampleAnagram.Size = new System.Drawing.Size(394, 80);
             this.labelSampleAnagram.TabIndex = 2;
             this.labelSampleAnagram.Text = "ololo";
             this.labelSampleAnagram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +166,7 @@
             // textBoxSampleAnswer
             // 
             this.textBoxSampleAnswer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSampleAnswer.Location = new System.Drawing.Point(54, 309);
+            this.textBoxSampleAnswer.Location = new System.Drawing.Point(98, 409);
             this.textBoxSampleAnswer.Name = "textBoxSampleAnswer";
             this.textBoxSampleAnswer.Size = new System.Drawing.Size(200, 29);
             this.textBoxSampleAnswer.TabIndex = 1;
@@ -171,9 +176,9 @@
             // 
             this.pictureBoxSample.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBoxSample.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBoxSample.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxSample.Location = new System.Drawing.Point(0, 3);
             this.pictureBoxSample.Name = "pictureBoxSample";
-            this.pictureBoxSample.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxSample.Size = new System.Drawing.Size(400, 400);
             this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSample.TabIndex = 0;
             this.pictureBoxSample.TabStop = false;
@@ -187,26 +192,26 @@
             this.tabPageEX3.Enabled = false;
             this.tabPageEX3.Location = new System.Drawing.Point(4, 25);
             this.tabPageEX3.Name = "tabPageEX3";
-            this.tabPageEX3.Size = new System.Drawing.Size(746, 467);
+            this.tabPageEX3.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX3.TabIndex = 2;
             this.tabPageEX3.Text = "Основная часть эксперимента";
             // 
             // labelNumTest
             // 
-            this.labelNumTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNumTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNumTest.Location = new System.Drawing.Point(220, 20);
             this.labelNumTest.Name = "labelNumTest";
-            this.labelNumTest.Size = new System.Drawing.Size(306, 23);
+            this.labelNumTest.Size = new System.Drawing.Size(400, 23);
             this.labelNumTest.TabIndex = 6;
             this.labelNumTest.Text = "Опыт 1 из n";
             this.labelNumTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNum
             // 
-            this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNum.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNum.Location = new System.Drawing.Point(220, 60);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(306, 23);
+            this.labelNum.Size = new System.Drawing.Size(400, 23);
             this.labelNum.TabIndex = 5;
             this.labelNum.Text = "Предъявление 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -220,14 +225,14 @@
             this.panel.Controls.Add(this.pictureBoxMask);
             this.panel.Location = new System.Drawing.Point(220, 100);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(306, 348);
+            this.panel.Size = new System.Drawing.Size(400, 450);
             this.panel.TabIndex = 4;
             // 
             // pictureBoxPresentation
             // 
-            this.pictureBoxPresentation.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxPresentation.Location = new System.Drawing.Point(0, 3);
             this.pictureBoxPresentation.Name = "pictureBoxPresentation";
-            this.pictureBoxPresentation.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxPresentation.Size = new System.Drawing.Size(400, 400);
             this.pictureBoxPresentation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPresentation.TabIndex = 3;
             this.pictureBoxPresentation.TabStop = false;
@@ -236,9 +241,9 @@
             // labelAnagram
             // 
             this.labelAnagram.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAnagram.Location = new System.Drawing.Point(3, 115);
+            this.labelAnagram.Location = new System.Drawing.Point(3, 165);
             this.labelAnagram.Name = "labelAnagram";
-            this.labelAnagram.Size = new System.Drawing.Size(300, 80);
+            this.labelAnagram.Size = new System.Drawing.Size(394, 80);
             this.labelAnagram.TabIndex = 2;
             this.labelAnagram.Text = "ololo";
             this.labelAnagram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,7 +252,7 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAnswer.Location = new System.Drawing.Point(54, 309);
+            this.textBoxAnswer.Location = new System.Drawing.Point(106, 409);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(200, 29);
             this.textBoxAnswer.TabIndex = 1;
@@ -257,9 +262,9 @@
             // 
             this.pictureBoxMask.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMask.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBoxMask.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxMask.Location = new System.Drawing.Point(0, 3);
             this.pictureBoxMask.Name = "pictureBoxMask";
-            this.pictureBoxMask.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxMask.Size = new System.Drawing.Size(400, 400);
             this.pictureBoxMask.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMask.TabIndex = 0;
             this.pictureBoxMask.TabStop = false;
@@ -267,7 +272,8 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(653, 505);
+            this.buttonNext.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNext.Location = new System.Drawing.Point(757, 605);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(100, 30);
             this.buttonNext.TabIndex = 1;
@@ -280,10 +286,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(884, 662);
             this.Controls.Add(this.panelMain);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormExperiment1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Эксперимент 1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormExperiment1_Load);

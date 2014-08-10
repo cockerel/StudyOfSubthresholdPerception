@@ -62,6 +62,7 @@
             this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.dataGridViewResult);
             this.Name = "FormCurrentResult";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результат";
             this.Load += new System.EventHandler(this.FormCurrentResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();

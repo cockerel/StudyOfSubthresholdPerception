@@ -43,7 +43,6 @@
             this.tabPage3 = new Dotnetrix.Controls.TabPageEX();
             this.labelNumTest = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,7 +86,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 1;
+            this.tabControlEx3.SelectedIndex = 2;
             this.tabControlEx3.Size = new System.Drawing.Size(818, 492);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -95,10 +94,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(810, 460);
+            this.tabPage1.Size = new System.Drawing.Size(810, 463);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
@@ -117,10 +116,10 @@
             this.tabPage2.Controls.Add(this.labelNumSampleTest);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(810, 460);
+            this.tabPage2.Size = new System.Drawing.Size(810, 463);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Пробный тест";
             // 
@@ -159,14 +158,13 @@
             this.tabPage3.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage3.Controls.Add(this.labelNumTest);
             this.tabPage3.Controls.Add(this.labelNum);
-            this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(810, 460);
+            this.tabPage3.Size = new System.Drawing.Size(810, 463);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Основная часть эксперимента";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -190,15 +188,6 @@
             this.labelNum.TabIndex = 9;
             this.labelNum.Text = "Предъявление 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(92, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(642, 101);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Нажмите далее для старта нового эксперимента";
             // 
             // label3
             // 
@@ -271,7 +260,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelMain;

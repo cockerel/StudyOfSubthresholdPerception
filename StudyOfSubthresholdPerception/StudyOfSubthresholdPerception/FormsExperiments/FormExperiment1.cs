@@ -171,25 +171,32 @@ namespace StudyOfSubthresholdPerception
 
         private void FormExperiment1_Load(object sender, EventArgs e)
         {
-            DoubleBuffered = true;
-            //new DB().loadTime();
-            tabControl.SelectedIndex = 0;
-            exp1.loadData();
-            exp1.loadTestAnagrams();
-            labelDescription.Text = labelDescription.Text.Replace("N", Experiment1.numOfExp.ToString());
-            labelDescription.Text = labelDescription.Text.Replace("M", Experiment1.numOfPresent.ToString());
-            
-            /*
-            if (listTime[0] == 0)
+            try
             {
-                pictureBoxSample.BeginInvoke(new Action(delegate()
-                {
-                    pictureBoxSample.Visible = false;
-                }));
-                pictureBoxMask.Visible = false;
-            }
-             */
+                DoubleBuffered = true;
+                //new DB().loadTime();
+                tabControl.SelectedIndex = 0;
+                exp1.loadData();
+                exp1.loadTestAnagrams();
+                labelDescription.Text = labelDescription.Text.Replace("N", Experiment1.numOfExp.ToString());
+                labelDescription.Text = labelDescription.Text.Replace("M", Experiment1.numOfPresent.ToString());
 
+                /*
+                if (listTime[0] == 0)
+                {
+                    pictureBoxSample.BeginInvoke(new Action(delegate()
+                    {
+                        pictureBoxSample.Visible = false;
+                    }));
+                    pictureBoxMask.Visible = false;
+                }
+                 */
+            }
+            catch
+            {
+                MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)

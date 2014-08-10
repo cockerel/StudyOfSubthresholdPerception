@@ -3,7 +3,6 @@ using System.IO;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.FormsAddData;
-using StudyOfSubthresholdPerception.Models.Experiment3;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -45,7 +44,7 @@ namespace StudyOfSubthresholdPerception
             dataGridViewEx3.Rows.Clear();
             for (int i = 0; i < data.Count; i++)
             {
-                dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+                dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer, data[i].Text);
             }
         }
 

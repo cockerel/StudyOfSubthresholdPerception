@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment1 = new System.Windows.Forms.DataGridView();
@@ -133,6 +137,7 @@
             this.dataGridViewExperiment1.ReadOnly = true;
             this.dataGridViewExperiment1.RowHeadersVisible = false;
             this.dataGridViewExperiment1.RowTemplate.Height = 100;
+            this.dataGridViewExperiment1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment1.TabIndex = 2;
             // 
@@ -147,6 +152,8 @@
             // 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Id.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id.HeaderText = "Идентификатор (Id)";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -406,6 +413,7 @@
             this.dataGridViewExperiment5.ReadOnly = true;
             this.dataGridViewExperiment5.RowHeadersVisible = false;
             this.dataGridViewExperiment5.RowTemplate.Height = 100;
+            this.dataGridViewExperiment5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment5.TabIndex = 3;
             // 
