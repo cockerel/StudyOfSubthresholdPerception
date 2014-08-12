@@ -75,7 +75,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     Date = DateTime.Now,
                     ExperimentsCount = ExpCount,
                     Incentive = label3.Text,
-                    PresentationTime = timer1.Interval
+                    PresentationTime = timer1.Interval,
+                    IsRight = true
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -171,7 +172,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     Date = DateTime.Now,
                     ExperimentsCount = UserExpCount,
                     Incentive = label3.Text,
-                    PresentationTime = timer1.Interval
+                    PresentationTime = timer1.Interval,
+                    IsRight = false
                 });
             }
             if (PresCount > Settings.PresCount)

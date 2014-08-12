@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlServerCe;
-using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DataHelpers;
 
@@ -56,7 +49,7 @@ namespace StudyOfSubthresholdPerception
                                 results[count].Date.ToString(CultureInfo.InvariantCulture),
                                 results[count].Incentive,
                                 results[count].Answer,
-                                results[count].Incentive == results[count].Answer
+                                results[count].IsRight
                             });
                         }
                         break;
