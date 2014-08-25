@@ -65,9 +65,9 @@
             // 
             // buttonFinish
             // 
-            this.buttonFinish.Location = new System.Drawing.Point(503, 501);
+            this.buttonFinish.Location = new System.Drawing.Point(583, 504);
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(210, 30);
+            this.buttonFinish.Size = new System.Drawing.Size(191, 34);
             this.buttonFinish.TabIndex = 4;
             this.buttonFinish.Text = "Закончить тренировочную серию";
             this.buttonFinish.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(721, 501);
+            this.buttonNext.Location = new System.Drawing.Point(780, 504);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(100, 30);
+            this.buttonNext.Size = new System.Drawing.Size(105, 34);
             this.buttonNext.TabIndex = 3;
             this.buttonNext.Text = "Далее";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@
             this.tabControlEx3.Controls.Add(this.tabPage1);
             this.tabControlEx3.Controls.Add(this.tabPage2);
             this.tabControlEx3.Controls.Add(this.tabPage3);
-            this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
+            this.tabControlEx3.Location = new System.Drawing.Point(11, 6);
             this.tabControlEx3.Name = "tabControlEx3";
             this.tabControlEx3.SelectedIndex = 0;
-            this.tabControlEx3.Size = new System.Drawing.Size(818, 492);
+            this.tabControlEx3.Size = new System.Drawing.Size(874, 496);
             this.tabControlEx3.TabIndex = 5;
             // 
             // tabPage1
@@ -102,7 +102,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(810, 463);
+            this.tabPage1.Size = new System.Drawing.Size(866, 467);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
@@ -249,14 +249,14 @@
             this.panelMain.Controls.Add(this.buttonFinish);
             this.panelMain.Location = new System.Drawing.Point(12, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(831, 538);
+            this.panelMain.Size = new System.Drawing.Size(903, 562);
             this.panelMain.TabIndex = 6;
             // 
             // FormExperiment2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 552);
+            this.ClientSize = new System.Drawing.Size(918, 574);
             this.Controls.Add(this.panelMain);
             this.Name = "FormExperiment2";
             this.Text = "Эксперимент 3";
