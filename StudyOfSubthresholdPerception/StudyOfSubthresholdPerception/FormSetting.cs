@@ -264,11 +264,13 @@ namespace StudyOfSubthresholdPerception
                 var ex2 = new Experiment2DataHelper();
                 var settingsEx2 = ex2.GetSettings();
                 settingsEx2.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+                settingsEx2.Mask = textBoxTimeMask2.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask2.Text);
                 ex2.SetSettings(settingsEx2);
 
                 var ex3 = new Experiment3DataHelper();
                 var settingsEx3 = ex3.GetSettings();
                 settingsEx3.Interval = textBoxTimePresent3.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+                settingsEx3.Mask = textBoxTimeMask3.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask3.Text);
                 ex3.SetSettings(settingsEx3);
 
                 var ex4 = new Experiment4DataHelper();
@@ -495,7 +497,7 @@ namespace StudyOfSubthresholdPerception
             if (expCount * presCount == count)
             {
                 var settings = ex3.GetSettings();
-                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval });
+                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval, Mask = settings.Mask});
                 MessageBox.Show("Данные сохранены.");
             }
             else

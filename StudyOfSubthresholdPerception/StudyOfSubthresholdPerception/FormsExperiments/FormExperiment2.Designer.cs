@@ -91,7 +91,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(11, 6);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 0;
+            this.tabControlEx3.SelectedIndex = 2;
             this.tabControlEx3.Size = new System.Drawing.Size(874, 496);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -126,7 +126,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(810, 463);
+            this.tabPage2.Size = new System.Drawing.Size(866, 467);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренировочная серия";
             // 
@@ -180,7 +180,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(810, 463);
+            this.tabPage3.Size = new System.Drawing.Size(866, 467);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Основная часть эксперимента";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);

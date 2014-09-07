@@ -119,7 +119,7 @@ namespace StudyOfSubthresholdPerception
                         dataGridViewEx3.Rows.Clear();
                         for (int i = 0; i < data.Count; i++)
                         {
-                            dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer);
+                            dataGridViewEx3.Rows.Add(i + 1, data[i].Id, data[i].FirstAnswer, data[i].SecondAnswer, data[i].Text);
                         }
                     }
                     break;

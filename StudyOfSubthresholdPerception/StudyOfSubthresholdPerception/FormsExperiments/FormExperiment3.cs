@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
 using StudyOfSubthresholdPerception.DataHelpers;
@@ -19,6 +20,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private int Index { get; set; }
         private bool TestExp { get; set; }
         private int UserExpCount { get; set; }
+        private bool IsFirstLabelRight { get; set; }
         private List<Experiment3ResultsModel> Results { get; set; }
 
         public FormExperiment3()
@@ -33,8 +35,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             PresCount = 1;
             ExpCount = 1;
             var ex3 = new Experiment3DataHelper();
+            WordShownFlag = false;
             Settings = ex3.GetSettings();
             timer1.Interval = Settings.Interval;
+            timer2.Interval = Settings.Mask;
             Data = ex3.GetSelectedData();
             SetWord();
             var db = new DB();
@@ -76,7 +80,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     ExperimentsCount = ExpCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
-                    IsRight = true
+                    IsRight = IsFirstLabelRight
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -173,7 +177,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     ExperimentsCount = UserExpCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
-                    IsRight = false
+                    IsRight = !IsFirstLabelRight
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -341,13 +345,26 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             if (!TestExp)
             {
-                label1.Text = Data[Index].FirstAnswer;
-                label2.Text = Data[Index].SecondAnswer;
+                var random = new Random();
+                int randomNum = random.Next(2);
+                if (randomNum == 0)
+                {
+                    label1.Text = Data[Index].FirstAnswer;
+                    label2.Text = Data[Index].SecondAnswer;
+                    IsFirstLabelRight = true;
+                }
+                else
+                {
+                    label2.Text = Data[Index].FirstAnswer;
+                    label1.Text = Data[Index].SecondAnswer;
+                    IsFirstLabelRight = false;
+                }
                 label3.Text = Data[Index].Text;
                 label1.Visible = false;
                 label2.Visible = false;
                 label3.Visible = true;
-                timer1.Start();
+                pictureBox3.Visible = true;
+                timer2.Start();
             }
             Index++;
         }
@@ -358,6 +375,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             label1.Visible = true;
             label2.Visible = true;
             timer1.Stop();
+            WordShownFlag = true;
+            pictureBox3.Visible = true;
+            timer2.Start();
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -447,6 +467,22 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             panelMain.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - panelMain.Size.Width / 2,
                 this.ClientSize.Height / 2 - panelMain.Size.Height / 2);
+        }
+
+        private bool WordShownFlag { get; set; }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            timer2.Stop();
+            if (!WordShownFlag)
+            {
+                timer1.Start();
+            }
+            else
+            {
+                WordShownFlag = false;
+            }
         }
     }
 }

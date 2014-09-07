@@ -40,7 +40,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(17, 184);
+            this.buttonAdd.Location = new System.Drawing.Point(30, 168);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(300, 30);
             this.buttonAdd.TabIndex = 13;
@@ -51,25 +51,25 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(54, 136);
+            this.label23.Location = new System.Drawing.Point(191, 113);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(82, 13);
+            this.label23.Size = new System.Drawing.Size(141, 13);
             this.label23.TabIndex = 32;
-            this.label23.Text = "Надпороговый";
+            this.label23.Text = "Вариант (несовпадающий)";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(66, 84);
+            this.label22.Location = new System.Drawing.Point(18, 113);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(82, 13);
+            this.label22.Size = new System.Drawing.Size(129, 13);
             this.label22.TabIndex = 31;
-            this.label22.Text = "Надпороговый";
+            this.label22.Text = "Вариант (совпадающий)";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(63, 41);
+            this.label21.Location = new System.Drawing.Point(94, 32);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 13);
             this.label21.TabIndex = 30;
@@ -77,30 +77,30 @@
             // 
             // textBoxEx3Down2
             // 
-            this.textBoxEx3Down2.Location = new System.Drawing.Point(153, 135);
+            this.textBoxEx3Down2.Location = new System.Drawing.Point(194, 129);
             this.textBoxEx3Down2.Name = "textBoxEx3Down2";
-            this.textBoxEx3Down2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEx3Down2.Size = new System.Drawing.Size(136, 20);
             this.textBoxEx3Down2.TabIndex = 29;
             // 
             // textBoxEx3Down1
             // 
-            this.textBoxEx3Down1.Location = new System.Drawing.Point(154, 87);
+            this.textBoxEx3Down1.Location = new System.Drawing.Point(21, 129);
             this.textBoxEx3Down1.Name = "textBoxEx3Down1";
-            this.textBoxEx3Down1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEx3Down1.Size = new System.Drawing.Size(140, 20);
             this.textBoxEx3Down1.TabIndex = 28;
             // 
             // textBoxEx3Und
             // 
-            this.textBoxEx3Und.Location = new System.Drawing.Point(154, 43);
+            this.textBoxEx3Und.Location = new System.Drawing.Point(97, 61);
             this.textBoxEx3Und.Name = "textBoxEx3Und";
-            this.textBoxEx3Und.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEx3Und.Size = new System.Drawing.Size(158, 20);
             this.textBoxEx3Und.TabIndex = 27;
             // 
-            // FormAddDataToExperiment1
+            // FormAddDataToExperiment3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 243);
+            this.ClientSize = new System.Drawing.Size(356, 243);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -108,7 +108,7 @@
             this.Controls.Add(this.textBoxEx3Down1);
             this.Controls.Add(this.textBoxEx3Und);
             this.Controls.Add(this.buttonAdd);
-            this.Name = "FormAddDataToExperiment1";
+            this.Name = "FormAddDataToExperiment3";
             this.Text = "Добавление предъявления";
             this.ResumeLayout(false);
             this.PerformLayout();

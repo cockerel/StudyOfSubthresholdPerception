@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,11 +43,6 @@
             this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewEx3 = new System.Windows.Forms.DataGridView();
-            this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3First = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Second = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +65,11 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3First = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Second = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
@@ -116,14 +112,14 @@
             // 
             this.dataGridViewExperiment1.AllowUserToAddRows = false;
             this.dataGridViewExperiment1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewExperiment1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExperiment1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewExperiment1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExperiment1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Position,
@@ -150,8 +146,6 @@
             // 
             // Id
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Id.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id.HeaderText = "Идентификатор (Id)";
@@ -215,41 +209,6 @@
             this.dataGridViewEx3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEx3.Size = new System.Drawing.Size(740, 474);
             this.dataGridViewEx3.TabIndex = 27;
-            // 
-            // Ex3Order
-            // 
-            this.Ex3Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Order.HeaderText = "№";
-            this.Ex3Order.Name = "Ex3Order";
-            this.Ex3Order.ReadOnly = true;
-            // 
-            // Ex3Id
-            // 
-            this.Ex3Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Id.HeaderText = "Id";
-            this.Ex3Id.Name = "Ex3Id";
-            this.Ex3Id.ReadOnly = true;
-            // 
-            // Ex3First
-            // 
-            this.Ex3First.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3First.HeaderText = "Надпороговый 1";
-            this.Ex3First.Name = "Ex3First";
-            this.Ex3First.ReadOnly = true;
-            // 
-            // Ex3Second
-            // 
-            this.Ex3Second.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Second.HeaderText = "Надпороговый 2";
-            this.Ex3Second.Name = "Ex3Second";
-            this.Ex3Second.ReadOnly = true;
-            // 
-            // Ex3Text
-            // 
-            this.Ex3Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Text.HeaderText = "Подпороговый";
-            this.Ex3Text.Name = "Ex3Text";
-            this.Ex3Text.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -393,14 +352,14 @@
             // 
             this.dataGridViewExperiment5.AllowUserToAddRows = false;
             this.dataGridViewExperiment5.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewExperiment5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewExperiment5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewExperiment5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExperiment5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -426,8 +385,8 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn2.HeaderText = "Идентификатор (Id)";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -480,6 +439,41 @@
             this.buttonAdd.TabIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // Ex3Order
+            // 
+            this.Ex3Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Order.HeaderText = "№";
+            this.Ex3Order.Name = "Ex3Order";
+            this.Ex3Order.ReadOnly = true;
+            // 
+            // Ex3Id
+            // 
+            this.Ex3Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Id.HeaderText = "Id";
+            this.Ex3Id.Name = "Ex3Id";
+            this.Ex3Id.ReadOnly = true;
+            // 
+            // Ex3First
+            // 
+            this.Ex3First.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3First.HeaderText = "Надпороговый (совпадающий)";
+            this.Ex3First.Name = "Ex3First";
+            this.Ex3First.ReadOnly = true;
+            // 
+            // Ex3Second
+            // 
+            this.Ex3Second.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Second.HeaderText = "Надпороговый (несовпадающий)";
+            this.Ex3Second.Name = "Ex3Second";
+            this.Ex3Second.ReadOnly = true;
+            // 
+            // Ex3Text
+            // 
+            this.Ex3Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Text.HeaderText = "Подпороговый";
+            this.Ex3Text.Name = "Ex3Text";
+            this.Ex3Text.ReadOnly = true;
+            // 
             // FormSetEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,11 +523,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Exp4Id;
         private System.Windows.Forms.DataGridViewImageColumn Exp4Img;
         private System.Windows.Forms.DataGridView dataGridViewEx3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Order;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3First;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Second;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Text;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -552,5 +541,10 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3First;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Second;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ex3Text;
     }
 }

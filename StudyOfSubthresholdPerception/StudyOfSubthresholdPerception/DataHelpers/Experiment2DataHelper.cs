@@ -181,7 +181,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         Id = settings.Id,
                         PresCount = settings.PresCount,
                         ExpCount = settings.ExpCount,
-                        Interval = settings.Interval
+                        Interval = settings.Interval,
+                        Mask = settings.Mask
                     });
                     context.SaveChanges();
                 }

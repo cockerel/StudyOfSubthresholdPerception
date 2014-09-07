@@ -153,6 +153,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         model.ExpCount = entity.ExpCount;
                         model.PresCount = entity.PresCount;
                         model.Interval = entity.Interval;
+                        model.Mask = entity.Mask;
                     }
                 }
                 catch (Exception e)
@@ -177,7 +178,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         Id = settings.Id,
                         PresCount = settings.PresCount,
                         ExpCount = settings.ExpCount,
-                        Interval = settings.Interval
+                        Interval = settings.Interval,
+                        Mask = settings.Mask
                     });
                     context.SaveChanges();
                 }
