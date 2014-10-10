@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using StudyOfSubthresholdPerception.DAL;
-using StudyOfSubthresholdPerception.DAL.Models.Exoeriment4;
 using StudyOfSubthresholdPerception.DAL.Models.Experiment3;
-using StudyOfSubthresholdPerception.Models.Experiment2;
 using StudyOfSubthresholdPerception.Models.Experiment3;
-using StudyOfSubthresholdPerception.Models.Experiment4;
 
 namespace StudyOfSubthresholdPerception.DataHelpers
 {

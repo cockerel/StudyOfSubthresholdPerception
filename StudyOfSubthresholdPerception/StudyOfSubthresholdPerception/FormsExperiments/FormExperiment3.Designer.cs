@@ -90,7 +90,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 0;
+            this.tabControlEx3.SelectedIndex = 2;
             this.tabControlEx3.Size = new System.Drawing.Size(851, 507);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -98,10 +98,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(843, 478);
+            this.tabPage1.Size = new System.Drawing.Size(843, 475);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
@@ -123,10 +123,10 @@
             this.tabPage2.Controls.Add(this.labelNumSampleTest);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(843, 478);
+            this.tabPage2.Size = new System.Drawing.Size(843, 475);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренировочная серия";
             // 
@@ -178,10 +178,10 @@
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(843, 478);
+            this.tabPage3.Size = new System.Drawing.Size(843, 475);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Основная часть эксперимента";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -189,7 +189,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBox3.Location = new System.Drawing.Point(234, 108);
+            this.pictureBox3.Location = new System.Drawing.Point(251, 96);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(282, 279);
             this.pictureBox3.TabIndex = 13;
@@ -199,7 +199,7 @@
             // labelNumTest
             // 
             this.labelNumTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumTest.Location = new System.Drawing.Point(224, 22);
+            this.labelNumTest.Location = new System.Drawing.Point(237, 17);
             this.labelNumTest.Name = "labelNumTest";
             this.labelNumTest.Size = new System.Drawing.Size(306, 23);
             this.labelNumTest.TabIndex = 10;
@@ -209,7 +209,7 @@
             // labelNum
             // 
             this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNum.Location = new System.Drawing.Point(224, 62);
+            this.labelNum.Location = new System.Drawing.Point(237, 57);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(306, 23);
             this.labelNum.TabIndex = 9;
@@ -219,7 +219,8 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(273, 205);
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label3.Location = new System.Drawing.Point(276, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(243, 84);
             this.label3.TabIndex = 2;
@@ -227,8 +228,8 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(448, 390);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(491, 378);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(335, 84);
             this.label2.TabIndex = 1;
@@ -237,10 +238,10 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(111, 390);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(41, 378);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 84);
+            this.label1.Size = new System.Drawing.Size(421, 84);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
