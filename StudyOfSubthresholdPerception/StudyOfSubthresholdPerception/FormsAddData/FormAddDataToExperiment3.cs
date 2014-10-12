@@ -28,5 +28,15 @@ namespace StudyOfSubthresholdPerception
             textBoxEx3Down1.Text = string.Empty;
             textBoxEx3Down2.Text = string.Empty;
         }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

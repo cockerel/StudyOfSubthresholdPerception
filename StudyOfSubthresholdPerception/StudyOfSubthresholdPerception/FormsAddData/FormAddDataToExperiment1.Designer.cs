@@ -79,11 +79,12 @@
             // labelAnswer1
             // 
             this.labelAnswer1.AutoSize = true;
-            this.labelAnswer1.Location = new System.Drawing.Point(21, 327);
+            this.labelAnswer1.Location = new System.Drawing.Point(9, 327);
             this.labelAnswer1.Name = "labelAnswer1";
             this.labelAnswer1.Size = new System.Drawing.Size(132, 13);
             this.labelAnswer1.TabIndex = 9;
             this.labelAnswer1.Text = "Вариант (совпадающий):";
+            this.labelAnswer1.Click += new System.EventHandler(this.labelAnswer1_Click);
             // 
             // buttonSelectImage
             // 
@@ -120,7 +121,7 @@
             // labelAnagram
             // 
             this.labelAnagram.AutoSize = true;
-            this.labelAnagram.Location = new System.Drawing.Point(85, 301);
+            this.labelAnagram.Location = new System.Drawing.Point(9, 301);
             this.labelAnagram.Name = "labelAnagram";
             this.labelAnagram.Size = new System.Drawing.Size(68, 13);
             this.labelAnagram.TabIndex = 15;

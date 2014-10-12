@@ -93,5 +93,10 @@ namespace StudyOfSubthresholdPerception
             if (e.KeyChar != 8 && (e.KeyChar < 'а' || e.KeyChar > 'ё'))
                 e.Handled = true;
         }
+
+        private void labelAnswer1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
