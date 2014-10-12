@@ -11,6 +11,8 @@ namespace StudyOfSubthresholdPerception.Models.Experiment3
         public int ExperimentsCount { get; set; }
         public int PresentationTime { get; set; }
         public bool IsRight { get; set; }
+        public int Mask { get; set; }
+        public int MaskAfter { get; set; }
         public int UserId { get; set; }
     }
 }

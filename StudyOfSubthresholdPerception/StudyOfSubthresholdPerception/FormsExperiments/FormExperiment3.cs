@@ -39,6 +39,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             Settings = ex3.GetSettings();
             timer1.Interval = Settings.Interval;
             timer2.Interval = Settings.Mask;
+            timer3.Interval = Settings.MaskAfter;
             Data = ex3.GetSelectedData();
             SetWord();
             var db = new DB();
@@ -80,7 +81,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     ExperimentsCount = ExpCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
-                    IsRight = IsFirstLabelRight
+                    IsRight = IsFirstLabelRight,
+                    Mask = Settings.Mask,
+                    MaskAfter = Settings.MaskAfter
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -177,7 +180,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     ExperimentsCount = UserExpCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
-                    IsRight = !IsFirstLabelRight
+                    IsRight = !IsFirstLabelRight,
+                    Mask = Settings.Mask,
+                    MaskAfter = Settings.MaskAfter
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -187,11 +192,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 if (ExpCount > Settings.ExpCount)
                 {
                     var table = new DataTable();
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Id"
-                    });
 
                     table.Columns.Add(new DataColumn
                     {
@@ -218,6 +218,16 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ColumnName = "Время предъявления"
                     });
 
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Время предъявления маски"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Время до маски"
+                    });
+
                     var ex3 = new Experiment3DataHelper();
                     var db = new DB();
                     foreach (var x in Results)
@@ -225,8 +235,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
                         {
-                            x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
-                            x.PresentationTime
+                            x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
+                            x.PresentationTime, Settings.Mask, Settings.MaskAfter
                         });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
@@ -273,6 +283,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     buttonFinish.Visible = true;
                     buttonNext.Visible = false;
                     labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
+                    label6.Visible = false;
+                    label7.Visible = false;
+                    timer3.Start();
                     Step++;
                     switch (PresCount)
                     {
@@ -362,22 +375,73 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 label3.Text = Data[Index].Text;
                 label1.Visible = false;
                 label2.Visible = false;
-                label3.Visible = true;
-                pictureBox3.Visible = true;
-                timer2.Start();
+                label3.Visible = false;
+                timer3.Start();
             }
             Index++;
         }
 
+        private bool IsEndFlag { get; set; }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (IsEndFlag)
+            {
+                if (!TestExp)
+                {
+                    pictureBox3.Visible = false;
+                    label3.Visible = false;
+                    timer3.Stop();
+                    label1.Visible = true;
+                    label2.Visible = true;
+                    IsEndFlag = false;
+                }
+                else
+                {
+                    pictureBox1.Visible = false;
+                    timer3.Stop();
+                    label6.Visible = true;
+                    label7.Visible = true;
+                    IsEndFlag = false;
+                }
+            }
+            else
+            {
+                if (!TestExp)
+                {
+                    timer2.Start();
+                    timer3.Stop();
+                    pictureBox3.Visible = true;
+                    label3.Visible = true;
+                    IsEndFlag = true;
+                }
+                else
+                {
+                    timer2.Start();
+                    timer3.Stop();
+                    pictureBox1.Visible = true;
+                    IsEndFlag = true;
+                }
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label3.Visible = false;
-            label1.Visible = true;
-            label2.Visible = true;
-            timer1.Stop();
-            WordShownFlag = true;
-            pictureBox3.Visible = true;
-            timer2.Start();
+            if (!TestExp)
+            {
+                label3.Visible = false;
+                timer1.Stop();
+                WordShownFlag = true;
+                pictureBox3.Visible = true;
+                timer2.Start();
+            }
+            else
+            {
+                timer1.Stop();
+                WordShownFlag = true;
+                pictureBox1.Visible = true;
+                timer2.Start();
+            }
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -421,6 +485,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         label7.Text = "Табуретка";
                         break;
                 }
+                label6.Visible = false;
+                label7.Visible = false;
+                timer3.Start();
             }
         }
 
@@ -460,6 +527,9 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         label7.Text = "Табуретка";
                         break;
                 }
+                label6.Visible = false;
+                label7.Visible = false;
+                timer3.Start();
             }
         }
 
@@ -474,6 +544,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private void timer2_Tick(object sender, EventArgs e)
         {
             pictureBox3.Visible = false;
+            pictureBox1.Visible = false;
             timer2.Stop();
             if (!WordShownFlag)
             {
@@ -482,6 +553,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             else
             {
                 WordShownFlag = false;
+                timer3.Start();
             }
         }
     }

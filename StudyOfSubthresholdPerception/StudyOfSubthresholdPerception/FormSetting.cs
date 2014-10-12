@@ -263,14 +263,15 @@ namespace StudyOfSubthresholdPerception
 
                 var ex2 = new Experiment2DataHelper();
                 var settingsEx2 = ex2.GetSettings();
-                settingsEx2.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
-                settingsEx2.Mask = textBoxTimeMask2.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask2.Text);
+                settingsEx2.Interval = textBoxTimePresent3.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent3.Text);
+                settingsEx2.Mask = textBoxTimeMask3.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask3.Text);
                 ex2.SetSettings(settingsEx2);
 
                 var ex3 = new Experiment3DataHelper();
                 var settingsEx3 = ex3.GetSettings();
-                settingsEx3.Interval = textBoxTimePresent3.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
-                settingsEx3.Mask = textBoxTimeMask3.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask3.Text);
+                settingsEx3.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+                settingsEx3.Mask = textBoxTimeMask2.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask2.Text);
+                settingsEx3.MaskAfter = textBoxSleep2.Text == String.Empty ? 40 : int.Parse(textBoxSleep2.Text);
                 ex3.SetSettings(settingsEx3);
 
                 var ex4 = new Experiment4DataHelper();

@@ -150,6 +150,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         model.PresCount = entity.PresCount;
                         model.Interval = entity.Interval;
                         model.Mask = entity.Mask;
+                        model.MaskAfter = entity.MaskAfter;
                     }
                 }
                 catch (Exception e)
@@ -175,7 +176,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         PresCount = settings.PresCount,
                         ExpCount = settings.ExpCount,
                         Interval = settings.Interval,
-                        Mask = settings.Mask
+                        Mask = settings.Mask,
+                        MaskAfter = settings.MaskAfter
                     });
                     context.SaveChanges();
                 }
@@ -201,7 +203,9 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         PresentationTime = result.PresentationTime,
                         Answer = result.Answer,
                         Incentive = result.Incentive,
-                        UserId = userId
+                        UserId = userId,
+                        MaskAfter = result.MaskAfter,
+                        Mask = result.Mask
                     });
                     context.SaveChanges();
                 }
@@ -226,7 +230,9 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         IsRight = x.IsRight,
                         PresentationTime = x.PresentationTime,
                         Incentive = x.Incentive,
-                        UserId = x.UserId
+                        UserId = x.UserId,
+                        Mask = x.Mask,
+                        MaskAfter = x.MaskAfter
                     });
                     return results.ToList();
                 }

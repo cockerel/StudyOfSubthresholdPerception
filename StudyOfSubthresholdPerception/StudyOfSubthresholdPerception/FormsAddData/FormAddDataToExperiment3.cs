@@ -18,7 +18,6 @@ namespace StudyOfSubthresholdPerception
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
             var ex3 = new Experiment3DataHelper();
             string und = textBoxEx3Und.Text;
             string word1 = textBoxEx3Down1.Text;

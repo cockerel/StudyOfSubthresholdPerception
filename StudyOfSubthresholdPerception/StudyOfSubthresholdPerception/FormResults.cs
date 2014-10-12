@@ -45,6 +45,8 @@ namespace StudyOfSubthresholdPerception
                                 count+1,
                                 uInfo.getUserName(results[count].UserId),
                                 results[count].ExperimentsCount,
+                                results[count].Mask,
+                                results[count].MaskAfter,
                                 results[count].PresentationTime,
                                 results[count].Date.ToString(CultureInfo.InvariantCulture),
                                 results[count].Incentive,

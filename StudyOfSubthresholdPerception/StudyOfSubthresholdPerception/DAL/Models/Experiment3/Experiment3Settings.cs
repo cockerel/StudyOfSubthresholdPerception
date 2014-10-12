@@ -10,5 +10,6 @@ namespace StudyOfSubthresholdPerception.DAL.Models.Experiment3
         public int PresCount { get; set; }
         public int Interval { get; set; }
         public int Mask { get; set; }
+        public int MaskAfter { get; set; }
     }
 }

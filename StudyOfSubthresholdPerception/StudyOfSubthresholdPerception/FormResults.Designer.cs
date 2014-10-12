@@ -67,6 +67,8 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaskAfterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaskColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,7 +159,7 @@
             this.Name.HeaderText = "Ф.И.О.";
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
-            this.Name.Width = 68;
+            this.Name.Width = 63;
             // 
             // NumberExperiment
             // 
@@ -183,7 +185,7 @@
             this.DataTime.HeaderText = "Дата и время";
             this.DataTime.Name = "DataTime";
             this.DataTime.ReadOnly = true;
-            this.DataTime.Width = 94;
+            this.DataTime.Width = 70;
             // 
             // Anagram
             // 
@@ -235,6 +237,8 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
+            this.MaskAfterColumn,
+            this.MaskColumn,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
@@ -324,7 +328,7 @@
             this.UserName.HeaderText = "Ф.И.О.";
             this.UserName.Name = "UserName";
             this.UserName.ReadOnly = true;
-            this.UserName.Width = 68;
+            this.UserName.Width = 63;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -350,7 +354,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Дата и время";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 94;
+            this.dataGridViewTextBoxColumn7.Width = 70;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -419,6 +423,18 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Номер эксперимента";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // MaskAfterColumn
+            // 
+            this.MaskAfterColumn.HeaderText = "Время до маски";
+            this.MaskAfterColumn.Name = "MaskAfterColumn";
+            this.MaskAfterColumn.ReadOnly = true;
+            // 
+            // MaskColumn
+            // 
+            this.MaskColumn.HeaderText = "Время предъявления маски";
+            this.MaskColumn.Name = "MaskColumn";
+            this.MaskColumn.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -514,6 +530,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaskAfterColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaskColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
