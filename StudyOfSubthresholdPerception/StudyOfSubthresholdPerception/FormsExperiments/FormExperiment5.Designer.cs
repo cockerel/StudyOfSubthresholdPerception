@@ -82,14 +82,15 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(860, 638);
             this.panelMain.TabIndex = 0;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // buttonFinish
             // 
             this.buttonFinish.Enabled = false;
             this.buttonFinish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFinish.Location = new System.Drawing.Point(541, 605);
+            this.buttonFinish.Location = new System.Drawing.Point(496, 605);
             this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(210, 30);
+            this.buttonFinish.Size = new System.Drawing.Size(250, 30);
             this.buttonFinish.TabIndex = 2;
             this.buttonFinish.Text = "Закончить тренировочную серию";
             this.buttonFinish.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@
             this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(854, 596);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
@@ -124,12 +125,13 @@
             // labelDescription
             // 
             this.labelDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDescription.Location = new System.Drawing.Point(4, 4);
+            this.labelDescription.Location = new System.Drawing.Point(13, 4);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(839, 552);
+            this.labelDescription.Size = new System.Drawing.Size(834, 552);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = resources.GetString("labelDescription.Text");
             this.labelDescription.UseCompatibleTextRendering = true;
+            this.labelDescription.Click += new System.EventHandler(this.labelDescription_Click);
             // 
             // tabPageEX2
             // 
@@ -398,7 +400,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(884, 662);
             this.Controls.Add(this.panelMain);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(885, 680);
             this.Name = "FormExperiment5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Эксперимент 5";

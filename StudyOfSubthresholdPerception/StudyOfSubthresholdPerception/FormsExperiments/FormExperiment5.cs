@@ -452,5 +452,15 @@ namespace StudyOfSubthresholdPerception
         {
             labelScale.Text = "Оценка: " + trackBarScale.Value;
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelDescription_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
