@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonExperiment5 = new System.Windows.Forms.Button();
             this.buttonExperiment4 = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
             this.buttonSetEditor = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,6 +66,8 @@
             this.buttonExperiment5.Size = new System.Drawing.Size(144, 47);
             this.buttonExperiment5.TabIndex = 4;
             this.buttonExperiment5.Text = "Эксперимент 5";
+            this.toolTip1.SetToolTip(this.buttonExperiment5, "Исследование влияния подпороговых стимулов\r\nна формирование эмоциональных реакций" +
+        "\r\nпо отношению к нейтральному объекту");
             this.buttonExperiment5.UseVisualStyleBackColor = true;
             this.buttonExperiment5.Click += new System.EventHandler(this.buttonExperiment5_Click);
             // 
@@ -99,6 +103,7 @@
             this.buttonExperiment3.Size = new System.Drawing.Size(144, 47);
             this.buttonExperiment3.TabIndex = 2;
             this.buttonExperiment3.Text = "Эксперимент 2";
+            this.toolTip1.SetToolTip(this.buttonExperiment3, "Исследование механизмов осознания\r\nподпороговых стимулов");
             this.buttonExperiment3.UseVisualStyleBackColor = true;
             this.buttonExperiment3.Click += new System.EventHandler(this.buttonExperiment3_Click);
             // 
@@ -122,6 +127,7 @@
             this.buttonExperiment1.TabIndex = 0;
             this.buttonExperiment1.Tag = "";
             this.buttonExperiment1.Text = "Эксперимент 1";
+            this.toolTip1.SetToolTip(this.buttonExperiment1, "Исследование влияния подпороговых\r\nстимулов на решение анаграмм");
             this.buttonExperiment1.UseMnemonic = false;
             this.buttonExperiment1.UseVisualStyleBackColor = true;
             this.buttonExperiment1.Click += new System.EventHandler(this.buttonExperiment1_Click);
@@ -206,5 +212,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonSetting;
         private System.Windows.Forms.Button buttonSetEditor;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
