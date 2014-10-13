@@ -41,12 +41,12 @@
             this.dataGridViewResult.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewResult.Name = "dataGridViewResult";
             this.dataGridViewResult.ReadOnly = true;
-            this.dataGridViewResult.Size = new System.Drawing.Size(759, 371);
+            this.dataGridViewResult.Size = new System.Drawing.Size(849, 371);
             this.dataGridViewResult.TabIndex = 0;
             // 
             // buttonSaveToFile
             // 
-            this.buttonSaveToFile.Location = new System.Drawing.Point(592, 390);
+            this.buttonSaveToFile.Location = new System.Drawing.Point(682, 393);
             this.buttonSaveToFile.Name = "buttonSaveToFile";
             this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
             this.buttonSaveToFile.TabIndex = 5;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 442);
+            this.ClientSize = new System.Drawing.Size(874, 442);
             this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.dataGridViewResult);
             this.Name = "FormCurrentResult";
