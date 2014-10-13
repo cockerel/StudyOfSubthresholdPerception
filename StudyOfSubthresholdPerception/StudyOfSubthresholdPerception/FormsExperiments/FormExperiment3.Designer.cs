@@ -137,9 +137,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 93);
+            this.pictureBox1.Location = new System.Drawing.Point(264, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
+            this.pictureBox1.Size = new System.Drawing.Size(360, 360);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -196,9 +196,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBox3.Location = new System.Drawing.Point(250, 93);
+            this.pictureBox3.Location = new System.Drawing.Point(264, 119);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(400, 400);
+            this.pictureBox3.Size = new System.Drawing.Size(360, 360);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -226,11 +226,11 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 53F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(250, 244);
+            this.label3.Location = new System.Drawing.Point(264, 244);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(400, 100);
+            this.label3.Size = new System.Drawing.Size(360, 100);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

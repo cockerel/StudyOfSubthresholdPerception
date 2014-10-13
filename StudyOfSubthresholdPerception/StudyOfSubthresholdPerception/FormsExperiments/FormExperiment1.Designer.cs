@@ -35,12 +35,14 @@
             this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelNumSampleTest = new System.Windows.Forms.Label();
             this.panelSample = new System.Windows.Forms.Panel();
             this.labelSampleAnagram = new System.Windows.Forms.Label();
             this.textBoxSampleAnswer = new System.Windows.Forms.TextBox();
             this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             this.tabPageEX3 = new Dotnetrix.Controls.TabPageEX();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelNumTest = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
@@ -94,7 +96,7 @@
             this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(854, 596);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
@@ -123,6 +125,7 @@
             // tabPageEX2
             // 
             this.tabPageEX2.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPageEX2.Controls.Add(this.label1);
             this.tabPageEX2.Controls.Add(this.labelNumSampleTest);
             this.tabPageEX2.Controls.Add(this.panelSample);
             this.tabPageEX2.Enabled = false;
@@ -132,6 +135,15 @@
             this.tabPageEX2.TabIndex = 1;
             this.tabPageEX2.Text = "Тренировочная серия";
             this.tabPageEX2.Click += new System.EventHandler(this.tabPageEX2_Click);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(273, 538);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(354, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // labelNumSampleTest
             // 
@@ -157,9 +169,9 @@
             // labelSampleAnagram
             // 
             this.labelSampleAnagram.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSampleAnagram.Location = new System.Drawing.Point(3, 165);
+            this.labelSampleAnagram.Location = new System.Drawing.Point(20, 165);
             this.labelSampleAnagram.Name = "labelSampleAnagram";
-            this.labelSampleAnagram.Size = new System.Drawing.Size(394, 80);
+            this.labelSampleAnagram.Size = new System.Drawing.Size(360, 80);
             this.labelSampleAnagram.TabIndex = 2;
             this.labelSampleAnagram.Text = "ololo";
             this.labelSampleAnagram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +180,7 @@
             // textBoxSampleAnswer
             // 
             this.textBoxSampleAnswer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSampleAnswer.Location = new System.Drawing.Point(98, 409);
+            this.textBoxSampleAnswer.Location = new System.Drawing.Point(98, 401);
             this.textBoxSampleAnswer.Name = "textBoxSampleAnswer";
             this.textBoxSampleAnswer.Size = new System.Drawing.Size(200, 29);
             this.textBoxSampleAnswer.TabIndex = 1;
@@ -178,9 +190,9 @@
             // 
             this.pictureBoxSample.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBoxSample.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBoxSample.Location = new System.Drawing.Point(0, 3);
+            this.pictureBoxSample.Location = new System.Drawing.Point(20, 3);
             this.pictureBoxSample.Name = "pictureBoxSample";
-            this.pictureBoxSample.Size = new System.Drawing.Size(400, 400);
+            this.pictureBoxSample.Size = new System.Drawing.Size(360, 360);
             this.pictureBoxSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSample.TabIndex = 0;
             this.pictureBoxSample.TabStop = false;
@@ -188,6 +200,7 @@
             // tabPageEX3
             // 
             this.tabPageEX3.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPageEX3.Controls.Add(this.label2);
             this.tabPageEX3.Controls.Add(this.labelNumTest);
             this.tabPageEX3.Controls.Add(this.labelNum);
             this.tabPageEX3.Controls.Add(this.panel);
@@ -198,10 +211,19 @@
             this.tabPageEX3.TabIndex = 2;
             this.tabPageEX3.Text = "Основная часть эксперимента";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(273, 538);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(354, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
+            // 
             // labelNumTest
             // 
             this.labelNumTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumTest.Location = new System.Drawing.Point(220, 20);
+            this.labelNumTest.Location = new System.Drawing.Point(240, 19);
             this.labelNumTest.Name = "labelNumTest";
             this.labelNumTest.Size = new System.Drawing.Size(400, 23);
             this.labelNumTest.TabIndex = 6;
@@ -211,7 +233,7 @@
             // labelNum
             // 
             this.labelNum.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNum.Location = new System.Drawing.Point(220, 60);
+            this.labelNum.Location = new System.Drawing.Point(241, 52);
             this.labelNum.Name = "labelNum";
             this.labelNum.Size = new System.Drawing.Size(400, 23);
             this.labelNum.TabIndex = 5;
@@ -225,16 +247,16 @@
             this.panel.Controls.Add(this.labelAnagram);
             this.panel.Controls.Add(this.textBoxAnswer);
             this.panel.Controls.Add(this.pictureBoxMask);
-            this.panel.Location = new System.Drawing.Point(220, 100);
+            this.panel.Location = new System.Drawing.Point(244, 89);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(400, 450);
             this.panel.TabIndex = 4;
             // 
             // pictureBoxPresentation
             // 
-            this.pictureBoxPresentation.Location = new System.Drawing.Point(0, 3);
+            this.pictureBoxPresentation.Location = new System.Drawing.Point(18, 3);
             this.pictureBoxPresentation.Name = "pictureBoxPresentation";
-            this.pictureBoxPresentation.Size = new System.Drawing.Size(400, 400);
+            this.pictureBoxPresentation.Size = new System.Drawing.Size(360, 360);
             this.pictureBoxPresentation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPresentation.TabIndex = 3;
             this.pictureBoxPresentation.TabStop = false;
@@ -254,7 +276,7 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAnswer.Location = new System.Drawing.Point(106, 409);
+            this.textBoxAnswer.Location = new System.Drawing.Point(98, 401);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(200, 29);
             this.textBoxAnswer.TabIndex = 1;
@@ -264,9 +286,9 @@
             // 
             this.pictureBoxMask.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMask.Image = global::StudyOfSubthresholdPerception.Properties.Resources.тв_шум;
-            this.pictureBoxMask.Location = new System.Drawing.Point(0, 3);
+            this.pictureBoxMask.Location = new System.Drawing.Point(18, 3);
             this.pictureBoxMask.Name = "pictureBoxMask";
-            this.pictureBoxMask.Size = new System.Drawing.Size(400, 400);
+            this.pictureBoxMask.Size = new System.Drawing.Size(360, 360);
             this.pictureBoxMask.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMask.TabIndex = 0;
             this.pictureBoxMask.TabStop = false;
@@ -335,5 +357,7 @@
         private System.Windows.Forms.Label labelNumTest;
         private System.Windows.Forms.PictureBox pictureBoxPresentation;
         private System.Windows.Forms.TextBox textBoxAnswer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
