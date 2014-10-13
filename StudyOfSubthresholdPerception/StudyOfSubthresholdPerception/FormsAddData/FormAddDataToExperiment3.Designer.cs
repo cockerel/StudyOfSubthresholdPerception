@@ -113,6 +113,7 @@
             this.Name = "FormAddDataToExperiment3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";
+            this.Shown += new System.EventHandler(this.FormAddDataToExperiment3_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

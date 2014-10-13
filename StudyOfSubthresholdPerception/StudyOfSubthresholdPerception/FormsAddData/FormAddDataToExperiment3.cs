@@ -25,6 +25,7 @@ namespace StudyOfSubthresholdPerception
             ex3.AddData(new Experiment3DataModel { FirstAnswer = word1, SecondAnswer = word2, Text = und });
             formSetEditor.Ex3Load();
             textBoxEx3Und.Text = string.Empty;
+            textBoxEx3Und.Focus();
             textBoxEx3Down1.Text = string.Empty;
             textBoxEx3Down2.Text = string.Empty;
         }
@@ -37,6 +38,11 @@ namespace StudyOfSubthresholdPerception
         private void label22_Click(object sender, EventArgs e)
         {
 
+        }
+                
+        private void FormAddDataToExperiment3_Shown(object sender, EventArgs e)
+        {
+            textBoxEx3Und.Focus();
         }
     }
 }
