@@ -34,6 +34,7 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.tabControlEx3 = new Dotnetrix.Controls.TabControlEX();
             this.tabPage1 = new Dotnetrix.Controls.TabPageEX();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.tabPage2 = new Dotnetrix.Controls.TabPageEX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelNumSampleTest = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.labelDescription = new System.Windows.Forms.Label();
             this.tabControlEx3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -108,6 +108,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
+            // labelDescription
+            // 
+            this.labelDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDescription.Location = new System.Drawing.Point(8, 4);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(834, 547);
+            this.labelDescription.TabIndex = 1;
+            this.labelDescription.Text = "\r\n      На экране дисплея Вам будут последовательно предъявляться пары слов. В ка" +
+    "ждой паре необходимо выбрать наиболее понравившееся слово и указать его щелчком " +
+    "левой кнопкой мыши.";
+            this.labelDescription.UseCompatibleTextRendering = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
@@ -144,7 +156,7 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(444, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(402, 84);
@@ -155,7 +167,7 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(3, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(435, 84);
@@ -224,7 +236,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(444, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(435, 84);
@@ -235,7 +247,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(435, 84);
@@ -261,18 +273,6 @@
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // labelDescription
-            // 
-            this.labelDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDescription.Location = new System.Drawing.Point(8, 4);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(834, 547);
-            this.labelDescription.TabIndex = 1;
-            this.labelDescription.Text = "\r\n      На экране дисплея Вам будут последовательно предъявляться пары слов. В ка" +
-    "ждой паре необходимо выбрать наиболее понравившееся слово и указать его щелчком " +
-    "левой кнопкой мыши.";
-            this.labelDescription.UseCompatibleTextRendering = true;
             // 
             // FormExperiment3
             // 
