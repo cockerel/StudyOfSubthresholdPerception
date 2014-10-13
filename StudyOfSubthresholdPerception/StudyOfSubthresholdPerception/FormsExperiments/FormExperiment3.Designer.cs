@@ -159,7 +159,7 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(444, 244);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(402, 84);
+            this.label6.Size = new System.Drawing.Size(402, 100);
             this.label6.TabIndex = 4;
             this.label6.Text = "label6";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,7 +170,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(3, 244);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(435, 84);
+            this.label7.Size = new System.Drawing.Size(435, 100);
             this.label7.TabIndex = 3;
             this.label7.Text = "label7";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,20 +226,21 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label3.Location = new System.Drawing.Point(365, 259);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(250, 244);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 84);
+            this.label3.Size = new System.Drawing.Size(400, 100);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(444, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(435, 84);
+            this.label2.Size = new System.Drawing.Size(435, 100);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,7 +251,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 244);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 84);
+            this.label1.Size = new System.Drawing.Size(435, 100);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
