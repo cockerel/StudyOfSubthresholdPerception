@@ -503,7 +503,7 @@ namespace StudyOfSubthresholdPerception
             }
             else
             {
-                MessageBox.Show("Количество строк в таблице не совпадает с общим количеством предъявлений. Проверьте правильность заполнения!");
+                MessageBox.Show("Количество строк в таблице предъявлений не совпадает с общим количеством заданных опытов и предъявлений. Проверьте корректность введенных данных!");
             }
         }
 
@@ -559,6 +559,22 @@ namespace StudyOfSubthresholdPerception
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+
+            MyDialog.CustomColors = new int[]{15724527, 16638445, 16440555, 15785195,
+                15785180, 15785170, 15785150, 15782610, 13816278, 13422794, 11515820,
+                10526880, 9868950, 9211020, 8553090, 8421504,};
+            MyDialog.AllowFullOpen = true;
+
+            // Update the text box color if the user clicks OK 
+            // В этом же if сохраняем цвет в базу
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                label22.ForeColor = MyDialog.Color;
 
         }
     }
