@@ -50,6 +50,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControlEx3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -93,13 +94,14 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 2;
+            this.tabControlEx3.SelectedIndex = 0;
             this.tabControlEx3.Size = new System.Drawing.Size(854, 596);
             this.tabControlEx3.TabIndex = 5;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.labelDescription);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -275,8 +277,18 @@
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(273, 538);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(354, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
+            // 
             // FormExperiment3
             // 
+            this.AcceptButton = this.buttonNext;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 662);
@@ -322,5 +334,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.Label label4;
     }
 }
