@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StudyOfSubthresholdPerception.DataHelpers;
 using StudyOfSubthresholdPerception.FormsExperiments;
 
 namespace StudyOfSubthresholdPerception
@@ -82,6 +83,12 @@ namespace StudyOfSubthresholdPerception
 		private void buttonExperiment3_Click(object sender, EventArgs e)
 		{
 			new FormExperiment3().ShowDialog();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            var ex3 = new Experiment3DataHelper();
+            ex3.GetSettings();
         }
     }
 }

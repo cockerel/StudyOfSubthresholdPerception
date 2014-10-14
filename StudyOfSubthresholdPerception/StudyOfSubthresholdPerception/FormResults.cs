@@ -43,13 +43,15 @@ namespace StudyOfSubthresholdPerception
                             dataGridViewResults2.Rows.Add(new object[]
                             {
                                 count+1,
+                                results[count].Id,
+                                results[count].UserId,
                                 uInfo.getUserName(results[count].UserId),
                                 results[count].ExperimentsCount,
                                 results[count].Mask,
-                                results[count].MaskAfter,
                                 results[count].PresentationTime,
                                 results[count].Date.ToString(CultureInfo.InvariantCulture),
                                 results[count].Incentive,
+                                results[count].AnswerRight,
                                 results[count].Answer,
                                 results[count].IsRight
                             });

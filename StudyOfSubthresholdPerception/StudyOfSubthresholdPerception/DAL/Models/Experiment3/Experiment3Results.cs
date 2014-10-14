@@ -23,5 +23,6 @@ namespace StudyOfSubthresholdPerception.DAL.Models.Experiment3
         public bool IsRight { get; set; }
         public int Mask { get; set; }
         public int MaskAfter { get; set; }
+        public string AnswerRight { get; set; }
     }
 }

@@ -65,14 +65,16 @@
             this.labelUserInfo = new System.Windows.Forms.Label();
             this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idex3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idex3user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaskAfterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaskColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex3under = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex3Selected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControlResults.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -235,14 +237,16 @@
             this.dataGridViewResults2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewResults2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
+            this.idex3,
+            this.idex3user,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
-            this.MaskAfterColumn,
             this.MaskColumn,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
+            this.ex3under,
             this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
+            this.ex3Selected,
             this.dataGridViewCheckBoxColumn1});
             this.dataGridViewResults2.Location = new System.Drawing.Point(6, 8);
             this.dataGridViewResults2.Name = "dataGridViewResults2";
@@ -412,6 +416,18 @@
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 50;
             // 
+            // idex3
+            // 
+            this.idex3.HeaderText = "Идентификатор (Id)";
+            this.idex3.Name = "idex3";
+            this.idex3.ReadOnly = true;
+            // 
+            // idex3user
+            // 
+            this.idex3user.HeaderText = "Идентификатор (Id) испытуемого";
+            this.idex3user.Name = "idex3user";
+            this.idex3user.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.HeaderText = "Ф.И.О.";
@@ -423,12 +439,6 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Номер эксперимента";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // MaskAfterColumn
-            // 
-            this.MaskAfterColumn.HeaderText = "Время до маски";
-            this.MaskAfterColumn.Name = "MaskAfterColumn";
-            this.MaskAfterColumn.ReadOnly = true;
             // 
             // MaskColumn
             // 
@@ -444,9 +454,15 @@
             // 
             // dataGridViewTextBoxColumn17
             // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Текущее время";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Дата и время";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // ex3under
+            // 
+            this.ex3under.HeaderText = "Подпороговый  стимул";
+            this.ex3under.Name = "ex3under";
+            this.ex3under.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -454,11 +470,11 @@
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn19
+            // ex3Selected
             // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Выбранный стимул";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.ex3Selected.HeaderText = "Надпороговый стимул (выбранный)";
+            this.ex3Selected.Name = "ex3Selected";
+            this.ex3Selected.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -528,14 +544,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idex3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idex3user;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaskAfterColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaskColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ex3under;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ex3Selected;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }

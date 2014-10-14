@@ -205,7 +205,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         Incentive = result.Incentive,
                         UserId = userId,
                         MaskAfter = result.MaskAfter,
-                        Mask = result.Mask
+                        Mask = result.Mask,
+                        AnswerRight = result.AnswerRight
                     });
                     context.SaveChanges();
                 }
@@ -232,7 +233,8 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                         Incentive = x.Incentive,
                         UserId = x.UserId,
                         Mask = x.Mask,
-                        MaskAfter = x.MaskAfter
+                        MaskAfter = x.MaskAfter,
+                        AnswerRight = x.AnswerRight
                     });
                     return results.ToList();
                 }

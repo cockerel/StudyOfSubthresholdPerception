@@ -22,6 +22,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         private int UserExpCount { get; set; }
         private bool IsFirstLabelRight { get; set; }
         private List<Experiment3ResultsModel> Results { get; set; }
+        private int ExSessionCount { get; set; }
 
         public FormExperiment3()
         {
@@ -50,6 +51,15 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 UserExpCount = prevRes[prevRes.Count - 1].ExperimentsCount;
             }
             UserExpCount++;
+            var res = ex3.GetResults();
+            if (res != null && res.Any())
+            {
+                ExSessionCount = res.First().ExperimentsCount + 1;
+            }
+            else
+            {
+                ExSessionCount = 1;
+            }
         }
 
         public void FormExperiment3_Load(object sender, EventArgs e)
@@ -78,12 +88,13 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     Answer = label1.Text,
                     Date = DateTime.Now,
-                    ExperimentsCount = ExpCount,
+                    ExperimentsCount = ExSessionCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
                     IsRight = IsFirstLabelRight,
                     Mask = Settings.Mask,
-                    MaskAfter = Settings.MaskAfter
+                    MaskAfter = Settings.MaskAfter,
+                    AnswerRight = IsFirstLabelRight ? label1.Text : label2.Text
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -126,14 +137,15 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     var ex3 = new Experiment3DataHelper();
                     var db = new DB();
+                    var i = 0;
                     foreach (var x in Results)
                     {
+                        i++;
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
-                            {
-                                x.Id, x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
-                                x.PresentationTime
-                            });
+                        {
+                            i, Settings.Mask, x.PresentationTime, x.Date.ToShortDateString(), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
+                        });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
                     var formRes = new FormCurrentResult(table);
@@ -177,12 +189,13 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     Answer = label2.Text,
                     Date = DateTime.Now,
-                    ExperimentsCount = UserExpCount,
+                    ExperimentsCount = ExSessionCount,
                     Incentive = label3.Text,
                     PresentationTime = timer1.Interval,
                     IsRight = !IsFirstLabelRight,
                     Mask = Settings.Mask,
-                    MaskAfter = Settings.MaskAfter
+                    MaskAfter = Settings.MaskAfter,
+                    AnswerRight = IsFirstLabelRight ? label1.Text : label2.Text
                 });
             }
             if (PresCount > Settings.PresCount)
@@ -195,27 +208,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Ответ"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Предъявление"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Дата"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Количество экспериментов"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Время предъявления"
+                        ColumnName = "№ предъявление"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -225,18 +218,45 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Время до маски"
+                        ColumnName = "Время предъявления"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Текущее время"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Подпороговый стимул"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Надпороговый(совпадающий)"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Выбранный стимул"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Совпадение",
+                        DataType = typeof(bool)
                     });
 
                     var ex3 = new Experiment3DataHelper();
                     var db = new DB();
+                    var i = 0;
                     foreach (var x in Results)
                     {
+                        i++;
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
                         {
-                            x.Answer, x.Incentive, x.Date.ToShortDateString(), x.ExperimentsCount,
-                            x.PresentationTime, Settings.Mask, Settings.MaskAfter
+                            i, Settings.Mask, x.PresentationTime, x.Date.ToShortDateString(), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
                         });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
