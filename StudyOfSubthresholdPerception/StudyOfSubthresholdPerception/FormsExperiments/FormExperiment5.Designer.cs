@@ -35,6 +35,7 @@
             this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
+            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.panelSample = new System.Windows.Forms.Panel();
             this.pictureBoxSample = new System.Windows.Forms.PictureBox();
             this.tabPageEX3 = new Dotnetrix.Controls.TabPageEX();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.pictureBoxPresentation = new System.Windows.Forms.PictureBox();
             this.pictureBoxMask = new System.Windows.Forms.PictureBox();
             this.buttonNext = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEX1.SuspendLayout();
@@ -154,6 +154,15 @@
             this.tabPageEX2.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX2.TabIndex = 1;
             this.tabPageEX2.Text = "Тренировочная серия";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(271, 541);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(354, 19);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // label8
             // 
@@ -269,6 +278,15 @@
             this.tabPageEX3.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX3.TabIndex = 2;
             this.tabPageEX3.Text = "Основная часть эксперимента";
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(271, 541);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(354, 19);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // label9
             // 
@@ -397,26 +415,9 @@
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(271, 541);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(354, 19);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(271, 541);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(354, 19);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
-            // 
             // FormExperiment5
             // 
+            this.AcceptButton = this.buttonNext;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;

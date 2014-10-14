@@ -191,6 +191,11 @@ namespace StudyOfSubthresholdPerception
                     pictureBoxMask.Visible = false;
                 }
                  */
+                if (Experiment1.table.Rows.Count == 0)
+                {
+                    MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
             catch
             {

@@ -62,8 +62,8 @@ namespace StudyOfSubthresholdPerception.SettingsExperiments
             }
             else
             {
-                MessageBox.Show("Таблица заполнена не польностью. Проверьте данные!", StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle,
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Количество строк в таблице предъявлений не совпадает с общим количеством заданных опытов и предъявлений. Проверьте корректность введенных данных!", 
+                    StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

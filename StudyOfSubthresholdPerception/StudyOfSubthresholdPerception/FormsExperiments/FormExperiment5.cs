@@ -162,6 +162,12 @@ namespace StudyOfSubthresholdPerception
                 exp5.loadTestImages();
                 labelDescription.Text = labelDescription.Text.Replace("N", Experiment5.numOfExp.ToString());
                 labelDescription.Text = labelDescription.Text.Replace("M", Experiment5.numOfPresent.ToString());
+
+                if (Experiment5.table.Rows.Count == 0)
+                {
+                    MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
             catch
             {
@@ -181,7 +187,15 @@ namespace StudyOfSubthresholdPerception
             //выполнение теста
             else
             {
-                nextPresentation();
+                try
+                {
+                    nextPresentation();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка!");
+                    this.Dispose();
+                }
             }
         }
 
