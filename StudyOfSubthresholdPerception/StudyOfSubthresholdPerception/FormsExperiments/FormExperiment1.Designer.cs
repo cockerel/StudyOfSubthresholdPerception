@@ -51,6 +51,7 @@
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.pictureBoxMask = new System.Windows.Forms.PictureBox();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEX1.SuspendLayout();
@@ -96,7 +97,7 @@
             this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(854, 596);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
@@ -104,6 +105,7 @@
             // tabPageEX1
             // 
             this.tabPageEX1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPageEX1.Controls.Add(this.label3);
             this.tabPageEX1.Controls.Add(this.labelDescription);
             this.tabPageEX1.Location = new System.Drawing.Point(4, 25);
             this.tabPageEX1.Name = "tabPageEX1";
@@ -305,6 +307,15 @@
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(273, 538);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
+            // 
             // FormExperiment1
             // 
             this.AcceptButton = this.buttonNext;
@@ -360,5 +371,6 @@
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
