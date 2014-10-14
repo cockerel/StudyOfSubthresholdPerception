@@ -208,7 +208,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "№ предъявление"
+                        ColumnName = "№ предъявления"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -218,7 +218,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Время предъявления"
+                        ColumnName = "Время предъявления подпорогового стимула"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -233,12 +233,12 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Надпороговый(совпадающий)"
+                        ColumnName = "Вариант (совпадающий)"
                     });
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Выбранный стимул"
+                        ColumnName = "Выбранный вариант"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -256,7 +256,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
                         {
-                            i, Settings.Mask, x.PresentationTime, x.Date.ToShortDateString(), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
+                            i, Settings.Mask, x.PresentationTime, x.Date, x.Incentive, x.AnswerRight, x.Answer, x.IsRight
                         });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");

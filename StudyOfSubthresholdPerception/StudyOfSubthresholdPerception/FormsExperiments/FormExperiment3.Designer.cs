@@ -34,6 +34,7 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.tabControlEx3 = new Dotnetrix.Controls.TabControlEX();
             this.tabPage1 = new Dotnetrix.Controls.TabPageEX();
+            this.label4 = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tabPage2 = new Dotnetrix.Controls.TabPageEX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,6 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControlEx3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -94,7 +94,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 0;
+            this.tabControlEx3.SelectedIndex = 2;
             this.tabControlEx3.Size = new System.Drawing.Size(854, 596);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -109,6 +109,15 @@
             this.tabPage1.Size = new System.Drawing.Size(846, 567);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(273, 538);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(354, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // labelDescription
             // 
@@ -242,7 +251,7 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(444, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(435, 100);
+            this.label2.Size = new System.Drawing.Size(399, 100);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,15 +285,6 @@
             // timer3
             // 
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(273, 538);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(354, 19);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // FormExperiment3
             // 
