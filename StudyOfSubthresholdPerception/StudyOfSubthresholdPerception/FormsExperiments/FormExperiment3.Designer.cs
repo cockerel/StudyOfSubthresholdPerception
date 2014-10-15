@@ -66,6 +66,7 @@
             // 
             // buttonFinish
             // 
+            this.buttonFinish.Enabled = false;
             this.buttonFinish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFinish.Location = new System.Drawing.Point(501, 605);
             this.buttonFinish.Name = "buttonFinish";

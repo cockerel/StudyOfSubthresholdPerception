@@ -407,6 +407,8 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             if (IsEndFlag)
             {
+                buttonFinish.Enabled = true;
+
                 if (!TestExp)
                 {
                     pictureBox3.Visible = false;
@@ -426,7 +428,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 }
             }
             else
-            {
+            {                
                 if (!TestExp)
                 {
                     timer2.Start();
@@ -471,6 +473,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void label7_Click(object sender, EventArgs e)
         {
+            buttonFinish.Enabled = false;
             PresCount++;
             if (PresCount > 5)
             {
@@ -513,6 +516,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void label6_Click(object sender, EventArgs e)
         {
+            buttonFinish.Enabled = false;
             PresCount++;
             if (PresCount > 5)
             {
