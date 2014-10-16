@@ -318,6 +318,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     label7.Visible = false;
                     timer3.Start();
                     Step++;
+                    buttonFinish.Enabled = false;
                     switch (PresCount)
                     {
                         case 1:
@@ -418,6 +419,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             if (IsEndFlag)
             {
+                buttonFinish.Enabled = true;
                 if (!TestExp)
                 {
                     pictureBox3.Visible = false;
@@ -488,6 +490,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void label7_Click(object sender, EventArgs e)
         {
+            buttonFinish.Enabled = false;
             PresCount++;
             if (PresCount > 5)
             {
@@ -530,6 +533,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
         private void label6_Click(object sender, EventArgs e)
         {
+            buttonFinish.Enabled = false;
             PresCount++;
             if (PresCount > 5)
             {
