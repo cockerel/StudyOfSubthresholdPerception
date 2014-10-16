@@ -39,10 +39,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             WordShownFlag = false;
             Settings = ex3.GetSettings();
             timer1.Interval = Settings.Interval;
-            if (Settings.Mask > 0)
-            {
-                timer2.Interval = Settings.Mask;
-            }
+            timer2.Interval = Settings.Mask == 0 ? 1 : Settings.Mask;
             Data = ex3.GetSelectedData();
             SetWord();
             var db = new DB();
@@ -319,14 +316,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                     label6.Visible = false;
                     label7.Visible = false;
-                    if (Settings.Mask > 0)
-                    {
-                        timer3.Start();
-                    }
-                    else
-                    {
-                        timer1.Start();
-                    }
+                    timer3.Start();
                     Step++;
                     switch (PresCount)
                     {
@@ -417,10 +407,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 label1.Visible = false;
                 label2.Visible = false;
                 label3.Visible = false;
-                if (Settings.MaskAfter <= 0)
-                {
-                    IsEndFlag = false;
-                }
                 timer3.Start();
             }
             Index++;
@@ -456,10 +442,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     timer2.Start();
                     timer3.Stop();
-                    if (Settings.Mask > 0)
-                    {
-                        pictureBox3.Visible = true;
-                    }
+                    pictureBox3.Visible = true;
                     label3.Visible = true;
                     IsEndFlag = true;
                 }
@@ -467,10 +450,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     timer2.Start();
                     timer3.Stop();
-                    if (Settings.Mask > 0)
-                    {
-                        pictureBox1.Visible = true;
-                    }
+                    pictureBox1.Visible = true;
                     IsEndFlag = true;
                 }
             }
@@ -486,54 +466,17 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 if (Settings.Mask > 0)
                 {
                     pictureBox3.Visible = true;
-                    timer2.Start();
                 }
-                else
-                {
-                    if (!TestExp)
-                    {
-                        pictureBox3.Visible = false;
-                        label3.Visible = false;
-                        label1.Visible = true;
-                        label2.Visible = true;
-                        IsEndFlag = false;
-                    }
-                    else
-                    {
-                        pictureBox1.Visible = false;
-                        label6.Visible = true;
-                        label7.Visible = true;
-                        IsEndFlag = false;
-                    }
-                }
+                timer2.Start();
             }
             else
             {
                 timer1.Stop();
                 WordShownFlag = true;
+                timer2.Start();
                 if (Settings.Mask > 0)
                 {
-                    timer2.Start();
-                    if (Settings.Mask > 0)
-                        pictureBox1.Visible = true;
-                }
-                else
-                {
-                    if (!TestExp)
-                    {
-                        pictureBox3.Visible = false;
-                        label3.Visible = false;
-                        label1.Visible = true;
-                        label2.Visible = true;
-                        IsEndFlag = false;
-                    }
-                    else
-                    {
-                        pictureBox1.Visible = false;
-                        label6.Visible = true;
-                        label7.Visible = true;
-                        IsEndFlag = false;
-                    }
+                    pictureBox1.Visible = true;
                 }
             }
         }
@@ -581,10 +524,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 }
                 label6.Visible = false;
                 label7.Visible = false;
-                if (Settings.MaskAfter <= 0)
-                {
-                    IsEndFlag = false;
-                }
                 timer3.Start();
             }
         }
@@ -627,10 +566,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 }
                 label6.Visible = false;
                 label7.Visible = false;
-                if (Settings.MaskAfter <= 0)
-                {
-                    IsEndFlag = false;
-                }
                 timer3.Start();
             }
         }
@@ -655,10 +590,6 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             else
             {
                 WordShownFlag = false;
-                if (Settings.MaskAfter <= 0)
-                {
-                    IsEndFlag = false;
-                }
                 timer3.Start();
             }
         }
