@@ -107,7 +107,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "№ предъявление"
+                        ColumnName = "№ предъявления"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -117,7 +117,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Время предъявления"
+                        ColumnName = "Время предъявления подпорогового стимула"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -132,12 +132,12 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Надпороговый(совпадающий)"
+                        ColumnName = "Вариант (совпадающий)"
                     });
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Выбранный стимул"
+                        ColumnName = "Выбранный вариант"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -219,7 +219,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "№ предъявление"
+                        ColumnName = "№ предъявления"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -229,7 +229,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Время предъявления"
+                        ColumnName = "Время предъявления подпорогового стимула"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -244,12 +244,12 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Надпороговый(совпадающий)"
+                        ColumnName = "Вариант (совпадающий)"
                     });
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Выбранный стимул"
+                        ColumnName = "Выбранный вариант"
                     });
 
                     table.Columns.Add(new DataColumn
