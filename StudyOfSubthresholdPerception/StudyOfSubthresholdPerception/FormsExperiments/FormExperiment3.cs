@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -155,7 +156,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
                         {
-                            i, Settings.Mask, x.PresentationTime, x.Date.ToShortDateString(), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
+                            i, Settings.Mask, x.PresentationTime, x.Date.ToString(CultureInfo.InvariantCulture), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
                         });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");
@@ -267,7 +268,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         ex3.AddResult(x, db.ID_USER);
                         table.Rows.Add(new object[]
                         {
-                            i, Settings.Mask, x.PresentationTime, x.Date.ToShortDateString(), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
+                            i, Settings.Mask, x.PresentationTime, x.Date.ToString(CultureInfo.InvariantCulture), x.Incentive, x.AnswerRight, x.Answer, x.IsRight
                         });
                     }
                     MessageBox.Show("Эксперимент завершен успешно. Просмотреть результаты эксперимента.");

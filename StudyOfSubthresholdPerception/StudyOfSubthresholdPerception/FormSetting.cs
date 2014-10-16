@@ -498,7 +498,7 @@ namespace StudyOfSubthresholdPerception
             if (expCount * presCount == count)
             {
                 var settings = ex3.GetSettings();
-                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval, Mask = settings.Mask});
+                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval, Mask = settings.Mask, MaskAfter = settings.MaskAfter});
                 MessageBox.Show("Данные сохранены.");
             }
             else
