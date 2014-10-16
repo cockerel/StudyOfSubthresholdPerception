@@ -39,8 +39,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             WordShownFlag = false;
             Settings = ex3.GetSettings();
             timer1.Interval = Settings.Interval;
-            timer2.Interval = Settings.Mask;
-            timer3.Interval = Settings.MaskAfter;
+            if (Settings.Mask > 0)
+            {
+                timer2.Interval = Settings.Mask;
+            }
             Data = ex3.GetSelectedData();
             SetWord();
             var db = new DB();
@@ -60,6 +62,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             {
                 ExSessionCount = 1;
             }
+            timer3.Interval = Settings.MaskAfter == 0 ? 1 : Settings.MaskAfter;
         }
 
         public void FormExperiment3_Load(object sender, EventArgs e)
@@ -107,32 +110,43 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Id"
+                        ColumnName = "№ предъявление"
                     });
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "Ответ"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Предъявление"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Дата"
-                    });
-
-                    table.Columns.Add(new DataColumn
-                    {
-                        ColumnName = "Количество экспериментов"
+                        ColumnName = "Время предъявления маски"
                     });
 
                     table.Columns.Add(new DataColumn
                     {
                         ColumnName = "Время предъявления"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Текущее время"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Подпороговый стимул"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Надпороговый(совпадающий)"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Выбранный стимул"
+                    });
+
+                    table.Columns.Add(new DataColumn
+                    {
+                        ColumnName = "Совпадение",
+                        DataType = typeof(bool)
                     });
 
                     var ex3 = new Experiment3DataHelper();
@@ -305,7 +319,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
                     label6.Visible = false;
                     label7.Visible = false;
-                    timer3.Start();
+                    if (Settings.Mask > 0)
+                    {
+                        timer3.Start();
+                    }
+                    else
+                    {
+                        timer1.Start();
+                    }
                     Step++;
                     switch (PresCount)
                     {
@@ -431,7 +452,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     timer2.Start();
                     timer3.Stop();
-                    pictureBox3.Visible = true;
+                    if (Settings.Mask > 0)
+                    {
+                        pictureBox3.Visible = true;
+                    }
                     label3.Visible = true;
                     IsEndFlag = true;
                 }
@@ -439,7 +463,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 {
                     timer2.Start();
                     timer3.Stop();
-                    pictureBox1.Visible = true;
+                    if (Settings.Mask > 0)
+                    {
+                        pictureBox1.Visible = true;
+                    }
                     IsEndFlag = true;
                 }
             }
@@ -452,15 +479,58 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 label3.Visible = false;
                 timer1.Stop();
                 WordShownFlag = true;
-                pictureBox3.Visible = true;
-                timer2.Start();
+                if (Settings.Mask > 0)
+                {
+                    pictureBox3.Visible = true;
+                    timer2.Start();
+                }
+                else
+                {
+                    if (!TestExp)
+                    {
+                        pictureBox3.Visible = false;
+                        label3.Visible = false;
+                        label1.Visible = true;
+                        label2.Visible = true;
+                        IsEndFlag = false;
+                    }
+                    else
+                    {
+                        pictureBox1.Visible = false;
+                        label6.Visible = true;
+                        label7.Visible = true;
+                        IsEndFlag = false;
+                    }
+                }
             }
             else
             {
                 timer1.Stop();
                 WordShownFlag = true;
-                pictureBox1.Visible = true;
-                timer2.Start();
+                if (Settings.Mask > 0)
+                {
+                    timer2.Start();
+                    if (Settings.Mask > 0)
+                        pictureBox1.Visible = true;
+                }
+                else
+                {
+                    if (!TestExp)
+                    {
+                        pictureBox3.Visible = false;
+                        label3.Visible = false;
+                        label1.Visible = true;
+                        label2.Visible = true;
+                        IsEndFlag = false;
+                    }
+                    else
+                    {
+                        pictureBox1.Visible = false;
+                        label6.Visible = true;
+                        label7.Visible = true;
+                        IsEndFlag = false;
+                    }
+                }
             }
         }
 
