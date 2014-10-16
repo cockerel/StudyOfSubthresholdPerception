@@ -417,6 +417,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 label1.Visible = false;
                 label2.Visible = false;
                 label3.Visible = false;
+                if (Settings.MaskAfter <= 0)
+                {
+                    IsEndFlag = false;
+                }
                 timer3.Start();
             }
             Index++;
@@ -577,6 +581,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 }
                 label6.Visible = false;
                 label7.Visible = false;
+                if (Settings.MaskAfter <= 0)
+                {
+                    IsEndFlag = false;
+                }
                 timer3.Start();
             }
         }
@@ -619,6 +627,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                 }
                 label6.Visible = false;
                 label7.Visible = false;
+                if (Settings.MaskAfter <= 0)
+                {
+                    IsEndFlag = false;
+                }
                 timer3.Start();
             }
         }
@@ -643,6 +655,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             else
             {
                 WordShownFlag = false;
+                if (Settings.MaskAfter <= 0)
+                {
+                    IsEndFlag = false;
+                }
                 timer3.Start();
             }
         }
