@@ -49,7 +49,7 @@ namespace StudyOfSubthresholdPerception
                                 results[count].ExperimentsCount,
                                 results[count].Mask,
                                 results[count].PresentationTime,
-                                results[count].Date.ToString(CultureInfo.InvariantCulture),
+                                results[count].Date,
                                 results[count].Incentive,
                                 results[count].AnswerRight,
                                 results[count].Answer,
