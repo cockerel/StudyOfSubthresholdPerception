@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewExperiment1 = new System.Windows.Forms.DataGridView();
@@ -47,6 +47,11 @@
             this.Answer2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewEx3 = new System.Windows.Forms.DataGridView();
+            this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3First = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Second = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ex3Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +74,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.Ex3Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Second = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3First = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ex3Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExperiment1)).BeginInit();
@@ -136,6 +136,7 @@
             this.dataGridViewExperiment1.Name = "dataGridViewExperiment1";
             this.dataGridViewExperiment1.ReadOnly = true;
             this.dataGridViewExperiment1.RowHeadersVisible = false;
+            this.dataGridViewExperiment1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridViewExperiment1.RowTemplate.Height = 100;
             this.dataGridViewExperiment1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(740, 471);
@@ -218,9 +219,57 @@
             this.dataGridViewEx3.Name = "dataGridViewEx3";
             this.dataGridViewEx3.ReadOnly = true;
             this.dataGridViewEx3.RowHeadersVisible = false;
+            this.dataGridViewEx3.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewEx3.RowTemplate.Height = 30;
             this.dataGridViewEx3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEx3.Size = new System.Drawing.Size(740, 474);
             this.dataGridViewEx3.TabIndex = 27;
+            // 
+            // Ex3Order
+            // 
+            this.Ex3Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ex3Order.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Ex3Order.FillWeight = 76.14214F;
+            this.Ex3Order.HeaderText = "№";
+            this.Ex3Order.Name = "Ex3Order";
+            this.Ex3Order.ReadOnly = true;
+            // 
+            // Ex3Id
+            // 
+            this.Ex3Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ex3Id.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Ex3Id.FillWeight = 105.9645F;
+            this.Ex3Id.HeaderText = "Идентификатор (Id)";
+            this.Ex3Id.Name = "Ex3Id";
+            this.Ex3Id.ReadOnly = true;
+            // 
+            // Ex3First
+            // 
+            this.Ex3First.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ex3First.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Ex3First.FillWeight = 105.9645F;
+            this.Ex3First.HeaderText = "Вариант (совпадающий)";
+            this.Ex3First.Name = "Ex3First";
+            this.Ex3First.ReadOnly = true;
+            // 
+            // Ex3Second
+            // 
+            this.Ex3Second.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Second.FillWeight = 105.9645F;
+            this.Ex3Second.HeaderText = "Вариант (несовпадающий)";
+            this.Ex3Second.Name = "Ex3Second";
+            this.Ex3Second.ReadOnly = true;
+            // 
+            // Ex3Text
+            // 
+            this.Ex3Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ex3Text.FillWeight = 105.9645F;
+            this.Ex3Text.HeaderText = "Подпороговый";
+            this.Ex3Text.Name = "Ex3Text";
+            this.Ex3Text.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -383,6 +432,7 @@
             this.dataGridViewExperiment5.Name = "dataGridViewExperiment5";
             this.dataGridViewExperiment5.ReadOnly = true;
             this.dataGridViewExperiment5.RowHeadersVisible = false;
+            this.dataGridViewExperiment5.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridViewExperiment5.RowTemplate.Height = 100;
             this.dataGridViewExperiment5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(740, 471);
@@ -450,52 +500,6 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.TabIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // Ex3Text
-            // 
-            this.Ex3Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Text.FillWeight = 105.9645F;
-            this.Ex3Text.HeaderText = "Подпороговый";
-            this.Ex3Text.Name = "Ex3Text";
-            this.Ex3Text.ReadOnly = true;
-            // 
-            // Ex3Second
-            // 
-            this.Ex3Second.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ex3Second.FillWeight = 105.9645F;
-            this.Ex3Second.HeaderText = "Вариант (несовпадающий)";
-            this.Ex3Second.Name = "Ex3Second";
-            this.Ex3Second.ReadOnly = true;
-            // 
-            // Ex3First
-            // 
-            this.Ex3First.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ex3First.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Ex3First.FillWeight = 105.9645F;
-            this.Ex3First.HeaderText = "Вариант (совпадающий)";
-            this.Ex3First.Name = "Ex3First";
-            this.Ex3First.ReadOnly = true;
-            // 
-            // Ex3Id
-            // 
-            this.Ex3Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ex3Id.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Ex3Id.FillWeight = 105.9645F;
-            this.Ex3Id.HeaderText = "Идентификатор (Id)";
-            this.Ex3Id.Name = "Ex3Id";
-            this.Ex3Id.ReadOnly = true;
-            // 
-            // Ex3Order
-            // 
-            this.Ex3Order.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ex3Order.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Ex3Order.FillWeight = 76.14214F;
-            this.Ex3Order.HeaderText = "№";
-            this.Ex3Order.Name = "Ex3Order";
-            this.Ex3Order.ReadOnly = true;
             // 
             // FormSetEditor
             // 

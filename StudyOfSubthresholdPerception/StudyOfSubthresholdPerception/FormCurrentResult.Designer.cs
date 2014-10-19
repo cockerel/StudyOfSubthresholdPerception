@@ -41,6 +41,8 @@
             this.dataGridViewResult.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewResult.Name = "dataGridViewResult";
             this.dataGridViewResult.ReadOnly = true;
+            this.dataGridViewResult.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridViewResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewResult.Size = new System.Drawing.Size(849, 371);
             this.dataGridViewResult.TabIndex = 0;
             // 
