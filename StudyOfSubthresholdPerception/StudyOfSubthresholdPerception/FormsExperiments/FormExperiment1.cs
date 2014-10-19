@@ -103,7 +103,7 @@ namespace StudyOfSubthresholdPerception
 
                         textBoxSampleAnswer.Text = String.Empty;
                         k++;
-                        labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 10";
+                        labelNumSampleTest.Text = "Стимул " + (k + 1) + " из 10";
                         textBoxSampleAnswer.Select();
                     }
                     else
@@ -140,7 +140,7 @@ namespace StudyOfSubthresholdPerception
                                 labelAnagram.Visible = false;
 
                                 k++;
-                                labelNum.Text = "Предъявление " + k + " из " + (Experiment1.numOfPresent); // Experiments.Experiment1.numOfExp);
+                                labelNum.Text = "Стимул " + k + " из " + (Experiment1.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp1.addAnswerPresentation(DateTime.Now, textBoxAnswer.Text);
                                 textBoxAnswer.Text = String.Empty;
                                 textBoxAnswer.Select();
@@ -244,7 +244,7 @@ namespace StudyOfSubthresholdPerception
             }));
             labelNum.BeginInvoke(new Action(delegate()
             {
-                labelNum.Text = "Предъявление " + ++k + " из " + (Experiment1.numOfPresent); // Experiments.Experiment1.numOfExp);
+                labelNum.Text = "Стимул " + ++k + " из " + (Experiment1.numOfPresent); // Experiments.Experiment1.numOfExp);
             }));
             timer.Start();
         }

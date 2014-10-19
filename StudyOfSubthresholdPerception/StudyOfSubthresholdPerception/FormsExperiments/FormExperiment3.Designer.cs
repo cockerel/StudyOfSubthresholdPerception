@@ -94,7 +94,7 @@
             this.tabControlEx3.Controls.Add(this.tabPage3);
             this.tabControlEx3.Location = new System.Drawing.Point(3, 3);
             this.tabControlEx3.Name = "tabControlEx3";
-            this.tabControlEx3.SelectedIndex = 1;
+            this.tabControlEx3.SelectedIndex = 2;
             this.tabControlEx3.Size = new System.Drawing.Size(854, 596);
             this.tabControlEx3.TabIndex = 5;
             // 
@@ -103,10 +103,10 @@
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.labelDescription);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(846, 564);
+            this.tabPage1.Size = new System.Drawing.Size(846, 567);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Инструкция";
             // 
@@ -138,10 +138,10 @@
             this.tabPage2.Controls.Add(this.labelNumSampleTest);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(846, 564);
+            this.tabPage2.Size = new System.Drawing.Size(846, 567);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Тренировочная серия";
             // 
@@ -159,11 +159,11 @@
             // labelNumSampleTest
             // 
             this.labelNumSampleTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumSampleTest.Location = new System.Drawing.Point(250, 10);
+            this.labelNumSampleTest.Location = new System.Drawing.Point(264, 10);
             this.labelNumSampleTest.Name = "labelNumSampleTest";
-            this.labelNumSampleTest.Size = new System.Drawing.Size(400, 41);
+            this.labelNumSampleTest.Size = new System.Drawing.Size(360, 41);
             this.labelNumSampleTest.TabIndex = 6;
-            this.labelNumSampleTest.Text = "Предъявление 1 из 10";
+            this.labelNumSampleTest.Text = "Стимул 1 из 10";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -197,10 +197,10 @@
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(846, 564);
+            this.tabPage3.Size = new System.Drawing.Size(846, 567);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Основная часть эксперимента";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -219,9 +219,9 @@
             // labelNumTest
             // 
             this.labelNumTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumTest.Location = new System.Drawing.Point(250, 10);
+            this.labelNumTest.Location = new System.Drawing.Point(264, 10);
             this.labelNumTest.Name = "labelNumTest";
-            this.labelNumTest.Size = new System.Drawing.Size(400, 41);
+            this.labelNumTest.Size = new System.Drawing.Size(360, 41);
             this.labelNumTest.TabIndex = 10;
             this.labelNumTest.Text = "Опыт 1 из n";
             this.labelNumTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,11 +229,11 @@
             // labelNum
             // 
             this.labelNum.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNum.Location = new System.Drawing.Point(250, 48);
+            this.labelNum.Location = new System.Drawing.Point(264, 48);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(400, 41);
+            this.labelNum.Size = new System.Drawing.Size(360, 41);
             this.labelNum.TabIndex = 9;
-            this.labelNum.Text = "Предъявление 1 из n";
+            this.labelNum.Text = "Стимул 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3

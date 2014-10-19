@@ -84,7 +84,7 @@ namespace StudyOfSubthresholdPerception
                         timer.Start();
                         //pictureBoxSample.Visible = true;
                         k++;
-                        labelNumSampleTest.Text = "Предъявление " + (k + 1) + " из 5";
+                        labelNumSampleTest.Text = "Стимул " + (k + 1) + " из 5";
                         trackBarScaleTest.Value = 0;
                         labelScaleTest.Text = "Оценка: 0";
                     }
@@ -123,7 +123,7 @@ namespace StudyOfSubthresholdPerception
                                 timer.Start();
 
                                 k++;
-                                labelNum.Text = "Предъявление " + k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
+                                labelNum.Text = "Стимул " + k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
                                 exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
                                 trackBarScale.Value = 0;
                                 labelScale.Text = "Оценка: 0";
@@ -225,7 +225,7 @@ namespace StudyOfSubthresholdPerception
             }));
             labelNum.BeginInvoke(new Action(delegate()
             {
-                labelNum.Text = "Предъявление " + ++k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
+                labelNum.Text = "Стимул " + ++k + " из " + (Experiment5.numOfPresent); // Experiments.Experiment1.numOfExp);
             }));
 
             timer.Start();

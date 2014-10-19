@@ -33,6 +33,7 @@
             this.buttonFinish = new System.Windows.Forms.Button();
             this.tabControl = new Dotnetrix.Controls.TabControlEX();
             this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
+            this.label13 = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
             this.label11 = new System.Windows.Forms.Label();
@@ -54,14 +55,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelScale = new System.Windows.Forms.Label();
-            this.trackBarScale = new System.Windows.Forms.TrackBar();
             this.labelNumTest = new System.Windows.Forms.Label();
             this.labelNum = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.pictureBoxPresentation = new System.Windows.Forms.PictureBox();
             this.pictureBoxMask = new System.Windows.Forms.PictureBox();
+            this.trackBarScale = new System.Windows.Forms.TrackBar();
             this.buttonNext = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEX1.SuspendLayout();
@@ -70,10 +70,10 @@
             this.panelSample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).BeginInit();
             this.tabPageEX3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPresentation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -110,7 +110,7 @@
             this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 1;
             this.tabControl.Size = new System.Drawing.Size(854, 596);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
@@ -125,6 +125,15 @@
             this.tabPageEX1.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX1.TabIndex = 0;
             this.tabPageEX1.Text = "Инструкция";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(271, 541);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(354, 19);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // labelDescription
             // 
@@ -230,11 +239,11 @@
             // labelNumSampleTest
             // 
             this.labelNumSampleTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumSampleTest.Location = new System.Drawing.Point(250, 10);
+            this.labelNumSampleTest.Location = new System.Drawing.Point(267, 10);
             this.labelNumSampleTest.Name = "labelNumSampleTest";
-            this.labelNumSampleTest.Size = new System.Drawing.Size(400, 41);
+            this.labelNumSampleTest.Size = new System.Drawing.Size(360, 41);
             this.labelNumSampleTest.TabIndex = 3;
-            this.labelNumSampleTest.Text = "Предъявление 1 из 5";
+            this.labelNumSampleTest.Text = "Стимул 1 из 5";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSample
@@ -338,22 +347,12 @@
             this.labelScale.TabIndex = 8;
             this.labelScale.Text = "Оценка: 0";
             // 
-            // trackBarScale
-            // 
-            this.trackBarScale.Location = new System.Drawing.Point(195, 453);
-            this.trackBarScale.Maximum = 100;
-            this.trackBarScale.Minimum = -100;
-            this.trackBarScale.Name = "trackBarScale";
-            this.trackBarScale.Size = new System.Drawing.Size(500, 45);
-            this.trackBarScale.TabIndex = 7;
-            this.trackBarScale.Scroll += new System.EventHandler(this.trackBarScale_Scroll);
-            // 
             // labelNumTest
             // 
             this.labelNumTest.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNumTest.Location = new System.Drawing.Point(250, 8);
+            this.labelNumTest.Location = new System.Drawing.Point(270, 8);
             this.labelNumTest.Name = "labelNumTest";
-            this.labelNumTest.Size = new System.Drawing.Size(400, 23);
+            this.labelNumTest.Size = new System.Drawing.Size(360, 23);
             this.labelNumTest.TabIndex = 6;
             this.labelNumTest.Text = "Опыт 1 из n";
             this.labelNumTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,11 +360,11 @@
             // labelNum
             // 
             this.labelNum.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNum.Location = new System.Drawing.Point(250, 30);
+            this.labelNum.Location = new System.Drawing.Point(270, 30);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(400, 25);
+            this.labelNum.Size = new System.Drawing.Size(360, 25);
             this.labelNum.TabIndex = 5;
-            this.labelNum.Text = "Предъявление 1 из n";
+            this.labelNum.Text = "Стимул 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel
@@ -400,6 +399,16 @@
             this.pictureBoxMask.TabStop = false;
             this.pictureBoxMask.Visible = false;
             // 
+            // trackBarScale
+            // 
+            this.trackBarScale.Location = new System.Drawing.Point(195, 453);
+            this.trackBarScale.Maximum = 100;
+            this.trackBarScale.Minimum = -100;
+            this.trackBarScale.Name = "trackBarScale";
+            this.trackBarScale.Size = new System.Drawing.Size(500, 45);
+            this.trackBarScale.TabIndex = 7;
+            this.trackBarScale.Scroll += new System.EventHandler(this.trackBarScale_Scroll);
+            // 
             // buttonNext
             // 
             this.buttonNext.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -410,15 +419,6 @@
             this.buttonNext.Text = "Далее";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(271, 541);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(354, 19);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // FormExperiment5
             // 
@@ -445,10 +445,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSample)).EndInit();
             this.tabPageEX3.ResumeLayout(false);
             this.tabPageEX3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPresentation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.ResumeLayout(false);
 
         }

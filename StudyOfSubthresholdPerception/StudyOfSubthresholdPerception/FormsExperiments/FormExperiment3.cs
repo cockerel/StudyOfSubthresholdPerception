@@ -108,7 +108,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "№ предъявления"
+                        ColumnName = "№ стимула"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -180,14 +180,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         buttonNext.Visible = false;
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
-                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                        labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                         SetWord();
                     }
                 }
             }
             else
             {
-                labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -220,7 +220,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
 
                     table.Columns.Add(new DataColumn
                     {
-                        ColumnName = "№ предъявления"
+                        ColumnName = "№ стимула"
                     });
 
                     table.Columns.Add(new DataColumn
@@ -292,14 +292,14 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         buttonNext.Visible = false;
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
-                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                        labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                         SetWord();
                     }
                 }
             }
             else
             {
-                labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                 SetWord();
             }
         }
@@ -314,7 +314,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     tabControlEx3.SelectTab(tabPage2);
                     buttonFinish.Visible = true;
                     buttonNext.Visible = false;
-                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
+                    labelNumSampleTest.Text = String.Concat("Стимул ", (PresCount), " из ", 5);
                     label6.Visible = false;
                     label7.Visible = false;
                     timer3.Start();
@@ -346,7 +346,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                     break;
                 case 1:
                     PresCount = 1;
-                    labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                    labelNumSampleTest.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                     buttonNext.Visible = false;
                     break;
                 case 2:
@@ -355,7 +355,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
                         buttonNext.Visible = false;
                         labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
                         PresCount = 1;
-                        labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+                        labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
                         SetWord();
                     }
                     break;
@@ -371,7 +371,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
         {
             MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
             Reset();
-            labelNum.Text = String.Concat("Предъявление ", (PresCount), " из ", Settings.PresCount);
+            labelNum.Text = String.Concat("Стимул ", (PresCount), " из ", Settings.PresCount);
             labelNumTest.Text = String.Concat("Опыт ", ExpCount, " из ", Settings.ExpCount);
             tabControlEx3.SelectTab(tabPage3);
             TestExp = false;
@@ -502,7 +502,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
-                labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
+                labelNumSampleTest.Text = String.Concat("Стимул ", (PresCount), " из ", 5);
                 switch (PresCount)
                 {
                     case 1:
@@ -545,7 +545,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             else
             {
-                labelNumSampleTest.Text = String.Concat("Предъявление ", (PresCount), " из ", 5);
+                labelNumSampleTest.Text = String.Concat("Стимул ", (PresCount), " из ", 5);
                 switch (PresCount)
                 {
                     case 1:

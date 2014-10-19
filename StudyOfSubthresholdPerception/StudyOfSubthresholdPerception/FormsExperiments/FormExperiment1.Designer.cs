@@ -33,6 +33,7 @@
             this.buttonFinish = new System.Windows.Forms.Button();
             this.tabControl = new Dotnetrix.Controls.TabControlEX();
             this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.pictureBoxMask = new System.Windows.Forms.PictureBox();
             this.buttonNext = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEX1.SuspendLayout();
@@ -97,7 +97,7 @@
             this.tabControl.ItemSize = new System.Drawing.Size(280, 21);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(854, 596);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
@@ -112,6 +112,15 @@
             this.tabPageEX1.Size = new System.Drawing.Size(846, 567);
             this.tabPageEX1.TabIndex = 0;
             this.tabPageEX1.Text = "Инструкция";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(273, 538);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // labelDescription
             // 
@@ -154,7 +163,7 @@
             this.labelNumSampleTest.Name = "labelNumSampleTest";
             this.labelNumSampleTest.Size = new System.Drawing.Size(400, 40);
             this.labelNumSampleTest.TabIndex = 3;
-            this.labelNumSampleTest.Text = "Предъявление 1 из 10";
+            this.labelNumSampleTest.Text = "Стимул 1 из 10";
             this.labelNumSampleTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSample
@@ -237,9 +246,9 @@
             this.labelNum.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNum.Location = new System.Drawing.Point(241, 52);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(400, 23);
+            this.labelNum.Size = new System.Drawing.Size(400, 34);
             this.labelNum.TabIndex = 5;
-            this.labelNum.Text = "Предъявление 1 из n";
+            this.labelNum.Text = "Стимул 1 из n";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel
@@ -306,15 +315,6 @@
             this.buttonNext.Text = "Далее";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(273, 538);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Для перехода далее нажмите \"Enter\" или соответствующую кнопку.";
             // 
             // FormExperiment1
             // 

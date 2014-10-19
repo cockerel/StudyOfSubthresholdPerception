@@ -150,7 +150,7 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, DB.connection);
                 //table.Clear();
                 table = new DataTable();
-                table.Columns.Add("№ предъявления");
+                table.Columns.Add("№ стимула");
                 adapter.Fill(table);
 
                 table.Columns[1].ColumnName = "Время предъявления маски";
