@@ -44,6 +44,7 @@
             this.panelExperimenter = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelExamenee.SuspendLayout();
             this.panelExperimenter.SuspendLayout();
             this.SuspendLayout();
@@ -201,12 +202,23 @@
             this.labelPassword.TabIndex = 0;
             this.labelPassword.Text = "Пароль:";
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 42);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Внимание!   Для   авторизации   может   потребоваться   не-\r\nсколько секунд. В эт" +
+    "о время программа может не отвечать.";
+            // 
             // FormAuthorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(284, 222);
+            this.ClientSize = new System.Drawing.Size(284, 255);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelExperimenter);
             this.Controls.Add(this.buttonAuthorization);
             this.Controls.Add(this.panelExamenee);
@@ -243,6 +255,7 @@
         private System.Windows.Forms.Panel panelExperimenter;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label label1;
     }
 }
 
