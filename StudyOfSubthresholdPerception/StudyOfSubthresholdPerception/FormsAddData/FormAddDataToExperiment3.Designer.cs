@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddDataToExperiment3));
             this.openFileDialogSelectImage = new System.Windows.Forms.OpenFileDialog();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.textBoxEx3Down1);
             this.Controls.Add(this.textBoxEx3Und);
             this.Controls.Add(this.buttonAdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddDataToExperiment3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";

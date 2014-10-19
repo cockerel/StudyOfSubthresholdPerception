@@ -286,8 +286,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 794);
+            this.ClientSize = new System.Drawing.Size(762, 750);
             this.Controls.Add(this.panelMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExperiment4";
             this.Text = "Эксперимент 4";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

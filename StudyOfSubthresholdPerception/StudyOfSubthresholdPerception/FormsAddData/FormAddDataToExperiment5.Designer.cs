@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddDataToExperiment5));
             this.pictureBoxNeutral = new System.Windows.Forms.PictureBox();
             this.pictureBoxPositive = new System.Windows.Forms.PictureBox();
             this.pictureBoxNegative = new System.Windows.Forms.PictureBox();
@@ -129,6 +130,7 @@
             this.Controls.Add(this.pictureBoxNegative);
             this.Controls.Add(this.pictureBoxPositive);
             this.Controls.Add(this.pictureBoxNeutral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddDataToExperiment5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";

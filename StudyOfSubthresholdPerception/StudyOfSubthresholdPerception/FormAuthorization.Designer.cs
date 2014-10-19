@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAuthorization));
             this.radioButtonExaminee = new System.Windows.Forms.RadioButton();
             this.radioButtonExperimenter = new System.Windows.Forms.RadioButton();
             this.panelExamenee = new System.Windows.Forms.Panel();
@@ -211,6 +212,7 @@
             this.Controls.Add(this.panelExamenee);
             this.Controls.Add(this.radioButtonExperimenter);
             this.Controls.Add(this.radioButtonExaminee);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCurrentResult));
             this.dataGridViewResult = new System.Windows.Forms.DataGridView();
             this.buttonSaveToFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
@@ -63,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(874, 442);
             this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.dataGridViewResult);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCurrentResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результат";

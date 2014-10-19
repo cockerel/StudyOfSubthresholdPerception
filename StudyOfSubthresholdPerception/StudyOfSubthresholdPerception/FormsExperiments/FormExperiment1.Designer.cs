@@ -324,6 +324,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(884, 662);
             this.Controls.Add(this.panelMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(885, 680);
             this.Name = "FormExperiment1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
