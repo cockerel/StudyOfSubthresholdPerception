@@ -46,6 +46,11 @@ namespace StudyOfSubthresholdPerception
             new SetEditor.Experiment1().loadData(dataGridViewExperiment1);
             settingExperiment1 = new SettingExperiment1(this);
             settingExperiment1.loadData();
+            if (dataGridViewExperiment1.Rows.Count == 0)
+            {
+                buttonAdd.Enabled = false;
+            }
+            
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,6 +122,11 @@ namespace StudyOfSubthresholdPerception
                     new SetEditor.Experiment5().loadData(dataGridViewExperiment5);
                     settingExperiment5 = new SettingExperiment5(this);
                     settingExperiment5.loadData();
+                    if (dataGridViewExperiment5.Rows.Count == 0)
+                    {
+                        buttonExp5AddPositive.Enabled = false;
+                        buttonExp5AddNegative.Enabled = false;
+                    }
                     break;
                 case (int)Tabs.GeneralSettings:
                     List<string> listTime = new DB().getTimeMaskAndPresent();

@@ -73,12 +73,13 @@ namespace StudyOfSubthresholdPerception
                         }
                         //Thread.Sleep(listTime[2]);
                         timer.Start();
+                        buttonNext.Enabled = false;
                     }
                     else
                     {
                         tabControl.SelectedIndex = (int)Tabs.Test;
                     }
-                    buttonNext.Enabled = false;
+                    
                     textBoxSampleAnswer.Select();
                     break;
                 case (int)Tabs.SampleTest:
@@ -120,6 +121,7 @@ namespace StudyOfSubthresholdPerception
                     break;
                 case (int)Tabs.Test:
                     buttonNext.Enabled = false;
+                    
                 loop1:
                     if (m < Experiment1.numOfPresent * Experiment1.numOfExp - 1)
                     {

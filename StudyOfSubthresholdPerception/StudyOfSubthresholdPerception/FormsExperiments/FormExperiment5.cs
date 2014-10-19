@@ -62,12 +62,12 @@ namespace StudyOfSubthresholdPerception
                         }
                         //Thread.Sleep(listTime[2]);
                         timer.Start();
+                        buttonNext.Enabled = false;
                     }
                     else
                     {
                         tabControl.SelectedIndex = (int)Tabs.Test;
                     }
-                    buttonNext.Enabled = false;
                     break;
                 case (int)Tabs.SampleTest:
                     buttonFinish.Enabled = false;
