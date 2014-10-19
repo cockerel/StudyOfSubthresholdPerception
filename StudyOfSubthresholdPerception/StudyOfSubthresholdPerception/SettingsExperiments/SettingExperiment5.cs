@@ -18,9 +18,29 @@ namespace StudyOfSubthresholdPerception.SettingsExperiments
         }
         public void saveData()
         {
-            int numOfExp = Convert.ToInt32(formSetting.TextBoxNumOfExp5.Text);
-            int numOfPresent = Convert.ToInt32(formSetting.TextBoxNumOfPresent5.Text);
-            int numOfAllPresent = numOfExp * numOfPresent;
+            int numOfExp = 0;
+            int numOfPresent = 0;
+            int numOfAllPresent = 0;
+
+            try
+            {
+                numOfExp = Convert.ToInt32(formSetting.TextBoxNumOfExp5.Text);
+            }
+            catch 
+            {
+                formSetting.TextBoxNumOfExp5.Text = "1";
+            }
+
+            try
+            {
+                numOfPresent = Convert.ToInt32(formSetting.TextBoxNumOfPresent5.Text);
+            }
+            catch
+            {
+                formSetting.TextBoxNumOfPresent5.Text = "1";
+            }
+            
+            numOfAllPresent = numOfExp * numOfPresent;
 
             if (numOfAllPresent == formSetting.DataGridViewExpSetting5.Rows.Count)
             {

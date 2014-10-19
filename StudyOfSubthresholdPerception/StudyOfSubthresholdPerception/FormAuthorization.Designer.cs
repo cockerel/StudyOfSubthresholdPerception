@@ -205,12 +205,12 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 221);
+            this.label1.Location = new System.Drawing.Point(9, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 42);
+            this.label1.Size = new System.Drawing.Size(270, 42);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Внимание!   Для   авторизации   может   потребоваться   не-\r\nсколько секунд. В эт" +
-    "о время программа может не отвечать.";
+            this.label1.Text = "Внимание!    Для    авторизации    может   потребоваться   не-\r\nсколько секунд. В" +
+    " это время приложение может не отвечать.";
             // 
             // FormAuthorization
             // 
