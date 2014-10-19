@@ -297,7 +297,7 @@
             this.MinimumSize = new System.Drawing.Size(885, 680);
             this.Name = "FormExperiment3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Эксперимент 2";
+            this.Text = "Эксперимент 2. Исследование механизмов осознания подпороговых стимулов.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormExperiment3_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment3_SizeChanged);

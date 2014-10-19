@@ -431,7 +431,8 @@
             this.MinimumSize = new System.Drawing.Size(885, 680);
             this.Name = "FormExperiment5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Эксперимент 5";
+            this.Text = "Эксперимент 5. Исследование влияния подпороговых стимулов на формирование эмоцион" +
+    "альных реакций по отношению к нейтральному объекту.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormExperiment5_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment5_SizeChanged);

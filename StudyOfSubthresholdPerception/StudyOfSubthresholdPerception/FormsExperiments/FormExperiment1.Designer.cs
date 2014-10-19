@@ -327,7 +327,7 @@
             this.MinimumSize = new System.Drawing.Size(885, 680);
             this.Name = "FormExperiment1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Эксперимент 1";
+            this.Text = "Эксперимент 1. Исследование влияния подпороговых стимулов на решение анаграмм.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormExperiment1_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment1_SizeChanged);
