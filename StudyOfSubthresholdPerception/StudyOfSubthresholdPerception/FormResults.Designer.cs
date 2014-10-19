@@ -32,8 +32,39 @@
             this.tabControlResults = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewResults1 = new System.Windows.Forms.DataGridView();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormResults1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberExperiment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeMask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimePresentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CorrectAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypedAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coincided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewResults2 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridViewResults5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
+            this.labelUserInfo = new System.Windows.Forms.Label();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idex3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idex3user = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,37 +77,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ex3Selected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridViewResults5 = new System.Windows.Forms.DataGridView();
-            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
-            this.labelUserInfo = new System.Windows.Forms.Label();
-            this.buttonSaveToFile = new System.Windows.Forms.Button();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberExperiment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeMask = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimePresentation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anagram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CorrectAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypedAnswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coincided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlResults.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResults1)).BeginInit();
@@ -119,7 +119,7 @@
             this.Number,
             this.Id,
             this.UserId,
-            this.Name,
+            this.FormResults1,
             this.NumberExperiment,
             this.TimeMask,
             this.TimePresentation,
@@ -135,6 +135,90 @@
             this.dataGridViewResults1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewResults1.Size = new System.Drawing.Size(899, 431);
             this.dataGridViewResults1.TabIndex = 0;
+            // 
+            // Number
+            // 
+            this.Number.HeaderText = "№";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 50;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Идентификатор (Id)";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 90;
+            // 
+            // UserId
+            // 
+            this.UserId.HeaderText = "Идентификатор (Id) испытуемого";
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
+            // 
+            // FormResults1
+            // 
+            this.FormResults1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FormResults1.HeaderText = "Ф.И.О.";
+            this.FormResults1.Name = "FormResults1";
+            this.FormResults1.ReadOnly = true;
+            this.FormResults1.Width = 68;
+            // 
+            // NumberExperiment
+            // 
+            this.NumberExperiment.HeaderText = "Номер эксперимента";
+            this.NumberExperiment.Name = "NumberExperiment";
+            this.NumberExperiment.ReadOnly = true;
+            // 
+            // TimeMask
+            // 
+            this.TimeMask.HeaderText = "Время предъявления маски";
+            this.TimeMask.Name = "TimeMask";
+            this.TimeMask.ReadOnly = true;
+            // 
+            // TimePresentation
+            // 
+            this.TimePresentation.HeaderText = "Время предъявления подпорогового стимула";
+            this.TimePresentation.Name = "TimePresentation";
+            this.TimePresentation.ReadOnly = true;
+            // 
+            // DataTime
+            // 
+            this.DataTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DataTime.HeaderText = "Дата и время";
+            this.DataTime.Name = "DataTime";
+            this.DataTime.ReadOnly = true;
+            this.DataTime.Width = 94;
+            // 
+            // Anagram
+            // 
+            this.Anagram.HeaderText = "Анаграмма";
+            this.Anagram.Name = "Anagram";
+            this.Anagram.ReadOnly = true;
+            // 
+            // CorrectAnswer
+            // 
+            this.CorrectAnswer.HeaderText = "Вариант (совпадающий)";
+            this.CorrectAnswer.Name = "CorrectAnswer";
+            this.CorrectAnswer.ReadOnly = true;
+            // 
+            // TypedAnswer
+            // 
+            this.TypedAnswer.HeaderText = "Введенный ответ";
+            this.TypedAnswer.Name = "TypedAnswer";
+            this.TypedAnswer.ReadOnly = true;
+            // 
+            // Coincided
+            // 
+            this.Coincided.HeaderText = "Совпадение";
+            this.Coincided.Name = "Coincided";
+            this.Coincided.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Идентификатор (Id) стимула в настройках";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -165,84 +249,11 @@
             this.dataGridViewTextBoxColumn18,
             this.ex3Selected,
             this.dataGridViewCheckBoxColumn1});
-            this.dataGridViewResults2.Location = new System.Drawing.Point(6, 8);
+            this.dataGridViewResults2.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewResults2.Name = "dataGridViewResults2";
             this.dataGridViewResults2.ReadOnly = true;
-            this.dataGridViewResults2.Size = new System.Drawing.Size(890, 417);
+            this.dataGridViewResults2.Size = new System.Drawing.Size(899, 431);
             this.dataGridViewResults2.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "№";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
-            // 
-            // idex3
-            // 
-            this.idex3.HeaderText = "Идентификатор (Id)";
-            this.idex3.Name = "idex3";
-            this.idex3.ReadOnly = true;
-            // 
-            // idex3user
-            // 
-            this.idex3user.HeaderText = "Идентификатор (Id) испытуемого";
-            this.idex3user.Name = "idex3user";
-            this.idex3user.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Ф.И.О.";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Номер эксперимента";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // MaskColumn
-            // 
-            this.MaskColumn.HeaderText = "Время предъявления маски";
-            this.MaskColumn.Name = "MaskColumn";
-            this.MaskColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Время предъявления подпорогового стимула,мс";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Дата и время";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // ex3under
-            // 
-            this.ex3under.HeaderText = "Подпороговый  стимул";
-            this.ex3under.Name = "ex3under";
-            this.ex3under.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "Надпороговый (совпадающий)";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // ex3Selected
-            // 
-            this.ex3Selected.HeaderText = "Надпороговый стимул (выбранный)";
-            this.ex3Selected.Name = "ex3Selected";
-            this.ex3Selected.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Совпадание";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -296,119 +307,6 @@
             this.dataGridViewResults5.Size = new System.Drawing.Size(899, 431);
             this.dataGridViewResults5.TabIndex = 1;
             // 
-            // comboBoxUsers
-            // 
-            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxUsers.FormattingEnabled = true;
-            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
-            this.comboBoxUsers.Name = "comboBoxUsers";
-            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
-            this.comboBoxUsers.TabIndex = 1;
-            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
-            // 
-            // labelUserInfo
-            // 
-            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
-            this.labelUserInfo.Name = "labelUserInfo";
-            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
-            this.labelUserInfo.TabIndex = 2;
-            this.labelUserInfo.Text = "label1";
-            // 
-            // buttonSaveToFile
-            // 
-            this.buttonSaveToFile.Location = new System.Drawing.Point(738, 510);
-            this.buttonSaveToFile.Name = "buttonSaveToFile";
-            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
-            this.buttonSaveToFile.TabIndex = 4;
-            this.buttonSaveToFile.Text = "Сохранить данные в файл";
-            this.buttonSaveToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "№";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 50;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Идентификатор (Id)";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 90;
-            // 
-            // UserId
-            // 
-            this.UserId.HeaderText = "Идентификатор (Id) испытуемого";
-            this.UserId.Name = "UserId";
-            this.UserId.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Name.HeaderText = "Ф.И.О.";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Width = 68;
-            // 
-            // NumberExperiment
-            // 
-            this.NumberExperiment.HeaderText = "Номер эксперимента";
-            this.NumberExperiment.Name = "NumberExperiment";
-            this.NumberExperiment.ReadOnly = true;
-            // 
-            // TimeMask
-            // 
-            this.TimeMask.HeaderText = "Время предъявления маски";
-            this.TimeMask.Name = "TimeMask";
-            this.TimeMask.ReadOnly = true;
-            // 
-            // TimePresentation
-            // 
-            this.TimePresentation.HeaderText = "Время предъявления подпорогового стимула";
-            this.TimePresentation.Name = "TimePresentation";
-            this.TimePresentation.ReadOnly = true;
-            // 
-            // DataTime
-            // 
-            this.DataTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DataTime.HeaderText = "Дата и время";
-            this.DataTime.Name = "DataTime";
-            this.DataTime.ReadOnly = true;
-            this.DataTime.Width = 65;
-            // 
-            // Anagram
-            // 
-            this.Anagram.HeaderText = "Анаграмма";
-            this.Anagram.Name = "Anagram";
-            this.Anagram.ReadOnly = true;
-            // 
-            // CorrectAnswer
-            // 
-            this.CorrectAnswer.HeaderText = "Вариант (совпадающий)";
-            this.CorrectAnswer.Name = "CorrectAnswer";
-            this.CorrectAnswer.ReadOnly = true;
-            // 
-            // TypedAnswer
-            // 
-            this.TypedAnswer.HeaderText = "Введенный ответ";
-            this.TypedAnswer.Name = "TypedAnswer";
-            this.TypedAnswer.ReadOnly = true;
-            // 
-            // Coincided
-            // 
-            this.Coincided.HeaderText = "Совпадение";
-            this.Coincided.Name = "Coincided";
-            this.Coincided.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Идентификатор (Id) стимула в настройках";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "№";
@@ -461,7 +359,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Дата и время";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 65;
+            this.dataGridViewTextBoxColumn7.Width = 94;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -483,6 +381,108 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(13, 13);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(300, 28);
+            this.comboBoxUsers.TabIndex = 1;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
+            // 
+            // labelUserInfo
+            // 
+            this.labelUserInfo.Location = new System.Drawing.Point(320, 9);
+            this.labelUserInfo.Name = "labelUserInfo";
+            this.labelUserInfo.Size = new System.Drawing.Size(452, 35);
+            this.labelUserInfo.TabIndex = 2;
+            this.labelUserInfo.Text = "label1";
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.Location = new System.Drawing.Point(738, 510);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(180, 40);
+            this.buttonSaveToFile.TabIndex = 4;
+            this.buttonSaveToFile.Text = "Сохранить данные в файл";
+            this.buttonSaveToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "№";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
+            // 
+            // idex3
+            // 
+            this.idex3.HeaderText = "Идентификатор (Id)";
+            this.idex3.Name = "idex3";
+            this.idex3.ReadOnly = true;
+            // 
+            // idex3user
+            // 
+            this.idex3user.HeaderText = "Идентификатор (Id) испытуемого";
+            this.idex3user.Name = "idex3user";
+            this.idex3user.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Ф.И.О.";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Номер эксперимента";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // MaskColumn
+            // 
+            this.MaskColumn.HeaderText = "Время предъявления маски";
+            this.MaskColumn.Name = "MaskColumn";
+            this.MaskColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Время предъявления подпорогового стимула";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "Дата и время";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // ex3under
+            // 
+            this.ex3under.HeaderText = "Подпороговый  стимул";
+            this.ex3under.Name = "ex3under";
+            this.ex3under.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "Вариант (совпадающий)";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // ex3Selected
+            // 
+            this.ex3Selected.HeaderText = "Выбранный вариант";
+            this.ex3Selected.Name = "ex3Selected";
+            this.ex3Selected.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Совпадание";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
             // FormResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,7 +493,7 @@
             this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tabControlResults);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormResults";
+            //this.Name.Name = "FormResults";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обработка результатов";
             this.Load += new System.EventHandler(this.FormResults_Load);
@@ -522,18 +522,6 @@
         private System.Windows.Forms.Button buttonSaveToFile;
         private System.Windows.Forms.DataGridView dataGridViewResults5;
         private System.Windows.Forms.DataGridView dataGridViewResults2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idex3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idex3user;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaskColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ex3under;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ex3Selected;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
@@ -558,5 +546,18 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormResults1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idex3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idex3user;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaskColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ex3under;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ex3Selected;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }
