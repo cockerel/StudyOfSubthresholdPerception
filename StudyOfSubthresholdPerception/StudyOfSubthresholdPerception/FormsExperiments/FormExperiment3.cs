@@ -75,7 +75,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             }
             catch (Exception)
             {
-                MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.");
+                MessageBox.Show("Произошла ошибка. Проверьте настройки эксперимента.", StudyOfSubthresholdPerception.Properties.Resources.StrErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }

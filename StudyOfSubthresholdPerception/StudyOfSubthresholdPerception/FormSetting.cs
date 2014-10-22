@@ -524,7 +524,8 @@ namespace StudyOfSubthresholdPerception
             }
             else
             {
-                MessageBox.Show("Количество строк в таблице предъявлений не совпадает с общим количеством заданных опытов и предъявлений. Проверьте корректность введенных данных!");
+                MessageBox.Show("Количество строк в таблице предъявлений не совпадает с общим количеством заданных опытов и предъявлений. Проверьте корректность введенных данных!",
+                    StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
