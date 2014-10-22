@@ -54,7 +54,7 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             var res = ex3.GetResults();
             if (res != null && res.Any())
             {
-                ExSessionCount = res.First().ExperimentsCount + 1;
+                ExSessionCount = prevRes[prevRes.Count - 1].ExperimentsCount + 1;
             }
             else
             {

@@ -50,7 +50,7 @@ namespace StudyOfSubthresholdPerception
             {
                 buttonAdd.Enabled = false;
             }
-            
+
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -361,6 +361,17 @@ namespace StudyOfSubthresholdPerception
                 new DB().clearTable("ResultsOfExperiment5");
                 new DB().clearTable("Users");
             }
+
+            var ex3 = new Experiment3DataHelper();
+            var results = ex3.GetResults();
+            var db = new DB();
+            foreach (var x in results)
+            {
+                if (x.UserId == db.ID_USER)
+                {
+                    ex3.RemoveResult(x.Id);
+                }
+            }
         }
 
         private void buttonExp4AddPair_Click(object sender, EventArgs e)
@@ -508,7 +519,7 @@ namespace StudyOfSubthresholdPerception
             if (expCount * presCount == count)
             {
                 var settings = ex3.GetSettings();
-                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval, Mask = settings.Mask, MaskAfter = settings.MaskAfter});
+                ex3.SetSettings(new Experiment3SettingsModel { ExpCount = expCount, PresCount = presCount, Interval = settings.Interval, Mask = settings.Mask, MaskAfter = settings.MaskAfter });
                 MessageBox.Show("Данные сохранены.");
             }
             else

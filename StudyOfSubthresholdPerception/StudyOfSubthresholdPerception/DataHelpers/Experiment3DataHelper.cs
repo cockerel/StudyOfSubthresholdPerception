@@ -245,5 +245,26 @@ namespace StudyOfSubthresholdPerception.DataHelpers
                 }
             }
         }
+
+        public void RemoveResult(int id)
+        {
+            using (var context = new DataContext())
+            {
+                try
+                {
+
+                    var entity = context.Experiment3Results.FirstOrDefault(x => x.Id == id);
+                    if (entity != null)
+                    {
+                        context.Experiment3Results.Remove(entity);
+                        context.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
     }
 }
