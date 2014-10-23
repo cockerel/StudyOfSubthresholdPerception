@@ -87,5 +87,10 @@ namespace StudyOfSubthresholdPerception
                 //(e.KeyChar < 128 || e.KeyChar > 175) && (e.KeyChar < 224 || e.KeyChar > 241))
                 e.Handled = true; 
         }
+
+        private void FormAuthorization_Load(object sender, EventArgs e)
+        {
+            //new ScreenSaver().ShowDialog();
+        }
     }
 }
