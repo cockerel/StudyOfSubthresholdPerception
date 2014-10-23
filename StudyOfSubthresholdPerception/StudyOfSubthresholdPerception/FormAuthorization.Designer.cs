@@ -229,6 +229,7 @@
             this.Name = "FormAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.Load += new System.EventHandler(this.FormAuthorization_Load);
             this.panelExamenee.ResumeLayout(false);
             this.panelExamenee.PerformLayout();
             this.panelExperimenter.ResumeLayout(false);

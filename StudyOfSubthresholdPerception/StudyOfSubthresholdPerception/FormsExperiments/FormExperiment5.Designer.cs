@@ -435,6 +435,7 @@
             this.Text = "Эксперимент 5. Исследование влияния подпороговых стимулов на формирование эмоцион" +
     "альных реакций по отношению к нейтральному объекту.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormExperiment5_FormClosing);
             this.Load += new System.EventHandler(this.FormExperiment5_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment5_SizeChanged);
             this.panelMain.ResumeLayout(false);
