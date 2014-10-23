@@ -100,6 +100,7 @@ namespace StudyOfSubthresholdPerception
             this.button3.Enabled = false;
             this.buttonSetEditor.Enabled = false;
             this.buttonSetting.Enabled = false;
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.Enabled = false;
             var ex3 = new Experiment3DataHelper();
             ex3.GetSettings();
@@ -111,6 +112,7 @@ namespace StudyOfSubthresholdPerception
             this.button3.Enabled = true;
             this.buttonSetEditor.Enabled = true;
             this.buttonSetting.Enabled = true;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Enabled = true;
             timer1.Enabled = false;
         }
