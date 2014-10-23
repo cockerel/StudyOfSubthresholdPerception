@@ -179,6 +179,7 @@ namespace StudyOfSubthresholdPerception
                         exp1.addAnswerPresentation(DateTime.Now, textBoxAnswer.Text);
                         exp1.saveData(listTime[0], listTime[1]);
                         //new FormCurrentResult().ShowDialog();
+                        isClose = false;
                         Close();
                     }
                     break;

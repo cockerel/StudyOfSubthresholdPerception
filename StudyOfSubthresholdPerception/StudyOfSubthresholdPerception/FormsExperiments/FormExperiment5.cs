@@ -160,6 +160,7 @@ namespace StudyOfSubthresholdPerception
                         exp5.addAnswerPresentation(DateTime.Now, trackBarScale.Value);
                         exp5.saveData(listTime[0], listTime[1]);
                         //new FormCurrentResult().ShowDialog();
+                        isClose = false;
                         Close();
                     }
                     break;
