@@ -19,6 +19,8 @@ namespace StudyOfSubthresholdPerception
         private enum Tabs { Description, SampleTest, Test };
         private int k = 0; //счетчик тестовых предъявлений
         private bool isTest = false; //проверка выполняется ли тест
+        private bool isFirst = true;
+        private bool isClose = false;
         private bool check = false; //если false, то отбразится маска, true - предъявление
         private int numChange = 0; //счетчик кол-ва смен изображений (маска - предъявление - маска)
         private DB db = new DB();
@@ -51,29 +53,38 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Description:
                     if (isTest == false)
                     {
-                        tabPageEX2.Enabled = true;
-                        tabControl.SelectedIndex = (int)Tabs.SampleTest;
-                        buttonFinish.Visible = true;
-                        pictureBoxSample.Visible = false;
-                        /*
-                        if (listTime[0] > 0)
+                        if (isFirst == true)
                         {
-                            timer.Period = listTime[0];
+                            tabPageEX2.Enabled = true;
+                            tabControl.SelectedIndex = (int)Tabs.SampleTest;
+                            buttonFinish.Visible = true;
+                            pictureBoxSample.Visible = false;
+                            /*
+                            if (listTime[0] > 0)
+                            {
+                                timer.Period = listTime[0];
+                            }
+                            else
+                            {
+                                timer.Period = listTime[1];
+                            }
+                             */
+                            //timer.Period = 1500;
+
+                            if (listTime[0] > 0)
+                            {
+                                timer.Period = listTime[0];
+                            }
+                            //Thread.Sleep(listTime[2]);
+                            timer.Start();
+                            isClose = true;
+                            buttonNext.Enabled = false;
+                            isFirst = false;
                         }
                         else
                         {
-                            timer.Period = listTime[1];
+                            tabControl.SelectedIndex = (int)Tabs.SampleTest;
                         }
-                         */
-                        //timer.Period = 1500;
-
-                        if (listTime[0] > 0)
-                        {
-                            timer.Period = listTime[0];
-                        }
-                        //Thread.Sleep(listTime[2]);
-                        timer.Start();
-                        buttonNext.Enabled = false;
                     }
                     else
                     {
@@ -83,6 +94,7 @@ namespace StudyOfSubthresholdPerception
                     textBoxSampleAnswer.Select();
                     break;
                 case (int)Tabs.SampleTest:
+                    isClose = true;
                     buttonFinish.Enabled = false;
                     buttonNext.Enabled = false;
                     if (k < 9)
@@ -112,6 +124,7 @@ namespace StudyOfSubthresholdPerception
                         MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
                         buttonNext.Enabled = false;
+                        isClose = true;
                         //textBoxAnswer.Select();
                         textBoxAnswer.BeginInvoke(new Action(delegate()
                         {
@@ -120,6 +133,7 @@ namespace StudyOfSubthresholdPerception
                     }
                     break;
                 case (int)Tabs.Test:
+                    isClose = true;
                     buttonNext.Enabled = false;
                     
                 loop1:
@@ -353,6 +367,7 @@ namespace StudyOfSubthresholdPerception
                     textBoxSampleAnswer.MaxLength = labelSampleAnagram.Text.Length;
                     //textBoxAnswer.Select();
                 }));
+                
                 buttonNext.BeginInvoke(new Action(delegate()
                     {
                         buttonNext.Enabled = true;
@@ -361,11 +376,13 @@ namespace StudyOfSubthresholdPerception
                 {
                     buttonFinish.Enabled = true;
                 }));
+                isClose = false;
             }
         }
 
         private void nextPresentation()
         {
+            isClose = true;
 
             if (numChange < 4 && listTime[0] > 0)
             {
@@ -509,6 +526,8 @@ namespace StudyOfSubthresholdPerception
                     buttonNext.Enabled = true;
                 }));
 
+                isClose = false;
+
                 //check = false;
                 //labelSampleAnagram.Text = Experiments.Experiment1.anagrams[k];
                 //labelSampleAnagram.Visible = true;
@@ -529,6 +548,11 @@ namespace StudyOfSubthresholdPerception
         private void tabPageEX2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormExperiment1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = isClose;
         }
     }
 }

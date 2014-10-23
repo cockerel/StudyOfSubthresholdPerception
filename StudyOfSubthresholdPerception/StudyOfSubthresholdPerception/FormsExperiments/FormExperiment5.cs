@@ -19,6 +19,8 @@ namespace StudyOfSubthresholdPerception
         private enum Tabs { Description, SampleTest, Test };
         private int k = 0; //счетчик тестовых предъявлений
         private bool isTest = false; //проверка выполняется ли тест
+        private bool isFirst = true;
+        private bool isClose = false;
         private bool check = false; //если false, то отбразится маска, true - предъявление
         private int numChange = 0; //счетчик кол-ва смен изображений (маска - предъявление - маска)
         private DB db = new DB();
@@ -52,17 +54,26 @@ namespace StudyOfSubthresholdPerception
                 case (int)Tabs.Description:
                     if (isTest == false)
                     {
-                        tabPageEX2.Enabled = true;
-                        tabControl.SelectedIndex = (int)Tabs.SampleTest;
-                        buttonFinish.Visible = true;
-                        pictureBoxSample.Visible = false;
-                        if (listTime[0] > 0)
+                        if (isFirst == true)
                         {
-                            timer.Period = listTime[0];
+                            tabPageEX2.Enabled = true;
+                            tabControl.SelectedIndex = (int)Tabs.SampleTest;
+                            buttonFinish.Visible = true;
+                            pictureBoxSample.Visible = false;
+                            if (listTime[0] > 0)
+                            {
+                                timer.Period = listTime[0];
+                            }
+                            //Thread.Sleep(listTime[2]);
+                            timer.Start();
+                            isClose = true;
+                            buttonNext.Enabled = false;
+                            isFirst = false;
                         }
-                        //Thread.Sleep(listTime[2]);
-                        timer.Start();
-                        buttonNext.Enabled = false;
+                        else
+                        {
+                            tabControl.SelectedIndex = (int)Tabs.SampleTest;
+                        }
                     }
                     else
                     {
@@ -71,6 +82,7 @@ namespace StudyOfSubthresholdPerception
                     break;
                 case (int)Tabs.SampleTest:
                     buttonFinish.Enabled = false;
+                    isClose = true;
                     buttonNext.Enabled = false;
                     pictureBoxSample.Visible = false;
                     //Thread.Sleep(listTime[2]);
@@ -92,10 +104,12 @@ namespace StudyOfSubthresholdPerception
                     {
                         MessageBox.Show(StudyOfSubthresholdPerception.Properties.Resources.StrAttention1);
                         moveToTabExp();
+                        isClose = true;
                         buttonNext.Enabled = false;
                     }
                     break;
                 case (int)Tabs.Test:
+                    isClose = true;
                     buttonNext.Enabled = false;
                 loop1:
                     if (m < Experiment5.numOfPresent * Experiment5.numOfExp - 1)
@@ -338,11 +352,13 @@ namespace StudyOfSubthresholdPerception
                 {
                     buttonFinish.Enabled = true;
                 }));
+                isClose = false;
             }
         }
 
         private void nextPresentation()
         {
+            isClose = true;
             //есть маска
             if (numChange < 4 && listTime[0] > 0)
             {
@@ -454,6 +470,7 @@ namespace StudyOfSubthresholdPerception
                 {
                     buttonNext.Enabled = true;
                 }));
+                isClose = false;
             }
         }
 
@@ -475,6 +492,11 @@ namespace StudyOfSubthresholdPerception
         private void labelDescription_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormExperiment5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = isClose;
         }
     }
 }

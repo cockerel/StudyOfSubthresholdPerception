@@ -330,6 +330,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Эксперимент 1. Исследование влияния подпороговых стимулов на решение анаграмм.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormExperiment1_FormClosing);
             this.Load += new System.EventHandler(this.FormExperiment1_Load);
             this.SizeChanged += new System.EventHandler(this.FormExperiment1_SizeChanged);
             this.panelMain.ResumeLayout(false);
