@@ -85,10 +85,34 @@ namespace StudyOfSubthresholdPerception
 			new FormExperiment3().ShowDialog();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        private void FormMain_Paint(object sender, PaintEventArgs e)
         {
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.buttonExperiment1.Enabled = false;
+            this.buttonExperiment2.Enabled = false;
+            this.buttonExperiment3.Enabled = false;
+            this.buttonExperiment4.Enabled = false;
+            this.buttonExperiment5.Enabled = false;
+            this.button3.Enabled = false;
+            this.buttonSetEditor.Enabled = false;
+            this.buttonSetting.Enabled = false;
+            this.Enabled = false;
             var ex3 = new Experiment3DataHelper();
             ex3.GetSettings();
+            this.buttonExperiment1.Enabled = true;
+            this.buttonExperiment2.Enabled = true;
+            this.buttonExperiment3.Enabled = true;
+            this.buttonExperiment4.Enabled = true;
+            this.buttonExperiment5.Enabled = true;
+            this.button3.Enabled = true;
+            this.buttonSetEditor.Enabled = true;
+            this.buttonSetting.Enabled = true;
+            this.Enabled = true;
+            timer1.Enabled = false;
         }
     }
 }
