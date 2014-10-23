@@ -527,6 +527,11 @@ namespace StudyOfSubthresholdPerception
                 MessageBox.Show("Количество строк в таблице предъявлений не совпадает с общим количеством заданных опытов и предъявлений. Проверьте корректность введенных данных!",
                     StudyOfSubthresholdPerception.Properties.Resources.StrWarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            var settingsEx3 = ex3.GetSettings();
+            settingsEx3.Interval = textBoxTimePresent2.Text == String.Empty ? 40 : int.Parse(textBoxTimePresent2.Text);
+            settingsEx3.Mask = textBoxTimeMask2.Text == String.Empty ? 40 : int.Parse(textBoxTimeMask2.Text);
+            settingsEx3.MaskAfter = textBoxSleep2.Text == String.Empty ? 40 : int.Parse(textBoxSleep2.Text);
+            ex3.SetSettings(settingsEx3);
         }
 
         private void button5_Click(object sender, EventArgs e)
