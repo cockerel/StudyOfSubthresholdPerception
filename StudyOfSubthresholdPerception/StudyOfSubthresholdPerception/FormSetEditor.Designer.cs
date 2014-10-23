@@ -138,7 +138,7 @@
             this.dataGridViewExperiment1.ReadOnly = true;
             this.dataGridViewExperiment1.RowHeadersVisible = false;
             this.dataGridViewExperiment1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewExperiment1.RowTemplate.Height = 100;
+            this.dataGridViewExperiment1.RowTemplate.Height = 165;
             this.dataGridViewExperiment1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment1.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment1.TabIndex = 2;
@@ -434,7 +434,7 @@
             this.dataGridViewExperiment5.ReadOnly = true;
             this.dataGridViewExperiment5.RowHeadersVisible = false;
             this.dataGridViewExperiment5.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dataGridViewExperiment5.RowTemplate.Height = 100;
+            this.dataGridViewExperiment5.RowTemplate.Height = 165;
             this.dataGridViewExperiment5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewExperiment5.Size = new System.Drawing.Size(740, 471);
             this.dataGridViewExperiment5.TabIndex = 3;
