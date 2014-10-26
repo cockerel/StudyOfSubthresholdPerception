@@ -42,6 +42,10 @@ namespace StudyOfSubthresholdPerception.FormsExperiments
             timer1.Interval = Settings.Interval;
             timer2.Interval = Settings.Mask == 0 ? 1 : Settings.Mask;
             Data = ex3.GetSelectedData();
+            if (Data == null || Data.Count == 0)
+            {
+                throw new Exception();
+            }
             SetWord();
             var db = new DB();
             var prevRes = ex3.GetResults().Where(x => x.UserId == db.ID_USER).ToList();
