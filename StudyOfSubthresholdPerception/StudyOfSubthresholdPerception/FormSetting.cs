@@ -360,14 +360,10 @@ namespace StudyOfSubthresholdPerception
                 new DB().clearTable("ResultOfExperiment1");
                 new DB().clearTable("ResultsOfExperiment5");
                 new DB().clearTable("Users");
-            }
-
-            var ex3 = new Experiment3DataHelper();
-            var results = ex3.GetResults();
-            var db = new DB();
-            foreach (var x in results)
-            {
-                if (x.UserId == db.ID_USER)
+                var ex3 = new Experiment3DataHelper();
+                var results = ex3.GetResults();
+                var db = new DB();
+                foreach (var x in results)
                 {
                     ex3.RemoveResult(x.Id);
                 }
