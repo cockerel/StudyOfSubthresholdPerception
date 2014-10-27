@@ -99,7 +99,7 @@ namespace StudyOfSubthresholdPerception.Results
 
                         if (j == 2) //если текущая ячейка с id юзера
                         {
-                            dgView.Rows[i].Cells[j + 1].Value = getUserName((int)tableResults.Rows[i][j-1]);
+                            dgView.Rows[i].Cells[j + 1].Value = getUserName((int)tableResults.Rows[i][j - 1]);
                         }
                     }
                 }
@@ -141,6 +141,23 @@ namespace StudyOfSubthresholdPerception.Results
                 loadResult((int)tableUsers.Rows[index][0]);
                 return this.dgView;
             }
+        }
+
+        public int getUserId(int index)
+        {
+            index -= 2;
+            if (index > -1)
+            {
+                return (int) tableUsers.Rows[index][0];
+            }
+            else
+            {
+                if (index == -1)
+                {
+                    return 0;
+                }
+            }
+            return -1;
         }
 
         public String getUserName(int idUser)

@@ -36,8 +36,11 @@ namespace StudyOfSubthresholdPerception
                         dataGridViewResults2.Rows.Clear();
                         var ex3 = new Experiment3DataHelper();
                         var results = ex3.GetResults();
-                        if (comboBoxUsers.SelectedIndex - 1 > -1)
-                            results = results.Where(x => x.UserId == comboBoxUsers.SelectedIndex - 1).ToList();
+                        var userId = uInfo.getUserId(comboBoxUsers.SelectedIndex);
+                        if (userId > -1)
+                        {
+                            results = results.Where(x => x.UserId == userId).ToList();
+                        }
                         for (var count = 0; count < results.Count; count++)
                         {
                             dataGridViewResults2.Rows.Add(new object[]
