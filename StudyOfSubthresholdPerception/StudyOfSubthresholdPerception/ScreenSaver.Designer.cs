@@ -64,13 +64,13 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(13, 96);
+            this.label3.Location = new System.Drawing.Point(3, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.Size = new System.Drawing.Size(454, 27);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Кафедра:";
+            this.label3.Text = "Кафедра инженерной психологии и эргономики";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -78,9 +78,8 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(196, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(261, 16);
+            this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Инженерной психологии и эргономики";
             // 
             // label5
             // 
@@ -144,7 +143,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 7000;
+            this.timer1.Interval = 1200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ScreenSaver

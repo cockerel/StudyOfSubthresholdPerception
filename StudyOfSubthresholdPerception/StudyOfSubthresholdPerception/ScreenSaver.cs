@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using StudyOfSubthresholdPerception.DataHelpers;
 
 namespace StudyOfSubthresholdPerception
 {
@@ -23,6 +24,10 @@ namespace StudyOfSubthresholdPerception
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            var ex3 = new Experiment3DataHelper();
+            ex3.GetSettings();
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Close();
         }
     }
