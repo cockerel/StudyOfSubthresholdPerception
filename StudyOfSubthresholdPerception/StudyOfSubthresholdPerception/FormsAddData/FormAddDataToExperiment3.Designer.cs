@@ -112,6 +112,7 @@
             this.Controls.Add(this.textBoxEx3Und);
             this.Controls.Add(this.buttonAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormAddDataToExperiment3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";

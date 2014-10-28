@@ -1932,6 +1932,7 @@
             this.ClientSize = new System.Drawing.Size(784, 730);
             this.Controls.Add(this.textBoxEx2Exp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Настройки";

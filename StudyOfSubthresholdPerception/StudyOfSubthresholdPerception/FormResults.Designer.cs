@@ -497,6 +497,7 @@
             this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tabControlResults);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             //this.Name = "FormResults";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Обработка результатов";

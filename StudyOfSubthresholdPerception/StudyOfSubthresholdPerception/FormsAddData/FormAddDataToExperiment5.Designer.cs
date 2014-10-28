@@ -131,6 +131,7 @@
             this.Controls.Add(this.pictureBoxPositive);
             this.Controls.Add(this.pictureBoxNeutral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormAddDataToExperiment5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление стимулов";

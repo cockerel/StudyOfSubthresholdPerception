@@ -512,6 +512,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.buttonAdd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormSetEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактор набора стимулов";
